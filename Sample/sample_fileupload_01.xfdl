@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_fileupload_01" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <FileUpload id="fileupload" taborder="0" left="27" top="20" width="253" height="220" itemcount="1" multiselect="true" itemheight="50" buttonsize="50" onitemchanged="fileupload_onitemchanged" onitemclick="fileupload_onitemclick"/>
+        <Button id="btnAdd" taborder="1" text="ADD" left="310" top="20" width="70" height="50" onclick="btnAdd_onclick"/>
+        <Button id="btnUpload" taborder="2" text="UPLOAD" left="390" top="20" width="90" height="50" onclick="btnUpload_onclick"/>
+        <TextArea id="TextArea00" taborder="3" left="310" top="83" width="310" height="157"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.btnAdd_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fileupload.appendItem();
+};
+
+this.btnUpload_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.fileupload.filelist.length > 0)
+	{
+		this.alert(this.fileupload.filelist.length);
+		//this.fileupload.upload('http://127.0.0.1:4098/index.html');
+	}
+};
+this.fileupload_onitemchanged = function(obj:nexacro.FileUpload,e:nexacro.FileUploadItemChangeEventInfo)
+{
+	this.fn_checklist();
+};
+
+this.fn_checklist = function()
+{
+	var filelist = "";
+	if(this.fileupload.filelist.length > 0)
+	{
+		for(var i=0;i<this.fileupload.filelist.length;i++)
+		{
+			filelist += this.fileupload.filelist[i].filename+"\n";
+		}
+		this.TextArea00.set_value(filelist);
+	} else {
+		this.TextArea00.set_value("NO SELECTED FILES");
+	}
+}
+
+this.fileupload_onitemclick = function(obj:nexacro.FileUpload,e:nexacro.FileUploadItemEventInfo)
+{
+	if(this.confirm("Delete Item"))
+	{
+		this.fileupload.deleteItem(e.index);
+		this.fn_checklist();
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

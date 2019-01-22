@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_basicchart_05" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BasicChart id="BasicChart00" taborder="0" left="20" top="30" width="419" height="325" binddataset="Dataset00" categorycolumn="bind:month">
+          <Contents><![CDATA[{
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletext": "month",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"titletext": "sales",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252"
+		}
+	],
+	"title": {
+		"id": "title",
+		"text": "SelectType Sample",
+		"textfont": "20pt/normal \"맑은 고딕\"",
+		"padding": "0px 0px 5px",
+		"linestyle": "0px none"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:sales",
+			"highlightbarvisible": "true",
+			"selectcolumn": "bind:select",
+			"selecttype": "bind",
+			"barfillstyle": "#1abd9c",
+			"selectbarfillstyle": "yellow",
+			"barlinestyle": "1px solid #1abd9c"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+        <Grid id="Grid00" taborder="1" left="458" top="20" width="202" height="320" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="month"/>
+                <Cell col="1" text="sales"/>
+                <Cell col="2" text="select"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:month"/>
+                <Cell col="1" text="bind:sales" edittype="normal"/>
+                <Cell col="2" text="bind:select" edittype="checkbox" displaytype="checkboxcontrol"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onload="Dataset00_onload">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="INT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">1</Col>
+            <Col id="sales">45</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">2</Col>
+            <Col id="sales">56</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">3</Col>
+            <Col id="sales">65</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">4</Col>
+            <Col id="sales">23</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">5</Col>
+            <Col id="sales">23</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">6</Col>
+            <Col id="sales">33</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">7</Col>
+            <Col id="sales">78</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">8</Col>
+            <Col id="sales">89</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">9</Col>
+            <Col id="sales">123</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">10</Col>
+            <Col id="sales">34</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">11</Col>
+            <Col id="sales">66</Col>
+            <Col id="select">false</Col>
+          </Row>
+          <Row>
+            <Col id="month">12</Col>
+            <Col id="sales">78</Col>
+            <Col id="select">false</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[var rowarr = [];
+this.Dataset00_onload = function(obj:nexacro.NormalDataset,e:nexacro.DSLoadEventInfo)
+{
+	var minvalue = this.Dataset00.getMin("sales");
+	this.getminrow("sales", minvalue, 0);
+};
+
+this.getminrow = function(colid, minvalue, startidx)
+{
+	var rowidx = this.Dataset00.findRow(colid, minvalue, startidx);
+	if(rowidx != -1)
+	{
+		rowarr.push(rowidx);
+		this.getminrow(colid, minvalue, rowidx+1);
+	}
+	else
+	{
+		this.updatecolumn();
+	}
+}
+
+this.updatecolumn = function()
+{
+	for(var i=0;i<rowarr.length;i++)
+	{
+		this.Dataset00.setColumn(rowarr[i], "select", true);
+	}
+}]]></Script>
+  </Form>
+</FDL>

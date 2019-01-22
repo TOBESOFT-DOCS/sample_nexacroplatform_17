@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_frame_02" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown" onload="sample_frame_02_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnCreate" taborder="0" text="Create Frame" left="30" top="20" width="120" height="50" right="" bottom="" onclick="btnCreate_onclick" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Radio id="radioSeparate" taborder="1" left="168" top="20" width="280" height="50" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" rowcount="2" onitemchanged="radioSeparate_onitemchanged" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">250,*,*</Col>
+                <Col id="datacolumn">250, *, *</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">160,*,160</Col>
+                <Col id="datacolumn">160, * ,160</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">*,*,250</Col>
+                <Col id="datacolumn">*, *, 250</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">*,250,*</Col>
+                <Col id="datacolumn">*, 250, *</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.sample_frame_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var objHFrameset = new HFrameSet();  
+	objHFrameset.init("hframesetNew", 30, 90, 400, 200);
+	this.addChild("hframesetNew", objHFrameset);
+	objHFrameset.set_border("1px solid #999999");
+	objHFrameset.show();
+};
+
+this.btnCreate_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.addChildFrame(this.hframesetNew, "childFrame00");
+	this.addChildFrame(this.hframesetNew, "childFrame01");
+	this.addChildFrame(this.hframesetNew, "childFrame02");
+};
+
+this.addChildFrame = function(obj, strId:String)
+{
+	var objChildFrame = new ChildFrame();  
+	objChildFrame.init(strId, 0, 0, 0, 0);
+	obj.addChild(strId, objChildFrame);
+	objChildFrame.set_border("1px solid #999999");
+	objChildFrame.show();
+}
+
+this.radioSeparate_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.hframesetNew.set_separatesize(obj.value);
+};
+
+
+]]></Script>
+  </Form>
+</FDL>

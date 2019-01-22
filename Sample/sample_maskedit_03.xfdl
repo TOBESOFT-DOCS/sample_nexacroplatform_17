@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_maskedit_03" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <MaskEdit id="MaskEdit00" taborder="0" left="32" top="40" width="180" height="32" type="string" value="" autoskip="false" maskchar="_" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="" bottom="" font="14 Arial" letterSpacing="2px" textAlign="left" format="###### '-' #{######}"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

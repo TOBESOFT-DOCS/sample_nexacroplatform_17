@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_global_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Static id="Static00" taborder="0" left="44" top="52" width="126" height="40" text="encodeURI"/>
+        <Static id="Static01" taborder="1" text="decodeURI" left="44" top="100" width="126" height="40"/>
+        <Edit id="Edit00" taborder="2" left="180" top="60" width="140" height="31" imemode="alpha,full" text="ｎｅｘａｃｒｏ"/>
+        <Edit id="Edit01" taborder="3" left="180" top="109" width="140" height="31" imemode="alpha" text="nexacro"/>
+        <Button id="Button00" taborder="4" text="change" left="44" top="155" width="120" height="50" onclick="Button00_onclick"/>
+        <Edit id="Edit02" taborder="5" left="330" top="60" width="230" height="31" enable="false"/>
+        <Edit id="Edit03" taborder="6" left="330" top="109" width="230" height="31" enable="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit02.set_value(encodeURI(this.Edit00.value));
+	try	{
+		this.Edit03.set_value(decodeURI(this.Edit01.value));
+	}	catch (e)	{
+		this.Edit03.set_value(e.name+": "+e.message);
+	}
+};]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_videoplayer_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <VideoPlayer id="VideoPlayer00" taborder="0" left="32" top="40" width="540" height="320" oncurrenttimechanged="VideoPlayer00_oncurrenttimechanged" onplaystatuschanged="VideoPlayer00_onplaystatuschanged"/>
+        <Button id="btn_play" taborder="1" text="Play" left="32" top="374" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_play_onclick"/>
+        <Button id="btn_pause" taborder="2" text="Pause" left="162" top="374" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_pause_onclick"/>
+        <Button id="btn_stop" taborder="3" text="Stop" left="290" top="374" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_stop_onclick"/>
+        <Static id="stt_playtime" taborder="4" left="430" top="374" width="120" height="32" enable="false" textAlign="right"/>
+        <CheckBox id="chk_mute" taborder="5" text="Mute" left="300" top="422" width="150" height="20" onchanged="chk_mute_onchanged"/>
+        <Button id="btn_forward" taborder="6" text="Forward" left="32" top="416" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_forward_onclick"/>
+        <Button id="btn_rewind" taborder="7" text="Rewind" left="162" top="416" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_rewind_onclick"/>
+        <Static id="stt_playtime_title" taborder="8" text="Play Time:" left="380" top="374" width="120" height="32" enable="false" textAlign="right"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_play_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.VideoPlayer00.set_url("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"); //http://www.mediaelementjs.com/
+	this.VideoPlayer00.play();
+};
+
+this.btn_pause_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.VideoPlayer00.pause();
+};
+
+this.btn_stop_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.VideoPlayer00.stop();
+};
+
+this.btn_forward_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.VideoPlayer00.set_currenttime(this.VideoPlayer00.currenttime + 2000);
+};
+
+this.btn_rewind_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.VideoPlayer00.set_currenttime(this.VideoPlayer00.currenttime - 2000);
+};
+
+this.chk_mute_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	if(e.postvalue)
+	{	
+		this.VideoPlayer00.set_mute(true);
+	}
+	else
+	{
+		this.VideoPlayer00.set_mute(false);
+	}	
+};
+
+this.VideoPlayer00_oncurrenttimechanged = function(obj:nexacro.VideoPlayer,e:nexacro.VideoCurrentTimeChangedEventInfo)
+{
+	var strPlayTime = nexacro.round(this.VideoPlayer00.currenttime / 1000) + " / " + nexacro.round(this.VideoPlayer00.duration / 1000);
+		
+	this.stt_playtime.set_text(strPlayTime);
+};
+
+this.VideoPlayer00_onplaystatuschanged = function(obj:nexacro.VideoPlayer,e:nexacro.VideoPlayStateChangedEventInfo)
+{
+	switch(e.newstate)
+	{	
+		case "stop":
+				this.stt_playtime.set_text(" ");
+		case "pause":
+		case "play":
+		case "buffer":
+		case "ended":
+		default:
+			trace("state: "+ e.newstate);
+	}
+};
+
+]]></Script>
+  </Form>
+</FDL>

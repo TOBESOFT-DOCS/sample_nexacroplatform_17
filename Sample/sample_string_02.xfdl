@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_string_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Static id="Static00" taborder="0" text="e-mail" left="54" top="52" width="52" height="40"/>
+        <Static id="Static01" taborder="1" text="result" left="54" top="100" width="52" height="40"/>
+        <Edit id="Edit00" taborder="2" left="100" top="60" width="190" height="31"/>
+        <Edit id="Edit01" taborder="3" left="100" top="109" width="190" height="31"/>
+        <Button id="Button00" taborder="4" text="check" left="310" top="60" width="120" height="50" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sRtn = this.fn_checkEmail(this.Edit00.value);
+	this.Edit01.set_value(sRtn);
+};
+
+this.fn_checkEmail = function(sValue)
+{
+    var vChk = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-._@";
+    var i, pos, vEmailFirst, vEmailLast;
+
+    if (this.fn_checkNull(sValue))
+    {
+        return false;
+    }
+
+    for (var i = 0 ; i < sValue.length ; i++)
+    {
+        if (vChk.indexOf(sValue.charAt(i)) < 0) 
+        {
+            return false;
+        }
+    }
+    
+    pos = this.fn_pos(sValue, "@");
+
+    if (pos < 0)
+    {
+        return false;
+    }
+        
+    vEmailFirst = sValue.substr(0, pos);
+    vEmailLast  = sValue.substr(pos+1);
+
+    if (vEmailFirst.length <= 0 || vEmailLast.length <= 0)
+    {
+        return false;
+    }
+
+    if (this.fn_pos(vEmailLast, ".") <= 0 
+     || this.fn_pos(vEmailLast, "..") >= 0 
+     || this.fn_right(vEmailLast, 1) == ".")
+    {
+        return false;
+    }
+
+    if (this.fn_pos(vEmailLast, "@") >= 0)
+    {
+        return false;
+    }
+        
+    return true;
+}
+
+this.fn_checkNull = function(sValue)
+{
+    if (String(sValue).valueOf() == "undefined") 
+    {
+        return true;
+    }
+
+    if (sValue == null)
+    {
+        return true;
+    }
+
+    if (("x"+sValue == "xNaN") && ( new String(sValue.length).valueOf() == "undefined" ))
+    {
+        return true;
+    }
+
+    if (sValue.length == 0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+this.fn_pos = function(sOrg, sFind, nStart)
+{
+    if (this.fn_checkNull(sOrg) || this.fn_checkNull(sFind))
+    {
+        return -1;
+    }
+
+    if (this.fn_checkNull(nStart))
+    {
+        nStart = 0;
+    }
+        
+    return sOrg.indexOf(sFind, nStart);
+}
+
+this.fn_right = function(sOrg, nSize)
+{
+    if (this.fn_checkNull(sOrg) || this.fn_checkNull(nSize))		
+    {
+        return "";
+    }
+
+    if (sOrg.length < nSize)
+    {
+        return sOrg;
+    }
+    else
+    {
+        return sOrg.substr(sOrg.length-nSize, nSize);
+    }
+}
+]]></Script>
+  </Form>
+</FDL>

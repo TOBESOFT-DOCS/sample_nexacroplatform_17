@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_array_03" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Edit id="Edit00" taborder="0" left="49" top="41" width="211" height="39"/>
+        <Button id="Button00" taborder="1" text="Button00" left="270" top="41" width="100" height="39" onclick="Button00_onclick"/>
+        <Edit id="Edit01" taborder="2" left="50" top="91" width="211" height="39"/>
+        <Edit id="Edit02" taborder="3" left="49" top="141" width="211" height="39"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var arrNo = this.Edit00.value.split(",");
+	this.fn_arrayNoSort(arrNo);	
+ 	this.fn_arrayStringSort(arrNo);
+};
+
+this.fn_arrayStringSort = function(arrNo)
+{
+    this.Edit01.set_value(arrNo.sort());
+};
+
+this.fn_arrayNoSort = function(arrNo)
+{
+	this.Edit02.set_value(arrNo.sort(function(a, b){return a-b}));
+};
+]]></Script>
+  </Form>
+</FDL>

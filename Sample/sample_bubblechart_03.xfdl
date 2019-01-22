@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_bubblechart_03" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BubbleChart id="BubbleChart00" taborder="0" left="30" top="70" width="420" height="290" binddataset="Dataset00">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Bubble Chart",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"itemtextvisible": "false",
+			"itemtextfont": "bold 9pt '맑은 고딕'",
+			"valuecolumn": "bind:time",
+			"value2column": "bind:budget2016",
+			"value3column": "bind:order2016",
+			"opacity": "0.5",
+			"tooltiptext": "bind:order2016",
+			"titletext": "2016"
+		},
+		{
+			"id": "series1",
+			"valuecolumn": "bind:time",
+			"value2column": "bind:budget2017",
+			"value3column": "bind:order2017",
+			"opacity": "0.5",
+			"tooltiptext": "bind:order2017",
+			"titletext": "2017"
+		},
+		{
+			"id": "series2",
+			"valuecolumn": "bind:time",
+			"value2column": "bind:budget2018",
+			"value3column": "bind:order2018",
+			"opacity": "0.5",
+			"tooltiptext": "bind:order2018",
+			"titletext": "2018"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "timevalueaxis",
+			"titletext": "time",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"tickinterval": "1",
+			"tickmin": "0",
+			"tickmax": "6"
+		},
+		{
+			"id": "budgetvalueaxis",
+			"titletext": "budget",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"tickmax": "30",
+			"tickmin": "0"
+		}
+	],
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt \"맑은 고딕\"",
+		"itemtextcolor": "#4c4c4c",
+		"markertextgap": "3"
+	}
+}]]></Contents>
+        </BubbleChart>
+        <Radio id="Radio00" taborder="1" left="54" top="15" width="306" height="35" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" text="ALL" value="ALL" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">ALL</Col>
+                <Col id="datacolumn">ALL</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2016</Col>
+                <Col id="datacolumn">2016</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2017</Col>
+                <Col id="datacolumn">2017</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2018</Col>
+                <Col id="datacolumn">2018</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="time" type="INT" size="256"/>
+          <Column id="budget2016" type="INT" size="256"/>
+          <Column id="budget2017" type="INT" size="256"/>
+          <Column id="budget2018" type="INT" size="256"/>
+          <Column id="order2016" type="INT" size="256"/>
+          <Column id="order2017" type="INT" size="256"/>
+          <Column id="order2018" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="time">1</Col>
+            <Col id="order2016">15</Col>
+            <Col id="order2017">20</Col>
+            <Col id="order2018">50</Col>
+            <Col id="budget2016">10</Col>
+            <Col id="budget2017">15</Col>
+            <Col id="budget2018">20</Col>
+          </Row>
+          <Row>
+            <Col id="time">2</Col>
+            <Col id="order2016">23</Col>
+            <Col id="order2017">28</Col>
+            <Col id="order2018">60</Col>
+            <Col id="budget2016">10</Col>
+            <Col id="budget2017">15</Col>
+            <Col id="budget2018">20</Col>
+          </Row>
+          <Row>
+            <Col id="time">3</Col>
+            <Col id="order2016">32</Col>
+            <Col id="order2017">38</Col>
+            <Col id="order2018">80</Col>
+            <Col id="budget2016">15</Col>
+            <Col id="budget2017">20</Col>
+            <Col id="budget2018">20</Col>
+          </Row>
+          <Row>
+            <Col id="time">4</Col>
+            <Col id="order2016">23</Col>
+            <Col id="order2017">30</Col>
+            <Col id="order2018">42</Col>
+            <Col id="budget2016">20</Col>
+            <Col id="budget2017">20</Col>
+            <Col id="budget2018">25</Col>
+          </Row>
+          <Row>
+            <Col id="time">5</Col>
+            <Col id="order2016">34</Col>
+            <Col id="order2017">30</Col>
+            <Col id="order2018">34</Col>
+            <Col id="budget2016">10</Col>
+            <Col id="budget2017">10</Col>
+            <Col id="budget2018">15</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	if(e.postvalue!="ALL")
+	{
+		this.BubbleChart00.seriesset[1].set_visible(false);
+		this.BubbleChart00.seriesset[2].set_visible(false);
+		this.BubbleChart00.seriesset[0].set_value2column("BIND:budget"+e.postvalue);
+		this.BubbleChart00.seriesset[0].set_value3column("BIND:order"+e.postvalue);
+	}
+	else
+	{
+		this.BubbleChart00.seriesset[1].set_visible(true);
+		this.BubbleChart00.seriesset[2].set_visible(true);
+		this.BubbleChart00.seriesset[0].set_value2column("BIND:budget2016");
+		this.BubbleChart00.seriesset[0].set_value3column("BIND:order2016");		
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

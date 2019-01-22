@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_function_01" width="1280" height="720" titletext="New Form" onload="sample_grid_65_onload" ondragmove="sample_grid_65_ondragmove" ondrop="sample_grid_65_ondrop">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Edit id="Edit00" taborder="0" left="50" top="47" width="90" height="33"/>
+        <Button id="Button00" taborder="1" text="decode" left="250" top="47" width="80" height="33" onclick="Button00_onclick"/>
+        <Edit id="Edit01" taborder="2" left="50" top="100" width="90" height="33"/>
+        <Button id="Button01" taborder="3" text="iif" left="250" top="100" width="80" height="33" onclick="Button01_onclick"/>
+        <Edit id="Edit02" taborder="4" left="150" top="47" width="90" height="33" enable="false"/>
+        <Edit id="Edit03" taborder="5" left="150" top="100" width="90" height="33" enable="false"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit02.set_value(this.fn_decode(this.Edit00.value, '0', 'SUN', '1', 'MON', '2', 'TUE', '3', 'WED', '4', 'THU', '5', 'FRI', '6', 'SAT', 'OTHERS'));
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit03.set_value(this.fn_iif(this.Edit01.value, 'Yes', 'No'));
+};
+
+this.fn_decode = function()
+{
+    var sRtnValue = null;
+    var arrArgument = this.fn_decode.arguments;
+    var sValue = arrArgument[0];
+    var bIsDefault = false;
+    var nCount = 0;
+	
+    if ((arrArgument.length % 2) == 0) 
+    {
+        nCount = arrArgument.length - 1;
+        bIsDefault = true;
+    } 
+    else 
+    {
+        nCount = arrArgument.length;
+        bIsDefault = false;
+    }
+	
+    for (var i = 1; i < nCount; i+=2) 
+    {
+        if(sValue == arrArgument[i]) 
+        {
+            sRtnValue = arrArgument[i+1];
+            i = nCount;
+        }
+    }
+	
+    if (sRtnValue == null && bIsDefault==true) 
+    {
+        sRtnValue = arrArgument[arrArgument.length-1];
+    }
+	
+    return sRtnValue;
+};
+
+this.fn_iif = function()
+{
+    var arrArgument = this.fn_iif.arguments;
+	
+    if (arrArgument[0]) 
+    {
+		return arrArgument[1];
+    } 
+    else 
+    {
+        return arrArgument[2];
+    }
+};
+
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_array_04" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Edit id="Edit00" taborder="0" left="49" top="41" width="90" height="39"/>
+        <Button id="Button00" taborder="1" text="Button00" left="240" top="41" width="100" height="39" onclick="Button00_onclick"/>
+        <Edit id="Edit01" taborder="2" left="145" top="40" width="90" height="39"/>
+        <TextArea id="TextArea00" taborder="3" left="49" top="90" width="291" height="186"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var arrValue = [];
+	var nLen1 = this.Edit00.value;
+	var nLen2 = this.Edit01.value;
+	for (var i = 0; i < nLen1; i++)
+	{
+		arrValue[i] = new Array();
+		for (var j = 0; j < nLen2; j++)
+		{
+			arrValue[i][j] = " [" + i + "][" + j + "]";
+		}
+	}
+	var sRtn = "";
+    for (var i = 0; i < nLen1; i++)
+    {
+        sRtn += arrValue[i] + "\n";
+    }	
+	this.TextArea00.set_value(sRtn);
+};
+]]></Script>
+  </Form>
+</FDL>

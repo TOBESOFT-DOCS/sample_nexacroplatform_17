@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_01" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="staticDateformat" taborder="0" text="dateformat:" left="32" top="72" width="120" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staticLocale" taborder="1" text="locale:" left="32" top="32" width="120" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnChange" taborder="2" text="change dateformat" left="407" top="72" width="137" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnChange_onclick"/>
+        <Edit id="editLocale" taborder="3" left="120" top="32" width="269" height="32" right="" bottom=""/>
+        <Edit id="editDateformat" taborder="4" left="120" top="72" width="269" height="32" right="" bottom=""/>
+        <Calendar id="calDisplay" taborder="5" left="120" top="128" width="269" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" value="20160601"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[this.btnChange_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.calDisplay.set_locale(this.editLocale.value);
+	this.calDisplay.set_dateformat(this.editDateformat.value);
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

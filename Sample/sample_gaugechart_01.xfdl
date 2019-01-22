@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_gaugechart_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <GaugeChart id="GaugeChart00" taborder="0" left="20" top="30" width="300" height="300" binddataset="Dataset00" categorycolumn="bind:Category">
+          <Contents><![CDATA[{
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmax": "100"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Value",
+			"radius": "100"
+		}
+	],
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"image": "",
+		"size": "",
+		"indent": "",
+		"fillstyle": "#4b4b4b",
+		"linestyle": "0px none",
+		"opacity": "1"
+	}
+}]]></Contents>
+        </GaugeChart>
+        <Radio id="Radio00" taborder="1" left="350" top="65" width="100" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio00_onitemchanged" index="0" text="vertical" value="vertical">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">vertical</Col>
+                <Col id="datacolumn">vertical</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">horizontal</Col>
+                <Col id="datacolumn">horizontal</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">circular</Col>
+                <Col id="datacolumn">circular</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Radio id="Radio01" taborder="2" left="350" top="145" width="100" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio01_onitemchanged" index="0" text="0, 360" value="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">0, 360</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">270</Col>
+                <Col id="datacolumn">270,180</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">225</Col>
+                <Col id="datacolumn">225,270</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="Static00" taborder="3" text="gaugetype" left="350" top="35" width="120" height="25" font="bold 12px/normal &quot;Gulim&quot;"/>
+        <Static id="Static01" taborder="4" text="startangle, endangle" left="350" top="118" width="150" height="25" font="bold 12px/normal &quot;Gulim&quot;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Category" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Category">TEST</Col>
+            <Col id="Value">70</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.GaugeChart00.set_gaugetype(e.postvalue);
+};
+
+this.Radio01_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	if(e.postvalue==0)
+	{
+		this.GaugeChart00.seriesset[0].set_startangle(0);
+		this.GaugeChart00.seriesset[0].set_endangle(360);
+	} 
+	else if(e.postvalue==225)
+	{
+		this.GaugeChart00.seriesset[0].set_startangle(225);
+		this.GaugeChart00.seriesset[0].set_endangle(270);
+	}
+	else if(e.postvalue==270)
+	{
+		this.GaugeChart00.seriesset[0].set_startangle(270);
+		this.GaugeChart00.seriesset[0].set_endangle(180);
+	}	
+};
+
+]]></Script>
+  </Form>
+</FDL>

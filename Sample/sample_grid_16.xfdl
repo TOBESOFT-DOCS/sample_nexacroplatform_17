@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_16" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="32" top="40" width="462" height="350" binddataset="Dataset00" autofittype="none" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autosizingtype="row" extendsizetype="none" autosizebandtype="allband" text="" autoenter="none" fillareatype="none" selecttype="row" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="160"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="45" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+                <Cell col="1" text="Address,&#13;&#10;Country"/>
+                <Cell col="2" text="Company&#13;&#10;and&#13;&#10;Department"/>
+                <Cell col="3" text="Salary"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name" textAlign="left"/>
+                <Cell col="1" text="bind:Address" wordWrap="english" textAlign="left"/>
+                <Cell col="2" text="bind:Company" wordWrap="english" textAlign="left"/>
+                <Cell col="3" text="bind:Salary" displaytype="currency" textAlign="right"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Name" type="STRING" size="256"/>
+          <Column id="Address" type="STRING" size="256"/>
+          <Column id="Company" type="STRING" size="256"/>
+          <Column id="Salary" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Name">John</Col>
+            <Col id="Address">Seoul, KOREA</Col>
+            <Col id="Company">1dollar / Sales</Col>
+            <Col id="Salary">15000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">James</Col>
+            <Col id="Address">Barcelona, Spain</Col>
+            <Col id="Company">EBOT / Consulting</Col>
+            <Col id="Salary">25000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Donald</Col>
+            <Col id="Address">Califonia, USA</Col>
+            <Col id="Company">EBOT / Research Institute</Col>
+            <Col id="Salary">1000000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Lisa</Col>
+            <Col id="Address">London, United Kingdom</Col>
+            <Col id="Company">1dollar / Quality Assurance</Col>
+            <Col id="Salary">3000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Joe</Col>
+            <Col id="Address">São Paulo, Brazil</Col>
+            <Col id="Company">hangul / R&amp;D</Col>
+            <Col id="Salary">8600</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Michael</Col>
+            <Col id="Address">Mumbai, India</Col>
+            <Col id="Company">1dollar / Personnel</Col>
+            <Col id="Salary">1300</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Lilli</Col>
+            <Col id="Address">Ankara, Turkey</Col>
+            <Col id="Company">hangul / Quality Assurance</Col>
+            <Col id="Salary">4400</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Colt</Col>
+            <Col id="Address">Sydney, NSW, Australia </Col>
+            <Col id="Company">hangul / Sales</Col>
+            <Col id="Salary">62000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_edit_08" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Edit id="editCode" taborder="0" left="104" top="80" width="140" height="41" right="" bottom="" oneditclick="editCode_oneditclick"/>
+        <Edit id="editData" taborder="0" left="252" top="80" width="140" height="41" right="" bottom=""/>
+        <PopupDiv id="popupdivList" text="PopupDiv00" visible="false" left="104" top="129" width="288" height="151" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Grid id="gridList" taborder="0" left="0" top="0" width="100%" height="100%" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList" autofittype="col" oncellclick="popupdivList_gridList_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row band="head" size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="CODE"/>
+                      <Cell col="1" text="DATA"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:CODE"/>
+                      <Cell col="1" text="bind:DATA"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Static id="staticCode" taborder="1" text="CODE" left="156" top="60" width="36" height="24" right="" bottom=""/>
+        <Static id="staticData" taborder="1" text="DATA" left="302" top="60" width="36" height="24" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsList">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">01</Col>
+            <Col id="DATA">apple</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">02</Col>
+            <Col id="DATA">pear</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">03</Col>
+            <Col id="DATA">walnut</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">04</Col>
+            <Col id="DATA">acorn</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">05</Col>
+            <Col id="DATA">stawberry</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.editCode_oneditclick = function(obj:nexacro.Edit,e:nexacro.EditClickEventInfo)
+{
+	this.popupdivList.trackPopupByComponent(this.editCode, 0, parseInt(this.editCode.height));
+};
+
+this.popupdivList_gridList_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.popupdivList.closePopup();
+	this.editCode.set_value(this.dsList.getColumn(e.row, "CODE"));
+	this.editData.set_value(this.dsList.getColumn(e.row, "DATA"));
+};
+]]></Script>
+  </Form>
+</FDL>

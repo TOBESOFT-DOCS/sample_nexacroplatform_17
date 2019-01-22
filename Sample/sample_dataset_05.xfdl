@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_dataset_05" width="1280" height="720" titletext="New Form" locale="en_US" onload="sample_dataset_03_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="50" top="60" width="160" height="90" autofittype="col"/>
+        <Grid id="Grid01" taborder="1" left="220" top="60" width="150" height="90" autofittype="col"/>
+        <TextArea id="TextArea00" taborder="2" left="50" top="165" width="320" height="75"/>
+        <Button id="Button00" taborder="3" text="Button00" left="390" top="60" width="90" height="40" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objApp = nexacro.getApplication();
+	var objGdS = new Dataset;	
+	objApp.addVariable("gds_data", objGdS);
+	objApp.gds_data.addColumn("COL0","String");
+	objApp.gds_data.addColumn("COL1","String");
+	objApp.gds_data.addRow();
+	objApp.gds_data.setColumn(objApp.gds_data.rowposition,"COL0","global COL0");
+	objApp.gds_data.setColumn(objApp.gds_data.rowposition,"COL1","global COL1");
+	this.Grid00.set_binddataset("gds_data");
+	this.Grid00.createFormat();
+	
+	var objLdS = new Dataset;
+	objLdS.set_name("ds_data");
+	this.addChild("ds_data", objLdS);  
+	this.ds_data.addColumn("COL0","String");
+	this.ds_data.addColumn("COL1","String");
+	this.ds_data.addRow();
+	this.ds_data.setColumn(this.ds_data.rowposition,"COL0","1");
+	this.ds_data.setColumn(this.ds_data.rowposition,"COL1","first");
+	this.ds_data.addRow();
+	this.ds_data.setColumn(this.ds_data.rowposition,"COL0","2");
+	this.ds_data.setColumn(this.ds_data.rowposition,"COL1","second");
+	this.Grid01.set_binddataset("ds_data");	
+	this.Grid01.createFormat();
+	
+    this.TextArea00.set_value('global dataset rowcount : ' + objApp.all["gds_data"].rowcount+'\n'
+		+'local  dataset rowcount : ' + this.all["ds_data"].rowcount);
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_progressbar_02_nexacro16" width="1024" height="768" titletext="New Form" ontimer="Form_ontimer">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <ProgressBar id="ProgressBar00" taborder="0" max="100" min="0" text="ProgressBar00" left="32" top="40" width="480" height="32" right="" bottom="" smooth="true"/>
+        <ProgressBar id="ProgressBar01" taborder="0" max="100" min="0" text="ProgressBar01" left="32" top="80" width="480" height="32" right="" bottom="" step="2" direction="backward"/>
+        <Button id="btn_start" taborder="4" text="Start" left="32" top="128" width="120" height="32" right="" bottom="" onclick="btn_start_onclick"/>
+        <Button id="btn_reset" taborder="4" text="Reset" left="160" top="128" width="120" height="32" right="" bottom="" onclick="btn_reset_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_start_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.setTimer(0, 100);
+	
+};
+
+this.Form_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	var varProgressValue00 = (this.ProgressBar00.pos / this.ProgressBar00.max) * 100;
+	var varProgressValue01 = (this.ProgressBar01.pos / this.ProgressBar01.max) * 100;
+
+	if(e.timerid == 0)
+	{
+		if(this.ProgressBar00.pos == this.ProgressBar01.max && this.ProgressBar01.pos == this.ProgressBar01.max)
+		{
+			this.killTimer(0);
+		}
+		
+		this.ProgressBar00.stepIt();
+		this.ProgressBar00.set_text(parseInt(varProgressValue00) + " %");
+		
+		this.ProgressBar01.stepIt();
+		this.ProgressBar01.set_text(parseInt(varProgressValue01) + " %");
+	}
+	
+};
+
+this.btn_reset_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ProgressBar00.set_pos(0);
+	this.ProgressBar00.set_text("ProgressBar00");
+	
+	this.ProgressBar01.set_pos(0);
+	this.ProgressBar01.set_text("ProgressBar01");
+	
+	this.killTimer(0);
+	
+};
+]]></Script>
+  </Form>
+</FDL>

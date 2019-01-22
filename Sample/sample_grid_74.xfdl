@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_73" width="1024" height="768" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="30" top="25" width="220" height="265" binddataset="Dataset00" autofittype="col" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="none" fillareatype="none" selecttype="multirow" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body" border="" selectscrollmode="select">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Column0" left="260" top="25" width="90" height="30" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="2" text="Column1 &amp;&amp; Column2" left="260" top="65" width="135" height="30" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="3" text="Init" left="260" top="105" width="90" height="30" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">b</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">2</Col>
+            <Col id="Column2">d</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+            <Col id="Column1">2</Col>
+            <Col id="Column2">e</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">6</Col>
+            <Col id="Column1">3</Col>
+            <Col id="Column2">f</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">7</Col>
+            <Col id="Column1">3</Col>
+            <Col id="Column2">g</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+            <Col id="Column1">4</Col>
+            <Col id="Column2">h</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+            <Col id="Column1">3</Col>
+            <Col id="Column2">f</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">a</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sExpr	= "rowidx==dataset.findRowExpr(\"Column0=='\" + Column0 + \"'\")";		
+	this.Dataset00.filter(sExpr);   
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gf_distincDsFilter(this.Dataset00, "Column1,Column2");
+};
+
+this.gf_distincDsFilter = function(objDs, sColID)
+{
+	var arrArgs	= sColID.split(",");
+	var sFilterExpr		= "";
+	var sFindRowExpr	= "";
+	
+	for (var i=0; i<arrArgs.length; i++)
+	{
+		if (objDs.getColumnInfo(arrArgs[i]) == null) continue;
+		
+		sFindRowExpr	+= (sFindRowExpr) ? " && " : "";
+		sFindRowExpr	+= "" + arrArgs[i] + "=='\" + " + arrArgs[i] + " + \"'";
+	}
+	
+	if (sFindRowExpr) {
+		sFilterExpr	= "rowidx==dataset.findRowExpr(\"" + sFindRowExpr + "\")";
+	}
+	objDs.filter(sFilterExpr);
+};
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.filter("");
+};
+]]></Script>
+  </Form>
+</FDL>

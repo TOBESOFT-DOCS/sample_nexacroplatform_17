@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_edit_05" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="Static00" taborder="0" text="Password:" left="40" top="32" width="120" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+        <Edit id="edit_password" taborder="1" left="128" top="28" width="240" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="" bottom="" password="true" value="nexacro17" text="nexacro17"/>
+        <Button id="Button00" taborder="2" text="Confirm" left="248" top="72" width="120" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Button00_onclick"/>
+        <CheckBox id="CheckBox00" taborder="3" text="Unmasking" left="384" top="34" width="96" height="20" right="" bottom="" truevalue="1" falsevalue="0" onchanged="CheckBox00_onchanged"/>
+        <Static id="Static01" taborder="4" left="40" top="66" width="197" height="38" color="red"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/*
+Event Handler
+*/
+this.Button00_onclick = function(obj:Button,e:ClickEventInfo)
+{
+    var sRtn = fn_checkPassword(this.edit_password.value);
+    
+	if(sRtn ==='Y')
+		// alert("Password correct");	
+		this.Static01.set_text("Password correct");
+	else
+		// alert("Password incorrect");		
+		this.Static01.set_text("Password incorrect");
+
+};
+
+this.CheckBox00_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	if(e.postvalue == 1) 
+	{
+		this.edit_password.set_password("false");
+	}
+	else
+	{
+		this.edit_password.set_password("true");
+	}
+	
+};
+
+
+/*
+정규식을 이용한 비밀번호 형식체크
+(영문/숫자로 구성한 8~10 자리 비밀번호만 허용)
+ */
+ function fn_checkPassword(sValue)
+{
+    var sRtn = "N";
+    var sRegExp = "[a-z0-9]{8,10}";
+    var objRegExp = new RegExp(sRegExp, "i"); 
+    var objResult = objRegExp.exec(sValue);
+	
+    if (objResult == null)
+    {
+        sRtn = "N";
+    }
+    else
+    {
+        if ((objResult.index == 0) && (objResult == sValue))
+            sRtn = "Y";
+        else
+            sRtn = "N";
+    }
+
+    return sRtn;
+}
+]]></Script>
+  </Form>
+</FDL>

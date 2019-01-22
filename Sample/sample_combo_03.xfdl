@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_combo_03_nexacro16" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Combo id="Combo00" taborder="0" text="male" left="32" top="40" width="130" height="32" codecolumn="CODE" datacolumn="DATA" index="0" value="00" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@ds_combo"/>
+        <Grid id="Grid00" taborder="1" left="180" top="40" width="130" height="180" binddataset="ds_grid" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="CODE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:CODE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="2" left="340" top="40" width="130" height="180" binddataset="ds_grid" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="CODE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:CODE" displaytype="combotext" combodataset="ds_combo" combocodecol="CODE" combodatacol="DATA"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_combo">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">00</Col>
+            <Col id="DATA">apple</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">01</Col>
+            <Col id="DATA">banana</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">02</Col>
+            <Col id="DATA">orange</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">03</Col>
+            <Col id="DATA">kiwi</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">04</Col>
+            <Col id="DATA">peach</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">05</Col>
+            <Col id="DATA">strawberry</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_grid">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">00</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">01</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">03</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">01</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">02</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">04</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Combo00" propid="value" datasetid="ds_grid" columnid="CODE"/>
+    </Bind>
+  </Form>
+</FDL>

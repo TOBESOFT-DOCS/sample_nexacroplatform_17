@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--
+	<title>CKEditor 5 – Classic editor</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+	-->
+	<title>CKEditor 4 – basic editor</title>
+    <script src="https://cdn.ckeditor.com/4.10.0/basic/ckeditor.js"></script>	
+</head>
+<body>
+    <textarea name="content" id="editor">
+	</textarea>
+    <script>
+		CKEDITOR.replace( 'editor' );
+		
+		function setData(str)
+		{
+			CKEDITOR.instances.editor.setData(str);
+		}
+		
+		function getData()
+		{
+			return CKEDITOR.instances.editor.getData();
+		}
+		/*
+		var myEditor;
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+			 .then( editor => {
+				console.log( editor );
+				myEditor = editor;
+			} )
+			.catch( error => {
+				console.error( error );
+			} );
+			
+		function setData(str)
+		{
+			myEditor.setData(str);
+		}
+		
+		function getData()
+		{
+			return myEditor.getData();
+		}
+		*/
+    </script>
+</body>
+</html>

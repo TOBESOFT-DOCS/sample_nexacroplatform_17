@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_listview_01" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Div id="Div00" taborder="0" text="Div00" left="10" top="50" width="320" height="330" border="1px solid black">
+          <Layouts>
+            <Layout>
+              <ListView id="ListView00" taborder="0" left="5" top="5" right="5" bottom="5" binddataset="Dataset00">
+                <Formats>
+                  <Format id="default">
+                    <Band id="body" width="100%" height="160">
+                      <Cell id="Cell03" left="5" top="5" width="150" height="150" text="bind:cover" displaytype="imagecontrol" border="0px none" padding="0px"/>
+                      <Cell id="Cell01" left="Cell03:5" top="5" height="150" text="bind:title" wordWrap="english" right="5" border="0px none"/>
+                    </Band>
+                  </Format>
+                  <Format id="format00">
+                    <Band id="body" left="0" width="50%" top="0" height="160">
+                      <Cell id="Cell03" left="5" top="5" width="150" height="150" text="bind:cover" displaytype="imagecontrol" border="0px none" padding="0px"/>
+                      <Cell id="Cell01" left="Cell03:5" top="5" height="150" text="bind:title" wordWrap="english" right="5" border="0px none"/>
+                    </Band>
+                  </Format>
+                  <Format id="format01">
+                    <Band id="body" width="100%" height="160">
+                      <Cell id="Cell03" left="5" top="5" width="150" height="150" text="bind:cover" displaytype="imagecontrol" border="0px none" padding="0px"/>
+                      <Cell id="Cell01" left="5" top="70%" text="bind:title" wordWrap="english" border="0px none" width="150" bottom="5" background="darkgray" opacity="0.7" color="white"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </ListView>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Radio id="Radio00" taborder="1" left="20" top="5" width="133" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="1" text="320" value="320" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">180</Col>
+                <Col id="datacolumn">180</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">320</Col>
+                <Col id="datacolumn">320</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">640</Col>
+                <Col id="datacolumn">640</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="cover" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="title">The Freewheelin' Bob Dylan</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_The_Freewheelin'_Bob_Dylan.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="title">Highway 61 Revisited</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Highway_61_Revisited.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="title">Blood on the Tracks</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Blood_on_the_Tracks.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="title">Blonde on Blonde</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Blonde_on_Blonde.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="title">Bringing It All Back Home</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Bringing_It_All_Back_Home.jpg</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.Div00.set_width(e.postvalue);
+	if(e.postvalue == 640)
+	{
+		this.Div00.form.ListView00.set_formatid("format00");
+	}
+	else if(e.postvalue == 180)
+	{
+		this.Div00.form.ListView00.set_formatid("format01");
+	}
+	else
+	{
+		this.Div00.form.ListView00.set_formatid("default");
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

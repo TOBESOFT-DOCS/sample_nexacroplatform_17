@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_listbox_01_nexacro16" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <ListBox id="ListBox00" taborder="0" left="48" top="40" width="240" height="140" innerdataset="@ds_data" codecolumn="CODE" datacolumn="DATA" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" multiselect="true"/>
+        <Button id="btn_selected_record" taborder="1" text="Selected record&#13;&#10;information" left="308" top="40" width="120" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_selected_record_onclick" font="9pt Arial"/>
+        <Button id="btn_select_all" taborder="2" text="Select all" left="308" top="82" width="120" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_select_all_onclick"/>
+        <TextArea id="TextArea00" taborder="3" left="48" top="187" width="380" height="253"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_data">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">00</Col>
+            <Col id="DATA">static</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">01</Col>
+            <Col id="DATA">dataset</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">02</Col>
+            <Col id="DATA">button</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">03</Col>
+            <Col id="DATA">calendar</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">04</Col>
+            <Col id="DATA">checkbox</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">05</Col>
+            <Col id="DATA">combo</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">06</Col>
+            <Col id="DATA">radio</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">07</Col>
+            <Col id="DATA">listbox</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">08</Col>
+            <Col id="DATA">grid</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">09</Col>
+            <Col id="DATA">tabpage</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">10</Col>
+            <Col id="DATA">tab</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">11</Col>
+            <Col id="DATA">imageviewer</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">12</Col>
+            <Col id="DATA">groupbox</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_selected_record_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sMsg  = "Selected Record is\n";	
+	var arrSelectedItems = this.ListBox00.getSelectedItems();
+	
+	for(var i=0;i<arrSelectedItems.length;i++)
+	{
+			sMsg += "- Row : "+ arrSelectedItems[i] +"\n";
+	}
+
+	sMsg += "\nNumber of selected record: " + this.ListBox00.getSelectedCount();	
+	
+	// this.alert(sMsg);
+	this.TextArea00.set_value(sMsg);
+	
+};
+
+
+this.btn_select_all_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	for(i=0;i<this.ListBox00.getCount();i++)
+	{
+		this.ListBox00.setSelect(i, true);
+	}
+	
+};
+]]></Script>
+  </Form>
+</FDL>

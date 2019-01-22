@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_05" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="" onkeydown="Form_onkeydown">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <Edit id="edit01" taborder="0" left="20" top="32" width="140" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" inputtype="number" maxlength="5" autoskip="true"/>
+        <Edit id="edit02" taborder="1" left="172" top="32" width="140" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnSubmit" taborder="2" text="SUBMIT" left="324" top="22" width="120" height="50" right="" bottom="" onclick="btnSubmit_onclick" onkeydown="btnSubmit_onkeydown"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Form_onkeydown = function(obj:nexacro.Form,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		var objFocus = this.getFocus();
+		var objComp = obj.getNextComponent(objFocus, true);
+		objComp.setFocus();
+	}
+};
+
+this.btnSubmit_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.edit01.set_value('');
+	this.edit02.set_value('');
+};
+
+this.btnSubmit_onkeydown = function(obj:nexacro.Button,e:nexacro.KeyEventInfo)
+{
+	return true;
+};]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_webbrowser_01_nexacro16" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <WebBrowser id="WebBrowser00" taborder="0" left="32" top="40" width="540" height="320" right="" bottom="" url="http://demo.nexacro.com/developer_guide/17/Service/webbrowser.html" onusernotify="WebBrowser00_onusernotify"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

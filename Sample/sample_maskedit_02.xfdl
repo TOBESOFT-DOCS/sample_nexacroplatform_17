@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_maskedit_02" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <MaskEdit id="maskedit_string" taborder="0" left="116" top="36" width="200" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" type="string" value="abcd12345" textAlign="left" format="aaaa - #####"/>
+        <MaskEdit id="maskedit_number" taborder="1" left="116" top="84" width="200" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" value="1234567.890" format="#,#.###"/>
+        <Static id="Static00" taborder="2" text="String :" left="32" top="40" width="80" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+        <Static id="Static01" taborder="3" text="Number :" left="32" top="88" width="80" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_tab_03" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Tab id="Tab00" taborder="0" tabindex="0" left="40" top="128" width="540" height="300" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="Tabpage1" border="1px groove">
+              <Layouts>
+                <Layout/>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="Tabpage2" border="1px groove">
+              <Layouts>
+                <Layout/>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <GroupBox id="GroupBox00" text="tabposition property" left="40" top="32" width="540" height="64" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Radio id="Radio00" taborder="1" left="69" top="55" width="400" height="32" right="" bottom="" index="0" rowcount="1" columncount="4" codecolumn="codecolumn" datacolumn="datacolumn" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onitemchanged="Radio00_onitemchanged" direction="horizontal" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">top</Col>
+                <Col id="datacolumn">TOP</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">left</Col>
+                <Col id="datacolumn">LEFT</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">right</Col>
+                <Col id="datacolumn">RIGHT</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">bottom</Col>
+                <Col id="datacolumn">BOTTOM</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.Tab00.set_tabposition(e.postvalue);
+
+};
+]]></Script>
+  </Form>
+</FDL>

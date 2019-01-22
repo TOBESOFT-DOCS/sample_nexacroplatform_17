@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_05" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnCal" taborder="6" text="Calculate" left="200" top="68" width="80" height="36" right="" bottom="" onclick="btnCal_onclick" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="editYear" taborder="7" left="96" top="32" width="96" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staYear" taborder="5" text="Year" left="40" top="34" width="48" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="staDay_onclick"/>
+        <Edit id="editWeek" taborder="7" left="96" top="70" width="96" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staWeek" taborder="5" text="Week" left="40" top="72" width="48" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="staDay_onclick"/>
+        <Calendar id="calWeek" taborder="8" left="96" top="120" width="184" height="184" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" type="monthonly" usetrailingday="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[this.btnCal_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var dDate = new Date(parseInt(this.editYear.value),0,1);
+	var nDay = dDate.getDay();
+	
+	if(nDay != 0) {
+		// dDate = new Date(dDate.addDate(-nDay));
+		dDate.addDate(-nDay);
+	}
+	
+	// var nWeekS = new Date(dDate.addDate(7 * (parseInt(this.editWeek.value)-1)));
+	dDate.addDate(7 * (parseInt(this.editWeek.value)-1));
+	
+	this.calWeek.set_value(dDate.getFullYear()
+		+(dDate.getMonth()+1).toString().padLeft(2, "0")
+		+dDate.getDate().toString().padLeft(2, "0")
+	);
+}]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

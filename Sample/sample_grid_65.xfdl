@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_65" width="1280" height="720" titletext="New Form" onload="sample_grid_65_onload" ondragmove="sample_grid_65_ondragmove" ondrop="sample_grid_65_ondrop">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="25" top="26" width="270" height="114" binddataset="Dataset00" autofittype="col" ondrag="Grid00_ondrag">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Edit id="Edit00" taborder="1" left="310" top="26" width="140" height="36"/>
+        <Edit id="Edit01" taborder="2" left="310" top="70" width="140" height="36"/>
+        <Edit id="Edit02" taborder="3" left="310" top="114" width="140" height="36"/>
+        <Edit id="Edit03" taborder="4" left="310" top="158" width="140" height="36"/>
+        <Static id="Static00" taborder="5" text="Static00" left="25" top="160" width="120" height="20" visible="false"/>
+        <Static id="Static01" taborder="6" text="Drop is not allowed" left="25" top="183" width="120" height="17" visible="false" color="red"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">apple</Col>
+            <Col id="Column1">John</Col>
+            <Col id="Column2">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">pear</Col>
+            <Col id="Column1">Donald</Col>
+            <Col id="Column2">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">walnut</Col>
+            <Col id="Column1">Leo</Col>
+            <Col id="Column2">3</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[var arr1 = [];
+var arr2 = [];
+
+this.sample_grid_65_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	// Drop unavailable
+	arr1[0] = this.Edit00;
+	arr1[1] = this.Edit02;
+
+	// Drop possible
+	arr2[0] = this.Edit01;
+	arr2[1] = this.Edit03;
+};
+
+this.Grid00_ondrag = function(obj:nexacro.Grid, e:nexacro.GridDragEventInfo)
+{
+	if(e.row == -1 || e.row == -2)
+	{
+		return false;
+	}	
+	
+	sTextDragData = obj.getCellValue(e.row, e.cell);
+
+	var cell_rect = obj.getCellRect(e.row, e.cell);
+	this.Static00.set_left(cell_rect.left);
+	this.Static00.set_top(cell_rect.top);
+	this.Static00.set_width(cell_rect.width);
+	this.Static00.set_height(cell_rect.height);
+	this.Static00.set_text(sTextDragData);
+	this.Static00.set_visible(true);
+	return true;
+};
+
+this.sample_grid_65_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
+{
+	this.DragTextMove(obj, e);
+};
+
+this.DragTextMove = function(obj, e)
+{
+    if( this.Static00.visible == true )
+    {	
+		for(var i = 0; i < arr1.length; i++)
+		{
+			if(arr1[i].name == e.fromobject.name)
+			{
+				this.equal_Obj(obj, e);
+				break;
+			}	else	{
+				this.different_Obj(obj, e);
+			}
+		}
+		this.Static00.move(e.clientx+5, e.clienty-15);
+    }
+};
+
+this.equal_Obj = function(obj, e)
+{
+	this.Static01.set_visible(true);
+	this.Static01.move(e.clientx-10, e.clienty+5);
+};
+
+this.different_Obj = function(obj, e)
+{
+	this.Static01.set_visible(false);
+};
+
+
+this.sample_grid_65_ondrop = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
+{
+	for(var i = 0; i < arr1.length; i++ )
+	{
+		if(e.fromobject != undefined && e.fromobject.name == arr1[i].name)
+		{
+			this.Static00.set_visible(false);
+			this.Static01.set_visible(false);
+			return false;
+		}
+	}
+
+   for(var i = 0; i < arr2.length; i++ )
+	{
+		if(e.fromobject != undefined && e.fromobject.name == arr2[i].name)
+		{
+			e.fromobject.set_value(sTextDragData);
+			this.Static00.set_visible(false);
+		}
+	}
+	this.Static00.set_visible(false);
+};
+]]></Script>
+  </Form>
+</FDL>

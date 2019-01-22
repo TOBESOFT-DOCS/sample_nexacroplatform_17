@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_googlemap_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <GoogleMap id="GoogleMap00" taborder="0" left="170" top="40" width="480" height="320" onload="GoogleMap00_onload" onerror="GoogleMap00_onerror" onrecvsuccess="GoogleMap00_onrecvsuccess"/>
+        <Button id="Button00" taborder="1" text="Show Map" left="32" top="40" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="2" text="Add Maker" left="32" top="80" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Button01_onclick" enable="false"/>
+        <Button id="Button02" taborder="3" text="Del Maker" left="32" top="120" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" enable="false" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.GoogleMap00.set_showzoom(true);
+	
+	this.GoogleMap00.load(false, 11.96832946, 121.922996308, 0, 13);
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objGoogleMapMaker = new nexacro.GoogleMapMarker();
+	
+	objGoogleMapMaker.set_latitude(11.96832946);
+	objGoogleMapMaker.set_longitude(121.922996308);
+	objGoogleMapMaker.set_text("Default Marker");
+	objGoogleMapMaker.set_draggable(true);
+	objGoogleMapMaker.set_visible(true);
+	
+	this.GoogleMap00.addItem("MapMarker", objGoogleMapMaker);
+	
+	this.Button01.set_enable(false);
+	this.Button02.set_enable(true);
+};
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.GoogleMap00.removeItem("MapMarker");
+
+	this.Button01.set_enable(true);
+	this.Button02.set_enable(false);
+};
+
+this.GoogleMap00_onerror = function(obj:nexacro.GoogleMap,e:nexacro.GoogleMapErrorEventInfo)
+{
+	trace("error: " + e.errormsg);
+};
+
+ this.GoogleMap00_onload = function(obj:nexacro.GoogleMap,e:nexacro.GoogleMapEventInfo)
+{
+	trace("loading succeed");
+
+	if(this.GoogleMap00.items[0])
+	{
+		this.GoogleMap00.removeItem(this.GoogleMap00.items[0]);
+	}
+	
+	this.Button01.set_enable(true);
+	this.Button02.set_enable(false);
+};]]></Script>
+  </Form>
+</FDL>

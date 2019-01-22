@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_82" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="25" top="10" width="270" height="190" binddataset="Dataset00" autofittype="col" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="expr:Column1"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="1" left="25" top="210" width="270" height="89"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column1">buttoncontrol</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">checkboxcontrol</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">combocontrol</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">calendarcontrol</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+Grid 셀 > 셀 실제 속성값 가져오기
+getCellPropertyValue
+*/
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{	
+	this.TextArea00.set_value(obj.getCellPropertyValue(e.row, e.cell, "displaytype")+"\n"
+		+obj.getCellProperty("body", e.cell, "displaytype"));
+};]]></Script>
+  </Form>
+</FDL>

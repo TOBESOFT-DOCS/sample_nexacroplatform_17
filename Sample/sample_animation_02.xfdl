@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_animation_02" left="0" top="0" width="1024" height="768" titletext="New Form" onload="sample_animation_02_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnPlay" taborder="0" text="play" left="180" top="10" width="90" height="30" onclick="btnPlay_onclick"/>
+        <Button id="btnInit" taborder="1" text="init" left="280" top="10" width="90" height="30" onclick="btnInit_onclick"/>
+        <Edit id="Edit00" taborder="2" left="26" top="10" width="144" height="30"/>
+        <Static id="Static00" taborder="3" text="0" left="26" top="58" width="244" height="92" textAlign="center" font="normal 40pt/normal &quot;Arial&quot;" background="indigo" color="white"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.sample_animation_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+    var aniObj = new nexacro.Animation("Ani00", this);
+    this.addChild("Ani00", aniObj);
+    
+    this.Ani00.set_easing("linear");
+	this.Ani00.set_duration("5000");
+	
+    this.Ani00.addTarget("AniItem00", this.Static00, "text:100");
+	this.Ani00.setEventHandler("onrun", this.Ani00_onrun, this);
+};
+
+this.btnPlay_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.Edit00.value > 0)
+	{
+		this.Ani00.items.AniItem00.props = "text:"+this.Edit00.value;
+	}
+    this.Ani00.play();
+};
+
+this.btnInit_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Static00.set_text(0);
+};
+
+this.Ani00_onrun = function(obj:nexacro.Animation,e:nexacro.AnimationEventInfo)
+{
+	this.Static00.set_text(nexacro.round(this.Static00.text));
+};]]></Script>
+  </Form>
+</FDL>

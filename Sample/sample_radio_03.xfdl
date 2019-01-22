@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_radio_02" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Radio id="Radio00" taborder="0" left="52" top="79" width="98" height="51" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" fittocontents="height">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">apple</Col>
+                <Col id="datacolumn">apple</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">banana</Col>
+                <Col id="datacolumn">banana</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">cocoa</Col>
+                <Col id="datacolumn">cocoa</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Button id="Button00" taborder="1" text="Button00" left="300" top="87" width="90" height="23" onclick="Button00_onclick"/>
+        <Edit id="Edit00" taborder="2" left="150" top="87" width="140" height="26"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var rtn = this.Radio00.getInnerDataset();
+	var nindex = rtn.rowcount;
+	rtn.insertRow(nindex);
+	rtn.setColumn(nindex, "codecolumn", this.Edit00.value);
+	rtn.setColumn(nindex, "datacolumn", this.Edit00.value);
+	this.resetScroll();
+};
+]]></Script>
+  </Form>
+</FDL>

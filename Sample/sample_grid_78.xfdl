@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_78" width="1024" height="768" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="29" top="30" width="323" height="100" binddataset="Dataset00" autofittype="col" selecttype="area">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80" band="left"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="type"/>
+                <Cell col="1" text="lunch"/>
+                <Cell col="2" text="dinner"/>
+                <Cell col="3" text="weekend"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:type" font="normal bold 12px/normal &quot;Gulim&quot;" textAlign="center"/>
+                <Cell col="1" text="bind:lunch" textAlign="center"/>
+                <Cell col="2" text="bind:dinner" textAlign="center"/>
+                <Cell col="3" text="bind:weekend" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="mergeCell" left="29" top="140" width="105" height="42" onclick="Button_onclick"/>
+        <Button id="Button01" taborder="2" text="splitCell" left="140" top="140" width="105" height="42" onclick="Button_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="type" type="STRING" size="256"/>
+          <Column id="lunch" type="INT" size="256"/>
+          <Column id="dinner" type="INT" size="256"/>
+          <Column id="weekend" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="type">adult</Col>
+            <Col id="lunch">14900</Col>
+            <Col id="dinner">23900</Col>
+            <Col id="weekend">23900</Col>
+          </Row>
+          <Row>
+            <Col id="type">student</Col>
+            <Col id="lunch">10900</Col>
+            <Col id="dinner">10900</Col>
+            <Col id="weekend">20000</Col>
+          </Row>
+          <Row>
+            <Col id="type">infant</Col>
+            <Col id="lunch">7500</Col>
+            <Col id="dinner">7500</Col>
+            <Col id="weekend">20000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Button_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(obj.text == 'mergeCell')
+	{
+		this.Grid00.mergeCell(this.Grid00.selectstartcol[0], 
+			this.Grid00.selectendcol[0],
+			this.Grid00.selectstartrow[0],
+			this.Grid00.selectendrow[0]);
+	}
+	else if(obj.text == 'splitCell')
+	{
+		this.Grid00.splitCell(this.Grid00.selectstartcol[0], 
+			this.Grid00.selectendcol[0],
+			this.Grid00.selectstartrow[0],
+			this.Grid00.selectendrow[0]);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

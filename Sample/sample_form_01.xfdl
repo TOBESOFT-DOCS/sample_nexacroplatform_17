@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_01" left="0" top="0" width="600" height="600" titletext="New Form" border="" background="" onsize="Form_onsize" onlayoutchanged="Form_onlayoutchanged">
+    <Layouts>
+      <Layout height="600" width="600">
+        <Button id="btnOpen" taborder="0" text="OPEN" left="24" top="70" width="120" height="50" right="" bottom="" onclick="btnOpen_onclick"/>
+        <Button id="Button01" taborder="1" text="Button01" left="168" top="70" width="120" height="50" right="" bottom=""/>
+        <Button id="Button02" taborder="2" text="Button02" left="312" top="70" width="120" height="50" right="" bottom=""/>
+        <Static id="staticLayoutInfo" taborder="3" text="" left="24" top="16" width="408" height="46" right="" bottom=""/>
+      </Layout>
+      <Layout name="Layout0" width="400" height="400">
+        <Button id="Button01" left="24" top="142" width="120" height="50" right="" bottom=""/>
+        <Button id="Button02" left="24" top="214" width="120" height="50" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.btnOpen_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	nexacro.open("TEST", "Sample::sample_form_01.xfdl", this.getOwnerFrame());
+};
+
+this.Form_onlayoutchanged = function(obj:nexacro.Form,e:nexacro.LayoutChangeEventInfo)
+{
+	this.staticLayoutInfo.set_text(e.oldlayout + "->" + e.newlayout + " (" + this.width + "x" + this.height + ")");
+};
+
+]]></Script>
+  </Form>
+</FDL>

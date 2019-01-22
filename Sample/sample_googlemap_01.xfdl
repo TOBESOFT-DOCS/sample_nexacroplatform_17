@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_googlemap_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <GoogleMap id="GoogleMap00" taborder="0" left="170" top="40" width="480" height="320" onload="GoogleMap00_onload" onerror="GoogleMap00_onerror" onrecvsuccess="GoogleMap00_onrecvsuccess" showzoom=""/>
+        <Button id="Button00" taborder="1" text="Show Map" left="32" top="40" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.GoogleMap00.set_showzoom(true);
+	
+	this.GoogleMap00.load(false, 11.96832946, 121.922996308, 0, 13);
+};
+
+this.GoogleMap00_onerror = function(obj:nexacro.GoogleMap,e:nexacro.GoogleMapErrorEventInfo)
+{
+	trace("error: " + e.errormsg);
+};
+
+ this.GoogleMap00_onload = function(obj:nexacro.GoogleMap,e:nexacro.GoogleMapEventInfo)
+{
+	trace("loading succeed");
+};]]></Script>
+  </Form>
+</FDL>

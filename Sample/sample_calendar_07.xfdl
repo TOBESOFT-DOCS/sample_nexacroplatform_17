@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_07" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Calendar id="Calendar00" taborder="0" left="63" top="56" width="157" height="30" onchanged="Calendar00_onchanged"/>
+        <Calendar id="Calendar01" taborder="1" left="63" top="100" width="157" height="30" enable="false"/>
+        <CheckBox id="CheckBox00" taborder="2" text="leap month" left="230" top="100" width="95" height="20" enable="false"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.Calendar00_onchanged = function(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo)
+{
+	var c = new String(obj.value);
+	var y = c.substr(0,4);
+	var m = c.substr(4,2);
+	var d = c.substr(6,2);
+	var lunar = this.lunarCalc(y, m, d, 1);
+	lunar.month = lunar.month < 10 ? "0"+lunar.month : lunar.month;
+	lunar.day = lunar.day   < 10 ? "0"+lunar.day   : lunar.day;
+	
+	this.Calendar01.set_value(String().concat(lunar.year, lunar.month, lunar.day));
+	this.CheckBox00.set_value(lunar.leapMonth);
+};
+
+this.myDate =	function (year, month, day, leapMonth)
+{
+	this.year = year;
+	this.month = month;
+	this.day = day;
+	this.leapMonth = leapMonth;
+};
+
+this.lunarCalc = function (year, month, day, type, leapmonth)
+{
+	var solYear, solMonth, solDay;
+	var lunYear, lunMonth, lunDay;
+	var lunLeapMonth, lunMonthDay;
+	var i, lunIndex;
+	
+	var solMonthDay = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+	
+	/* range check */
+	if (year < 1900 || year > 2040)
+	{
+		alert('This example supports solar to lunar from 1900 to 2040 only');
+		return;
+	}
+	
+	/* For increasing performance, date is divided compared in various conditions. */
+	if (year >= 2000)
+	{
+		/* Default date for solar calendar is used on year 2000 01 month , and 1 day. Defalut value for lunar is used year 1999 month 11, day 25 */
+		solYear = 2000;
+		solMonth = 1;
+		solDay = 1;
+		lunYear = 1999;
+		lunMonth = 11;
+		lunDay = 25;
+		lunLeapMonth = 0;
+		
+		solMonthDay[1] = 29;    /* 2000 Year 2 Month 28 Day */
+		lunMonthDay = 30;   /* 1999 Year 11 Month */
+	}
+	else if (year >= 1970)
+	{
+		/* Default date entered solar Year 1970, Month 1, Day 1, and lunar 1969 year, month 11, day 24. */
+		solYear = 1970;
+		solMonth = 1;
+		solDay = 1;
+		lunYear = 1969;
+		lunMonth = 11;
+		lunDay = 24;
+		lunLeapMonth = 0;
+		
+		solMonthDay[1] = 28;    /* Year 1970, Month 2, Day 28 */
+		lunMonthDay = 30;   /* Year 1969, Month 11 */
+	}
+	else if (year >= 1940)
+	{
+		/* Default date solar Year 1940,  Month 1,  Day 1 (Lunar Year 1939, Month 11, Day 22) */
+		solYear = 1940;
+		solMonth = 1;
+		solDay = 1;
+		lunYear = 1939;
+		lunMonth = 11;
+		lunDay = 22;
+		lunLeapMonth = 0;
+		
+		solMonthDay[1] = 29;    /* Year 1940, Month 2, Day 28 */
+		lunMonthDay = 29;   /* Year 1939 Month 11 */
+	}
+	else
+	{
+		/* Basic date solar Year 1900, Month 1, Day 1 (Lunar Year 1899, Month 12,  Day 1) */
+		solYear = 1900;
+		solMonth = 1;
+		solDay = 1;
+		lunYear = 1899;
+		lunMonth = 12;
+		lunDay = 1;
+		lunLeapMonth = 0;
+		
+		solMonthDay[1] = 28;    /* Year 1900, Month 2, Day 28 */
+		lunMonthDay = 30;   /* Year  1899, Month 12 */
+	}
+	
+	lunIndex = lunYear - 1899;
+	
+	while (true)
+	{
+		
+		if (type == 1 &&
+			year == solYear &&
+			month == solMonth &&
+			day == solDay)
+		{
+			return new this.myDate(lunYear, lunMonth, lunDay, lunLeapMonth);
+		}
+		else if (type == 2 &&
+			year == lunYear &&
+			month == lunMonth &&
+			day == lunDay &&
+			leapmonth == lunLeapMonth)
+		{
+			return new this.myDate(solYear, solMonth, solDay, 0);
+		}
+		
+		/* add a day of solar calendar */
+		if (solMonth == 12 && solDay == 31)
+		{
+			solYear++;
+			solMonth = 1;
+			solDay = 1;
+			
+			/* set monthDay of Feb */
+			if (solYear % 400 == 0)
+			solMonthDay[1] = 29;
+			else if (solYear % 100 == 0)
+			solMonthDay[1] = 28;
+			else if (solYear % 4 == 0)
+			solMonthDay[1] = 29;
+			else
+			solMonthDay[1] = 28;
+			
+		}
+		else if (solMonthDay[solMonth - 1] == solDay)
+		{
+			solMonth++;
+			solDay = 1;
+		}
+		else
+		solDay++;
+		
+		/* add a day of lunar calendar */
+		if (lunMonth == 12 &&
+			((lunarMonthTable[lunIndex][lunMonth - 1] == 1 && lunDay == 29) ||
+				(lunarMonthTable[lunIndex][lunMonth - 1] == 2 && lunDay == 30)))
+		{
+			lunYear++;
+			lunMonth = 1;
+			lunDay = 1;
+			
+			if (lunYear > 2043) {
+				alert("There is no input month."); 
+				break;
+			}
+			
+			lunIndex = lunYear - 1899;
+			
+			if (lunarMonthTable[lunIndex][lunMonth - 1] == 1)
+			lunMonthDay = 29;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 2)
+			lunMonthDay = 30;
+		}
+		else if (lunDay == lunMonthDay)
+		{
+			if (lunarMonthTable[lunIndex][lunMonth - 1] >= 3
+				&& lunLeapMonth == 0)
+			{
+				lunDay = 1;
+				lunLeapMonth = 1;
+			}
+			else
+			{
+				lunMonth++;
+				lunDay = 1;
+				lunLeapMonth = 0;
+			}
+			
+			if (lunarMonthTable[lunIndex][lunMonth - 1] == 1)
+			lunMonthDay = 29;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 2)
+			lunMonthDay = 30;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 3)
+			lunMonthDay = 29;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 4 &&
+				lunLeapMonth == 0)
+			lunMonthDay = 29;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 4 &&
+				lunLeapMonth == 1)
+			lunMonthDay = 30;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 5 &&
+				lunLeapMonth == 0)
+			lunMonthDay = 30;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 5 &&
+				lunLeapMonth == 1)
+			lunMonthDay = 29;
+			else if (lunarMonthTable[lunIndex][lunMonth - 1] == 6)
+			lunMonthDay = 30;
+		}
+		else
+		lunDay++;
+	}
+};
+
+var lunarMonthTable = [
+	[2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 2, 5, 2, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2, 1],   /* 1901 */
+	[2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2],
+	[1, 2, 1, 2, 3, 2, 1, 1, 2, 2, 1, 2],
+	[2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 1],
+	[2, 2, 1, 2, 2, 1, 1, 2, 1, 2, 1, 2],
+	[1, 2, 2, 4, 1, 2, 1, 2, 1, 2, 1, 2],
+	[1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1],
+	[2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2],
+	[1, 5, 1, 2, 1, 2, 1, 2, 2, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2, 1],
+	[2, 1, 2, 1, 1, 5, 1, 2, 2, 1, 2, 2],   /* 1911 */
+	[2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 1, 2],
+	[2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2],
+	[2, 2, 1, 2, 5, 1, 2, 1, 2, 1, 1, 2],
+	[2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2],
+	[1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1],
+	[2, 3, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1],
+	[2, 1, 1, 2, 1, 2, 1, 2, 2, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 5, 2, 2, 1, 2, 2],
+	[1, 2, 1, 1, 2, 1, 1, 2, 2, 1, 2, 2],
+	[2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 2],   /* 1921 */
+	[2, 1, 2, 2, 3, 2, 1, 1, 2, 1, 2, 2],
+	[1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2],
+	[2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1, 1],
+	[2, 1, 2, 5, 2, 1, 2, 2, 1, 2, 1, 2],
+	[1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1],
+	[2, 1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 2],
+	[1, 5, 1, 2, 1, 1, 2, 2, 1, 2, 2, 2],
+	[1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2],
+	[1, 2, 2, 1, 1, 5, 1, 2, 1, 2, 2, 1],
+	[2, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1],   /* 1931 */
+	[2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2],
+	[1, 2, 2, 1, 6, 1, 2, 1, 2, 1, 1, 2],
+	[1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2],
+	[1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1],
+	[2, 1, 4, 1, 2, 1, 2, 1, 2, 2, 2, 1],
+	[2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1],
+	[2, 2, 1, 1, 2, 1, 4, 1, 2, 2, 1, 2],
+	[2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2],
+	[2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1],
+	[2, 2, 1, 2, 2, 4, 1, 1, 2, 1, 2, 1],   /* 1941 */
+	[2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 1, 2],
+	[1, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2],
+	[1, 1, 2, 4, 1, 2, 1, 2, 2, 1, 2, 2],
+	[1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2],
+	[2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2],
+	[2, 5, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2],
+	[2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2],
+	[2, 2, 1, 2, 1, 2, 3, 2, 1, 2, 1, 2],
+	[2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 1],
+	[2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2],   /* 1951 */
+	[1, 2, 1, 2, 4, 2, 1, 2, 1, 2, 1, 2],
+	[1, 2, 1, 1, 2, 2, 1, 2, 2, 1, 2, 2],
+	[1, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2],
+	[2, 1, 4, 1, 1, 2, 1, 2, 1, 2, 2, 2],
+	[1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2],
+	[2, 1, 2, 1, 2, 1, 1, 5, 2, 1, 2, 2],
+	[1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2],
+	[1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],
+	[2, 1, 2, 1, 2, 5, 2, 1, 2, 1, 2, 1],
+	[2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2],   /* 1961 */
+	[1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 1],
+	[2, 1, 2, 3, 2, 1, 2, 1, 2, 2, 2, 1],
+	[2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2],
+	[1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 2],
+	[1, 2, 5, 2, 1, 1, 2, 1, 1, 2, 2, 1],
+	[2, 2, 1, 2, 2, 1, 1, 2, 1, 2, 1, 2],
+	[1, 2, 2, 1, 2, 1, 5, 2, 1, 2, 1, 2],
+	[1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1],
+	[2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2],
+	[1, 2, 1, 1, 5, 2, 1, 2, 2, 2, 1, 2],   /* 1971 */
+	[1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2, 1],
+	[2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 2, 1],
+	[2, 2, 1, 5, 1, 2, 1, 1, 2, 2, 1, 2],
+	[2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2],
+	[2, 2, 1, 2, 1, 2, 1, 5, 2, 1, 1, 2],
+	[2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1],
+	[2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1],
+	[2, 1, 1, 2, 1, 6, 1, 2, 2, 1, 2, 1],
+	[2, 1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 2],
+	[1, 2, 1, 1, 2, 1, 1, 2, 2, 1, 2, 2],   /* 1981 */
+	[2, 1, 2, 3, 2, 1, 1, 2, 2, 1, 2, 2],
+	[2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 2],
+	[2, 1, 2, 2, 1, 1, 2, 1, 1, 5, 2, 2],
+	[1, 2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2],
+	[1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 1, 1],
+	[2, 1, 2, 2, 1, 5, 2, 2, 1, 2, 1, 2],
+	[1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1],
+	[2, 1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 2],
+	[1, 2, 1, 1, 5, 1, 2, 1, 2, 2, 2, 2],
+	[1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2],   /* 1991 */
+	[1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 2],
+	[1, 2, 5, 2, 1, 2, 1, 1, 2, 1, 2, 1],
+	[2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2],
+	[1, 2, 2, 1, 2, 2, 1, 5, 2, 1, 1, 2],
+	[1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2],
+	[1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1],
+	[2, 1, 1, 2, 3, 2, 2, 1, 2, 2, 2, 1],
+	[2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1],
+	[2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 1],
+	[2, 2, 2, 3, 2, 1, 1, 2, 1, 2, 1, 2],   /* 2001 */
+	[2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1],
+	[2, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2],
+	[1, 5, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2],
+	[1, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 1],
+	[2, 1, 2, 1, 2, 1, 5, 2, 2, 1, 2, 2],
+	[1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2],
+	[2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2],
+	[2, 2, 1, 1, 5, 1, 2, 1, 2, 1, 2, 2],
+	[2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2],
+	[2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 1],   /* 2011 */
+	[2, 1, 6, 2, 1, 2, 1, 1, 2, 1, 2, 1],
+	[2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2],
+	[1, 2, 1, 2, 1, 2, 1, 2, 5, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2, 1],
+	[2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2],
+	[2, 1, 1, 2, 3, 2, 1, 2, 1, 2, 2, 2],
+	[1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2],
+	[2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2],
+	[2, 1, 2, 5, 2, 1, 1, 2, 1, 2, 1, 2],
+	[1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],   /* 2021 */
+	[2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2],
+	[1, 5, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 1],
+	[2, 1, 2, 1, 1, 5, 2, 1, 2, 2, 2, 1],
+	[2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2],
+	[1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 2],
+	[1, 2, 2, 1, 5, 1, 2, 1, 1, 2, 2, 1],
+	[2, 2, 1, 2, 2, 1, 1, 2, 1, 1, 2, 2],
+	[1, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 1],
+	[2, 1, 5, 2, 1, 2, 2, 1, 2, 1, 2, 1],   /* 2031 */
+	[2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 5, 2],
+	[1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2, 1],
+	[2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 1, 2],
+	[2, 2, 1, 2, 1, 4, 1, 1, 2, 2, 1, 2],
+	[2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2],
+	[2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1],
+	[2, 2, 1, 2, 5, 2, 1, 2, 1, 2, 1, 1],
+	[2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 1],
+	[2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2],   /* 2041 */
+	[1, 5, 1, 2, 1, 2, 1, 2, 2, 2, 1, 2],
+	[1, 2, 1, 1, 2, 1, 1, 2, 2, 1, 2, 2]];]]></Script>
+  </Form>
+</FDL>

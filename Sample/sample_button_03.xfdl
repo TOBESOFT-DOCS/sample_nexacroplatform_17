@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_button_03_nexacro16" width="1024" height="768" titletext="New Form" background="">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnLike" taborder="0" text="like" left="60" top="48" width="50" height="50" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnLike_onclick"/>
+        <Button id="btnImage" taborder="1" text="" left="126" top="48" width="50" height="50" right="" bottom="" background="url(&quot;imagerc::like50.png&quot;)" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="0px none" onclick="Button01_onclick"/>
+        <Button id="btnAngry" taborder="0" text="angry" left="192" top="48" width="50" height="50" right="" bottom="" onclick="btnAngry_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btnLike_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.btnImage.set_background('url("imagerc::like50.png")');
+};
+
+this.btnAngry_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.btnImage.set_background('url("imagerc::angry50.png")');
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

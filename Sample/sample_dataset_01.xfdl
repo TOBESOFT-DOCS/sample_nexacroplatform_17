@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_55" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="28" width="90" height="222" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="252" top="28" width="85" height="30" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="2" left="130" top="64" width="207" height="186"/>
+        <Edit id="Edit00" taborder="3" left="130" top="28" width="110" height="30"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">10</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">20</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">30</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">40</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">50</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">30</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">40</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">10</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strCmpExpr = "Column0 > "+this.Edit00.value;
+	var casesum = this.Dataset00.getCaseSum(strCmpExpr, "Column0");
+	var caseavg = nexacro.round(this.Dataset00.getCaseAvg(strCmpExpr, "Column0"), 1);
+	var casecount = this.Dataset00.getCaseCount(strCmpExpr, "Column0");
+	this.TextArea00.set_value("getCaseSum: "+casesum+"\n"
+		+"getCaseAvg: "+caseavg+"\n"
+		+"getCaseCount: "+casecount);
+};
+]]></Script>
+  </Form>
+</FDL>

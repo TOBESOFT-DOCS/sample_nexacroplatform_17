@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_application_04" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnSet" taborder="0" text="SET DATA" left="244" top="32" width="80" height="50" onclick="btnSet_onclick"/>
+        <Button id="btnGet" taborder="1" text="GET DATA" left="340" top="32" width="80" height="50" onclick="btnGet_onclick"/>
+        <Edit id="editSet" taborder="2" left="48" top="32" width="176" height="49" right="" bottom=""/>
+        <Edit id="Edit00" taborder="3" left="48" top="95" width="372" height="50"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.btnSet_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit00.set_value(nexacro.setPrivateProfile('TEST', this.editSet.value))
+};
+
+this.btnGet_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit00.set_value(nexacro.getPrivateProfile('TEST'))
+};
+]]></Script>
+  </Form>
+</FDL>

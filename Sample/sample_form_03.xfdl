@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_03" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <Button id="btnGo" taborder="0" text="Go TEST (MAIN)" left="55" top="57" width="120" height="50" right="" bottom="" onclick="btnGo_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.btnGo_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.go("Sample::sample_form_03_sub.xfdl");	
+};
+]]></Script>
+  </Form>
+</FDL>

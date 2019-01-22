@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_56" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="15" top="13" width="270" height="297" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="C1"/>
+                <Cell col="1" text="C2"/>
+                <Cell col="2" text="C3"/>
+                <Cell col="3" text="C4"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:C1" suppress="1"/>
+                <Cell col="1" text="bind:C2" suppress="2" expr="expr:dataset.getRowLevel(rowidx)==2?'sum ' + dataset.getColumn(rowidx-2,'C1'):C2"/>
+                <Cell col="2" text="bind:C3" expr="expr:dataset.getRowLevel(rowidx)==1?'sum ' + dataset.getColumn(rowidx-1,'C2'):C3"/>
+                <Cell col="3" text="bind:C4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="295" top="13" width="270" height="297" binddataset="Dataset01" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="C1"/>
+                <Cell col="1" text="C2"/>
+                <Cell col="2" text="C3"/>
+                <Cell col="3" text="C4"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:C1" suppress="1"/>
+                <Cell col="1" text="bind:C2" suppress="2"/>
+                <Cell col="2" text="bind:C3"/>
+                <Cell col="3" text="bind:C4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" keystring="G:+C1,+C2">
+        <ColumnInfo>
+          <Column id="C1" type="STRING" size="256"/>
+          <Column id="C2" type="STRING" size="256"/>
+          <Column id="C3" type="STRING" size="256"/>
+          <Column id="C4" type="INT" size="256" prop="SUM"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="C1">A</Col>
+            <Col id="C2">apple</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">asia</Col>
+          </Row>
+          <Row>
+            <Col id="C1">A</Col>
+            <Col id="C2">apple</Col>
+            <Col id="C4">20</Col>
+            <Col id="C3">africa</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">car</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">asia</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">car</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">africa</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">water</Col>
+            <Col id="C4">20</Col>
+            <Col id="C3">asia</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">water</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">africa</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01" keystring="G:+C1+C2">
+        <ColumnInfo>
+          <Column id="C1" type="STRING" size="256"/>
+          <Column id="C2" type="STRING" size="256"/>
+          <Column id="C3" type="STRING" size="256"/>
+          <Column id="C4" type="INT" size="256" prop="SUM"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="C1">A</Col>
+            <Col id="C2">apple</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">asia</Col>
+          </Row>
+          <Row>
+            <Col id="C1">A</Col>
+            <Col id="C2">apple</Col>
+            <Col id="C4">20</Col>
+            <Col id="C3">africa</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">car</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">asia</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">car</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">africa</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">water</Col>
+            <Col id="C4">20</Col>
+            <Col id="C3">asia</Col>
+          </Row>
+          <Row>
+            <Col id="C1">B</Col>
+            <Col id="C2">water</Col>
+            <Col id="C4">10</Col>
+            <Col id="C3">africa</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

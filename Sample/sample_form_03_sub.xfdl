@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_03_sub" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <Button id="btnGo2" taborder="0" text="Go TEST (SUB)" left="24" top="24" width="120" height="50" right="" bottom="" onclick="btnGo_onclick"/>
+        <Button id="btnCheck" taborder="1" text="Check formurl" left="24" top="94" width="120" height="50" right="" bottom="" onclick="btnCheck_onclick"/>
+        <Edit id="Edit00" taborder="2" left="154" top="94" width="286" height="50"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.btnGo_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.go("Sample::sample_form_03.xfdl");
+};
+
+this.btnCheck_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.parent.hasOwnProperty("formurl"))
+	{
+		this.Edit00.set_value(this.parent.formurl);
+	} else {
+		this.Edit00.set_value(this.parent.url);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

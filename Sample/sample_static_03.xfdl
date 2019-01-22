@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_03" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="staticDecorate" taborder="3" text="My name is" left="44" top="50" width="554" height="46" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" textDecoration="none" usedecorate="true"/>
+        <Edit id="editText" taborder="4" left="136" top="104" width="230" height="24" right="" bottom=""/>
+        <Spin id="spinFontSize" taborder="5" left="224" top="134" width="94" height="24" right="" bottom="" value="10"/>
+        <Combo id="comboFontColor" taborder="6" text="red" left="328" top="134" width="115" height="24" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" index="0" innerdataset="innerdataset" value="red">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">red</Col>
+                <Col id="datacolumn">red</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">orange</Col>
+                <Col id="datacolumn">orange</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">yellow</Col>
+                <Col id="datacolumn">yellow</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">green</Col>
+                <Col id="datacolumn">green</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">blue</Col>
+                <Col id="datacolumn">blue</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">indigo</Col>
+                <Col id="datacolumn">indigo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">purple</Col>
+                <Col id="datacolumn">purple</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">black</Col>
+                <Col id="datacolumn">black</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="comboFontFamily" taborder="6" left="448" top="134" width="150" height="24" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" innerdataset="innerdataset" index="0" text="Arial" value="Arial">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Arial</Col>
+                <Col id="datacolumn">Arial</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Comic Sans MS</Col>
+                <Col id="datacolumn">Comic Sans MS</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Courier New</Col>
+                <Col id="datacolumn">Courier New</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Georgia</Col>
+                <Col id="datacolumn">Georgia</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Radio id="radioBold" taborder="7" left="136" top="163" width="150" height="24" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="1" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">true</Col>
+                <Col id="datacolumn">true</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">false</Col>
+                <Col id="datacolumn">false</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Radio id="radioItalic" taborder="7" left="136" top="192" width="150" height="24" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="1" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">true</Col>
+                <Col id="datacolumn">true</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">false</Col>
+                <Col id="datacolumn">false</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Radio id="radioUnderline" taborder="7" left="136" top="221" width="150" height="24" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="1" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">true</Col>
+                <Col id="datacolumn">true</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">false</Col>
+                <Col id="datacolumn">false</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Radio id="radioStrike" taborder="7" left="136" top="250" width="150" height="24" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="1" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">true</Col>
+                <Col id="datacolumn">true</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">false</Col>
+                <Col id="datacolumn">false</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="staticText" taborder="8" text="text" left="47" top="104" width="53" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staticFont" taborder="8" text="font size / color / family" left="47" top="134" width="153" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Static01_onclick"/>
+        <Static id="staticBold" taborder="8" text="bold" left="47" top="163" width="53" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staticItalic" taborder="8" text="italic" left="47" top="192" width="53" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staticUnderline" taborder="8" text="underline" left="47" top="221" width="73" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staticStrike" taborder="8" text="strike" left="47" top="250" width="53" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnText" taborder="9" text="input text" left="380" top="104" width="120" height="24" right="" bottom="" onclick="btnText_onclick"/>
+        <TextArea id="textareaDecorate" taborder="10" left="32" top="297" width="566" height="79" right="" bottom="" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.defaultValue = "My name is ";
+this.addFrontValue = "";
+this.addBackValue = "";
+
+this.fn_initValue = function()
+{
+    this.addFrontValue = "";
+    this.addBackValue = "";
+}
+
+this.btnText_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_initValue();
+	this.addValue("fs", this.spinFontSize.value);
+	this.addValue("fc", this.comboFontColor.value);
+	this.addValue("ff", this.comboFontFamily.value);
+	this.addValue("b", this.radioBold.value);
+	this.addValue("i", this.radioItalic.value);
+	this.addValue("u", this.radioUnderline.value);
+	this.addValue("s", this.radioStrike.value);
+	this.staticDecorate.set_text(this.defaultValue + this.addFrontValue + this.editText.value + this.addBackValue);
+	this.textareaDecorate.set_value(this.staticDecorate.text);
+};
+
+this.addValue = function(tag:String, value:String) {
+	if(value) {
+		this.addFrontValue += "<"+tag+" v='"+value+"'>";
+		this.addBackValue = "</"+tag+">"+this.addBackValue ;
+	}
+};
+			  
+			  
+			  
+			  
+			  ]]></Script>
+  </Form>
+</FDL>

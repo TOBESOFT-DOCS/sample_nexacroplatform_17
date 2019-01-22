@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_08" left="0" top="0" width="200" height="300" titletext="New Form" border="" background="black" onload="sample_form_08_onload" ontimer="sample_form_08_ontimer" stepshowtype="action">
+    <Layouts>
+      <Layout height="300" width="200" stepcount="3">
+        <Static id="Static01" taborder="0" text="MANNERS&#13;&#13;&#10;MAKETH" left="20" top="70" width="160" height="150" font="normal 20pt/normal &quot;Times New Roman&quot;" verticalAlign="top" positionstep="1" textAlign="center" fittocontents="none" color="white"/>
+        <Static id="Static00" taborder="1" text="MANNERS" left="20" top="70" width="160" height="150" font="normal 20pt/normal &quot;Times New Roman&quot;" verticalAlign="top" positionstep="0" textAlign="center" fittocontents="none" onclick="Static00_onclick" color="white"/>
+        <Static id="Static02" taborder="2" text="MANNERS&#13;&#10;MAKETH&#13;&#10;MAN" left="20" top="70" width="160" height="150" font="normal 20pt/normal &quot;Times New Roman&quot;" verticalAlign="top" positionstep="2" textAlign="center" fittocontents="none" color="white"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.sample_form_08_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.setTimer(1, 2000);
+};
+
+this.sample_form_08_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if(e.timerid == 1){
+		this.stepselector.stepIt(true, true);
+	}
+};]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_application_01" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnAlert" taborder="0" text="Alert TEST" left="48" top="31" width="120" height="50" right="" bottom="" onclick="btnAlert_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[
+this.btnAlert_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	for(var i=0 ; i<10 ; i++)
+	{
+		nexacro.getApplication().alert(i);
+	}
+};]]></Script>
+  </Form>
+</FDL>

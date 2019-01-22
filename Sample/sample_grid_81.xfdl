@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_81" width="1000" height="720" titletext="New Form" ontimer="test_180625_ontimer" onload="test_180625_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1000">
+        <Grid id="Grid00" taborder="0" left="25" top="20" width="385" height="160" autofittype="col" binddataset="Dataset00" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <PopupDiv id="PopupDiv00" visible="false" left="152" top="219" width="178" height="61" border="1px solid coral"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">A</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">B</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">C</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">D</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+            <Col id="Column1">E</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+선택한 셀 보더 표시하기
+Grid 응용 / PopupDiv 컴포넌트를 Cell border 처럼 표현하기
+키워드 getCellRect, trackPopupByComponent
+
+*/
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var aryRect = this.Grid00.getCellRect(e.row, e.cell);
+	
+	var nX = aryRect.left;	
+	var nW = aryRect.width;
+	var nH = aryRect.height;
+	var nY = nY = aryRect.top + 2;
+	
+	this.PopupDiv00.trackPopupByComponent(this.Grid00, nX, nY, nW, nH, "", false);
+};
+
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_string_04" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Button id="Button00" taborder="4" text="change" left="305" top="40" width="120" height="40" onclick="Button00_onclick"/>
+        <Edit id="Edit00" taborder="1" left="44" top="41" width="165" height="39"/>
+        <Spin id="Spin00" taborder="2" left="220" top="41" width="75" height="39" value="20"/>
+        <Edit id="Edit01" taborder="3" left="44" top="90" width="251" height="39"/>
+        <Edit id="Edit02" taborder="4" left="44" top="141" width="251" height="39"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit01.set_value(this.Edit00.value.padLeft(this.Spin00.value, "*"));
+	this.Edit02.set_value(this.Edit00.value.padRight(this.Spin00.value, "*"));
+};
+]]></Script>
+  </Form>
+</FDL>

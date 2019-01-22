@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_45" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="43" top="48" width="206" height="110" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="text"/>
+                <Cell col="1" text="date"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:text"/>
+                <Cell col="1" text="bind:date" displaytype="date" edittype="date"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="43" top="185" width="206" height="110" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="text"/>
+                <Cell col="1" text="date"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:text"/>
+                <Cell col="1" text="bind:date" displaytype="date" calendardisplaynulltype="nulltext" calendardisplaynulltext="NULL" edittype="date"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="text" type="STRING" size="256"/>
+          <Column id="date" type="DATE" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="text">TEST</Col>
+            <Col id="date">20180301</Col>
+          </Row>
+          <Row>
+            <Col id="text">NULL TEST</Col>
+          </Row>
+          <Row>
+            <Col id="date"/>
+            <Col id="text">EMPTY TEST</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

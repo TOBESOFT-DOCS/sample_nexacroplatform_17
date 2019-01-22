@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_imageviewer_02" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <ImageViewer id="imageviewerMain" taborder="0" text="" left="30" top="30" width="300" height="300" image="URL(&quot;imagerc::160px-Bob_Dylan_1978.jpg&quot;)" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="1" text="fixaspectratio" left="340" top="30" width="90" height="30" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="2" text="fit" left="340" top="67" width="90" height="30" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="3" text="none" left="340" top="104" width="90" height="30" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.imageviewerMain.set_stretch('fixaspectratio');
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.imageviewerMain.set_stretch('fit');
+};
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.imageviewerMain.set_stretch('none');
+};
+]]></Script>
+  </Form>
+</FDL>

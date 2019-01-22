@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ENV version="2.1">
+  <Environment themeid="theme::default" filesecurelevel="all">
+    <ScreenDefinition>
+      <Screen id="Screen_D" type="desktop" userzoom="true"/>
+    </ScreenDefinition>
+    <Variables/>
+    <Cookies>
+      <Cookie id="Cookie0" initval="TEST"/>
+      <Cookie id="Cookie1" initval="nexacro platform 17"/>
+    </Cookies>
+    <httpheader/>
+  </Environment>
+</ENV>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<head>
+<meta charset="UTF-8">
+<title>WebBrowser Component</title>
+<script type="text/javascript">
+if (! window.NEXACROHTML)
+{
+	window.NEXACROHTML = {};
+}
+
+window.NEXACROHTML.FireUserNotify = function(userdata)
+{
+	
+	if (window.NEXACROWEBBROWSER)
+	{
+		window.NEXACROWEBBROWSER.on_fire_onusernotify(window.NEXACROWEBBROWSER, userdata);
+	}
+	else
+	{			
+		window.document.title = userdata;
+	}
+	
+}
+
+function getInputValue()
+{
+	if(document.getElementById("inputText").value)
+	{
+		window.NEXACROHTML.FireUserNotify(document.getElementById("inputText").value);
+	}
+	else
+	{
+		window.NEXACROHTML.FireUserNotify(" ");
+	}
+	
+}
+
+function setInputValue(str)
+{
+	document.getElementById("inputText").value = str;
+	
+}
+
+function sendToNexacro()
+{		
+	str = document.getElementById("inputText").value;
+	
+	if(str)
+	{
+		window.NEXACROHTML.FireUserNotify(str);
+	}
+	else
+	{
+		window.NEXACROHTML.FireUserNotify("This is a text in html page.");
+	}
+	
+}
+
+
+function colorFunction(str)
+{
+	var doc = document.getElementById('title_test');
+	doc.style.color = str;
+}
+
+strHTML = "This is strHTML variable value in HTML page.";
+</script>
+</head>
+
+<body bgcolor='burlywood'>
+<p><H1 id='title_test'>webbrowser.html</H1></p>
+<p><input id="inputButton" type="button" value="send to nexacroplatform" onclick="sendToNexacro()">
+<input id="inputText" type="text" value="This is a value of inputText in html page." size="64"></p>
+
+<p>strHTML = &quot;<script type="text/javascript">document.write(strHTML);</script>&quot;</p>
+
+<hr>
+<font color="grey">
+<p>Objects > XComponents > WebBrowser</p>
+<p>
+It is Wrapper Component of Web Browser ActiveX/Plugin.
+</p>
+<p>
+new WebBrowser(strName, position, nLeft, nTop[, nWidth, nHeight[, nRight, nBottom]])
+</p>
+
+<table width='100%' border='1' cellpadding='7' cellspacing='0' bordercolorlight='#C6C6C6' bordercolordark='#C6C6C6' style='table-layout: fixed; border-collapse:collapse; word-wrap:break-word;'> 
+	<tr class='table_title' bgcolor='#F6F6F6' bordercolor='#c6c6c6'> 
+		<td width='20%' align='center'>Parameters</td> 
+		<td width='15%' align='center'>Type</td> 
+		<td width='65%' align='center'>Description</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>strName</td> 
+		<td>String</td> 
+		<td>WebBrowser ID</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>position</td> 
+		<td>String</td> 
+		<td>Coornidate type of WebBrowser</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>nLeft</td> 
+		<td>Integer</td> 
+		<td>Left coordinate of a location of an WebBrowser.
+It is applied to the left coordinate of the position.</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>nTop</td> 
+		<td>Integer</td> 
+		<td>Top coordinate  of a location of an WebBrowser.
+It is applied to the top coordinate of the position.</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>nWidth</td> 
+		<td>Integer</td> 
+		<td>Width of an WebBrowser</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>nHeight</td> 
+		<td>Integer</td> 
+		<td>Height of an WebBrowser</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>nRight</td> 
+		<td>Integer</td> 
+		<td>Right coordinate of a position to create an WebBrowser.
+It is applied to the right coordinate of the position.</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td>nBottom</td> 
+		<td>Integer</td> 
+		<td>Bottom coordinate of a position to create an WebBrowser.    
+It is applied to the bottom coordinate of the position.</td> 
+	</tr> 
+	<tr class='list' bgcolor='#FFFFFF' bordercolor='#c6c6c6'> 
+		<td colspan='3'>Sample Call:<br>var objWebBrowser = new WebBrowser("WebBrowser00", "absolute", 30, 120, 196, 46, null, null);<br>
+var objWebBrowser = new WebBrowser("WebBrowser00", "absolute", null, null, 300, "400px", "80%", 300);</td> 
+	</tr> 
+</table> 
+
+</font>
+
+</body>
+
+</html>

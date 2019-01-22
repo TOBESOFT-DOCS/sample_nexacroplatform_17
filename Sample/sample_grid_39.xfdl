@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_38" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="gridData" taborder="0" left="41" top="96" width="512" height="216" binddataset="dsTest">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+                <Cell col="4" text="Column4"/>
+                <Cell col="5" text="Column5"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3"/>
+                <Cell col="4" text="bind:Column4"/>
+                <Cell col="5" text="bind:Column5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Combo id="cbType" taborder="1" text="default" left="230" top="36" width="175" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" index="0" value="default" onitemchanged="cbType_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">default</Col>
+                <Col id="datacolumn">default</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">topdisplay</Col>
+                <Col id="datacolumn">topdisplay</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">centerdisplay</Col>
+                <Col id="datacolumn">centerdisplay</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">topbottomdisplay</Col>
+                <Col id="datacolumn">topbottomdisplay</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">topcenterbottomdisplay</Col>
+                <Col id="datacolumn">topcenterbottomdisplay</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">trackbarfollow</Col>
+                <Col id="datacolumn">trackbarfollow</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Button id="btnData" taborder="2" text="Data Loading" left="433" top="36" width="120" height="50" onclick="btnData_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsTest">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.btnData_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var rIdx;
+	this.dsTest.set_enableevent(false);
+	for(var i=0;i<1000000;i++)	{
+		rIdx = this.dsTest.addRow();
+		this.dsTest.setColumn(rIdx, "Column0", i);
+		this.dsTest.setColumn(rIdx, "Column1", i);
+		this.dsTest.setColumn(rIdx, "Column2", i);
+		this.dsTest.setColumn(rIdx, "Column3", i);
+		this.dsTest.setColumn(rIdx, "Column4", i);
+		this.dsTest.setColumn(rIdx, "Column5", i);
+	}
+	this.dsTest.set_enableevent(true);
+};
+
+this.cbType_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.gridData.set_fastvscrolltype(e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

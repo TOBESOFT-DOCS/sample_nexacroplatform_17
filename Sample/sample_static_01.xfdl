@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_01" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="staticExpr" taborder="0" text="test" left="185" top="24" width="351" height="65" right="" bottom="" expr="comp.parent.fn_dateTostr()"/>
+        <Radio id="radioExpr" taborder="1" left="64" top="31" width="80" height="50" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" index="0" onitemchanged="radioExpr_onitemchanged" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Today</Col>
+                <Col id="datacolumn">Today</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Browser</Col>
+                <Col id="datacolumn">Browser</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">OS</Col>
+                <Col id="datacolumn">OS</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.fn_dateTostr = function()
+{
+	
+	var objDate = new Date();
+	var sRtn =  objDate.getFullYear()+"/"
+		+ (objDate.getMonth()+1).toString().padLeft(2, "0")+"/"
+		+ objDate.getDate().toString().padLeft(2, "0");
+	return sRtn;
+};
+
+this.fn_checkBrowser = function()
+{
+	return system.navigatorname + " " + system.navigatorversion;
+}
+
+this.fn_checkOS = function()
+{
+	return system.osversion;
+}
+
+this.radioExpr_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	var todayExpr = "comp.parent.fn_dateTostr()";
+	var browserExpr = "comp.parent.fn_checkBrowser()";
+	var osExpr = "comp.parent.fn_checkOS()";
+	if(obj.value == "Today")
+		this.staticExpr.set_expr(todayExpr);		
+	else if(obj.value == "Browser")
+		this.staticExpr.set_expr(browserExpr);
+	else if(obj.value == "OS")
+		this.staticExpr.set_expr(osExpr);	
+};
+
+]]></Script>
+  </Form>
+</FDL>

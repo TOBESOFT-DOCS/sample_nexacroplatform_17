@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sampla_grid_71" left="0" top="0" width="1024" height="768">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="40" top="44" width="260" height="156" binddataset="Dataset00" oncellclick="Grid00_oncellclick" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:comp.parent.ck_func(currow)" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="310" top="45" width="120" height="50" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="2" left="40" top="214" width="260" height="79"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.ck_arr = [];
+
+this.ck_func = function(nRow)
+{	
+	return this.ck_arr[nRow] == null ? 0 :  this.ck_arr[nRow];
+}
+
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.cell == 0 )
+	{
+		this.ck_arr[e.row] = this.ck_arr[e.row] == null ? 1 : this.ck_arr[e.row]^1;
+		this.Grid00.redrawExprCell('body');
+	}
+	
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var cnt = 0;
+	for(var i = 0 ; i < this.ck_arr.length ; i++)
+	{
+		if(this.ck_arr[i])
+		{
+			cnt = cnt + 1;
+		}	
+	}
+	
+	this.TextArea00.set_value("No. of selected rows : " + cnt);
+	
+	if(cnt == 0){
+		this.TextArea00.set_value("There is no selected row " );
+	}
+	
+};
+]]></Script>
+  </Form>
+</FDL>

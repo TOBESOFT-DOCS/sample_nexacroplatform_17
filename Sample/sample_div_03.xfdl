@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="test" width="1280" height="720" titletext="New Form" scrollbartype="auto fixed" scrolltype="vertical">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Div id="Div00" taborder="0" text="Div00" left="50" top="50" width="500" height="300" border="1px solid darkblue" ondragmove="Div00_ondragmove" ondrop="Div00_ondrop">
+          <Layouts>
+            <Layout>
+              <Div id="Div01" taborder="1" left="200" top="0" width="5" height="100%" background="skyblue" cursor="e-resize" ondrag="Div00_Div01_ondrag"/>
+              <Div id="Div00" taborder="0" text="LEFT" left="0" top="0" height="100%" right="Div01:0" background="lightgreen" minwidth=""/>
+              <Div id="Div02" taborder="2" text="RIGHT" left="Div01:0" top="0" height="100%" right="0" background="lightcoral"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.Div00_ondragmove = function(obj:nexacro.Div,e:nexacro.DragEventInfo)
+{
+	this.Div00.form.Div01.set_left(e.clientx);
+	this.Div00.form.resetScroll();
+};
+
+this.Div00_Div01_ondrag = function(obj:nexacro.Div,e:nexacro.DragEventInfo)
+{
+	return true;
+};
+
+/*
+this.Div00_ondrop = function(obj:nexacro.Div,e:nexacro.DragEventInfo)
+{
+	this.Div00.form.resetScroll();
+};
+*/]]></Script>
+  </Form>
+</FDL>

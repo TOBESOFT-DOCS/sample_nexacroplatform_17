@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_piechart_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <PieChart id="PieChart00" taborder="0" left="30" top="10" width="430" height="320" binddataset="Dataset00" categorycolumn="bind:type" enableanimation="true">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Favorite Movie",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"markertextgap": "5"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"radius": 150,
+			"innerradius": "0",
+			"linestyle": "1px solid #1f77b4",
+			"itemtextvisible": true,
+			"itemtextfont": "10pt/normal '맑은 고딕'",
+			"valuecolumn": "bind:value",
+			"itemtextwidth": "15",
+			"itemtextguidesize": "15",
+			"itemtextguidelinestyle": "1px solid crimson",
+			"fillstyle": "#1f77b4,#aec7e8,#ff7f0e,#ffbb78,#2ca02c,#98df8a,#d62728,#ff9896,#9467bd,#c5b0d5,#8c564b,#c49c94,#e377c2,#f7b6d2,#7f7f7f,#c7c7c7,#bcbd22,#dbdb8d,#17becf,#9edae5"
+		}
+	]
+}]]></Contents>
+        </PieChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="type" type="STRING" size="256"/>
+          <Column id="value" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="type">Comedy</Col>
+            <Col id="value">20</Col>
+          </Row>
+          <Row>
+            <Col id="type">Action</Col>
+            <Col id="value">25</Col>
+          </Row>
+          <Row>
+            <Col id="type">Romance</Col>
+            <Col id="value">30</Col>
+          </Row>
+          <Row>
+            <Col id="type">Drama</Col>
+            <Col id="value">5</Col>
+          </Row>
+          <Row>
+            <Col id="type">SciFi</Col>
+            <Col id="value">20</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

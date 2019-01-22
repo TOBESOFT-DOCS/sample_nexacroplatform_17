@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_02" left="0" top="0" width="200" height="300" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="300" width="200" stepcount="3">
+        <Button id="btnStep1" taborder="0" text="STEP1" left="20" top="70" width="120" height="50" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnStep2" taborder="1" text="STEP2" left="20" top="70" width="120" height="50" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" positionstep="1"/>
+        <Button id="btnStep3" taborder="2" text="STEP3" left="20" top="70" width="120" height="50" right="" bottom="" positionstep="2"/>
+        <Button id="btnGoStep3" taborder="4" text="Go STEP3" left="20" top="143" width="120" height="50" right="" bottom="" onclick="btnGoStep3_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[this.btnGoStep3_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+		this.setStepIndex(2);
+};]]></Script>
+  </Form>
+</FDL>

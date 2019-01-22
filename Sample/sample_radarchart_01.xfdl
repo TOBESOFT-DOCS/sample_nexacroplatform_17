@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_radarchart_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <RadarChart id="RadarChart00" taborder="0" left="50" top="40" width="280" height="314" categorycolumn="bind:type" binddataset="Dataset00" visible="true" enableanimation="true">
+          <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "10pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"visible": "true",
+		"boardlinevisible": "true"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"boardlinevisible": "true",
+			"visible": "true"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"linevisible": true,
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:value",
+			"pointvisible": "true",
+			"lineareavisible": "true",
+			"pointsize": "10",
+			"itemtext": "bind:value"
+		}
+	]
+}]]></Contents>
+        </RadarChart>
+        <Radio id="Radio00" taborder="1" left="347" top="90" width="87" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" index="0" text="polygon" value="polygon" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">polygon</Col>
+                <Col id="datacolumn">polygon</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">circle</Col>
+                <Col id="datacolumn">circle</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="Static00" taborder="2" text="radartype" left="357" top="58" width="63" height="32" font="bold 12px/normal &quot;Gulim&quot;"/>
+        <CheckBox id="CheckBox00" taborder="3" text="linevisible" left="347" top="170" width="143" height="20" value="true" onchanged="CheckBox_onchanged"/>
+        <CheckBox id="CheckBox01" taborder="4" text="pointvisible" left="347" top="195" width="143" height="20" value="true" onchanged="CheckBox_onchanged"/>
+        <CheckBox id="CheckBox02" taborder="5" text="lineareavisible" left="347" top="220" width="143" height="20" value="true" onchanged="CheckBox_onchanged"/>
+        <Static id="Static01" taborder="6" text="series visible" left="357" top="140" width="103" height="32" font="bold 12px/normal &quot;Gulim&quot;"/>
+        <CheckBox id="CheckBox03" taborder="7" text="categoryaxis" left="347" top="274" width="143" height="20" value="true" onchanged="CheckBox_onchanged"/>
+        <CheckBox id="CheckBox04" taborder="8" text="valueaxis" left="347" top="299" width="143" height="20" value="true" onchanged="CheckBox_onchanged"/>
+        <Static id="Static02" taborder="9" text="axis visible" left="357" top="244" width="103" height="32" font="bold 12px/normal &quot;Gulim&quot;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="type" type="STRING" size="256"/>
+          <Column id="value" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="type">Comedy</Col>
+            <Col id="value">4</Col>
+          </Row>
+          <Row>
+            <Col id="type">Action</Col>
+            <Col id="value">5</Col>
+          </Row>
+          <Row>
+            <Col id="type">Romance</Col>
+            <Col id="value">3</Col>
+          </Row>
+          <Row>
+            <Col id="type">Drama</Col>
+            <Col id="value">2</Col>
+          </Row>
+          <Row>
+            <Col id="type">SciFi</Col>
+            <Col id="value">5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.RadarChart00.set_radartype(e.postvalue);
+};
+
+this.CheckBox_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	if(obj.text == "linevisible")
+	{
+		this.RadarChart00.seriesset[0].set_linevisible(e.postvalue);
+	} else if(obj.text == "pointvisible")
+	{
+		this.RadarChart00.seriesset[0].set_pointvisible(e.postvalue);
+	} else if(obj.text == "lineareavisible")
+	{
+		this.RadarChart00.seriesset[0].set_lineareavisible(e.postvalue);
+	}
+	else if(obj.text == "categoryaxis")
+	{
+		this.RadarChart00.categoryaxis.set_visible(e.postvalue);
+	}	
+	else if(obj.text == "valueaxis")
+	{
+		this.RadarChart00.valueaxes[0].set_visible(e.postvalue);
+	}	
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="test" width="1280" height="720" titletext="New Form" scrollbartype="auto fixed" scrolltype="vertical">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="20" top="20" width="410" height="137" binddataset="Dataset00" oncellclick="Grid00_oncellclick" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="113"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="Restaurant"/>
+                <Cell col="1" colspan="3" text="Service" textAlign="center"/>
+                <Cell col="4" colspan="3" text="Value" textAlign="center"/>
+                <Cell row="1" col="1" text="1" textAlign="center"/>
+                <Cell row="1" col="2" text="2" textAlign="center"/>
+                <Cell row="1" col="3" text="3" textAlign="center"/>
+                <Cell row="1" col="4" text="1" textAlign="center"/>
+                <Cell row="1" col="5" text="2" textAlign="center"/>
+                <Cell row="1" col="6" text="3" textAlign="center"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Restaurant"/>
+                <Cell col="1" text="expr:dataset.getColumn(currow, &quot;Service&quot;)==1?1:0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="2" text="expr:dataset.getColumn(currow, &quot;Service&quot;)==2?1:0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="3" text="expr:dataset.getColumn(currow, &quot;Service&quot;)==3?1:0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="4" text="expr:dataset.getColumn(currow, &quot;Value&quot;)==1?1:0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="5" text="expr:dataset.getColumn(currow, &quot;Value&quot;)==2?1:0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="6" text="expr:dataset.getColumn(currow, &quot;Value&quot;)==3?1:0" edittype="checkbox" displaytype="checkboxcontrol"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="20" top="167" width="249" height="103" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="121"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Restaurant"/>
+                <Cell col="1" text="Service"/>
+                <Cell col="2" text="Value"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Restaurant"/>
+                <Cell col="1" text="bind:Service"/>
+                <Cell col="2" text="bind:Value"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" oncolumnchanged="Dataset00_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="Restaurant" type="STRING" size="256"/>
+          <Column id="Service" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Restaurant">Burgerking</Col>
+            <Col id="Service">2</Col>
+            <Col id="Value">3</Col>
+          </Row>
+          <Row>
+            <Col id="Restaurant">McDonald's</Col>
+            <Col id="Value">2</Col>
+            <Col id="Service">1</Col>
+          </Row>
+          <Row>
+            <Col id="Restaurant">SHAKE SHACK</Col>
+            <Col id="Value">2</Col>
+            <Col id="Service">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.col>0 && e.col<4)
+	{
+		this.Dataset00.setColumn(e.row, "Service", e.col);
+	}	else
+	if(e.col>=4 && e.col<7)
+	{
+		this.Dataset00.setColumn(e.row, "Value", e.col-3);
+	}	
+};
+]]></Script>
+  </Form>
+</FDL>

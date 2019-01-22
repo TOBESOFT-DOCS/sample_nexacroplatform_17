@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_60" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="29" width="190" height="321" binddataset="Dataset00" treeinitstatus="expand,all" autofittype="col" treeusecheckbox="false" treeuseimage="true" treeuseline="true">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="155"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="label"/>
+                <Cell col="1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:label" displaytype="treeitemcontrol" treelevel="bind:level" edittype="tree" cssclass="expr:level == 0?'sample_grid_60_font_red':level==1?'sample_grid_60_font_blue':'sample_grid_60_font_lightgreen'"/>
+                <Cell col="1" text="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="240" top="30" width="120" height="50" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="label" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">A</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="label">B</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">C</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">D</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">E</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="label">F</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">G</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">H</Col>
+          </Row>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">I</Col>
+          </Row>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">J</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Grid00.setCellProperty("body", 0, "cssclass", 
+		"expr:level == 0?'sample_grid_60_font_lightgreen':level==1?'sample_grid_60_font_red':'sample_grid_60_font_blue'");
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_42" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="36" top="34" width="294" height="126" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+                <Cell col="1" text="Department"/>
+                <Cell col="2" text="Vacation"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name" displaytype="expr:comp.parent.iCurrow==currow?'editcontrol':'normal'" edittype="normal"/>
+                <Cell col="1" text="bind:Department" displaytype="expr:comp.parent.iCurrow == currow ? 'combocontrol' : 'combotext'" combodataset="Dataset01" combocodecol="code" combodatacol="text" edittype="combo"/>
+                <Cell col="2" text="bind:Vacation" displaytype="expr:comp.parent.iCurrow == currow ? 'checkboxcontrol' : 'normal'" edittype="checkbox"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onrowposchanged="Dataset00_onrowposchanged">
+        <ColumnInfo>
+          <Column id="Name" type="STRING" size="256"/>
+          <Column id="Department" type="STRING" size="256"/>
+          <Column id="Vacation" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Name">John</Col>
+            <Col id="Department">01</Col>
+            <Col id="Vacation">1</Col>
+          </Row>
+          <Row>
+            <Col id="Name">James</Col>
+            <Col id="Department">02</Col>
+            <Col id="Vacation">0</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Donald</Col>
+            <Col id="Department">03</Col>
+            <Col id="Vacation">0</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Lisa</Col>
+            <Col id="Department">04</Col>
+            <Col id="Vacation">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Dataset00_onrowposchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSRowPosChangeEventInfo)
+{
+	this.iCurrow = e.newrow;
+};]]></Script>
+  </Form>
+</FDL>

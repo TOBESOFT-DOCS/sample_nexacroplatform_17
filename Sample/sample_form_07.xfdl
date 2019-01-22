@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_07" left="0" top="0" width="600" height="600" titletext="New Form" border="" background="" onsize="Form_onsize" onlayoutchanged="Form_onlayoutchanged" onload="sample_form_07_onload">
+    <Layouts>
+      <Layout height="600" width="600">
+        <Button id="btnOpen" taborder="0" text="OPEN" left="20" top="25" width="120" height="50" onclick="btnOpen_onclick"/>
+        <Grid id="Grid00" taborder="1" left="20" top="85" height="275" binddataset="Dataset00" autofittype="col" right="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+                <Cell col="4" text="Column4"/>
+                <Cell col="5" text="Column5"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3"/>
+                <Cell col="4" text="bind:Column4"/>
+                <Cell col="5" text="bind:Column5"/>
+              </Band>
+            </Format>
+            <Format id="default_00">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column2"/>
+                <Cell col="2" text="Column4"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column2"/>
+                <Cell col="2" text="bind:Column4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+      <Layout name="Layout0" width="400" height="400">
+        <Grid id="Grid00" left="20" top="85" height="275" right="20"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.btnOpen_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	nexacro.open("TEST", "Sample::sample_form_07.xfdl", this.getOwnerFrame());
+};
+
+this.Form_onlayoutchanged = function(obj:nexacro.Form,e:nexacro.LayoutChangeEventInfo)
+{
+	trace(this.parent.name);
+	if(e.newlayout == 'default') {
+		this.Grid00.set_formatid("default");
+	} else if(e.newlayout == 'Layout0') {
+		this.Grid00.set_formatid("default_00");
+	}	
+};
+
+
+this.sample_form_07_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	if(this.parent.name == "TEST") {
+		this.Grid00.set_visible(true);
+		this.btnOpen.set_visible(false);
+	} else {
+		this.Grid00.set_visible(false);
+		this.btnOpen.set_visible(true);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

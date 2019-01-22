@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_button_03_nexacro16" width="1024" height="768" titletext="New Form" background="">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnIcon" taborder="0" text="Button00" left="44" top="56" width="120" height="120" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" icon="URL(&quot;imagerc::img_sta_des.png&quot;)" onclick="btnIcon_onclick"/>
+        <Edit id="editIconPosition" taborder="1" left="172" top="56" width="68" height="20" right="" bottom=""/>
+        <Static id="Static00" taborder="2" text="iconposition / left | top | right | bottom" left="248" top="56" width="240" height="20" right="" bottom=""/>
+        <Edit id="editTextPaddingTop" taborder="1" left="172" top="88" width="36" height="20" right="" bottom="" inputtype="number" value="0" onchanged="editTextPadding_onchanged"/>
+        <Static id="Static01" taborder="2" text="textpadding / top" left="216" top="88" width="136" height="20" right="" bottom=""/>
+        <Edit id="editTextPaddingRight" taborder="1" left="360" top="88" width="36" height="20" right="" bottom="" inputtype="number" value="0" onchanged="editTextPadding_onchanged"/>
+        <Static id="Static02" taborder="2" text="textpadding / right" left="404" top="88" width="124" height="20" right="" bottom=""/>
+        <Edit id="editTextPaddingBottom" taborder="1" left="172" top="116" width="36" height="20" right="" bottom="" inputtype="number" value="0" onchanged="editTextPadding_onchanged"/>
+        <Static id="Static03" taborder="2" text="textpadding / bottom" left="216" top="116" width="136" height="20" right="" bottom=""/>
+        <Edit id="editTextPaddingLeft" taborder="1" left="360" top="116" width="36" height="20" right="" bottom="" inputtype="number" value="0" onchanged="editTextPadding_onchanged"/>
+        <Static id="Static04" taborder="2" text="textpadding / left" left="404" top="116" width="124" height="20" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.btnIcon_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	obj.set_iconPosition(this.editIconPosition.value);
+	//obj.set_textPadding("20px");
+	obj.set_textPadding(this.editTextPaddingTop.value+"px " 
+		+this.editTextPaddingRight.value+"px "
+		+this.editTextPaddingBottom.value+"px " 
+		+this.editTextPaddingLeft.value+"px");
+};
+
+this.editTextPadding_onchanged = function(obj:nexacro.Edit,e:nexacro.ChangeEventInfo)
+{
+	if(!nexacro.isNumeric(obj.value))
+	{
+		obj.set_value(0);
+	}
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

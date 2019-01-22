@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sampla_grid_68" left="0" top="0" width="1024" height="768">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="30" top="30" width="270" height="100" binddataset="Dataset00" autofittype="col" oninput="Grid00_oninput">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1" edittype="normal"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">apple</Col>
+            <Col id="Column1">사과</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">car</Col>
+            <Col id="Column1">자동차</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">water</Col>
+            <Col id="Column1">물</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oninput = function(obj:nexacro.Grid,e:nexacro.InputEventInfo)
+{
+	var strControlValue  = obj.getEditValue();
+	if(strControlValue)
+	{
+		obj.setEditValue(strControlValue.replace(/[^\ㄱ-ㅎㅏ-ㅣ가-힣]/g, ""));
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

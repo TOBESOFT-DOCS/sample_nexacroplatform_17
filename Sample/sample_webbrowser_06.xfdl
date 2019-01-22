@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_webbrowser_06" width="1280" height="720" titletext="New Form" onload="sample_webbrowser_06_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <WebBrowser id="WebBrowser00" taborder="0" left="32" top="40" width="540" height="210" onusernotify="WebBrowser00_onusernotify"/>
+        <TextArea id="TextArea00" taborder="1" left="32" top="270" width="540" height="110"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.WebBrowser00_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
+{	
+	if(e.userdata)
+	{
+		var str = this.WebBrowser00.id + "_onusernotify: " + e.userdata;
+
+		this.TextArea00.set_value(str);
+	}
+};
+
+this.sample_webbrowser_06_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var domain = document.location.href;
+	var arrdomain = domain.split('/');
+	var currentfile = arrdomain.pop();
+	domain = domain.replace(currentfile, "Service/webbrowser.html")
+	this.WebBrowser00.set_url(domain);
+};
+]]></Script>
+  </Form>
+</FDL>

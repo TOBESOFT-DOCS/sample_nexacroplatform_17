@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_62" width="1280" height="720" titletext="New Form" onload="sample_grid_62_onload" ontimer="sample_grid_62_ontimer">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="29" width="350" height="151" binddataset="Dataset00" treeinitstatus="expand,all" autofittype="col" treeusecheckbox="false" treeuseimage="true" treeuseline="true" cellexprupdatecondition="none">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="label"/>
+                <Cell col="1" text="level"/>
+                <Cell col="2" text="flag"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:label" cssclass="expr:comp.parent.setblink(currow)"/>
+                <Cell col="1" text="bind:level" cssclass="expr:comp.parent.setblink(currow)"/>
+                <Cell col="2" text="bind:flag" cssclass="expr:comp.parent.setblink(currow)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="blinkCell" left="390" top="29" width="130" height="40" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="label" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="flag" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">A</Col>
+            <Col id="flag">0</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="label">B</Col>
+            <Col id="flag">0</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">C</Col>
+            <Col id="flag">2</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">D</Col>
+            <Col id="flag">3</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.styleArr = ["sample_grid_62_blink2", "sample_grid_62_blink1", "sample_grid_62_blinkcell"];
+this.idx = 0 ;
+this.blinkRow = 0 ;
+
+this.sample_grid_62_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.setTimer(1, 1000);
+	trace(1^1);//0
+	trace(0^1);//1
+};
+
+this.sample_grid_62_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	var v = this.Dataset00.getColumn(e.timerid,2)^1;
+	this.Dataset00.setColumn(e.timerid, 2, v);
+	
+	this.idx = v;
+	this.blinkRow = e.timerid;
+};
+
+this.setblink = function (nRow)
+{
+	if(nRow >= 2)
+	{
+		return this.styleArr[2];
+	}
+	else if(this.blinkRow == nRow)
+	{
+		return this.styleArr[this.idx ];
+	}
+	return "";
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Grid00.blinkCell(2, "label, level, flag", 5000, 5);
+	this.Grid00.blinkCellByInterval(3, "label, level, flag", 500, 5);
+};
+]]></Script>
+  </Form>
+</FDL>

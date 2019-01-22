@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_52" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="24" top="30" width="376" height="180" binddataset="Dataset00" autofittype="none" onheadclick="Grid00_onheadclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="Column0"/>
+                <Cell col="1" rowspan="2" text="Column1"/>
+                <Cell col="2" colspan="2" text="Column2"/>
+                <Cell col="4" rowspan="2" text="Column4"/>
+                <Cell col="5" colspan="3" text="Column5"/>
+                <Cell row="1" col="2" text="Column2"/>
+                <Cell row="1" col="3" text="Column3"/>
+                <Cell row="1" col="5" text="Column5"/>
+                <Cell row="1" col="6" text="Column6"/>
+                <Cell row="1" col="7" text="Column7"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3"/>
+                <Cell col="4" text="bind:Column4"/>
+                <Cell col="5" text="bind:Column5"/>
+                <Cell col="6" text="bind:Column6"/>
+                <Cell col="7" text="bind:Column7"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var iCnt=0;
+	
+    for (var j = e.cell; j >= 0; j--) 
+    {
+        var iColCur = this.Grid00.getCellProperty("Head", j, "col");
+        var iCell = e.cell;
+		
+        for (var i = iCell; i >= 0; i--) 
+        {
+            if (this.Grid00.getCellProperty("Head", i, "row") == 0 
+				&& iColCur == this.Grid00.getCellProperty("Head", i, "col")) 
+            {             
+                if (iCnt==0) 
+                {
+                    var iCol = this.Grid00.getCellProperty("Head", i, "col");					
+                    var iSpan = this.Grid00.getCellProperty("Head", i, "colspan")-1;
+                    var iTotCol = iCol + iSpan;                    
+                    for (var k = 0; k <= iTotCol; k++)
+                    {
+                        this.Grid00.setFormatColProperty(k, "band", "left");
+                    }
+					for(var l = iTotCol;l<this.Grid00.getCellCount("head"); l++)
+					{
+					   this.Grid00.setFormatColProperty(k, "band", "body");
+					}
+                }
+                iCnt++;
+            } 
+        }
+    } 
+};
+]]></Script>
+  </Form>
+</FDL>

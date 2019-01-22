@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_combo_06" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Combo id="Combo00" taborder="0" text="" left="105" top="61" width="275" height="29" ondropdown="Combo00_ondropdown"/>
+        <Grid id="Grid00" taborder="1" left="105" top="90" width="275" height="100" binddataset="Dataset00" autofittype="col" oncellclick="Grid00_oncellclick" visible="false">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:check"/>
+                <Cell col="1" text="bind:CODE"/>
+                <Cell col="2" text="bind:DATA"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.col!=0)
+	{
+		this.Grid00.set_visible(false);
+		this.fn_comboEdit_set();
+	}
+};
+
+this.Combo00_ondropdown = function(obj:nexacro.Combo,e:nexacro.EventInfo)
+{
+	this.Grid00.set_visible(true);
+	return false;
+};
+
+this.fn_comboEdit_set = function()
+{
+	var str_txt = "";
+	
+	for (i=0;i<this.Dataset00.getRowCount();i++)
+	{
+		if (this.Dataset00.getColumn(i, "check")==1)
+		{
+			str_txt += this.Dataset00.getColumn(i,"DATA") + ",";
+			
+		}
+	}	
+	this.Combo00.set_text(str_txt.substr(0, str_txt.length-1));
+};
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="check" type="STRING" size="256"/>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">01</Col>
+            <Col id="DATA">CODE01</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">02</Col>
+            <Col id="DATA">CODE02</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">03</Col>
+            <Col id="DATA">CODE03</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">04</Col>
+            <Col id="DATA">CODE04</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

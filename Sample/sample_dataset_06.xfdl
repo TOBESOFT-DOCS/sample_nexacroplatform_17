@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_dataset_06" width="1280" height="720" titletext="New Form" locale="en_US" onload="sample_dataset_03_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="15" top="24" width="425" height="116" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+                <Cell col="4" text="Column4"/>
+                <Cell col="5" text="Column5"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="1" text="bind:Column1" edittype="normal"/>
+                <Cell col="2" text="bind:Column2" edittype="normal"/>
+                <Cell col="3" text="bind:Column3" edittype="normal"/>
+                <Cell col="4" text="bind:Column4" edittype="normal"/>
+                <Cell col="5" text="expr:dataset.getRowType(currow)  "/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="15" top="145" width="105" height="35" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">2</Col>
+            <Col id="Column3">3</Col>
+            <Col id="Column4">5</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">a</Col>
+            <Col id="Column2">b</Col>
+            <Col id="Column3">c</Col>
+            <Col id="Column4">d</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">data1</Col>
+            <Col id="Column2">data2</Col>
+            <Col id="Column3">data3</Col>
+            <Col id="Column4">data4</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var iRowCount = this.Dataset00.getRowCount();
+	var iColCount = this.Dataset00.getColCount();
+	
+	for (var i = 0; i < iRowCount; i++)
+	{
+        if (this.Dataset00.getRowType(i) != "1")
+        {
+            for (var j = 0; j < iColCount; j++)
+            {   
+                if (this.Dataset00.getColumn(i, j) != this.Dataset00.getOrgColumn(i, j))
+                {
+                    this.Dataset00.setColumn(i, j, this.Dataset00.getOrgColumn(i, j));
+                }
+            }
+        }
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

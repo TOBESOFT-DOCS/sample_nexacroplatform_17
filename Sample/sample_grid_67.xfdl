@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sampla_grid_66" left="0" top="0" width="1024" height="768">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="30" top="30" width="270" height="180" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="182"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="RowType"/>
+                <Cell col="1" text="Column0"/>
+                <Cell col="2" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="expr:comp.parent.getRowType(currow)"/>
+                <Cell col="1" text="bind:Column0" edittype="normal"/>
+                <Cell col="2" text="bind:Column1" edittype="normal"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="addRow" left="310" top="30" width="88" height="39" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="2" text="Delete" left="310" top="81" width="88" height="39" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="3" text="Delete" left="310" top="131" width="88" height="39" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">apple</Col>
+            <Col id="Column1">A</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">car</Col>
+            <Col id="Column1">A</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">water</Col>
+            <Col id="Column1">B</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">computer</Col>
+            <Col id="Column1">C</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">mouse</Col>
+            <Col id="Column1">A</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.addRow();
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.deleteRow(this.Dataset00.rowposition);
+	var test = this.Dataset00.getDeletedRowset();
+};
+
+this.getRowType = function(currow)
+{
+	var numRowType = this.Dataset00.getRowType(currow);
+	var strRowType = "ROWTYPE_EMPTY";
+	
+	switch(numRowType) {
+	case 0:
+		strRowType = "ROWTYPE_EMPTY";
+		break;
+	case 1:
+		strRowType = "ROWTYPE_NORMAL";
+		break;
+	case 2:
+		strRowType = "ROWTYPE_INSERT";
+		break;
+	case 4:
+		strRowType = "ROWTYPE_UPDATE";
+		break;
+	case 8:
+		strRowType = "ROWTYPE_DELETE";
+		break;
+	case 16:
+		strRowType = "ROWTYPE_GROUP";
+		break;
+	}
+	return strRowType;
+}
+
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	trace(this.Dataset00.saveXML("Dataset00", "All"));
+	this.Dataset00.set_updatecontrol(false);
+	trace(this.Dataset00.setRowTypeNF(0, 4));
+	this.Dataset00.set_updatecontrol(true);
+	trace(this.Dataset00.saveXML("Dataset00", "All"));	
+};
+]]></Script>
+  </Form>
+</FDL>

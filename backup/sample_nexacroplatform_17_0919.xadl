@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="sample_nexacroplatform_17_0919" screenid="Screen_D">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="1440" height="768" resizable="true" showtitleicon="false">
+        <ChildFrame id="ChildFrame00" formurl="Base::main_0919.xfdl" showcascadetitletext="false" showtitlebar="false" showtitleicon="false"/>
+      </MainFrame>
+    </Layout>
+    <Style url="xcssrc::grid_subtotal.xcss"/>
+    <Style url="xcssrc::sample_common_style.xcss"/>
+  </Application>
+</ADL>

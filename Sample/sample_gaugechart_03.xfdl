@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_gaugechart_03" width="768" height="480" titletext="New Form" onload="sample_gaugechart_03_onload" ontimer="sample_gaugechart_03_ontimer">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart00" taborder="1" left="50" top="40" width="270" height="300" binddataset="Dataset00" categorycolumn="bind:Category" gaugetype="circular">
+          <Contents><![CDATA[{
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"image": "URL(\"imagerc::minute_hand.png\")",
+		"size": "20",
+		"indent": "",
+		"fillstyle": "#4b4b4b",
+		"linestyle": "0px none",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "200",
+			"opposite": "true",
+			"tickinterval": "20",
+			"labelgap": "5",
+			"gap": "5"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Value",
+			"itemtextmask": "###km/h",
+			"startangle": "225",
+			"endangle": "270",
+			"innerradius": "80",
+			"fillstyle": "linear-gradient(to right,#00ff00 0%,#ff0000 100%)",
+			"baropacity": "0",
+			"itemtextgap": "0 30",
+			"radius": "100"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <CheckBox id="CheckBox00" taborder="0" text="opposite" left="139" top="266" width="71" height="20" value="true" onchanged="CheckBox00_onchanged"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Category" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Category">SPEED</Col>
+            <Col id="Value">130</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.sample_gaugechart_03_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.setTimer("SPEED", 1000);
+};
+
+this.sample_gaugechart_03_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	this.Dataset00.setColumn(0, "Value", Math.floor(Math.random() * 200) + 1);
+};
+
+this.CheckBox00_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	this.GaugeChart00.valueaxes[0].set_opposite(e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

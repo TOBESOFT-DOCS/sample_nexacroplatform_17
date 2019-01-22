@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_50" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="57" top="38" width="223" height="132" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Checkbox"/>
+                <Cell col="1" text="Original Data"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" suppressalign="middle" edittype="checkbox" expr="expr:Column0=='Y'?'1':'0'" text="bind:Column0"/>
+                <Cell col="1" text="bind:Column0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" oncolumnchanged="Dataset00_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">Y</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">N</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">N</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">Y</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Dataset00_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if(e.columnid == "Column0")
+	{
+		obj.set_enableevent(false);
+		if(e.newvalue == '1')
+		{
+			obj.setColumn(e.row,"Column0",'Y');
+		} else if(e.newvalue == '0')
+		{
+			
+			obj.setColumn(e.row,"Column0",'N');  
+		}
+		obj.set_enableevent(true);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Button.btn_TP_Menu01[status=mouseover],.Button.btn_TP_Menu01[userstatus=selected]
+{
+	background : URL("imagerc::btn_TP_Menu01_O.png") no-repeat center center;
+}
+.Static.Sta_TF_AllMenuTit
+{
+	background : url("imagerc::Sta_TF_AllMenuTit.png") repeat-x;
+	font : bold 11pt "맑은 고딕";
+	color : #d3d3d3;
+	-nexa-padding : 0px 0px 10px 0px;
+
+}
+
+.Static.Sta_TF_mapTitle
+{
+	background : url("imagerc::Sta_TF_mapTitle.png") no-repeat left center;
+	color : #a9aaaa;
+	-nexa-padding : 0px 0px 0px 10px;
+	font : bold 9pt "맑은 고딕";
+	cursor : pointer;	
+}
+
+.Static.Sta_TF_mapTitle[status=mouseover]
+{
+	-nexa-text-decoration : underline;
+}
+
+.Static.Sta_TF_menubar
+{
+	color : white;
+	-nexa-padding : 0px 0px 0px 10px;
+	font : bold 9pt "맑은 고딕";
+	cursor : pointer;	
+}
+
+.Static.Sta_TF_menubar[status=mouseover]
+{
+	-nexa-text-decoration : underline;
+}
+
+.Grid .body .row .cell.sample_grid_61 .celltreeitem .treeitemimage
+{
+	-nexa-icon : URL("theme://images/img_WF_Grdimg.png");
+}
+
+.Grid .body .row .cell.sample_grid_61 .celltreeitem .treeitemimage[userstatus=expand]
+{
+	-nexa-icon : URL("theme://images/btn_WF_Popmenunext_D.png");
+}
+.Grid .body .row .cell.sample_grid_60_font_red .celltreeitem .treeitemtext
+{		
+	color : red;
+}
+
+.Grid .body .row .cell.sample_grid_60_font_blue .celltreeitem .treeitemtext
+{		
+	color : blue;
+}
+	
+.Grid .body .row .cell.sample_grid_71 .cellcombo .combolist .listboxitem[userstatus=selected]
+{		
+	color : red;
+}
+	
+.GroupBox.sample_groupbox_03 .groupboxcontents
+{
+	background : greenyellow;
+	-nexa-border : 3px solid violet;
+}.Grid .body .row .cell.sample_grid_60_font_lightgreen .celltreeitem .treeitemtext
+{		
+	color : lightgreen;
+}/***** sample_grid_62 *****/
+.Grid .body .row .cell.sample_grid_62_blink1
+{		
+	background : gold;
+}
+
+.Grid .body .row .cell.sample_grid_62_blink2
+{		
+	background : white;
+}
+
+.Grid .body .row .cell.sample_grid_62_blinkcell[userstatus=blinked]
+{		
+	background : gold;
+	color : #666666;
+}
+
+.Grid .body .row .cell.sample_grid_64_changevalue
+{
+	color : red;
+}
+
+.GroupBox.sample_groupbox_03 .groupboxtitle
+{
+	background : greenyellow;
+	-nexa-icon : URL("theme://images/rdo_WF_Radio.png");
+}
+.Combo.main_combo
+{
+	-nexa-border : 1px solid #ff8f00;
+	-nexa-padding : 5px 0px;	
+	font : 9pt "맑은 고딕";
+}
+.Combo.main_combo .combolist .vscrollbar
+{
+	-nexa-border : 1px none, 1px none, 1px none, 1px solid #b1b1b1;	
+}
+.Combo.main_combo .combolist .vscrollbar .trackbar
+{
+	background : #a1a1a1;
+}
+.Combo.main_combo .combolist .vscrollbar .decbutton
+{
+	-nexa-icon : URL("imagerc::icon_decbtn_N.png");
+}
+.Combo.main_combo .combolist .vscrollbar .decbutton[userstatus=pushed]
+{
+	-nexa-icon : URL("imagerc::icon_decbtn_P.png");
+}
+.Combo.main_combo .combolist .vscrollbar .incbutton
+{
+	-nexa-icon : URL("imagerc::icon_incbtn_N.png");
+}
+.Combo.main_combo .combolist .vscrollbar .incbutton[userstatus=pushed]
+{
+	-nexa-icon : URL("imagerc::icon_incbtn_P.png");
+}
+.Combo.main_combo .combolist .listboxitem
+{
+	-nexa-padding : 5px 0px 5px 2px;
+	font : 9pt "맑은 고딕";
+}
+.Combo.main_combo .combolist .listboxitem[userstatus=selected]
+{
+	background : #ff8f00;
+}
+.Combo.main_combo .combolist .listboxitem[status=mouseover]
+{
+	background : #fce5c7;
+}
+.Combo.main_combo .combolist, .Combo.main_combo .combolist[status=mouseover]
+{
+	-nexa-border : 1px solid #ff8f00;
+}
+.Combo.main_combo .dropbutton
+{
+	-nexa-icon : URL("imagerc::cmb_dropbtn_N.png");
+}
+.Combo.main_combo .dropbutton[userstatus=pushed], .Combo.main_combo .dropbutton[status=mouseover]
+{
+	-nexa-icon : URL("imagerc::cmb_dropbtn_P.png");
+}
+.Combo.main_combo[status=mouseover], .Combo.main_combo[status=focused]
+{
+	-nexa-border : 1px solid #ff8f00;
+}
+.Button.btn_TP_Menu01,.Button.btn_TP_Menu01[status=focused]
+{
+	background : URL("imagerc::btn_TP_Menu01_N.png") no-repeat center center;	
+}
+.Grid.sample_grid_83 .body .selection
+{
+	-nexa-border : 2px dotted hotpink;
+}
+]]></XCSS>

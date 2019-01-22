@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_basicchart_06" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BasicChart id="BasicChart00" taborder="0" left="20" top="9" width="640" height="403" binddataset="Dataset00" categorycolumn="bind:date" onclick="BasicChart00_onclick" onrangezoomed="BasicChart00_onrangezoomed" onlegendclick="BasicChart00_onlegendclick" rangezoom="xy">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Particulate Matter Chart",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"align": "rightcenter",
+		"markertextgap": "5"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "8pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"axistype": "datetime",
+		"datetickunit": "day",
+		"rangezoom": "true",
+		"labelrotate": "90",
+		"tickinterval": 5,
+		"labelmask": "MMdd"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "PM2.5",
+			"barvisible": "false",
+			"barsize": "65",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:PM25",
+			"linevisible": "true",
+			"pointshape": "circle",
+			"pointvisible": "true",
+			"linetype": "segment",
+			"pointsize": "5"
+		},
+		{
+			"id": "series1",
+			"titletext": "PM10",
+			"barvisible": "false",
+			"barsize": "65",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:PM10",
+			"linevisible": "true",
+			"pointvisible": "true",
+			"pointshape": "square",
+			"linetype": "segment",
+			"pointsize": "5"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"titletext": "㎍/㎥",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"rangezoom": "true"
+		}
+	],
+	"selection": {
+		"id": "selection",
+		"type": "xy",
+		"linestyle": "1px solid #525252",
+		"background": "#525252",
+		"opacity": "0.5"
+	}
+}]]></Contents>
+        </BasicChart>
+        <Button id="Button00" taborder="1" text="deleteSelection" left="687" top="73" width="163" height="37" onclick="Button00_onclick"/>
+        <Radio id="Radio00" taborder="2" left="687" top="120" width="170" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">x</Col>
+                <Col id="datacolumn">x</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">y</Col>
+                <Col id="datacolumn">y</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">xy</Col>
+                <Col id="datacolumn">xy</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="date" type="DATE" size="256"/>
+          <Column id="PM25" type="INT" size="256"/>
+          <Column id="PM10" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="PM10">62</Col>
+            <Col id="PM25">33</Col>
+            <Col id="date">20180401</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">62</Col>
+            <Col id="PM25">27</Col>
+            <Col id="date">20180402</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">61</Col>
+            <Col id="PM25">19</Col>
+            <Col id="date">20180403</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">9</Col>
+            <Col id="PM25">6</Col>
+            <Col id="date">20180404</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">3</Col>
+            <Col id="PM25">2</Col>
+            <Col id="date">20180405</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">67</Col>
+            <Col id="PM25">19</Col>
+            <Col id="date">20180415</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">34</Col>
+            <Col id="PM25">21</Col>
+            <Col id="date">20180416</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">56</Col>
+            <Col id="PM25">28</Col>
+            <Col id="date">20180417</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">65</Col>
+            <Col id="PM25">34</Col>
+            <Col id="date">20180418</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">77</Col>
+            <Col id="PM25">36</Col>
+            <Col id="date">20180419</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">98</Col>
+            <Col id="PM25">53</Col>
+            <Col id="date">20180420</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">68</Col>
+            <Col id="PM25">40</Col>
+            <Col id="date">20180421</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">32</Col>
+            <Col id="PM25">18</Col>
+            <Col id="date">20180422</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">9</Col>
+            <Col id="PM25">7</Col>
+            <Col id="date">20180423</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">9</Col>
+            <Col id="PM25">5</Col>
+            <Col id="date">20180424</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">32</Col>
+            <Col id="PM25">24</Col>
+            <Col id="date">20180425</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">38</Col>
+            <Col id="PM25">28</Col>
+            <Col id="date">20180426</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">49</Col>
+            <Col id="PM25">36</Col>
+            <Col id="date">20180427</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">54</Col>
+            <Col id="PM25">38</Col>
+            <Col id="date">20180428</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">49</Col>
+            <Col id="PM25">31</Col>
+            <Col id="date">20180429</Col>
+          </Row>
+          <Row>
+            <Col id="PM10">75</Col>
+            <Col id="PM25">56</Col>
+            <Col id="date">20180430</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180501</Col>
+            <Col id="PM25">18</Col>
+            <Col id="PM10">32</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180502</Col>
+            <Col id="PM25">7</Col>
+            <Col id="PM10">9</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180503</Col>
+            <Col id="PM25">5</Col>
+            <Col id="PM10">9</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180504</Col>
+            <Col id="PM25">24</Col>
+            <Col id="PM10">32</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180505</Col>
+            <Col id="PM25">28</Col>
+            <Col id="PM10">38</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180506</Col>
+            <Col id="PM25">36</Col>
+            <Col id="PM10">49</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180507</Col>
+            <Col id="PM25">38</Col>
+            <Col id="PM10">54</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180508</Col>
+            <Col id="PM25">31</Col>
+            <Col id="PM10">49</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180509</Col>
+            <Col id="PM25">56</Col>
+            <Col id="PM10">75</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180510</Col>
+            <Col id="PM25">19</Col>
+            <Col id="PM10">61</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180511</Col>
+            <Col id="PM25">6</Col>
+            <Col id="PM10">9</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180512</Col>
+            <Col id="PM25">2</Col>
+            <Col id="PM10">3</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180513</Col>
+            <Col id="PM25">24</Col>
+            <Col id="PM10">114</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180514</Col>
+            <Col id="PM25">21</Col>
+            <Col id="PM10">43</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180515</Col>
+            <Col id="PM25">12</Col>
+            <Col id="PM10">22</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180516</Col>
+            <Col id="PM25">26</Col>
+            <Col id="PM10">36</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180517</Col>
+            <Col id="PM25">19</Col>
+            <Col id="PM10">38</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180518</Col>
+            <Col id="PM25">22</Col>
+            <Col id="PM10">55</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180519</Col>
+            <Col id="PM25">13</Col>
+            <Col id="PM10">38</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180520</Col>
+            <Col id="PM25">12</Col>
+            <Col id="PM10">30</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180521</Col>
+            <Col id="PM25">19</Col>
+            <Col id="PM10">61</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180522</Col>
+            <Col id="PM25">6</Col>
+            <Col id="PM10">9</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180523</Col>
+            <Col id="PM25">2</Col>
+            <Col id="PM10">3</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180524</Col>
+            <Col id="PM25">24</Col>
+            <Col id="PM10">114</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180525</Col>
+            <Col id="PM25">21</Col>
+            <Col id="PM10">43</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180526</Col>
+            <Col id="PM25">12</Col>
+            <Col id="PM10">22</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180527</Col>
+            <Col id="PM25">26</Col>
+            <Col id="PM10">36</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180528</Col>
+            <Col id="PM25">19</Col>
+            <Col id="PM10">38</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180529</Col>
+            <Col id="PM25">22</Col>
+            <Col id="PM10">55</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180530</Col>
+            <Col id="PM25">13</Col>
+            <Col id="PM10">38</Col>
+          </Row>
+          <Row>
+            <Col id="date">20180531</Col>
+            <Col id="PM25">12</Col>
+            <Col id="PM10">30</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BasicChart00.selection.deleteSelection();
+};
+
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.BasicChart00.set_rangezoom(e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

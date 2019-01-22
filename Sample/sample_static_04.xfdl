@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_04" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="staticTitle" taborder="" text="nexacro platform" left="10%" top="50" width="260" height="46" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="normal bold 20pt Arial"/>
+        <Static id="staticDecorate00" taborder="3" text="" left="10%" top="90" width="" height="5" right="10%" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background="skyblue"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+  </Form>
+</FDL>

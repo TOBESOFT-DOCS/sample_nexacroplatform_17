@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_44" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="45" top="30" width="225" height="150" autofittype="col" binddataset="Dataset01" onexpandup="Grid00_onexpandup">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="name"/>
+                <Cell col="1" text="Item"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:name"/>
+                <Cell col="1" text="bind:Item" expandshow="show"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" visible="false" left="290" top="31" width="220" height="179">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0" top="0" width="100%" height="100%" binddataset="Dataset00" autofittype="col" oncelldblclick="PopupDiv00_Grid00_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row band="head" size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="code"/>
+                      <Cell col="1" text="item"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:code"/>
+                      <Cell col="1" text="bind:item"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="item" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="item">apple</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="item">pear</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="item">walnut</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="item">acorn</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="item">strawberry</Col>
+          </Row>
+          <Row>
+            <Col id="code">06</Col>
+            <Col id="item">tangerine</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="Item" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">John</Col>
+          </Row>
+          <Row>
+            <Col id="name">James</Col>
+          </Row>
+          <Row>
+            <Col id="name">Donald</Col>
+          </Row>
+          <Row>
+            <Col id="name">Lisa</Col>
+          </Row>
+          <Row>
+            <Col id="name">Leo</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.col;
+this.row;
+
+this.Grid00_onexpandup = function(obj:nexacro.Grid,e:nexacro.GridMouseEventInfo)
+{
+	this.col = e.cell;
+	this.row = e.row;
+	var nX = system.screenToClientX(this, e.screenx);
+	var nY = system.screenToClientY(this, e.screeny);		
+	this.PopupDiv00.trackPopupByComponent(this, nX, nY, null, null, "call_back");
+};
+
+this.call_back = function (strId,str)
+{
+	this.Dataset01.setColumn( this.row, this.col , str)
+};
+
+this.PopupDiv00_Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var value = this.Dataset00.getColumn(e.row , 1);
+	this.PopupDiv00.closePopup(value);
+};
+]]></Script>
+  </Form>
+</FDL>

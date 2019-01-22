@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BasicChartMultiAxis" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BasicChart id="BasicChart00" taborder="0" left="25" top="25" binddataset="dsWeather" categorycolumn="bind:month" bargrouping="false" width="635" height="335">
+          <Contents><![CDATA[{
+	"legend": {
+		"id": "legend",
+		"align": "center",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"markertextgap": "2",
+		"itemautofit": "false",
+		"itemgap": "10"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board",
+		"visible": "false"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "10pt '맑은 고딕'",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barvisible": true,
+			"barsize": "70",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:rainfall",
+			"valueaxis": "rainaxis",
+			"barfillstyle": "#1abd9d",
+			"barlinestyle": "#1abd9d"
+		},
+		{
+			"id": "series1",
+			"titletext": "temperature",
+			"barvisible": "false",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:temperature",
+			"valueaxis": "tempaxis",
+			"linevisible": "true",
+			"pointvisible": "true",
+			"pointsize": "8",
+			"linetype": "curve",
+			"linestyle": "1px solid #1a71bd",
+			"pointfillstyle": "#1a71bd",
+			"pointlinestyle": "1px solid #1a71bd"
+		},
+		{
+			"id": "series2",
+			"titletext": "pressure",
+			"barvisible": "false",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:pressure",
+			"valueaxis": "pressureaxis",
+			"pointvisible": "true",
+			"pointsize": "4",
+			"pointshape": "diamond",
+			"linestyle": "1px dotted #c2251b",
+			"linevisible": "true",
+			"pointfillstyle": "#c2251b",
+			"pointlinestyle": "1px solid #c2251b"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "rainaxis",
+			"titletext": "Rainfall",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#1abd9d",
+			"labeltextfont": "8pt/normal '맑은 고딕'",
+			"titletextcolor": "#1abd9d",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "2px solid #1abd9d",
+			"axislinestyle": "2px solid #1abd9d",
+			"labelmask": "###mm",
+			"labeltype": "text",
+			"titlegap": "10",
+			"gap": "10"
+		},
+		{
+			"id": "tempaxis",
+			"titletext": "Temperature",
+			"boardlinevisible": "false",
+			"labeltextcolor": "#1a71bd",
+			"labeltextfont": "8pt/normal \"맑은 고딕\"",
+			"titletextcolor": "#1a71bd",
+			"titletextfont": "bold 12pt \"맑은 고딕\"",
+			"ticklinestyle": "2px solid #1a71bd",
+			"axislinestyle": "2px solid #1a71bd",
+			"opposite": "true",
+			"labelmask": "##°C",
+			"titlegap": "10",
+			"labelgap": "10",
+			"labeltype": "text",
+			"gap": "10",
+			"tickmax": "33"
+		},
+		{
+			"id": "pressureaxis",
+			"titletext": "Sea-Level Pressure",
+			"boardlinevisible": "false",
+			"labeltextcolor": "#c2251b",
+			"labeltextfont": "8pt/normal \"맑은 고딕\"",
+			"titletextcolor": "#c2251b",
+			"titletextfont": "bold 12pt \"맑은 고딕\"",
+			"ticklinestyle": "2px solid #c2251b",
+			"axislinestyle": "2px solid #c2251b",
+			"opposite": "true",
+			"labelmask": "####mb",
+			"gap": "10",
+			"titlegap": "10",
+			"labeltype": "text",
+			"tickmin": "1000",
+			"tickmax": "1030"
+		}
+	],
+	"title": {
+		"id": "title",
+		"text": "Rainfall Chart",
+		"textfont": "20pt/normal \"맑은 고딕\"",
+		"padding": "0px 0px 5px",
+		"linestyle": "0px none"
+	}
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsWeather">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="rainfall" type="FLOAT" size="256"/>
+          <Column id="temperature" type="FLOAT" size="256"/>
+          <Column id="pressure" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">1</Col>
+            <Col id="rainfall">49.9</Col>
+            <Col id="temperature">7.0</Col>
+            <Col id="pressure">1016</Col>
+          </Row>
+          <Row>
+            <Col id="month">2</Col>
+            <Col id="rainfall">71.5</Col>
+            <Col id="temperature">6.9</Col>
+            <Col id="pressure">1016</Col>
+          </Row>
+          <Row>
+            <Col id="month">3</Col>
+            <Col id="rainfall">106.4</Col>
+            <Col id="temperature">9.5</Col>
+            <Col id="pressure">1015.9</Col>
+          </Row>
+          <Row>
+            <Col id="month">4</Col>
+            <Col id="rainfall">129.2</Col>
+            <Col id="temperature">14.5</Col>
+            <Col id="pressure">1015.5</Col>
+          </Row>
+          <Row>
+            <Col id="month">5</Col>
+            <Col id="rainfall">144.0</Col>
+            <Col id="temperature">18.2</Col>
+            <Col id="pressure">1012.3</Col>
+          </Row>
+          <Row>
+            <Col id="month">6</Col>
+            <Col id="rainfall">176.0</Col>
+            <Col id="temperature">21.5</Col>
+            <Col id="pressure">1009.5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

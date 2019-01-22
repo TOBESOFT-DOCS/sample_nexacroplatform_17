@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_spin_02" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Spin id="Spin00" taborder="0" left="40" top="32" width="240" height="32" right="" bottom="" increment="1000" max="100000000" min="-100000000" type="noneditable" displaycomma="true" value="0"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

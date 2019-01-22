@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_div_01" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Div id="divMain" taborder="0" text="divMain" left="30" top="100" width="300" height="300" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="0" text="Button00" left="54" top="61" width="99" height="48" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnLeft" taborder="1" text="left top red" left="30" top="42" width="120" height="50" right="" bottom="" onclick="btnLeft_onclick"/>
+        <Button id="btnRight" taborder="1" text="right bottom blue" left="210" top="42" width="120" height="50" right="" bottom="" onclick="btnRight_onclick"/>
+        <Button id="btnInit" taborder="2" text="Init" left="344" top="42" width="120" height="50" right="" bottom="" onclick="btnInit_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[this.btnLeft_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.divMain.set_url("Sample::sample_div_01_left.xfdl");
+};
+
+
+this.btnRight_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.divMain.set_url("Sample::sample_div_01_right.xfdl");
+};
+
+this.btnInit_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.divMain.set_url(null);
+};
+]]></Script>
+  </Form>
+</FDL>

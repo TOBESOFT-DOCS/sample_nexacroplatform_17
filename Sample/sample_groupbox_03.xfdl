@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_groupbox_03" width="1024" height="768">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Div id="Div00" taborder="0" text="Div00" left="30" top="23" width="323" height="235" background="greenyellow" border="1px solid black">
+          <Layouts>
+            <Layout>
+              <GroupBox id="GroupBox00" taborder="0" text="GroupBox00" left="30" top="30" right="30" bottom="30" cssclass="sample_groupbox_03"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <GroupBox id="GroupBox02" taborder="1" text="GroupBox00" left="380" top="60" width="270" height="167" font="24px/normal &quot;Gulim&quot;" color="hotpink" letterSpacing="5px"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

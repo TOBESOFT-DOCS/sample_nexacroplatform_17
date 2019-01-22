@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_edit_04" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="Static02" taborder="4" text="japanese:" left="44" top="136" width="120" height="24" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial" right="" bottom=""/>
+        <Edit id="edit_japanese" taborder="5" left="124" top="128" width="360" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onkeyup="edit_input_onkeyup" imemode="hiragana" right="" bottom=""/>
+        <Static id="Static00" taborder="3" text="hangul:" left="56" top="32" width="120" height="24" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial" right="" bottom=""/>
+        <Edit id="edit_hangul" taborder="0" left="124" top="24" width="360" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onkeyup="edit_input_onkeyup" imemode="hangul" right="" bottom=""/>
+        <Static id="Static01" taborder="1" text="english:" left="56" top="84" width="120" height="24" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial" right="" bottom=""/>
+        <Edit id="edit_english" taborder="2" left="124" top="76" width="360" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onkeyup="edit_input_onkeyup" imemode="alpha" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

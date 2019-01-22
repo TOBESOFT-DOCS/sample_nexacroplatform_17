@@ -1,0 +1,2047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_nexacroplatform_17" left="0" top="0" width="1440" height="768" titletext="nexacroplatform developer guide" scrollbardecbuttonsize="0" scrollbarincbuttonsize="0" scrolltype="vertical" statustext="" scrollbartype="none" onload="Form_onload" onerror="sample_nexacroplatform_17_onerror">
+    <Layouts>
+      <Layout height="768" width="1440">
+        <Div id="Div00" taborder="" text="" left="0" top="0" width="100%" height="48" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" color="" background="" enableevent="true">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="3" text="Version: 17.0.0.0" left="190" top="6" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="35" verticalAlign="bottom" right="160"/>
+              <ImageViewer id="btn_img_download_file" taborder="0" text="" top="7" width="32" height="32" right="102" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" image="URL(&quot;imagerc::icon_download_7a7a7a_32.png&quot;)" stretch="fit" onlbuttondown="Div00_btn_img_download_file_onlbuttondown" onlbuttonup="Div00_btn_img_download_file_onlbuttonup" onclick="Div00_btn_img_download_file_onclick" cssclass="" border="0px none" tooltiptext="Downloading sample file&#13;&#10;(only xfdl)" onmouseenter="Div00_btn_img_download_file_onmouseenter" onmouseleave="Div00_btn_img_download_file_onmouseleave"/>
+              <ImageViewer id="btn_img_download_prj" taborder="1" text="" top="7" width="32" height="32" right="60" image="URL(&quot;imagerc::icon_cloud-computing_7a7a7a_32.png&quot;)" stretch="fit" onlbuttondown="Div00_btn_img_download_prj_onlbuttondown" onlbuttonup="Div00_btn_img_download_prj_onlbuttonup" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Div00_btn_img_download_prj_onclick" border="0px none" tooltiptext="Downloading sample project&#13;&#10;(zip file)" onmouseenter="Div00_btn_img_download_prj_onmouseenter" onmouseleave="Div00_btn_img_download_prj_onmouseleave"/>
+              <ImageViewer id="btn_img_reload" taborder="2" text="" top="7" width="32" height="32" right="18" image="URL(&quot;imagerc::icon_reload_7a7a7a_32.png&quot;)" stretch="fit" onlbuttondown="Div00_btn_img_reload_onlbuttondown" onlbuttonup="Div00_btn_img_reload_onlbuttonup" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Div00_btn_img_reload_onclick" border="0px none" tooltiptext="Reload the sample" onmouseenter="Div00_btn_img_reload_onmouseenter" onmouseleave="Div00_btn_img_reload_onmouseleave"/>
+              <Div id="Div00" taborder="4" left="20" top="5" width="140" height="35" background="URL(&quot;imagerc::img_imgviewer_N.png&quot;)"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="1" text="" top="101" bottom="5" bottombase="" rightbase="" widthbase="" heightbase="" url="" border="0px solid #dfdfdf , 1px solid #dfdfdf , 1px solid #dfdfdf" positionstep="0" width="640" left="245">
+          <Layouts>
+            <Layout>
+              <WebBrowser id="WebBrowser00" taborder="0" left="0" top="0" width="100%" height="100%" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" url="" border="0" onloadcompleted="Div01_WebBrowser00_onloadcompleted"/>
+              <ImageViewer id="ImageViewer00" taborder="1" top="50%" width="15" height="45" image="URL(&quot;imagerc::btn_RF_Quick.png&quot;)" stretch="fit" left="-1" onclick="Div01_ImageViewer00_onclick" border="0px none" text=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div03" taborder="2" text="Div03" left="Div01:5" top="53" right="5" bottom="5" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" url="" async="false" border="1px solid #dfdfdf">
+          <Layouts>
+            <Layout>
+              <Tab id="Tab00" taborder="0" tabindex="0" left="5" top="18" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" tabjustify="false">
+                <Tabpages>
+                  <Tabpage id="tp_description" text="예제"/>
+                  <Tabpage id="tp_source" text="소스">
+                    <Layouts>
+                      <Layout>
+                        <TextArea id="ta_source" taborder="0" left="0" top="0" width="100%" height="100%" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" readonly="true" value="" maxlength="0" wordWrap="english"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="tp_script" text="스크립트">
+                    <Layouts>
+                      <Layout>
+                        <TextArea id="ta_script" taborder="0" left="0" top="0" width="100%" height="100%" right="" bottom="" readonly="true" wordWrap="english"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                </Tabpages>
+              </Tab>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div04" taborder="3" text="Div04" left="5" top="53" rightbase="" leftbase="" topbase="" bottombase="" widthbase="" heightbase="" border="1px solid #dfdfdf, 1px solid #dfdfdf, 0px solid #dfdfdf" height="48" right="Div03:5">
+          <Layouts>
+            <Layout>
+              <Static id="Static01" taborder="3" text="예제 설명" left="10" top="0" height="100%" font="normal bold 14pt &quot;맑은 고딕&quot;" border="0px none #ffffff , 0px none #ffffff , 1px solid #dfdfdf , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="10"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="4" text="Div02" left="5" top="100" width="240" bottom="5">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0" top="0" width="100%" height="100%" binddataset="ds_sample_list" treeusecheckbox="false" treeinitstatus="expand,null" autosizingtype="none" autofittype="none" oncellclick="Div02_Grid00_oncellclick" extendsizetype="none" treeuseline="true">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="60"/>
+                      <Column size="160"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="44"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell edittype="tree" treelevel="bind:tree_level" displaytype="treeitemcontrol" border="0px none"/>
+                      <Cell col="1" text="bind:subject" tooltiptext="bind:subject" treelevel="bind:tree_level" border="0px none" autosizecol="limitmax" textAlign="left" wordWrap="english"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/*
+ 본 프로젝트는 넥사크로플랫폼 17 개발가이드의 예제로 사용된 샘플 모음입니다.
+ 모든 샘플은 독립적인 Form 단위로의 동작에 대해서만 고려되었기 때문에
+ 통합된 하나의 애플리케이션으로 동작하지 않습니다.
+ 따라서 예제를 실행하려면 각 Form(xfdl) 별로 QuickView를 사용하시기 바라며
+ Launch 실행은 권장하지 않습니다.
+  */
+
+var g_strAppInfo = nexacro.getApplication();
+var strCategory = "";
+var strSubject = "";
+var strSampleFile = "";
+var strDocID = "";
+
+this.fn_displayInfo = function()
+{
+	/*
+	if(!nexacro._manual && !nexacro._sample)
+	{		
+		alert(" 본 프로젝트는 넥사크로플랫폼 17 개발가이드의 예제로 사용된 \n\
+ 샘플 모음입니다. 모든 샘플은 독립적인 Form 단위로의 동작에 대해서만 \n\
+ 고려되었기 때문에 통합된 하나의 애플리케이션으로 동작하지 않습니다.\n\
+ 따라서 예제를 실행하려면 각 Form(xfdl) 별로 QuickView를 사용하시기 \n\
+ 바라며 Launch 실행은 권장하지 않습니다.");
+		//g_strAppInfo.exit();
+	}	
+	*/	
+
+	trace("OS: " + system.osversion);
+	trace("Browser: " + system.navigatorname + " " + system.navigatorversion);
+	trace("Engine version: " + g_strAppInfo.engineversion);
+	trace("Applilcation version: " + g_strAppInfo.version);
+
+	var titleComment = "본 예제는 " + g_strAppInfo.appVersion + " 버전에서 테스트되었습니다." 
+		+ "\n" 
+		+ "사용하는 제품의 테마에 따라 예제에 보이는 이미지와 실제 동작하는 애플리케이션이 다를 수 있습니다.";
+	this.Div00.form.Static00.set_text(titleComment);
+
+}
+
+this.fn_LoadContents = function(strDocID, strSampleFile, strCategory, strSubject)
+{
+	var strServiceURL = g_strAppInfo.serverURL + "/17/Service/viewsource.jsp?fileName=";
+
+	this.Div04.form.Static01.set_text(strCategory + " > " + strSubject);	
+
+	this.Div01.form.WebBrowser00.set_url(g_strAppInfo.docsURL + strDocID);
+	this.Div03.form.Tab00.tp_description.set_url("Sample::" + strSampleFile + ".xfdl");
+
+	this.ds_source.clear();
+	this.transaction( "tr"
+					, strServiceURL + strSampleFile
+					, ""
+					, "ds_source=output"
+					, ""
+					, "fn_callback"
+					, true); 
+}
+
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace(sTrId+":"+nErrorCode+":"+sErrorMsg);	
+}
+
+
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.fn_displayInfo();
+
+	if(!nexacro._manual && !nexacro._sample)
+	{		
+		strCategory = this.ds_sample_list.getColumn(1, "category");
+		strSubject = this.ds_sample_list.getColumn(1, "subject");
+		strSampleFile = this.ds_sample_list.getColumn(1, "id_sample");
+		strDocID = this.ds_sample_list.getColumn(1, "id_doc");
+		
+		this.Div02.form.Grid00.selectRow(1);		
+	}
+	else
+	{
+		strSampleFile = nexacro._sample;
+		strDocID = nexacro._manual;
+		
+		strCategory = this.ds_sample_list.getColumn(this.ds_sample_list.findRow("id_sample", strSampleFile), "category");
+		strSubject = this.ds_sample_list.getColumn(this.ds_sample_list.findRow("id_sample", strSampleFile), "subject");
+	}
+
+	this.fn_LoadContents(strDocID, strSampleFile, strCategory, strSubject);
+
+};
+
+this.Div02_Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	strCategory = this.ds_sample_list.getColumn(e.row, "category");
+	strSubject = this.ds_sample_list.getColumn(e.row, "subject");
+	strSampleFile = this.ds_sample_list.getColumn(e.row, "id_sample");
+	strDocID = this.ds_sample_list.getColumn(e.row, "id_doc");
+
+	if((strSampleFile !== undefined) && (strDocID !== undefined))
+	{
+		this.fn_LoadContents(strDocID, strSampleFile, strCategory, strSubject);
+	}	
+	
+};
+
+this.Div01_ImageViewer00_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{
+	if(this.Div02.width !== 0)
+	{
+		this.Div02.set_width(0);
+	
+		this.Div01.set_left(5);
+		this.Div01.set_width(880);	
+	}
+	else
+	{
+		this.Div02.set_width(240);
+	
+		this.Div01.set_left(245);
+		this.Div01.set_width(640);
+	}
+};
+
+
+/*
+ * reload sample	
+ */
+this.Div00_btn_img_reload_onlbuttondown = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_reload.set_image("imagerc::icon_reload_red_32.png");
+};
+this.Div00_btn_img_reload_onlbuttonup = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_reload.set_image("imagerc::icon_reload_7a7a7a_32.png");	
+};
+this.Div00_btn_img_reload_onmouseenter = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_reload.set_image("imagerc::icon_reload_black_32.png");		
+};
+this.Div00_btn_img_reload_onmouseleave = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_reload.set_image("imagerc::icon_reload_7a7a7a_32.png");		
+};
+this.Div00_btn_img_reload_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{
+	this.Div03.form.Tab00.tp_description.set_url("");
+	this.Div03.form.Tab00.tp_description.set_url("Sample::" + strSampleFile + ".xfdl");
+};
+
+
+/*
+ *	xfdl file download
+ */
+this.Div00_btn_img_download_file_onlbuttondown = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_file.set_image("imagerc::icon_download_red_32.png");
+};
+this.Div00_btn_img_download_file_onlbuttonup = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_file.set_image("imagerc::icon_download_7a7a7a_32.png");
+};
+this.Div00_btn_img_download_file_onmouseenter = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_file.set_image("imagerc::icon_download_black_32.png");
+};
+this.Div00_btn_img_download_file_onmouseleave = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_file.set_image("imagerc::icon_download_7a7a7a_32.png");	
+};
+this.Div00_btn_img_download_file_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{	
+	//strURL = nexacro._hostname + "/developer_guide/source/17/Sample/" + nexacro._sample + ".xfdl";
+	strURL = g_strAppInfo.serverURL + "/source/17/Sample/" + strSampleFile + ".xfdl";
+	
+	system.execBrowser(strURL);
+};
+
+
+/*
+ *	project files download
+ */
+this.Div00_btn_img_download_prj_onlbuttondown = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_prj.set_image("imagerc::icon_cloud-computing_red_32.png");
+};
+this.Div00_btn_img_download_prj_onlbuttonup = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_prj.set_image("imagerc::icon_cloud-computing_7a7a7a_32.png");
+};
+this.Div00_btn_img_download_prj_onmouseenter = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_prj.set_image("imagerc::icon_cloud-computing_black_32.png");	
+};
+this.Div00_btn_img_download_prj_onmouseleave = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.Div00.form.btn_img_download_prj.set_image("imagerc::icon_cloud-computing_7a7a7a_32.png");	
+};
+this.Div00_btn_img_download_prj_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{	
+	//strURL = nexacro._hostname + "/developer_guide/source/sample_nexacroplatform_17.zip";
+	strURL = g_strAppInfo.serverURL + "/source/sample_nexacroplatform_17.zip";
+
+	system.execBrowser(strURL);
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_source">
+        <ColumnInfo>
+          <Column id="source" type="STRING" size="100000"/>
+          <Column id="script" type="STRING" size="100000"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sample_list">
+        <ColumnInfo>
+          <Column id="category" type="STRING" size="256"/>
+          <Column id="subject" type="STRING" size="256"/>
+          <Column id="id_sample" type="STRING" size="256"/>
+          <Column id="id_doc" type="STRING" size="256"/>
+          <Column id="tree_level" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="category">Application</Col>
+            <Col id="subject">Application</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id_sample">sample_application_01</Col>
+            <Col id="category">Application</Col>
+            <Col id="subject">경고, 확인 대화상자 띄우기</Col>
+            <Col id="id_doc">f6dd5835cc0425a5</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Application</Col>
+            <Col id="subject">사용자 정보 저장하기</Col>
+            <Col id="id_sample">sample_application_04</Col>
+            <Col id="id_doc">ddf9a1b4ce1fb74d</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Application</Col>
+            <Col id="subject">쿠키 정보 확인하기</Col>
+            <Col id="id_sample">sample_application_05</Col>
+            <Col id="id_doc">e25865f6e40a0ec4</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Application</Col>
+            <Col id="subject">활성화된 화면(Form) 이름(ID) 속성 정보 얻기</Col>
+            <Col id="id_sample">sample_application_06</Col>
+            <Col id="id_doc">1889bb02d9f01c39</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">Form</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">화면 크기에 따라 레이아웃 바꾸기</Col>
+            <Col id="id_sample">sample_form_01</Col>
+            <Col id="id_doc">f0255ff819661e26</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">화면을 스탭 단위로 나누기</Col>
+            <Col id="id_sample">sample_form_02</Col>
+            <Col id="id_doc">f90ea11e48f50064</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">화면 이동하기</Col>
+            <Col id="id_sample">sample_form_03</Col>
+            <Col id="id_doc">d0cef60c99a2965d</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">오브젝트 접근하기</Col>
+            <Col id="id_sample">sample_form_04</Col>
+            <Col id="id_doc">74aa3fa840791191</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">엔터키로 컴포넌트 이동하기</Col>
+            <Col id="id_sample">sample_form_05</Col>
+            <Col id="id_doc">4ba9d698956708ce</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">타이머로 시간 표시하기</Col>
+            <Col id="id_sample">sample_form_06</Col>
+            <Col id="id_doc">0cc7b612bdba344f</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">화면 크기에 따라 Grid 포맷 바꾸기</Col>
+            <Col id="id_sample">sample_form_07</Col>
+            <Col id="id_doc">308de2e2d28ed2f8</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">스탭 기능을 활용해 슬라이스쇼 만들기</Col>
+            <Col id="id_sample">sample_form_08</Col>
+            <Col id="id_doc">5a971a0c2474a09f</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">컴포넌트 목록 표시하기</Col>
+            <Col id="id_sample">sample_form_09</Col>
+            <Col id="id_doc">4f2882ccb815788d</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Form</Col>
+            <Col id="subject">서버와 transaction 처리하기</Col>
+            <Col id="id_sample">sample_form_10</Col>
+            <Col id="id_doc">31992ee434c32f2c</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Frames</Col>
+            <Col id="subject">Frames</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Frames</Col>
+            <Col id="subject">ChildFrame 생성하기</Col>
+            <Col id="id_sample">sample_frame_01</Col>
+            <Col id="id_doc">c0ecb4835d242050</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Frames</Col>
+            <Col id="subject">FrameSet 생성하기</Col>
+            <Col id="id_sample">sample_frame_02</Col>
+            <Col id="id_doc">4193684a812fd327</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Frames</Col>
+            <Col id="subject">ChildFrame 정렬하기</Col>
+            <Col id="id_sample">sample_frame_03</Col>
+            <Col id="id_doc">d80ac6b0dc055926</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Frames</Col>
+            <Col id="subject">모달창으로 ChildFrame 생성하기</Col>
+            <Col id="id_sample">sample_frame_04</Col>
+            <Col id="id_doc">12189f8129a667ac</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Frames</Col>
+            <Col id="subject">open 메소드로 속성값 전달하기</Col>
+            <Col id="id_sample">sample_frame_05</Col>
+            <Col id="id_doc">8503df5be3fa3137</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Animation</Col>
+            <Col id="subject">Animation</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Animation</Col>
+            <Col id="subject">크기와 위치 변경하기</Col>
+            <Col id="id_sample">sample_animation_01</Col>
+            <Col id="id_doc">617ff9a48a32a559</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Animation</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">숫자 카운터 효과 만들기</Col>
+            <Col id="id_sample">sample_animation_02</Col>
+            <Col id="id_doc">9c784bb80e98781d</Col>
+          </Row>
+          <Row>
+            <Col id="category">Animation</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">easing 효과 만들기</Col>
+            <Col id="id_sample">sample_animation_03</Col>
+            <Col id="id_doc">0dd4c2ad86fe4178</Col>
+          </Row>
+          <Row>
+            <Col id="category">Animation</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">순서대로 애니메이션 처리하기</Col>
+            <Col id="id_sample">sample_animation_04</Col>
+            <Col id="id_doc">bfe7166e54f8f753</Col>
+          </Row>
+          <Row>
+            <Col id="category">AnimationTimeline</Col>
+            <Col id="subject">AnimationTimeline</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">AnimationTimeline</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">순서대로 애니메이션 처리하기</Col>
+            <Col id="id_sample">sample_animationtimeline_01</Col>
+            <Col id="id_doc">dd24198382a20fa7</Col>
+          </Row>
+          <Row>
+            <Col id="category">BasicChart</Col>
+            <Col id="subject">BasicChart</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="subject">실적(판매, 이익) 데이터 표현하기</Col>
+            <Col id="id_sample">sample_basicchart_01</Col>
+            <Col id="id_doc">fd028bc55d5d4cfe</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="category">BasicChart</Col>
+          </Row>
+          <Row>
+            <Col id="category">BasicChart</Col>
+            <Col id="id_sample">sample_basicchart_02</Col>
+            <Col id="id_doc">7257c1f785603f0e</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">여러 제품 판매 실적 데이터 표현하기</Col>
+          </Row>
+          <Row>
+            <Col id="category">BasicChart</Col>
+            <Col id="subject">미끄럼식 바 차트 표현하기</Col>
+            <Col id="id_sample">sample_basicchart_03</Col>
+            <Col id="id_doc">04441ea92b564b9b</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">BasicChart</Col>
+            <Col id="subject">세로축 여러 개 표현하기</Col>
+            <Col id="id_doc">f11206d265fe6a99</Col>
+            <Col id="id_sample">sample_basicchart_04</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">BasicChart</Col>
+            <Col id="subject">특정 데이터 다른 색으로 표현하기</Col>
+            <Col id="id_sample">sample_basicchart_05</Col>
+            <Col id="id_doc">91442f68456fed87</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">BasicChart</Col>
+            <Col id="subject">날짜 형식의 데이터 표현하기</Col>
+            <Col id="id_sample">sample_basicchart_06</Col>
+            <Col id="id_doc">fb8144ca55067e4b</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">BubbleChart</Col>
+            <Col id="subject">BubbleChart</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="subject">BubbleChart 다듬어서 표현하기</Col>
+            <Col id="category">BubbleChart</Col>
+            <Col id="id_sample">sample_bubblechart_01</Col>
+            <Col id="id_doc">94dddc4e44b617bb</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">BubbleChart</Col>
+            <Col id="subject">분산형 차트 표현하기</Col>
+            <Col id="id_sample">sample_bubblechart_02</Col>
+            <Col id="id_doc">06c725f82a2d6a9c</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">BubbleChart</Col>
+            <Col id="subject">Seriesset 여러 개 표현하기</Col>
+            <Col id="id_sample">sample_bubblechart_03</Col>
+            <Col id="id_doc">13879f0c358f7e86</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">PieChart</Col>
+            <Col id="subject">PieChart</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">PieChart</Col>
+            <Col id="subject">가이드라인 사용하기</Col>
+            <Col id="id_sample">sample_piechart_01</Col>
+            <Col id="id_doc">be0f3d23634eb284</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">PieChart</Col>
+            <Col id="subject">Grid 컴포넌트에서 선택한 항목을 차트에 표시하기</Col>
+            <Col id="id_sample">sample_piechart_02</Col>
+            <Col id="id_doc">84c10de1f2490343</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Button</Col>
+            <Col id="subject">Button</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Button</Col>
+            <Col id="subject">버튼에 아이콘 넣기</Col>
+            <Col id="id_sample">sample_button_02</Col>
+            <Col id="id_doc">8efeb94c768d3f1f</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Button</Col>
+            <Col id="subject">이미지 버튼 만들기</Col>
+            <Col id="id_sample">sample_button_03</Col>
+            <Col id="id_doc">6bccb424c67518cd</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Button</Col>
+            <Col id="subject">버튼에 들어간 아이콘 위치 변경하기</Col>
+            <Col id="id_sample">sample_button_04</Col>
+            <Col id="id_doc">22b1e0ca6bb0d463</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Button</Col>
+            <Col id="subject">컴포넌트의 속성, 메소드, 이벤트 확인하기</Col>
+            <Col id="id_sample">sample_button_05</Col>
+            <Col id="id_doc">63ba0ff39fbf2176</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="subject">Calendar</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="subject">날짜 형식 바꾸기</Col>
+            <Col id="id_sample">sample_calendar_01</Col>
+            <Col id="id_doc">48002e0dbf4eba4d</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="subject">오늘 날짜 구하기</Col>
+            <Col id="id_sample">sample_calendar_02</Col>
+            <Col id="id_doc">bbdccd3050e9e0c2</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Trailing day 보여주기</Col>
+            <Col id="id_sample">sample_calendar_03</Col>
+            <Col id="id_doc">af752b49ad72649e</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">날짜 간 차이 계산하기</Col>
+            <Col id="id_sample">sample_calendar_04</Col>
+            <Col id="id_doc">3506a74ca5dd0a73</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">연도와 주로 날짜 구간 계산하기</Col>
+            <Col id="id_sample">sample_calendar_05</Col>
+            <Col id="id_doc">986201e9b429f410</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">공휴일 지정하기</Col>
+            <Col id="id_sample">sample_calendar_06</Col>
+            <Col id="id_doc">63d4989e17c87b57</Col>
+          </Row>
+          <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="subject">음력 날짜로 변환하기</Col>
+            <Col id="id_sample">sample_calendar_07</Col>
+            <Col id="id_doc">e175be15d9cc2e5c</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">CheckBox</Col>
+            <Col id="subject">CheckBox</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">CheckBox</Col>
+            <Col id="subject">TRUE, FALSE 값 변경하기</Col>
+            <Col id="id_sample">sample_checkbox_02</Col>
+            <Col id="id_doc">bfb584c0167f6a21</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Combo</Col>
+            <Col id="subject">Combo</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Combo</Col>
+            <Col id="subject">Combo 구성하기 - 고정 아이템 목록</Col>
+            <Col id="id_sample">sample_combo_02</Col>
+            <Col id="id_doc">599fff6fbe158aed</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Combo</Col>
+            <Col id="subject">Combo 구성하기 - 동작 아이템 목록</Col>
+            <Col id="id_sample">sample_combo_03</Col>
+            <Col id="id_doc">8c489834619cd131</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Combo</Col>
+            <Col id="subject">키워드 검색을 통하여 관련 아이템 추출하기</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_sample">sample_combo_04</Col>
+            <Col id="id_doc">8b1d993c5c6162ee</Col>
+          </Row>
+          <Row>
+            <Col id="category">Combo</Col>
+            <Col id="subject">멀티 콤보 구현하기</Col>
+            <Col id="id_sample">sample_combo_05</Col>
+            <Col id="id_doc">30bdfe858d8d3cc7</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Combo</Col>
+            <Col id="subject">여러 항목 선택하는 콤보 구현하기</Col>
+            <Col id="id_sample">sample_combo_06</Col>
+            <Col id="id_doc">1b7f04cca6082831</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="subject">Edit</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">문자열 길이 구하기</Col>
+            <Col id="id_sample">sample_edit_02</Col>
+            <Col id="id_doc">5d3a5b69f980780b</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">자동 포커스 이동</Col>
+            <Col id="id_sample">sample_edit_03</Col>
+            <Col id="id_doc">db1a56890e08a7b3</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">입력 언어 변경하기</Col>
+            <Col id="id_sample">sample_edit_04</Col>
+            <Col id="id_doc">3117ccab554de9d6</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">정규표현식(Regular Expression)을 사용한 비밀번호 형식 체크하기</Col>
+            <Col id="id_sample">sample_edit_05</Col>
+            <Col id="id_doc">9a691487e9b769f5</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Edit에 Dataset 바인딩하기</Col>
+            <Col id="id_sample">sample_edit_06</Col>
+            <Col id="id_doc">a8124dd2fe950b03</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">자동완성 기능으로 키워드 제시하기</Col>
+            <Col id="id_sample">sample_edit_07</Col>
+            <Col id="id_doc">f8c5838bc5131e84</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">목록에서 선택한 값을 여러 개 Edit 컴포넌트에 입력하기</Col>
+            <Col id="id_sample">sample_edit_08</Col>
+            <Col id="id_doc">5eaa3096a43f32ce</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="subject">바인딩된 값을 키 입력 시 바로 업데이트하기</Col>
+            <Col id="id_sample">sample_edit_09</Col>
+            <Col id="id_doc">4b37b2dd30ac283d</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Edit</Col>
+            <Col id="subject">한글만 입력할 수 있도록 하기</Col>
+            <Col id="id_sample">sample_edit_10</Col>
+            <Col id="id_doc">5819e4df13d15871</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">GoogleMap</Col>
+            <Col id="subject">GoogleMap</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">GoogleMap</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">지도에 마커 추가/삭제하기</Col>
+            <Col id="id_sample">sample_googlemap_02</Col>
+            <Col id="id_doc">640aad51a01a85c5</Col>
+          </Row>
+          <Row>
+            <Col id="category">GoogleMap</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">지도에 원 추가/삭제하기</Col>
+            <Col id="id_sample">sample_googlemap_03</Col>
+            <Col id="id_doc">2c1fd1b2665f63b5</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="subject">Grid 기본</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Grid에 Dataset 바인딩하기</Col>
+            <Col id="id_sample">sample_grid_02</Col>
+            <Col id="id_doc">06a2973e4ee37b03</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">조건에 맞는 레코드 필터링하기</Col>
+            <Col id="id_sample">sample_grid_03</Col>
+            <Col id="id_doc">5b1a6849529719bc</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">조건에 맞는 특정 레코드 검색하기</Col>
+            <Col id="id_sample">sample_grid_04</Col>
+            <Col id="id_doc">2d3da18bc229dbf0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">레코드 추가/삭제하기</Col>
+            <Col id="id_sample">sample_grid_05</Col>
+            <Col id="id_doc">e26116663154678e</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">여러 레코드 선택하기</Col>
+            <Col id="id_sample">sample_grid_06</Col>
+            <Col id="id_doc">8248b677d4c1b860</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">여러 레코드 삭제하기</Col>
+            <Col id="id_sample">sample_grid_07</Col>
+            <Col id="id_doc">252cd965e21b43b7</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">다른 데이터셋의 레코드 추가하기</Col>
+            <Col id="id_sample">sample_grid_08</Col>
+            <Col id="id_doc">6e8bcebfb4975bb0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">레코드 개수 구하기</Col>
+            <Col id="id_sample">sample_grid_09</Col>
+            <Col id="id_doc">11eaaf5b460a5800</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">변경된 데이터가 있는지 확인하기</Col>
+            <Col id="id_sample">sample_grid_10</Col>
+            <Col id="id_doc">2ddc55140fdf7ac9</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">변경 내용 데이터셋에 반영하기/되돌리기</Col>
+            <Col id="id_sample">sample_grid_11</Col>
+            <Col id="id_doc">88d3606f8aac951f</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">텍스트의 길이가 긴 경우 툴팁(Tooltip)으로 보여주기</Col>
+            <Col id="id_sample">sample_grid_36</Col>
+            <Col id="id_doc">f841c718e6bfc601</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="subject">Smart Scroll 기능 사용하기</Col>
+            <Col id="id_sample">sample_grid_39</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_doc">c5513942c9addaf4</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="subject">Grid 레이아웃</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Cell 크기 조절하기 (Row 크기 일괄 조절)</Col>
+            <Col id="id_sample">sample_grid_12</Col>
+            <Col id="id_doc">e1b5be29cd1980a9</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Cell 크기 조절하기 (특정 Row 크기 조절)</Col>
+            <Col id="id_sample">sample_grid_13</Col>
+            <Col id="id_doc">57649bc49372d244</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">다중 헤드와 다중 레코드 표현하기</Col>
+            <Col id="id_sample">sample_grid_14</Col>
+            <Col id="id_doc">2c0e2aadf4c25988</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">자동 줄 바꾸기와 자동 Cell 크기 조절하기</Col>
+            <Col id="id_sample">sample_grid_15</Col>
+            <Col id="id_doc">a914371e5e9843fd</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Head Column에 여러 줄 입력하기</Col>
+            <Col id="id_sample">sample_grid_16</Col>
+            <Col id="id_doc">b215acf33383a866</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">틀 고정하기 - Column</Col>
+            <Col id="id_sample">sample_grid_17</Col>
+            <Col id="id_doc">163a47bff1f0490a</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">틀 고정하기 - Row</Col>
+            <Col id="id_sample">sample_grid_18</Col>
+            <Col id="id_doc">d441c3f15837be12</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Column 위치 이동하기</Col>
+            <Col id="id_sample">sample_grid_19</Col>
+            <Col id="id_doc">9adbaaee8f727622</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="subject">변경된 Column 상태의 포맷 복사하기</Col>
+            <Col id="id_sample">sample_grid_43</Col>
+            <Col id="id_doc">bae574bce302eb35</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="subject">포맷 정보 확인하기</Col>
+            <Col id="id_sample">sample_grid_49</Col>
+            <Col id="id_doc">06d6ac5b3ff85fd3</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="subject">틀 고정하기 - 선택한 Column</Col>
+            <Col id="id_sample">sample_grid_52</Col>
+            <Col id="id_doc">db28bd5a13a74fe8</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 레이아웃</Col>
+            <Col id="subject">컬럼 크기 조정 기능 제한하기</Col>
+            <Col id="id_sample">sample_grid_54</Col>
+            <Col id="id_doc">dbc0cb9da7ca86ab</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">Grid 셀</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">포맷 변경해서 적용하기</Col>
+            <Col id="id_sample">sample_grid_20</Col>
+            <Col id="id_doc">bf670b9414b79529</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">바인딩된 Dataset 오브젝트의 포맷을 생성하여 보여주기</Col>
+            <Col id="id_sample">sample_grid_21</Col>
+            <Col id="id_doc">92991016bdc201b5</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">다양한 형식으로 데이터 표현하기</Col>
+            <Col id="id_sample">sample_grid_22</Col>
+            <Col id="id_doc">2f09175766c62e2f</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">다양한 형식으로 데이터 편집하기</Col>
+            <Col id="id_sample">sample_grid_23</Col>
+            <Col id="id_doc">3fc40a4c93dda2f8</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">레코드 그룹핑하기</Col>
+            <Col id="id_sample">sample_grid_24</Col>
+            <Col id="id_doc">d048a7c0b4d2406d</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">레코드 정렬하기</Col>
+            <Col id="id_sample">sample_grid_25</Col>
+            <Col id="id_doc">595f03c930188057</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">값이 동일한 셀을 하나의 셀로 표시하기 - Suppress</Col>
+            <Col id="id_sample">sample_grid_26</Col>
+            <Col id="id_doc">2e4e0cab9a0a912d</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">셀 속성 설정하기</Col>
+            <Col id="id_sample">sample_grid_27</Col>
+            <Col id="id_doc">8653f8d63f6718c6</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">셀 병합하기</Col>
+            <Col id="id_sample">sample_grid_28</Col>
+            <Col id="id_doc">7f71e0d4c756ad45</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">서브 셀 속성 설정하기</Col>
+            <Col id="id_sample">sample_grid_29</Col>
+            <Col id="id_doc">78841889251123b9</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">일부 데이터를 감추어 표시하기</Col>
+            <Col id="id_sample">sample_grid_41</Col>
+            <Col id="id_doc">dea2b5879f210951</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">선택한 Row 전체 컬럼을 입력 상태로 변환하기</Col>
+            <Col id="id_sample">sample_grid_42</Col>
+            <Col id="id_doc">ef1db71590a45458</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">PopupDiv에서 선택한 값을 데이터로 입력하기</Col>
+            <Col id="id_sample">sample_grid_44</Col>
+            <Col id="id_doc">2c9fa071715771f3</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">조건에 따라 displaytype 속성값 변경하기</Col>
+            <Col id="id_sample">sample_grid_46</Col>
+            <Col id="id_doc">38a3987ef600aa33</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">데이터가 없는 경우 Calendar 대신 대체 텍스트 표시하기</Col>
+            <Col id="id_sample">sample_grid_45</Col>
+            <Col id="id_doc">3103d7394d6ff664</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">컬럼값이 Y, N 인 경우 checkcontorl 사용하기</Col>
+            <Col id="id_sample">sample_grid_50</Col>
+            <Col id="id_doc">72d5c585819b2e04</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">URL 링크 클릭 시 해당 사이트로 이동하기</Col>
+            <Col id="id_sample">sample_grid_53</Col>
+            <Col id="id_doc">6413d33cb4c566a1</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">expr 내에서 사용할 수 있는 속성</Col>
+            <Col id="id_sample">sample_grid_57</Col>
+            <Col id="id_doc">b29d8368e4a87181</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">데이터가 없는 영역을 채우기</Col>
+            <Col id="id_sample">sample_grid_59</Col>
+            <Col id="id_doc">95fef7d5769b66ac</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">스크립트로 suppress 속성 적용하기</Col>
+            <Col id="id_sample">sample_grid_58</Col>
+            <Col id="id_doc">e0df9c86f29f1382</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">행번호 표시하기</Col>
+            <Col id="id_sample">sample_grid_66</Col>
+            <Col id="id_doc">ab7cdce586819d81</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">특정 Row를 깜빡이게 표시하기</Col>
+            <Col id="id_sample">sample_grid_62</Col>
+            <Col id="id_doc">1edec0027da96524</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">데이터 변경 시 Cell 글자색 바꾸어 표시하기</Col>
+            <Col id="id_sample">sample_grid_64</Col>
+            <Col id="id_doc">889e2e47ece0ea4c</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">트리 레벨에 따라 글자색 바꾸어 표시하기</Col>
+            <Col id="id_sample">sample_grid_60</Col>
+            <Col id="id_doc">23a98350b9e93369</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">아이콘 이미지 바꾸어 표시하기</Col>
+            <Col id="id_sample">sample_grid_61</Col>
+            <Col id="id_doc">c0d93c279233c7c2</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">선택한 Cell 속성 확인하기</Col>
+            <Col id="id_sample">sample_grid_70</Col>
+            <Col id="id_doc">1cc10598610cefc6</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">ComboControl 내에서 선택한 항목의 스타일 바꾸어 표시하기</Col>
+            <Col id="id_sample">sample_grid_71</Col>
+            <Col id="id_doc">cb6f792e7387d286</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">Grid에서 특정 텍스트만 입력하기</Col>
+            <Col id="id_sample">sample_grid_68</Col>
+            <Col id="id_doc">9a7b1f572b3b2acd</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="subject">가로값이 동일한 셀을 하나의 셀로 표시하기</Col>
+            <Col id="category">Grid 셀</Col>
+            <Col id="id_sample">sample_grid_75</Col>
+            <Col id="id_doc">7a2210e3cc2d67be</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">Grid에서 특정 텍스트만 입력하기</Col>
+            <Col id="id_sample">sample_grid_68</Col>
+            <Col id="id_doc">9a7b1f572b3b2acd</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">Grid 응용</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Grid에서 엑셀로 복사/붙여넣기</Col>
+            <Col id="id_sample">sample_grid_30</Col>
+            <Col id="id_doc">2e314460f5a5869d</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">합계/소계 구하기</Col>
+            <Col id="id_sample">sample_grid_31</Col>
+            <Col id="id_doc">d485297c0d099f58</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">소계 이름과 배경색 설정하기</Col>
+            <Col id="id_sample">sample_grid_31_style</Col>
+            <Col id="id_doc">f555e80cc2b47f22</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">트리 형태로 표현하기</Col>
+            <Col id="id_sample">sample_grid_32</Col>
+            <Col id="id_doc">0843710722d68046</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">트리에서 편집하기</Col>
+            <Col id="id_sample">sample_grid_33</Col>
+            <Col id="id_doc">e7a98c2932193774</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">헤더 이벤트를 이용한 정렬하기</Col>
+            <Col id="id_sample">sample_grid_34</Col>
+            <Col id="id_doc">33c1574e75c1c1f6</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">전체 선택/해제하기</Col>
+            <Col id="id_sample">sample_grid_35</Col>
+            <Col id="id_doc">2e69196f50aaf319</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Grid간의 복사/붙여넣기</Col>
+            <Col id="id_sample">sample_grid_37</Col>
+            <Col id="id_doc">bddce2c11978273b</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">페이지 기능 구현하기</Col>
+            <Col id="id_sample">sample_grid_38</Col>
+            <Col id="id_doc">b64eb34f535b5bb4</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">Grid에서 간단한 설문조사 구현하기</Col>
+            <Col id="id_sample">sample_grid_40</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_doc">96e390279a5283bf</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">마우스 휠 동작을 이용한 페이징 처리</Col>
+            <Col id="id_sample">sample_grid_47</Col>
+            <Col id="id_doc">cef5d2f692f7f2fc</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">1건만 있는 소계 삭제하기</Col>
+            <Col id="id_sample">sample_grid_48</Col>
+            <Col id="id_doc">b1bf35f275c487f8</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">특정 위치의 부모 트리만 펼치기</Col>
+            <Col id="id_sample">sample_grid_51</Col>
+            <Col id="id_doc">0c6cf3d39041e305</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">영수증 계산하기</Col>
+            <Col id="id_sample">sample_grid_55</Col>
+            <Col id="id_doc">1447285d3be2eb2e</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject"> 그룹에 레벨 지정해서 subtotal 계산하기</Col>
+            <Col id="id_sample">sample_grid_56</Col>
+            <Col id="id_doc">56a17ccdee386f9e</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">동적으로 Grid 컴포넌트 생성하고 데이터 바인딩하기</Col>
+            <Col id="id_sample">sample_grid_63</Col>
+            <Col id="id_doc">fa1a8212edc366ab</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">드래그앤드롭으로 Grid 컴포넌트의 문자열 옮기기</Col>
+            <Col id="id_sample">sample_grid_65</Col>
+            <Col id="id_doc">7a7cc55945b27c9e</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">두 개의 Grid 컴포넌트의 스크롤을 동시에 움직이기</Col>
+            <Col id="id_sample">sample_grid_69</Col>
+            <Col id="id_doc">09e23af078712fe8</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">체크된 Row 숫자 반환하기</Col>
+            <Col id="id_sample">sample_grid_72</Col>
+            <Col id="id_doc">96bf32669c5d6dc7</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">Like 조건으로 검색하기</Col>
+            <Col id="id_sample">sample_grid_73</Col>
+            <Col id="id_doc">acf5d7198215573a</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">중복된 항목 제거하기</Col>
+            <Col id="id_sample">sample_grid_74</Col>
+            <Col id="id_doc">1de5b63f092d3890</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">Radio 버튼 표현하기</Col>
+            <Col id="id_sample">sample_grid_76</Col>
+            <Col id="id_doc">526da33eef970782</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">GroupBox</Col>
+            <Col id="subject">GroupBox</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">GroupBox</Col>
+            <Col id="subject">UI 요소 그룹짓기</Col>
+            <Col id="id_sample">sample_groupbox_02</Col>
+            <Col id="id_doc">ced0f3711c1deac6</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">GroupBox</Col>
+            <Col id="subject">GroupBox 스타일 적용하기</Col>
+            <Col id="id_sample">sample_groupbox_03</Col>
+            <Col id="id_doc">3fa8ce1f2d590d0b</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">ImageViewer</Col>
+            <Col id="subject">ImageViewer</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">ImageViewer</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_sample">sample_imageviewer_01</Col>
+            <Col id="id_doc">a66b2e8ebc82239f</Col>
+            <Col id="subject">이미지 폴더에 있는 이미지 보여주기</Col>
+          </Row>
+          <Row>
+            <Col id="category">ImageViewer</Col>
+            <Col id="subject">이미지 크기 조정하기</Col>
+            <Col id="id_sample">sample_imageviewer_02</Col>
+            <Col id="id_doc">e637ddb4c1c92980</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">ListView</Col>
+            <Col id="subject">ListView</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">ListView</Col>
+            <Col id="subject">기본, 상세 데이터 표현하기</Col>
+            <Col id="id_sample">sample_listview_01</Col>
+            <Col id="id_doc">ab6e316aa65ead10</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">ListView</Col>
+            <Col id="subject">너비에 따라 다른 형식으로 데이터 표현하기</Col>
+            <Col id="id_sample">sample_listview_02</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_doc">45e351819da4b26c</Col>
+          </Row>
+          <Row>
+            <Col id="category">ListView</Col>
+            <Col id="subject">버튼 클릭 이벤트 처리하기</Col>
+            <Col id="id_sample">sample_listview_03</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_doc">2e93490f063880e8</Col>
+          </Row>
+          <Row>
+            <Col id="category">ListBox</Col>
+            <Col id="subject">ListBox</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">ListBox</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_sample">sample_listbox_03</Col>
+            <Col id="id_doc">84c3d7ff5eaa5bc5</Col>
+            <Col id="subject">다중선택</Col>
+          </Row>
+          <Row>
+            <Col id="category">MaskEdit</Col>
+            <Col id="subject">MaskEdit</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">MaskEdit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">정해진 형식으로 입력받기</Col>
+            <Col id="id_sample">sample_maskedit_02</Col>
+            <Col id="id_doc">f48ed310801f697f</Col>
+          </Row>
+          <Row>
+            <Col id="category">MaskEdit</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">주민등록번호 안 보이게 처리하기</Col>
+            <Col id="id_sample">sample_maskedit_03</Col>
+            <Col id="id_doc">ce7195f392567303</Col>
+          </Row>
+          <Row>
+            <Col id="category">Menu</Col>
+            <Col id="subject">Menu</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Menu</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_sample">sample_menu_01</Col>
+            <Col id="id_doc">53495f9744459953</Col>
+            <Col id="subject">메뉴 구성하기</Col>
+          </Row>
+          <Row>
+            <Col id="category">PopupMenu</Col>
+            <Col id="subject">PopupMenu</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">PopupMenu</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">팝업 위치 변경하기</Col>
+            <Col id="id_sample">sample_popupmenu_01</Col>
+            <Col id="id_doc">9434c3d19fad2f12</Col>
+          </Row>
+          <Row>
+            <Col id="category">ProgressBar</Col>
+            <Col id="subject">ProgressBar</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">ProgressBar</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">진행 상태 표시하기</Col>
+            <Col id="id_doc">63bb83ebd6a426d5</Col>
+            <Col id="id_sample">sample_progressbar_02</Col>
+          </Row>
+          <Row>
+            <Col id="category">Radio</Col>
+            <Col id="subject">Radio</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Radio</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">기본값 설정하기</Col>
+            <Col id="id_sample">sample_radio_01</Col>
+            <Col id="id_doc">ed8a2618cc9a42e0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Radio</Col>
+            <Col id="subject">가로 방향으로 나열하기</Col>
+            <Col id="id_sample">sample_radio_02</Col>
+            <Col id="id_doc">90fff307419dbe7d</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Radio</Col>
+            <Col id="subject">innerdataset 항목 추가하기</Col>
+            <Col id="id_sample">sample_radio_03</Col>
+            <Col id="id_doc">82e1129acc65a9d3</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Sketch</Col>
+            <Col id="subject">Sketch</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Sketch</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Sketch 옵션 추가하기</Col>
+            <Col id="id_sample">sample_sketch_01</Col>
+            <Col id="id_doc">1c057f86dd7992fc</Col>
+          </Row>
+          <Row>
+            <Col id="category">Spin</Col>
+            <Col id="subject">Spin</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Spin</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_sample">sample_spin_02</Col>
+            <Col id="id_doc">4d86239dd60850e5</Col>
+            <Col id="subject">Spin 사용하기</Col>
+          </Row>
+          <Row>
+            <Col id="category">Static</Col>
+            <Col id="subject">Static</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Static</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_sample">sample_static_01</Col>
+            <Col id="id_doc">f9b209fa15011dda</Col>
+            <Col id="subject">텍스트를 동적으로 표현하기</Col>
+          </Row>
+          <Row>
+            <Col id="category">Static</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_sample">sample_static_02</Col>
+            <Col id="id_doc">16ce5289541920b5</Col>
+            <Col id="subject">자동줄넘김(wordwrap) 기능</Col>
+          </Row>
+          <Row>
+            <Col id="category">Static</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">텍스트 꾸미기</Col>
+            <Col id="id_sample">sample_static_03</Col>
+            <Col id="id_doc">1ec4313dc48bc354</Col>
+          </Row>
+          <Row>
+            <Col id="category">Static</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">가로바 만들기</Col>
+            <Col id="id_sample">sample_static_04</Col>
+            <Col id="id_doc">d451c8d36903e5ef</Col>
+          </Row>
+          <Row>
+            <Col id="category">Static</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">글자 길이에 맞추어 배치하기</Col>
+            <Col id="id_sample">sample_static_05</Col>
+            <Col id="id_doc">392302144d42a6ea</Col>
+          </Row>
+          <Row>
+            <Col id="subject">여러줄로 문자열 표시하기</Col>
+            <Col id="category">Static</Col>
+            <Col id="id_sample">sample_static_06</Col>
+            <Col id="id_doc">74e35b477227c003</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Static</Col>
+            <Col id="subject">Bar 차트 만들기</Col>
+            <Col id="id_sample">sample_static_07</Col>
+            <Col id="id_doc">6aac773a65285661</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">TextArea</Col>
+            <Col id="subject">TextArea</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="tree_level">1</Col>
+            <Col id="category">TextArea</Col>
+            <Col id="subject">자동줄넘김(wordwrap) 기능</Col>
+            <Col id="id_sample">sample_textarea_01</Col>
+            <Col id="id_doc">c6d55129e8a74dd3</Col>
+          </Row>
+          <Row>
+            <Col id="category">VideoPlayer</Col>
+            <Col id="subject">VideoPlayer</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">VideoPlayer</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">컨트롤 기능 만들기</Col>
+            <Col id="id_sample">sample_videoplayer_02</Col>
+            <Col id="id_doc">77ee1b8760cc2bb5</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">WebBrowser</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">엘리먼트 속성값 가져오기</Col>
+            <Col id="id_sample">sample_webbrowser_02</Col>
+            <Col id="id_doc">a9c554c01e553086</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">엘리먼트 속성값 설정하기</Col>
+            <Col id="id_sample">sample_webbrowser_03</Col>
+            <Col id="id_doc">ed58d95c1c85adcb</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">스크립트의 변수값 가져오기</Col>
+            <Col id="id_sample">sample_webbrowser_04</Col>
+            <Col id="id_doc">9af7b052b5d20dad</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">스크립트의 함수 호출하기</Col>
+            <Col id="id_sample">sample_webbrowser_05</Col>
+            <Col id="id_doc">9bbbf4aa785c0030</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">usernotify 이벤트를 이용한 사용자 데이터 전달하기</Col>
+            <Col id="id_sample">sample_webbrowser_06</Col>
+            <Col id="id_doc">ac238f988b9d49df</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">innerHTML을 사용해 데이터 표현하기</Col>
+            <Col id="id_sample">sample_webbrowser_07</Col>
+            <Col id="id_doc">9292e496960ee026</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">WebBrowser</Col>
+            <Col id="subject">외부 웹에디터 사용하기</Col>
+            <Col id="id_sample">sample_webbrowser_08</Col>
+            <Col id="id_doc">5c702f8059bd5b6a</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Div</Col>
+            <Col id="subject">Div</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Div</Col>
+            <Col id="subject">다른 화면 보여주기</Col>
+            <Col id="id_sample">sample_div_01</Col>
+            <Col id="id_doc">3a7cf8469f5d1f1c</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Div</Col>
+            <Col id="subject">Div Contents 접근하기</Col>
+            <Col id="id_sample">sample_div_02</Col>
+            <Col id="id_doc">2fcaeca830c9ee09</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Div</Col>
+            <Col id="subject">간단한 splitter 구현하기</Col>
+            <Col id="id_sample">sample_div_03</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="id_doc">af4dbb545827f87b</Col>
+          </Row>
+          <Row>
+            <Col id="category">PopupDiv</Col>
+            <Col id="subject">PopupDiv</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">PopupDiv</Col>
+            <Col id="subject">PopupDiv 배치하기</Col>
+            <Col id="id_sample">sample_popupdiv_02</Col>
+            <Col id="id_doc">7521f1add096cd5e</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Tab</Col>
+            <Col id="subject">Tab</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Tab</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">멀티 라인 Tab 구성하기</Col>
+            <Col id="id_sample">sample_tab_02</Col>
+            <Col id="id_doc">2578cefe5055a945</Col>
+          </Row>
+          <Row>
+            <Col id="category">Tab</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">탭 버튼 위치 조정하기</Col>
+            <Col id="id_sample">sample_tab_03</Col>
+            <Col id="id_doc">559b4ca98c7ecee0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Tab</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">탭 버튼 비활성화</Col>
+            <Col id="id_sample">sample_tab_04</Col>
+            <Col id="id_doc">38cb640572041a16</Col>
+          </Row>
+          <Row>
+            <Col id="category">Array</Col>
+            <Col id="subject">Array</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Array</Col>
+            <Col id="subject">문자열을 분리해 배열로 만들기</Col>
+            <Col id="id_sample">sample_array_01</Col>
+            <Col id="id_doc">bef2ec59fae40c15</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Array</Col>
+            <Col id="subject">중복된 요소 제거하기</Col>
+            <Col id="id_sample">sample_array_02</Col>
+            <Col id="id_doc">bb5412eef7556c72</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Array</Col>
+            <Col id="subject">숫자 배열 정렬하기</Col>
+            <Col id="id_sample">sample_array_03</Col>
+            <Col id="id_doc">e2eb660d7424bdfa</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Array</Col>
+            <Col id="subject">2차원 배열 만들기</Col>
+            <Col id="id_sample">sample_array_04</Col>
+            <Col id="id_doc">699858dcb4a1d5d8</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Date</Col>
+            <Col id="subject">Date</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Date</Col>
+            <Col id="subject">타이머 구현하기</Col>
+            <Col id="id_sample">sample_date_01</Col>
+            <Col id="id_doc">1eb3a4d36719c0e1</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Date</Col>
+            <Col id="subject">입력된 날짜에서 정보 구하기</Col>
+            <Col id="id_sample">sample_date_02</Col>
+            <Col id="id_doc">85c67d23cb69d521</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Function</Col>
+            <Col id="subject">Function</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Function</Col>
+            <Col id="subject">DECODE, IIF 기능 구현하기</Col>
+            <Col id="id_sample">sample_function_01</Col>
+            <Col id="id_doc">844a3868a6e5a236</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Global</Col>
+            <Col id="subject">Global</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Global</Col>
+            <Col id="subject">RGB 색상 코드 변경하기</Col>
+            <Col id="id_sample">sample_global_01</Col>
+            <Col id="id_doc">df8804bb22f6a929</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Global</Col>
+            <Col id="subject">URI 변환하기</Col>
+            <Col id="id_sample">sample_global_02</Col>
+            <Col id="id_doc">d5efd4f46142d08a</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Global</Col>
+            <Col id="subject">유니코드 변환하기</Col>
+            <Col id="id_sample">sample_global_03</Col>
+            <Col id="id_doc">09f59961c4c6f4bc</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Global</Col>
+            <Col id="subject">function 찾아서 실행하기</Col>
+            <Col id="id_sample">sample_global_04</Col>
+            <Col id="id_doc">5b8a8decd1d3eb56</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Math</Col>
+            <Col id="subject">Math</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Math</Col>
+            <Col id="subject">백분율 구하기</Col>
+            <Col id="id_sample">sample_math_01</Col>
+            <Col id="id_doc">5f3b3d189bc6a686</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Number</Col>
+            <Col id="subject">Number</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Number</Col>
+            <Col id="subject">숫자 범위 체크하기</Col>
+            <Col id="id_sample">sample_number_01</Col>
+            <Col id="id_doc">a1e16d253fc4de9a</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">String</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">영문 자판으로 한글 입력 시 자동 전환하기</Col>
+            <Col id="id_sample">sample_string_01</Col>
+            <Col id="id_doc">72710341fe2e80e3</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">이메일 주소값 검증하기</Col>
+            <Col id="id_sample">sample_string_02</Col>
+            <Col id="id_doc">a9d14828ccf89bea</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">전각문자와 반각문자 변환하기</Col>
+            <Col id="id_sample">sample_string_03</Col>
+            <Col id="id_doc">bb2f7406d8522ea9</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">문자열이 지정된 길이가 되도록 다른 문자로 채우기</Col>
+            <Col id="id_sample">sample_string_04</Col>
+            <Col id="id_doc">3d94de7e1a5aeb08</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">문자열에 있는 하이픈(-) 제거하기</Col>
+            <Col id="id_sample">sample_string_05</Col>
+            <Col id="id_doc">20795c7db92a2e20</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">법인등록번호 유효성 검사하기</Col>
+            <Col id="id_sample">sample_string_07</Col>
+            <Col id="id_doc">33c36dd3bc1cc6de</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">주민등록번호 유효성 검사하기</Col>
+            <Col id="id_sample">sample_string_06</Col>
+            <Col id="id_doc">d0cbf18f9ffe1686</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">NULL 값 체크하기</Col>
+            <Col id="id_sample">sample_string_08</Col>
+            <Col id="id_doc">317fed915f5839d6</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">앞뒤 공백문자 제거하기</Col>
+            <Col id="id_sample">sample_string_09</Col>
+            <Col id="id_doc">39f161381c2f9cc3</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">숫자 형식 여부 확인하기</Col>
+            <Col id="id_sample">sample_string_10</Col>
+            <Col id="id_doc">73350c7429bb870e</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">영문이나 숫자 여부 확인하기</Col>
+            <Col id="id_sample">sample_string_11</Col>
+            <Col id="id_doc">0d141c52b0b87f41</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">String</Col>
+            <Col id="subject">날짜, 시간 유효성 확인하기</Col>
+            <Col id="id_sample">sample_string_12</Col>
+            <Col id="id_doc">35b8988c55e4ff45</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">Dataset</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">조건에 따라 데이터 평균, 합계 계산하기</Col>
+            <Col id="id_sample">sample_dataset_01</Col>
+            <Col id="id_doc">ef3a0952dff2c13c</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">컬럼 정보 확인하고 type 속성값 변경하기</Col>
+            <Col id="id_sample">sample_dataset_03</Col>
+            <Col id="id_doc">a043f7d0995eeff1</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">삭제된 Row 정보 확인하기</Col>
+            <Col id="id_sample">sample_dataset_04</Col>
+            <Col id="id_doc">0d261e823e8ebe2d</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">스크립트로 Dataset 생성하기</Col>
+            <Col id="id_sample">sample_dataset_05</Col>
+            <Col id="id_doc">ddf4795ac71f6bd1</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">변경된 컬럼정보 원복하기</Col>
+            <Col id="id_sample">sample_dataset_06</Col>
+            <Col id="id_doc">b1997e2a389fd3d5</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">RowType 변경하기</Col>
+            <Col id="id_sample">sample_dataset_07</Col>
+            <Col id="id_doc">3ffe2b3450596b25</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">대소문자 구분 없이 필터링하기</Col>
+            <Col id="id_sample">sample_dataset_08</Col>
+            <Col id="id_doc">04dd86b05e990ca2</Col>
+            <Col id="tree_level">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">ExcelExportObject / ExcelImportObject</Col>
+            <Col id="subject">ExcelExportObject / ExcelImportObject</Col>
+            <Col id="tree_level">0</Col>
+          </Row>
+          <Row>
+            <Col id="category">ExcelExportObject / ExcelImportObject</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Grid를 엑셀 파일로 내보내기(익스포트)</Col>
+            <Col id="id_sample">sample_excelexportimport_01</Col>
+            <Col id="id_doc">bf6d9db84a21560d</Col>
+          </Row>
+          <Row>
+            <Col id="category">ExcelExportObject / ExcelImportObject</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">엑셀 파일 읽어서 Grid로 보여주기(임포트)</Col>
+            <Col id="id_sample">sample_excelexportimport_02</Col>
+            <Col id="id_doc">4fca092a3e5a17cd</Col>
+          </Row>
+          <Row>
+            <Col id="category">ExcelExportObject / ExcelImportObject</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">Grid의 이미지를 엑셀 파일로 내보내기</Col>
+            <Col id="id_sample">sample_excelexportimport_03</Col>
+            <Col id="id_doc">c6a785d72dad5154</Col>
+          </Row>
+          <Row>
+            <Col id="category">ExcelExportObject / ExcelImportObject</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="subject">여러 Grid 데이터를 엑셀 파일로 내보내기</Col>
+            <Col id="id_sample">sample_excelexportimport_04</Col>
+            <Col id="id_doc">be65e7edec215612</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div03.form.Tab00.tp_source.form.ta_source" propid="value" datasetid="ds_source" columnid="source"/>
+      <BindItem id="item1" compid="Div03.form.Tab00.tp_script.form.ta_script" propid="value" datasetid="ds_source" columnid="script"/>
+    </Bind>
+  </Form>
+</FDL>

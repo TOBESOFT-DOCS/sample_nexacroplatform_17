@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_61" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="29" width="150" height="321" binddataset="Dataset00" treeinitstatus="expand,all" autofittype="col" treeusecheckbox="false" treeuseimage="true" treeuseline="true">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="155"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="label"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:label" displaytype="treeitemcontrol" treelevel="bind:level" edittype="tree"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="200" top="29" width="150" height="321" binddataset="Dataset00" treeinitstatus="expand,all" autofittype="col" treeusecheckbox="false" treeuseimage="true" treeuseline="true">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="155"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="label"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:label" displaytype="treeitemcontrol" treelevel="bind:level" edittype="tree" cssclass="sample_grid_61"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="label" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">A</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="label">B</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">C</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">D</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">E</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="label">F</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">G</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">H</Col>
+          </Row>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">I</Col>
+          </Row>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">J</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

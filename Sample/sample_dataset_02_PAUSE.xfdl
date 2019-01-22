@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_dateset_02" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Button id="Button00" taborder="0" text="datasetXML00" left="135" top="40" width="97" height="30" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="1" left="33" top="77" width="304" height="143"/>
+        <Button id="Button01" taborder="2" text="datasetXML01" left="240" top="40" width="97" height="30" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onload="Dataset00_onload"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[// RP 79615 검토중
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.set_url("FileSample::data_sample_dataset_02.xml");
+	this.Dataset00.set_serverdatasetid("datasetXML00");
+	this.Dataset00.load();
+};
+
+this.Dataset00_onload = function(obj:nexacro.NormalDataset,e:nexacro.DSLoadEventInfo)
+{
+	this.TextArea00.set_value("Dataset onload");
+	this.fn_datasetinfo();
+};
+
+this.fn_datasetinfo = function()
+{
+	var s_info = this.TextArea00.value+"\n"
+		+"Column count: "+this.Dataset00.getColCount()+"\n"
+		+"Row count: "+this.Dataset00.getRowCount();
+	this.TextArea00.set_value(s_info);
+}
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("");
+	this.Dataset00.set_serverdatasetid("datasetXML01");
+	this.Dataset00.load();	
+};
+]]></Script>
+  </Form>
+</FDL>

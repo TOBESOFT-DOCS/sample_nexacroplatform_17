@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_tab_02" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Tab id="Tab00" taborder="0" tabindex="0" left="20" top="60" width="540" height="138" multiline="true" showextrabutton="false">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="Tabpage1"/>
+            <Tabpage id="Tabpage2" text="Tabpage2"/>
+            <Tabpage id="Tabpage3" text="Tabpage3"/>
+            <Tabpage id="Tabpage4" text="Tabpage4"/>
+            <Tabpage id="Tabpage5" text="Tabpage5"/>
+            <Tabpage id="Tabpage6" text="Tabpage6"/>
+            <Tabpage id="Tabpage7" text="Tabpage7"/>
+            <Tabpage id="Tabpage8" text="Tabpage8"/>
+            <Tabpage id="Tabpage9" text="Tabpage9"/>
+            <Tabpage id="Tabpage10" text="Tabpage10"/>
+          </Tabpages>
+        </Tab>
+        <Button id="btnInsert" taborder="1" text="insert tabpage" left="20" top="25" width="110" height="30" onclick="btnInsert_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btnInsert_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var i = this.Tab00.getTabpageCount()+1;
+	this.Tab00.insertTabpage("TabPage"+i, -1);
+};
+]]></Script>
+  </Form>
+</FDL>

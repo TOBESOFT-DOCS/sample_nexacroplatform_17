@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_radarchart_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <RadarChart id="RadarChart00" taborder="0" left="42" top="33" width="428" height="377" binddataset="Dataset00" categorycolumn="bind:type" radartype="polygon">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Favorite Movie",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"itemautofit": "false",
+		"markertype": "circle",
+		"markertextgap": "1"
+	},
+	"board": {
+		"id": "board",
+		"visible": "true"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "10pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"visible": "true",
+		"boardlinevisible": "true"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"labeltype": "",
+			"visible": "false",
+			"boardlinevisible": "true"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "10대",
+			"linevisible": true,
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:age10",
+			"linestyle": "1px solid #1f77b4",
+			"linefillstyle": "#1f77b4",
+			"lineareavisible": "true",
+			"highlightlineareavisible": "true",
+			"highlightlineareaopacity": "0.5",
+			"lineareaopacity": "0.1",
+			"itemtexttype": "normal"
+		},
+		{
+			"id": "series1",
+			"titletext": "20대",
+			"linevisible": true,
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:age20",
+			"linestyle": "1px solid #aec7e8",
+			"linefillstyle": "#aec7e8",
+			"lineareavisible": "true",
+			"highlightlineareavisible": "true",
+			"highlightlineareaopacity": "0.5",
+			"lineareaopacity": "0.1"
+		},
+		{
+			"id": "series2",
+			"titletext": "30대",
+			"linevisible": true,
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:age30",
+			"linestyle": "1px solid #ff7f0e",
+			"linefillstyle": "#ff7f0e",
+			"lineareavisible": "true",
+			"highlightlineareavisible": "true",
+			"highlightlineareaopacity": "0.5",
+			"lineareaopacity": "0.1"
+		},
+		{
+			"id": "series3",
+			"titletext": "40대",
+			"linevisible": true,
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:age40",
+			"linestyle": "1px solid #ffbb78",
+			"linefillstyle": "#ffbb78",
+			"lineareavisible": "true",
+			"highlightlineareavisible": "true",
+			"highlightlineareaopacity": "0.5",
+			"lineareaopacity": "0.1"
+		}
+	],
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal \"맑은 고딕\"",
+		"padding": "5px"
+	}
+}]]></Contents>
+        </RadarChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="type" type="STRING" size="256"/>
+          <Column id="age10" type="INT" size="256"/>
+          <Column id="age20" type="INT" size="256"/>
+          <Column id="age30" type="INT" size="256"/>
+          <Column id="age40" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="type">Comedy</Col>
+            <Col id="age10">4</Col>
+            <Col id="age20">4</Col>
+            <Col id="age30">3</Col>
+            <Col id="age40">4</Col>
+          </Row>
+          <Row>
+            <Col id="type">Action</Col>
+            <Col id="age10">5</Col>
+            <Col id="age20">4</Col>
+            <Col id="age30">3</Col>
+            <Col id="age40">2</Col>
+          </Row>
+          <Row>
+            <Col id="type">Romance</Col>
+            <Col id="age10">3</Col>
+            <Col id="age20">4</Col>
+            <Col id="age30">5</Col>
+            <Col id="age40">4</Col>
+          </Row>
+          <Row>
+            <Col id="type">Drama</Col>
+            <Col id="age10">2</Col>
+            <Col id="age20">3</Col>
+            <Col id="age30">4</Col>
+            <Col id="age40">5</Col>
+          </Row>
+          <Row>
+            <Col id="type">SciFi</Col>
+            <Col id="age10">5</Col>
+            <Col id="age20">2</Col>
+            <Col id="age30">2</Col>
+            <Col id="age40">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

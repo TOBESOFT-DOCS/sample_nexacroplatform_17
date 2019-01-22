@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_edit_03" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Edit id="edit_first" taborder="1" left="40" top="72" width="64" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autoskip="true" maxlength="3"/>
+        <Edit id="edit_second" taborder="2" left="112" top="72" width="80" height="32" right="" bottom="" maxlength="4" autoskip="true" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="edit_third" taborder="3" left="200" top="72" width="80" height="32" right="" bottom="" autoskip="true" maxlength="4" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="4" text="OK" left="288" top="72" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Button00_onclick" right="" bottom=""/>
+        <Static id="Static00" taborder="0" text="Enter your phone number." left="40" top="32" width="200" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strPhoneNumber = this.edit_first.value + "-" + this.edit_second.value + "-" + this.edit_third.value;
+	
+	confirm("Your phone number is " + strPhoneNumber, "Phone Number");	
+	
+};
+]]></Script>
+  </Form>
+</FDL>

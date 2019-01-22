@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_div_02" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Div id="divMain" taborder="0" text="divMain" left="30" top="100" width="300" height="300" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #e5e5e5">
+          <Layouts>
+            <Layout>
+              <Static id="staticInput" taborder="0" text="" left="16" top="16" width="271" height="74" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnInput" taborder="1" text="input text" left="208" top="40" width="120" height="50" right="" bottom="" onclick="btnInput_onclick"/>
+        <Edit id="editInput" taborder="2" left="32" top="40" width="168" height="48" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[
+this.btnInput_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.divMain.form.staticInput.set_text(this.editInput.value);
+};
+]]></Script>
+  </Form>
+</FDL>

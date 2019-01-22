@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_80" width="1000" height="720" titletext="New Form" ontimer="sample_grid_80_ontimer" onload="sample_grid_80_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1000">
+        <Grid id="Grid00" taborder="0" left="25" top="20" width="385" height="250" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="140"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="timezone"/>
+                <Cell col="1" text="timevalue"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:timezone"/>
+                <Cell col="1" text="bind:timevalue"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="timezone" type="STRING" size="256"/>
+          <Column id="timevalue" type="STRING" size="256"/>
+          <Column id="offset" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="timezone">KST (한국 표준시)</Col>
+            <Col id="offset">9</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">PST (태평양 표준시)</Col>
+            <Col id="offset">-8</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">PDT (태평양 표준시/일광절약시간제)</Col>
+            <Col id="offset">-7</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">EST (동부 표준시)</Col>
+            <Col id="offset">-5</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">EDT (동부 표준시/일광절약시간제)</Col>
+            <Col id="offset">-4</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">CET (중앙유럽 표준시)</Col>
+            <Col id="offset">1</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">CEST (중앙유럽 표준시/일광절약시간제)</Col>
+            <Col id="offset">2</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">CST (중국 표준시)</Col>
+            <Col id="offset">8</Col>
+          </Row>
+          <Row>
+            <Col id="timezone">UTC (협정 세계시)</Col>
+            <Col id="offset">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+Grid 응용 / 세계 시간 표시하기
+키워드 getTimezoneOffset
+
+*/
+this.sample_grid_80_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	for(var i=0;i<this.Dataset00.getRowCount();i++)
+	{
+		this.Dataset00.setColumn(i, 1, this.getWorldTime(this.Dataset00.getColumn(i, 2)));
+	}
+};
+
+this.getWorldTime = function(offSet)
+{
+	var objDate = new Date();
+	var nTime = objDate.getTime() + (objDate.getTimezoneOffset() * 60000) + (offSet * 3600000);
+	objDate.setTime(nTime);
+	
+	  var s =
+    this.fn_getDate(objDate.getFullYear(), 4) + '-' +
+    this.fn_getDate(objDate.getMonth() + 1, 2) + '-' +
+    this.fn_getDate(objDate.getDate(), 2) + ' ' +
+
+    this.fn_getDate(objDate.getHours(), 2) + ':' +
+    this.fn_getDate(objDate.getMinutes(), 2) + ':' +
+    this.fn_getDate(objDate.getSeconds(), 2);
+	
+  return s;
+}
+
+this.fn_getDate = function(n, digits) 
+{
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+this.sample_grid_80_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.setTimer(0, 1000);
+};
+]]></Script>
+  </Form>
+</FDL>

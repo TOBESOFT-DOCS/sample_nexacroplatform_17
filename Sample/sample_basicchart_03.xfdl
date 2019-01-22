@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_basicchart_03" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BasicChart id="BasicChart00" taborder="0" left="20" top="53" width="510" height="295" binddataset="Dataset00" categorycolumn="bind:age" stacktype="none" rotateaxis="true" bargrouping="false" border="1px solid darkblue">
+          <Contents><![CDATA[{
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"markertextgap": "5"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"ticklinestyle": "0px solid",
+		"visible": "true",
+		"axislinestyle": "0px solid",
+		"titletextalign": "middle"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"titletext": "valueaxis",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"ticks": "1",
+			"visible": "false",
+			"boardlinevisible": "true"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "Males",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Males",
+			"itemtextmask": "##%",
+			"itemtexttype": "text",
+			"stacktype": "none",
+			"barlinestyle": "1px solid #1abd9c",
+			"barfillstyle": "#1abd9c"
+		},
+		{
+			"id": "series1",
+			"titletext": "Females",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Females",
+			"itemtextmask": "##%",
+			"itemtexttype": "text",
+			"barlinestyle": "1px solid #1a85be",
+			"barfillstyle": "#1a85be"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+        <CheckBox id="CheckBox00" taborder="1" text="rotateaxis" left="20" top="20" width="100" height="20" value="true" onchanged="CheckBox00_onchanged"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="age" type="STRING" size="256"/>
+          <Column id="Males" type="INT" size="256"/>
+          <Column id="Females" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="age">0-10</Col>
+            <Col id="Males">-40</Col>
+            <Col id="Females">60</Col>
+          </Row>
+          <Row>
+            <Col id="age">10-20</Col>
+            <Col id="Males">-35</Col>
+            <Col id="Females">65</Col>
+          </Row>
+          <Row>
+            <Col id="age">20-30</Col>
+            <Col id="Males">-50</Col>
+            <Col id="Females">50</Col>
+          </Row>
+          <Row>
+            <Col id="age">30-40</Col>
+            <Col id="Males">-45</Col>
+            <Col id="Females">55</Col>
+          </Row>
+          <Row>
+            <Col id="age">40-50</Col>
+            <Col id="Males">-50</Col>
+            <Col id="Females">50</Col>
+          </Row>
+          <Row>
+            <Col id="age">50-60</Col>
+            <Col id="Males">-45</Col>
+            <Col id="Females">55</Col>
+          </Row>
+          <Row>
+            <Col id="age">60-70</Col>
+            <Col id="Males">-30</Col>
+            <Col id="Females">70</Col>
+          </Row>
+          <Row>
+            <Col id="age">70-</Col>
+            <Col id="Females">35</Col>
+            <Col id="Males">-65</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.CheckBox00_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	this.BasicChart00.set_rotateaxis(e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

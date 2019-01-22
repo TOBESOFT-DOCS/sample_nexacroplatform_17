@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_29" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="32" top="40" width="560" height="360" right="" bottom="" binddataset="Dataset00" autofittype="col" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="none" fillareatype="none" selecttype="cell" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body" border="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="160"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="160"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24"/>
+                <Row size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" text="ID" border=""/>
+                <Cell col="2" rowspan="4" text="Contact" border=""/>
+                <Cell col="3" rowspan="2" text="Mail" border=""/>
+                <Cell col="4" rowspan="2">
+                  <Cell text="Primary" textAlign="center"/>
+                  <Cell row="1" text="Secondary" textAlign="center"/>
+                </Cell>
+                <Cell row="1" rowspan="3" text="Name" border=""/>
+                <Cell row="1" col="1" rowspan="3">
+                  <Cell text="First" textAlign="center"/>
+                  <Cell row="1" text="Middle" textAlign="center"/>
+                  <Cell row="2" text="Last" textAlign="center"/>
+                </Cell>
+                <Cell row="2" col="3" rowspan="2" text="Tel." border=""/>
+                <Cell row="2" col="4" rowspan="2">
+                  <Cell text="Mobile" textAlign="center"/>
+                  <Cell row="1" text="Office" textAlign="center"/>
+                </Cell>
+              </Band>
+              <Band id="body">
+                <Cell colspan="2" text="bind:ID" border=""/>
+                <Cell col="2" rowspan="4" text="Contact" border=""/>
+                <Cell col="3" rowspan="2" text="Mail" border=""/>
+                <Cell col="4" rowspan="2" border="">
+                  <Cell text="bind:Mail_P" border="1px dotted black , 1px dotted black , 1px dotted black , 1px dotted black"/>
+                  <Cell row="1" text="bind:Mail_S" border="1px dotted black , 1px dotted black , 1px dotted black , 1px dotted black"/>
+                </Cell>
+                <Cell row="1" rowspan="3" text="Name" border="" textAlign=""/>
+                <Cell row="1" col="1" rowspan="3">
+                  <Cell text="bind:First" border="1px dotted black , 1px dotted black , 1px dotted black , 1px dotted black"/>
+                  <Cell row="1" text="bind:Middle" border="1px dotted black , 1px dotted black , 1px dotted black , 1px dotted black"/>
+                  <Cell row="2" text="bind:Last" border="1px dotted black , 1px dotted black , 1px dotted black , 1px dotted black"/>
+                </Cell>
+                <Cell row="2" col="3" rowspan="2" text="Tel." border=""/>
+                <Cell row="2" col="4" rowspan="2" border="">
+                  <Cell text="bind:Tel_M" border="1px dotted black , 1px dotted black , 1px dotted black , 1px dotted black"/>
+                  <Cell row="1" text="bind:Tel_O" border="1px dotted black , 1px dotted black , 1px dotted black , 1px dotted black"/>
+                </Cell>
+              </Band>
+            </Format>
+            <Format id="format00">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+                <Cell col="1" text="Salary"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name" textAlign="left"/>
+                <Cell col="1" text="bind:Salary" displaytype="currency" textAlign="right"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_getCellProperty" taborder="4" text="getCellProperty" left="32" top="424" width="120" height="32" right="" bottom="" font="8pt &quot;Arial&quot;" onclick="btn_getCellProperty_onclick"/>
+        <Button id="btn_setCellProperty00" taborder="4" text="setCellProperty" left="164" top="424" width="120" height="32" right="" bottom="" font="8pt &quot;Arial&quot;" onclick="btn_setCellProperty_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="ID" type="STRING" size="256"/>
+          <Column id="First" type="STRING" size="256"/>
+          <Column id="Middle" type="STRING" size="256"/>
+          <Column id="Last" type="STRING" size="256"/>
+          <Column id="Mail_P" type="STRING" size="256"/>
+          <Column id="Mail_S" type="STRING" size="256"/>
+          <Column id="Tel_M" type="STRING" size="256"/>
+          <Column id="Tel_O" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="ID">JOHNSON</Col>
+            <Col id="First">John</Col>
+            <Col id="Middle"/>
+            <Col id="Last">Doe</Col>
+            <Col id="Mail_P">john@email.com</Col>
+            <Col id="Mail_S">john@email.org</Col>
+            <Col id="Tel_M">1012345678</Col>
+            <Col id="Tel_O"/>
+          </Row>
+          <Row>
+            <Col id="ID">JJ</Col>
+            <Col id="First">Jane</Col>
+            <Col id="Middle"/>
+            <Col id="Last">Roe</Col>
+            <Col id="Tel_M">1056781234</Col>
+            <Col id="Tel_O">256781234</Col>
+            <Col id="Mail_P">jane@email.com</Col>
+            <Col id="Mail_S"/>
+          </Row>
+          <Row>
+            <Col id="First">Dick</Col>
+            <Col id="Last">Public</Col>
+            <Col id="Middle">Fitzgerald</Col>
+            <Col id="Tel_M">1012345678</Col>
+            <Col id="Tel_O">212345678</Col>
+            <Col id="Mail_P">dick@email.com</Col>
+            <Col id="Mail_S">dick@email.org</Col>
+            <Col id="ID">jaspers</Col>
+          </Row>
+          <Row>
+            <Col id="First">Robert</Col>
+            <Col id="Last">Smith</Col>
+            <Col id="Middle">Walker</Col>
+            <Col id="Tel_M"/>
+            <Col id="Tel_O">256781234</Col>
+            <Col id="Mail_P">robert@email.com</Col>
+            <Col id="Mail_S">robert@email.org</Col>
+            <Col id="ID">son</Col>
+          </Row>
+          <Row>
+            <Col id="First">Jack</Col>
+            <Col id="Last">Robertson</Col>
+            <Col id="Tel_M">1012345678</Col>
+            <Col id="Tel_O">212345678</Col>
+            <Col id="Mail_P">jack@email.com</Col>
+            <Col id="Mail_S"/>
+            <Col id="ID">Daniel</Col>
+          </Row>
+          <Row>
+            <Col id="First">Billy</Col>
+            <Col id="Last">Cook</Col>
+            <Col id="Tel_M">1056781234</Col>
+            <Col id="Tel_O"/>
+            <Col id="Mail_P">bill@email.com</Col>
+            <Col id="Mail_S">bill@email.org</Col>
+            <Col id="ID">BILLBILL</Col>
+          </Row>
+          <Row>
+            <Col id="First">Elizabeth</Col>
+            <Col id="Last">Soap</Col>
+            <Col id="Tel_M">1012345678</Col>
+            <Col id="Tel_O"/>
+            <Col id="Mail_P">elizabeth@email.com</Col>
+            <Col id="Mail_S">elizabeth@email.org</Col>
+            <Col id="ID">mixnut</Col>
+          </Row>
+          <Row>
+            <Col id="First">Harry</Col>
+            <Col id="Last">Blow</Col>
+            <Col id="Middle">Hussein</Col>
+            <Col id="Tel_M">1056781234</Col>
+            <Col id="Tel_O">256781234</Col>
+            <Col id="Mail_P">harry@email.com</Col>
+            <Col id="ID">sync</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.btn_getCellProperty_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    var varProperty = this.Grid00.getSubCellProperty("body", 5, 0, "background");    
+    
+    alert("Background value of first name sub cell: " + varProperty);
+};
+
+
+this.btn_setCellProperty_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    var bRet = this.Grid00.setSubCellProperty("body", 5, 0, "background", "khaki");
+};]]></Script>
+  </Form>
+</FDL>

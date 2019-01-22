@@ -1,0 +1,1974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[/*
+nexacro17 Application Theme
+default.xtheme
+last-modified : 2018-08-06
+*/
+
+/**********************Frame/Form***********************************************/
+.Form
+{
+	font : 12px Gulim;
+	color : #555555;
+	background : #ffffff;
+	-nexa-border : 0px none;
+}
+
+.Form[userstatus=contents]
+{
+	background : transparent;
+}
+
+.Form[status=disabled]
+{
+	color : #999999;
+}
+
+.MainFrame,.ChildFrame,.FrameSet,.VFrameSet,.HFrameSet,.TileFrameSet
+{
+	/*별도스타일없음*/
+}
+
+.MainFrame .titlebar .titleicon
+{
+	-nexa-icon : URL('theme://images/titlebar_icon_nexacro17.ico');
+}
+
+
+/**********************Button***********************************************/
+/**********************FileDownload***********************************************/
+/**********************FileUpload***********************************************/
+.Button,.FileDownload
+{
+	background : linear-gradient(to top,#eaeaea,#ffffff);
+	-nexa-border : 1px solid #c2c2c2;
+}
+
+.ButtonControl
+{
+	background : transparent;
+	-nexa-border : 0px none;
+}
+
+.FileUpload
+{
+	/*별도스타일없음*/
+}
+
+.FileUpload .fileuploaditem
+{
+	/*별도스타일없음*/
+}
+
+.FileUpload .fileuploaditem[status=disabled]
+{
+	color : #999999;
+}
+
+.FileUpload .fileuploaditem .fileuploaditembutton
+{
+	background : linear-gradient(to top,#eaeaea,#ffffff);
+	-nexa-border : 1px solid #c2c2c2;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.Button[status=mouseover],.Button[status=focused],.FileDownload[status=mouseover],.FileDownload[status=focused],.FileUpload .fileuploaditem .fileuploaditembutton[status=mouseover],.FileUpload .fileuploaditem .fileuploaditembutton[status=focused]
+{
+	background : linear-gradient(to top,#e7e7e7,#fefefe);
+	-nexa-border : 1px solid #a0a0a0;
+}
+
+.Button[userstatus=pushed],.Button[userstatus=selected],.FileDownload[userstatus=pushed],.FileUpload .fileuploaditem .fileuploaditembutton[userstatus=pushed],.FileUpload .fileuploaditem .fileuploaditembutton[userstatus=selected]
+{
+	background : linear-gradient(to top,#fefefe,#e9e9e9);
+}
+
+.Button[status=disabled],.FileDownload[status=disabled],.FileUpload .fileuploaditem .fileuploaditembutton[status=disabled]
+{
+	color : #bbbbbb;
+	background : #f5f5f5;
+	-nexa-border : 1px solid #d9d9d9;
+}
+
+
+/**********************Calendar***********************************************/
+.Calendar,.CalendarControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+.Calendar[status=mouseover],.CalendarControl[status=mouseover],.Calendar[status=focused],.CalendarControl[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.Calendar[status=readonly],.CalendarControl[status=readonly]
+{
+	background : #efefef;
+}
+
+.Calendar[status=disabled],.CalendarControl[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+.Calendar .calendaredit,.CalendarControl .calendaredit
+{
+	/*MaskEditControl과 동일*/
+}
+
+.Calendar .dropbutton,.CalendarControl .dropbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calendar.png');
+}
+
+.Calendar .dropbutton[status=disabled],.CalendarControl .dropbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calendar_D.png');
+}
+
+.Calendar .calendarspinupbutton,.CalendarControl .calendarspinupbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spinup.png');
+}
+
+.Calendar .calendarspinupbutton[status=mouseover],.CalendarControl .calendarspinupbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spinup_O.png');
+}
+
+.Calendar .calendarspinupbutton[userstatus=pushed],.CalendarControl .calendarspinupbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spinup_P.png');
+}
+
+.Calendar .calendarspinupbutton[status=disabled],.CalendarControl .calendarspinupbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spinup_D.png');
+}
+
+.Calendar .calendarspindownbutton,.CalendarControl .calendarspindownbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spindown.png');
+}
+
+.Calendar .calendarspindownbutton[status=mouseover],.CalendarControl .calendarspindownbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spindown_O.png');
+}
+
+.Calendar .calendarspindownbutton[userstatus=pushed],.CalendarControl .calendarspindownbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spindown_P.png');
+}
+
+.Calendar .calendarspindownbutton[status=disabled],.CalendarControl .calendarspindownbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spindown_D.png');
+}
+
+
+/**********************CheckBox***********************************************/
+.CheckBox,.CheckBoxControl
+{
+	-nexa-icon : URL('theme://images/chk_WF_Box.png');
+	-nexa-text-padding : 0px 0px 0px 6px;
+}
+
+.CheckBox[status=mouseover],.CheckBoxControl[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/chk_WF_Box_O.png');
+}
+
+.CheckBox[status=readonly],.CheckBoxControl[status=readonly]
+{
+	-nexa-icon : URL('theme://images/chk_WF_Box_D.png');
+}
+
+.CheckBox[userstatus=selected],.CheckBoxControl[userstatus=selected]
+{
+	-nexa-icon : URL('theme://images/chk_WF_Box_S.png');
+}
+
+.CheckBox[status=disabled],.CheckBoxControl[status=disabled]
+{
+	color : #999999;
+	-nexa-icon : URL('theme://images/chk_WF_Box_D.png');
+}
+
+.CheckBox[status=disabled][userstatus=selected],.CheckBoxControl[status=disabled][userstatus=selected]
+{
+	color : #999999;
+	-nexa-icon : URL('theme://images/chk_WF_Box_DS.png');
+}
+
+
+/**********************Combo***********************************************/
+.Combo,.ComboControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+.Combo[status=mouseover],.Combo[status=focused],.ComboControl[status=mouseover],.ComboControl[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.Combo[status=readonly],.ComboControl[status=readonly]
+{
+	background : #efefef;
+}
+
+.Combo[status=disabled],.ComboControl[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+.Combo .comboedit,.ComboControl .comboedit
+{
+	/*EditControl과 동일*/
+}
+
+.Combo .dropbutton,.ComboControl .dropbutton
+{
+	-nexa-padding : 1px 2px 0px 0px;
+	-nexa-icon : URL('theme://images/cmb_WF_Drop.png');
+}
+
+.Combo .dropbutton[status=mouseover],.Combo .dropbutton[status=focused],.ComboControl .dropbutton[status=mouseover],.ComboControl .dropbutton[status=focused]
+{
+	-nexa-icon : URL('theme://images/cmb_WF_Drop_O.png');
+}
+
+.Combo .dropbutton[userstatus=pushed],.Combo .dropbutton[userstatus=selected],.ComboControl .dropbutton[userstatus=pushed],.ComboControl .dropbutton[userstatus=selected]
+{
+	-nexa-icon : URL('theme://images/cmb_WF_Drop_P.png');
+}
+
+.Combo .dropbutton[status=disabled],.ComboControl .dropbutton[status=disabled]
+{
+	opacity : 0.50;
+}
+
+.Combo .combolist,.ComboControl .combolist
+{
+	font : 12px Gulim;
+	color : #555555;
+	background : #ffffff;
+	-nexa-border : 1px solid #b1b1b1;
+}
+
+
+/**********************Edit***********************************************/
+.Edit,.FileUpload .fileuploaditem .fileuploaditemedit
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.EditControl
+{
+	background : transparent;
+	-nexa-border : 0px none;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.Edit[status=mouseover],.Edit[status=focused],.FileUpload .fileuploaditem .fileuploaditemedit[status=mouseover],.FileUpload .fileuploaditem .fileuploaditemedit[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.Edit[status=readonly]
+{
+	background : #efefef;
+}
+
+.Edit[status=disabled],.FileUpload .fileuploaditem .fileuploaditemedit[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+
+/**********************Grid***********************************************/
+.Grid
+{
+	background : #ffffff;
+	-nexa-border : 2px solid #125dae, 1px solid #b7b1b2, 1px solid #b7b1b2, 1px solid #b7b1b2;
+}
+
+/*-----------------------------------head------------------------------------*/
+.Grid .head .row .cell
+{
+	font : bold 12px Gulim;
+	color : #2f2f2f;
+	background : linear-gradient(to top, #eff0f0, #f9fafa);
+	-nexa-border : 1px solid #cacaca;
+	-nexa-padding : 4px 4px 4px 4px;
+	-nexa-text-align : center;
+}
+
+.Grid .head .row .cell[status=disabled]
+{
+	color : #999999;
+}
+
+.Grid .body .row .cell[status=disabled][userstatus=selected]
+{
+	background : #f0f0f0;
+}
+/*-----------------------------------headcellbutton:ButtonControl과 동일------------------------------------*/
+/*-----------------------------------headcellcalendar:CalendarControl과 동일------------------------------------*/
+/*-----------------------------------headcellcheckbox:CheckBoxControl과 동일------------------------------------*/
+/*-----------------------------------headcellcombo:ComboControl과 동일------------------------------------*/
+/*-----------------------------------headcelledit:EditControl과 동일------------------------------------*/
+/*-----------------------------------headcellexpandbutton------------------------------------*/
+/*-----------------------------------headcellimage:별도스타일없음------------------------------------*/
+/*-----------------------------------headcellmaskedit:MaskEditControl과 동일------------------------------------*/
+/*-----------------------------------headcellprogressbar:ProgressBarControl과 동일------------------------------------*/
+/*-----------------------------------headcelltextarea:TextAreaControl과 동일------------------------------------*/
+/*-----------------------------------headcelltreeitem:------------------------------------*/
+
+/*-----------------------------------body------------------------------------*/
+.Grid .body .row .cell
+{
+	color : #666666;
+	-nexa-border : 1px solid #dbdee2;
+	-nexa-padding : 4px 4px 4px 4px;
+}
+
+.Grid .body .row .cell[status=mouseover]
+{
+	background : #f6f6f6;
+}
+
+.Grid .body .row .cell[userstatus=selected]
+{
+	background : #f2f9ff;
+}
+
+.Grid .body .row .cell[status=disabled]
+{
+	color : #999999;
+}
+
+/*-----------------------------------subcell:cell과 동일------------------------------------*/
+.Grid .body .row .cell .subcell
+{
+	color : #666666;
+	-nexa-border : 1px solid #dbdee2;
+	-nexa-padding : 4px 4px 4px 4px;
+}
+.Grid .body .row .cell .subcell[status=mouseover]
+{
+	background : #f6f6f6;
+}
+.Grid .body .row .cell .subcell[status=disabled]
+{
+	color : #999999;
+}
+.Grid .body .row .cell .subcell[userstatus=selected]
+{
+	background : #f2f9ff;
+}
+.Grid .body .row .cell .subcell[userstatus=blinked]
+{
+    background : #125dae;
+	color : #ffffff;
+}
+/*-----------------------------------bodycellbutton:ButtonControl과 동일------------------------------------*/
+/*-----------------------------------bodycellcalendar:CalendarControl과 동일------------------------------------*/
+/*-----------------------------------bodycellcheckbox:CheckBoxControl과 동일------------------------------------*/
+/*-----------------------------------bodycellcombo:ComboControl과 동일------------------------------------*/
+/*-----------------------------------bodycelledit:EditControl과 동일------------------------------------*/
+/*-----------------------------------bodycellexpandbutton------------------------------------*/
+/*-----------------------------------bodycellimage:별도스타일없음------------------------------------*/
+/*-----------------------------------bodycellmaskedit:MaskEditControl과 동일------------------------------------*/
+/*-----------------------------------bodycellprogressbar:ProgressBarControl과 동일------------------------------------*/
+/*-----------------------------------bodycelltextarea:TextAreaControl과 동일------------------------------------*/
+/*-----------------------------------bodycelltreeitem:------------------------------------*/
+
+/*-----------------------------------summary------------------------------------*/
+.Grid .summary
+{
+	-nexa-border : 1px solid #c8c1c2, 0px none, 0px none, 0px none;
+}
+
+.Grid .summary .row .cell
+{
+	font : bold 12px Gulim;
+	color : #333333;
+	background : #fdfbe5;
+	-nexa-border : 1px solid #c8c1c2;
+	-nexa-text-align : center;
+}
+
+/*-----------------------------------summarycellbutton:ButtonControl과 동일------------------------------------*/
+/*-----------------------------------summarycellcalendar:CalendarControl과 동일------------------------------------*/
+/*-----------------------------------summarycellcheckbox:CheckBoxControl과 동일------------------------------------*/
+/*-----------------------------------summarycellcombo:ComboControl과 동일------------------------------------*/
+/*-----------------------------------summarycelledit:EditControl과 동일------------------------------------*/
+/*-----------------------------------summarycellexpandbutton------------------------------------*/
+/*-----------------------------------summarycellimage:별도스타일없음------------------------------------*/
+/*-----------------------------------summarycellmaskedit:MaskEditControl과 동일------------------------------------*/
+/*-----------------------------------summarycellprogressbar:ProgressBarControl과 동일------------------------------------*/
+/*-----------------------------------summarycelltextarea:TextAreaControl과 동일------------------------------------*/
+/*-----------------------------------summarycelltreeitem:------------------------------------*/
+
+/*-----------------------------------Grid hscrollbar:------------------------------------*/
+.Grid .hscrollbar
+{
+	-nexa-border : 1px solid #b1b1b1, 0px none, 0px none, 0px none;
+}
+
+/*-----------------------------------Grid vscrollbar:------------------------------------*/
+.Grid .vscrollbar
+{
+	-nexa-border : 0px none, 0px none, 0px none, 1px solid #b1b1b1;
+}
+
+
+/*-----------------------------------cellbutton:ButtonControl과 동일------------------------------------*/
+.GridCellControl .cellbutton
+{
+	font : 12px Gulim;
+	color : #555555;
+	background : linear-gradient(to top,#eaeaea,#ffffff);
+	-nexa-border : 1px solid #c2c2c2;
+}
+
+.GridCellControl .cellbutton[status=mouseover],.GridCellControl .cellbutton[status=focused]
+{
+	background : linear-gradient(to top,#e7e7e7,#fefefe);
+	-nexa-border : 1px solid #a0a0a0;
+}
+
+.GridCellControl .cellbutton[userstatus=pushed],.GridCellControl .cellbutton[userstatus=selected]
+{
+	background : linear-gradient(to top,#fefefe,#e9e9e9);
+}
+
+.GridCellControl .cellbutton[status=disabled]
+{
+	color : #bbbbbb;
+	background : #f5f5f5;
+	-nexa-border : 1px solid #d9d9d9;
+}
+
+/*-----------------------------------cellcalendar:CalendarControl과 동일------------------------------------*/
+.GridCellControl .cellcalendar
+{
+	font : 12px Gulim;
+}
+
+/*-----------------------------------cellcheckbox:CheckBoxControl과 동일------------------------------------*/
+.GridCellControl .cellcheckbox
+{
+	font : 12px Gulim;
+}
+
+/*-----------------------------------cellcombo:ComboControl과 동일------------------------------------*/
+.GridCellControl .cellcombo
+{
+	font : 12px Gulim;
+}
+
+.GridCellControl .cellcombo .combolist
+{
+	font : 12px Gulim;
+	color : #555555;
+}
+
+.GridCellControl .cellcombo .combolist .listboxitem[status=mouseover]
+{
+	background : #e8e9ed;
+}
+
+/*-----------------------------------celledit:EditControl과 동일------------------------------------*/
+.GridCellControl .celledit
+{
+	font : 12px Gulim;
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.GridCellControl .celledit[status=mouseover],.GridCellControl .celledit[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.GridCellControl .celledit[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+/*-----------------------------------cellexpandbutton------------------------------------*/
+.GridCellControl .cellexpandbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Grdexpand.png');
+}
+
+/*-----------------------------------cellimage:별도스타일없음------------------------------------*/
+
+/*-----------------------------------cellmaskedit:MaskEditControl과 동일------------------------------------*/
+.GridCellControl .cellmaskedit
+{
+	font : 12px Gulim;
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.GridCellControl .cellmaskedit[status=mouseover],.GridCellControl .cellmaskedit[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.GridCellControl .cellmaskedit[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+/*-----------------------------------cellprogressbar:ProgressBarControl과 동일------------------------------------*/
+.GridCellControl .cellprogressbar
+{
+	font : 12px Gulim;
+}
+
+/*-----------------------------------celltextarea:TextAreaControl과 동일------------------------------------*/
+.GridCellControl .celltextarea
+{
+	font : 12px Gulim;
+}
+
+/*-----------------------------------celltreeitem:------------------------------------*/
+.GridCellControl .celltreeitem .treeitemtext
+{
+	font : 12px Gulim;
+	color : #666666;
+}
+
+.GridCellControl .celltreeitem .treeitemtext[status=disabled]
+{
+	color : #999999;
+}
+
+.GridCellControl .celltreeitem .treeitembutton[userstatus=expand]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Treeexpand.png');
+}
+
+.GridCellControl .celltreeitem .treeitembutton[userstatus=collapse]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Treecollapse.png');
+}
+
+.GridCellControl .celltreeitem .treeitemimage
+{
+	-nexa-icon : URL('theme://images/img_WF_Treeitem.png');
+}
+
+.GridCellControl .celltreeitem .treeitemimage[userstatus=expand]
+{
+	-nexa-icon : URL('theme://images/img_WF_Treeexpand.png');
+}
+
+.GridCellControl .celltreeitem .treeitemimage[userstatus=collapse]
+{
+	-nexa-icon : URL('theme://images/img_WF_Treecollapse.png');
+}
+
+.GridCellControl .celltreeline
+{
+	-nexa-border : 1px dotted #909090;
+}
+
+.Grid .body .row .cell[userstatus=blinked]
+{
+    background : #125dae;
+	color : #ffffff;
+}
+
+.Grid .body .selection
+{
+	-nexa-border	: 2px solid #125dae;
+}
+
+/**********************GroupBox***********************************************/
+.GroupBox
+{
+	/*별도스타일없음*/
+}
+
+.GroupBox .groupboxcontents
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d6d4d5;
+}
+
+.GroupBox .groupboxcontents[status=disabled]
+{
+	background : #efefef;
+}
+
+.GroupBox .groupboxtitle
+{
+	background : #ffffff;
+	-nexa-padding : 0px 4px 0px 4px;
+}
+
+.GroupBox .groupboxtitle[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+
+/**********************ImageViewer***********************************************/
+.ImageViewer
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+.ImageViewer[status=disabled]
+{
+	background : #f2f2f2;
+}
+
+.ImageViewer .imagetext
+{
+	-nexa-text-align : center;
+}
+
+.ImageViewer .imagetext[status=disabled]
+{
+	color : #999999;
+}
+
+
+/**********************ListBox***********************************************/
+.ListBox,.ListBoxControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+.ListBox[status=mouseover],.ListBox[status=focused],.ListBoxControl[status=mouseover],.ListBoxControl[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.ListBox[status=disabled],.ListBoxControl[status=disabled]
+{
+	background : #efefef;
+}
+
+.ListBox .listboxitem,.ListBoxControl .listboxitem
+{
+	color : #555555;
+	-nexa-padding : 2px 9px 3px 9px;
+}
+
+.ListBox .listboxitem[status=mouseover],.ListBoxControl .listboxitem[status=mouseover]
+{
+	background : #e7e9ed;
+}
+
+.ListBox .listboxitem[userstatus=selected],.ListBoxControl .listboxitem[userstatus=selected]
+{
+	color : #ffffff;
+	background : #125dae;
+}
+
+.ListBox .listboxitem[status=disabled],.ListBoxControl .listboxitem[status=disabled]
+{
+	/*color : #999999;*/
+	opacity : 0.50;
+}
+
+
+/**********************MaskEdit***********************************************/
+.MaskEdit
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.MaskEditControl
+{
+	background : transparent;
+	-nexa-border : 0px none;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.MaskEdit[status=mouseover],.MaskEdit[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.MaskEdit[status=readonly]
+{
+	background : #efefef;
+}
+
+.MaskEdit[status=disabled]
+{
+	color : #999999;
+	background : #f2f2f2;
+}
+
+
+/**********************Menu***********************************************/
+.Menu
+{
+	background : linear-gradient(to top, #1059a8, #125dae);
+}
+
+.Menu[status=disabled]
+{
+	background : #94a9bf;
+}
+
+.Menu .prevbutton
+{
+	-nexa-padding : 0px 5px 0px 15px;
+	-nexa-icon : URL('theme://images/btn_WF_Menuprev.png');
+}
+
+.Menu .prevbutton[status=mouseover],.Menu .prevbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Menuprev_O.png');
+}
+
+.Menu .prevbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Menuprev_D.png');
+}
+
+.Menu .nextbutton
+{
+	-nexa-padding : 0px 15px 0px 5px;
+	-nexa-icon : URL('theme://images/btn_WF_Menunext.png');
+}
+
+.Menu .nextbutton[status=mouseover],.Menu .nextbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Menunext_O.png');
+}
+
+.Menu .nextbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Menunext_D.png');
+}
+
+.Menu .menuitem
+{
+	font : bold 13px Gulim;
+	color : #ffffff;
+	-nexa-padding : 0px 30px 0px 30px;
+}
+
+.Menu .menuitem[status=disabled]
+{
+	color : #c7d4e2;
+}
+
+.Menu .menuitem[status=mouseover],.Menu .menuitem[userstatus=selected]
+{
+	background : URL('theme://images/img_WF_Menu_O.png') no-repeat center top;
+}
+
+.Menu .menupopupmenu
+{
+	font : 12px Gulim;
+	color : #555555;
+	background : #0753a5;
+	-nexa-border : 1px solid #034389;
+}
+
+.Menu .menupopupmenu .prevbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenuprev.png');
+}
+
+.Menu .menupopupmenu .prevbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenuprev_O.png');
+}
+
+.Menu .menupopupmenu .prevbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenuprev_D.png');
+}
+
+.Menu .menupopupmenu .nextbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenunext.png');
+}
+
+.Menu .menupopupmenu .nextbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenunext_O.png');
+}
+
+.Menu .menupopupmenu .nextbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenunext_D.png');
+}
+
+.Menu .menupopupmenu .popupmenuitem
+{
+	color : #c3e0ff;
+	-nexa-border : 0px none, 0px none, 1px solid #2065ae, 0px none;
+	-nexa-padding : 3px 8px 3px 8px;
+}
+
+.Menu .menupopupmenu .popupmenuitem[status=mouseover],.Menu .menupopupmenu .popupmenuitem[status=focused],.Menu .menupopupmenu .popupmenuitem[userstatus=selected]
+{
+	color : #ffffff;
+	background : transparent;
+}
+
+.Menu .menupopupmenu .popupmenuitem[status=disabled]
+{
+	color : #2665af;
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemcheckbox
+{
+	-nexa-padding : 0px 7px 0px 0px;
+	-nexa-icon : URL('theme://images/chk_WF_Popupmenu_O.png');
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemcheckbox[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/chk_WF_Popupmenu_O.png');
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemtext
+{
+	color : #c3e0ff;
+	-nexa-padding : 0px 20px 0px 0px;
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemtext[status=mouseover]
+{
+	color : #ffffff;
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemtext[status=disabled]
+{
+	color : #2665af;
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemhotkeytext
+{
+	color : #6d95cc;
+	-nexa-padding : 0px 7px 0px 0px;
+	-nexa-text-align : right;
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemhotkeytext[status=mouseover]
+{
+	color : #ffffff;
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemhotkeytext[status=disabled]
+{
+	color : #4577b9;
+}
+
+.Menu .menupopupmenu .popupmenuitem .popupmenuitemexpandimage
+{
+	-nexa-padding : 0px 0px 2px 0px;
+	-nexa-icon : URL('theme://images/btn_WF_Popupexpand.png');
+}
+/**********************Plugin***********************************************/
+.Plugin,.PluginControl
+{
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+
+/**********************PopupMenu***********************************************/
+.PopupMenu,.PopupMenuControl
+{
+	font : 12px Gulim;
+	color : #555555;
+	background : #ffffff;
+	-nexa-border : 1px solid #b5b5b5;
+}
+
+.PopupMenu .prevbutton,.PopupMenuControl .prevbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenuprev2.png');
+}
+
+.PopupMenu .prevbutton[status=mouseover],.PopupMenuControl .prevbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenuprev2_O.png');
+}
+
+.PopupMenu .prevbutton[status=disabled],.PopupMenuControl .prevbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenuprev2_D.png');
+}
+
+.PopupMenu .nextbutton,.PopupMenuControl .nextbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenunext2.png');
+}
+
+.PopupMenu .nextbutton[status=mouseover],.PopupMenuControl .nextbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenunext2_O.png');
+}
+
+.PopupMenu .nextbutton[status=disabled],.PopupMenuControl .nextbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popmenunext2_D.png');
+}
+
+.PopupMenu .popupmenuitem,.PopupMenuControl .popupmenuitem
+{
+	color : #555555;
+	-nexa-padding : 3px 9px 3px 9px;
+}
+
+.PopupMenu .popupmenuitem[userstatus=selected],.PopupMenuControl .popupmenuitem[userstatus=selected]
+{
+	color : #ffffff;
+	background : #125dae;
+}
+
+.PopupMenu .popupmenuitem[status=mouseover],.PopupMenu .popupmenuitem[status=focused],.PopupMenuControl .popupmenuitem[status=mouseover],.PopupMenuControl .popupmenuitem[status=focused]
+{
+	background : #e7e9ed;
+}
+
+.PopupMenu .popupmenuitem[status=disabled],.PopupMenuControl .popupmenuitem[status=disabled]
+{
+	color : #999999;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemcheckbox,.PopupMenuControl .popupmenuitem .popupmenuitemcheckbox
+{
+	background : URL('theme://images/chk_WF_Box_F.png') no-repeat left center;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemcheckbox[status=mouseover],.PopupMenuControl .popupmenuitem .popupmenuitemcheckbox[status=mouseover]
+{
+	background : URL('theme://images/chk_WF_Box_F.png') no-repeat left center;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemcheckbox[status=disabled],.PopupMenuControl .popupmenuitem .popupmenuitemcheckbox[status=disabled]
+{
+	background : URL('theme://images/chk_WF_Box_D.png') no-repeat left center;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemtext,.PopupMenuControl .popupmenuitem .popupmenuitemtext
+{
+	-nexa-padding : 2px 10px 1px 4px;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext,.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext
+{
+	color : #aaaaaa;
+	-nexa-padding : 0px 7px 0px 0px;
+	-nexa-text-align : right;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext[status=disabled],.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext[status=disabled]
+{
+	color : #4577b9;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemexpandimage,.PopupMenuControl .popupmenuitem .popupmenuitemexpandimage
+{
+	-nexa-icon : URL('theme://images/btn_WF_Popupexpand2.png');
+}
+
+
+/**********************ProgressBar***********************************************/
+.ProgressBar,.ProgressBarControl
+{
+	background : linear-gradient(to top, #f0f0f0, #e7e7e7);
+	-nexa-border : 1px solid #aeaeae, 1px solid #d2d0d1, 1px solid #d2d0d1, 1px solid #d2d0d1;
+}
+
+.ProgressBar .progressbaritem,.ProgressBarControl .progressbaritem
+{
+	background : #125dae;
+}
+
+.ProgressBar .progressbaritem[status=disabled],.ProgressBarControl .progressbaritem[status=disabled]
+{
+	background : #b5b5b5;
+}
+
+.ProgressBar .progressbartext,.ProgressBarControl .progressbartext
+{
+	color : #ffffff;
+	-nexa-text-align : center;
+}
+
+
+/**********************Radio***********************************************/
+.Radio
+{
+	/*별도스타일없음*/
+}
+
+.Radio .radioitem
+{
+	-nexa-icon : URL('theme://images/rdo_WF_Radio.png');
+	-nexa-text-padding : 0px 0px 0px 5px;
+}
+
+.Radio .radioitem[userstatus=selected]
+{
+	-nexa-icon : URL('theme://images/rdo_WF_Radio_S.png');
+}
+
+.Radio .radioitem[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/rdo_WF_Radio_O.png');
+}
+
+.Radio .radioitem[status=disabled]
+{
+	-nexa-icon : URL('theme://images/rdo_WF_Radio_D.png');
+}
+
+.Radio .radioitem[status=disabled][userstatus=selected]
+{
+	-nexa-icon : URL('theme://images/rdo_WF_Radio_DS.png');
+}
+
+
+/**********************Sketch***********************************************/
+.Sketch
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+.Sketch[status=disabled]
+{
+	background : #efefef;
+}
+
+
+/**********************Spin***********************************************/
+.Spin
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+.Spin[status=mouseover],.Spin[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.Spin[status=readonly]
+{
+	background : #efefef;
+}
+
+.Spin[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+.Spin .spinedit
+{
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-text-align : right;
+}
+
+.Spin .spinedit[status=disabled]
+{
+	-nexa-padding : 1px 2px 0px 9px;
+}
+
+.Spin .spinupbutton
+{
+	-nexa-padding : 1px 0px 0px 0px;
+	-nexa-icon : URL('theme://images/btn_WF_Spinup.png');
+}
+
+.Spin .spinupbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spinup_O.png');
+}
+
+.Spin .spinupbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spinup_P.png');
+}
+
+.Spin .spinupbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spinup_D.png');
+}
+
+.Spin .spindownbutton
+{
+	-nexa-padding : 0px 0px 2px 0px;
+	-nexa-icon : URL('theme://images/btn_WF_Spindown.png');
+}
+
+.Spin .spindownbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spindown_O.png');
+}
+
+.Spin .spindownbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spindown_P.png');
+}
+
+.Spin .spindownbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Spindown_D.png');
+}
+
+
+/**********************Static***********************************************/
+.Static,.StaticControl
+{
+	/*별도스타일없음*/
+}
+
+.Static[status=disabled],.StaticControl[status=disabled]
+{
+	color : #999999;
+}
+
+
+/**********************TextArea***********************************************/
+.TextArea,.TextAreaControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+	-nexa-padding : 9px 9px 9px 9px;
+}
+
+.TextArea[status=mouseover],.TextArea[status=focused],.TextAreaControl[status=mouseover],.TextAreaControl[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.TextArea[status=readonly],.TextAreaControl[status=readonly]
+{
+	background : #efefef;
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+.TextArea[status=disabled],.TextAreaControl[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+
+/**********************WebBrowser***********************************************/
+.WebBrowser,.WebBrowserControl
+{
+	-nexa-border : 1px solid #d5d5d5;
+}
+
+
+/**********************Div:별도스타일없음***********************************************/
+/**********************PopupDiv:별도스타일없음***********************************************/
+.Div,.PopupDiv
+{
+	/*별도스타일없음*/
+}
+
+
+/**********************Tab***********************************************/
+.Tab
+{
+	/*별도스타일없음*/
+}
+
+.Tab .tabpage
+{
+	-nexa-border : 1px solid #cfcfcf, 0px none, 0px none, 0px none;
+}
+
+.Tab .tabbuttonitem
+{
+	color : #333333;
+	background : linear-gradient(to top, #fcfcfc, #fafafa);
+	-nexa-border : 1px solid #c7c7c7;
+	-nexa-padding : 6px 10px 6px 10px;
+}
+
+.Tab .tabbuttonitem[status=mouseover]
+{
+	-nexa-border : 1px solid #b1b1b1;
+	background : linear-gradient(to top, #dddcdc, #fefefe);
+}
+
+.Tab .tabbuttonitem[status=focused]
+{
+	color : #dee4ef;
+}
+
+.Tab .tabbuttonitem[userstatus=selected],.Tab .tabbuttonitem[status=focused][userstatus=selected]
+{
+	color : #dee4ef;
+	background : #1055a1;
+	-nexa-border : 1px solid #1055a1;
+}
+
+.Tab .tabbuttonitem[status=disabled]
+{
+	color : #ababab;
+	background : #e7e7e7;
+}
+
+.Tab .tabbuttonitem[status=disabled][userstatus=selected]
+{
+	-nexa-border : 1px solid #c7d4e2;
+	background : #94a9bf;
+}
+
+.Tab .tabbuttonitem .tabbuttonitemtext[status=disabled]
+{
+	color : #c8c8c8;
+}
+
+.Tab .tabbuttonitem .extrabutton
+{
+	-nexa-padding : 0px 0px 0px 20px;
+	-nexa-icon : URL('theme://images/btn_WF_Tabextra.png');
+	/*-nexa-icon-position : right;*/
+}
+
+.Tab .tabbuttonitem .extrabutton[userstatus=selected]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Tabextra_S.png';
+}
+
+.Tab .prevbutton
+{
+	-nexa-padding : 0px 8px 10px 0px;
+	-nexa-icon : URL('theme://images/btn_WF_Tabprev.png');
+}
+
+.Tab .prevbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Tabprev_O.png');
+}
+
+.Tab .prevbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Tabprev_D.png');
+}
+
+.Tab .nextbutton
+{
+	-nexa-padding : 0px 0px 10px 8px;
+	-nexa-icon : URL('theme://images/btn_WF_Tabnext.png');
+}
+
+.Tab .nextbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Tabnext_O.png');
+}
+
+.Tab .nextbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Tabnext_D.png');
+}
+
+
+/**********************DatePickerControl***********************************************/
+.DatePickerControl
+{
+	background : #ffffff;
+}
+
+.DatePickerControl .head
+{
+	background : #125dae;
+	-nexa-padding : 5px 0px 0px 0px;
+}
+
+.DatePickerControl .head[status=disabled]
+{
+	background : #94a9bf;
+	color : #cdcdcd;
+}
+
+.DatePickerControl .head .prevbutton
+{
+	-nexa-padding : 0px 0px 0px 10px;
+	-nexa-icon : URL('theme://images/btn_WF_Calprev.png');
+}
+
+.DatePickerControl .head .prevbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calprev_O.png');
+}
+
+.DatePickerControl .head .prevbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calprev_O.png');
+}
+
+.DatePickerControl .head .prevbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calprev.png');
+}
+
+.DatePickerControl .head .nextbutton
+{
+	-nexa-padding : 0px 10px 0px 0px;
+	-nexa-icon : URL('theme://images/btn_WF_Calnext.png');
+}
+
+.DatePickerControl .head .nextbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calnext_O.png');
+}
+
+.DatePickerControl .head .nextbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calnext_O.png');
+}
+
+.DatePickerControl .head .nextbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calnext.png');
+}
+
+.DatePickerControl .head .yearstatic,.DatePickerControl .head .monthstatic
+{
+	font : bold 14px Tahoma;
+	color : #ffffff;
+	-nexa-padding : 0px 10px 0px 0px;
+}
+
+.DatePickerControl .head .yearstatic[status=disabled]
+{
+	color : #c7d4e2;
+}
+
+.DatePickerControl .head .monthstatic[status=disabled]
+{
+	color : #c7d4e2;
+}
+
+.DatePickerControl .head .yearspin .spinedit,.DatePickerControl .head .monthspin .spinedit
+{
+	font : bold 14px Tahoma;
+	color : #ffffff;
+	background : #0042a0;
+}
+
+.DatePickerControl .head .yearspin .spinupbutton,.DatePickerControl .head .monthspin .spinupbutton
+{
+	-nexa-padding : 0px 10px 0px 5px;
+	-nexa-icon : URL('theme://images/btn_WF_Calspinup.png');
+}
+
+.DatePickerControl .head .yearspin .spinupbutton[status=mouseover],.DatePickerControl .head .monthspin .spinupbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calspinup_O.png');
+}
+
+.DatePickerControl .head .yearspin .spinupbutton[userstatus=pushed],.DatePickerControl .head .monthspin .spinupbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calspinup_O.png');
+}
+
+.DatePickerControl .head .yearspin .spinupbutton[status=disabled],.DatePickerControl .head .monthspin .spinupbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calspinup_D.png');
+}
+
+.DatePickerControl .head .yearspin .spindownbutton,.DatePickerControl .head .monthspin .spindownbutton
+{
+	-nexa-padding : 0px 10px 0px 5px;
+	-nexa-icon : URL('theme://images/btn_WF_Calspindown.png');
+}
+
+.DatePickerControl .head .yearspin .spindownbutton[status=mouseover],.DatePickerControl .head .monthspin .spindownbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calspindown_O.png');
+}
+
+.DatePickerControl .head .yearspin .spindownbutton[userstatus=pushed],.DatePickerControl .head .monthspin .spindownbutton[userstatus=pushed]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calspindown_O.png');
+}
+
+.DatePickerControl .head .yearspin .spindownbutton[status=disabled],.DatePickerControl .head .monthspin .spindownbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Calspindown_D.png');
+}
+
+.DatePickerControl .body
+{
+	-nexa-border : 1px solid #125dae, 1px solid #697888, 1px solid #697888, 1px solid #697888;
+}
+
+.DatePickerControl .body[status=disabled]
+{
+	-nexa-border : 1px solid #98a6b5;
+}
+
+.DatePickerControl .body .weekband
+{
+	background : #125dae;
+}
+
+.DatePickerControl .body .weekband[status=disabled]
+{
+	background : #94a9bf;
+}
+
+.DatePickerControl .body .weekitem
+{
+	color : #ffffff;
+}
+
+.DatePickerControl .body .weekitem[userstatus=saturday]
+{
+	color : #48afff;
+}
+
+.DatePickerControl .body .weekitem[userstatus=sunday]
+{
+	color : #ff7986;
+}
+
+.DatePickerControl .body .weekitem[status=disabled]
+{
+	color : #c7d4e2;
+	background : #94a9bf;
+}
+
+.DatePickerControl .body .dayitem
+{
+	color : #333333;
+}
+
+.DatePickerControl .body .dayitem[status=mouseover]
+{
+	color : #ffffff;
+	background : #8da3c7;
+}
+
+.DatePickerControl .body .dayitem[status=focused]
+{
+	color : #ffffff;
+	background : #125dae;
+}
+
+.DatePickerControl .body .dayitem[userstatus=selected]
+{
+	color : #ffffff;
+	background : #125dae;
+}
+
+.DatePickerControl .body .dayitem[userstatus=today]
+{
+	color : #ffffff;
+	background : #e7595c;
+}
+
+.DatePickerControl .body .dayitem[userstatus=saturday]
+{
+	color : #269bee;
+}
+
+.DatePickerControl .body .dayitem[status=mouseover][userstatus=saturday]
+{
+	color : #ffffff;
+}
+
+.DatePickerControl .body .dayitem[userstatus=sunday]
+{
+	color : #ff4c5e;
+}
+
+.DatePickerControl .body .dayitem[status=mouseover][userstatus=sunday]
+{
+	color : #ffffff;
+}
+
+.DatePickerControl .body .dayitem[userstatus=trailingday]
+{
+	color : #989898;
+}
+
+.DatePickerControl .body .dayitem[status=mouseover][userstatus=trailingday]
+{
+	color : #ffffff;
+}
+
+.DatePickerControl .body .dayitem[status=disabled]
+{
+	color : #cdcdcd;
+}
+
+.DatePickerControl .body .dayitem[status=disabled][userstatus=selected]
+{
+	background : #f0f0f0;
+}
+
+
+/**********************ScrollBar***********************************************/
+.VScrollBarControl
+{
+	background : linear-gradient(to left,#ffffff,#f7f7f7);
+	-nexa-border : 1px solid #b1b1b1;
+	-nexa-padding : 2px 2px 2px 2px;
+}
+
+.HScrollBarControl
+{
+	background : linear-gradient(to top,#ffffff,#f7f7f7);
+	-nexa-border : 1px solid #b1b1b1;
+	-nexa-padding : 2px 2px 2px 2px;
+}
+
+.VScrollBarControl .incbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Vinc.png');
+}
+
+.VScrollBarControl .incbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Vinc_O.png');
+}
+
+.VScrollBarControl .incbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Vinc_D.png');
+}
+
+.VScrollBarControl .decbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Vdec.png');
+}
+
+.VScrollBarControl .decbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Vdec_O.png');
+}
+
+.VScrollBarControl .decbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Vdec_D.png');
+}
+
+.HScrollBarControl .incbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Hinc.png');
+}
+
+.HScrollBarControl .incbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Hinc_O.png');
+}
+
+.HScrollBarControl .incbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Hinc_D.png');
+}
+
+.HScrollBarControl .decbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Hdec.png');
+}
+
+.HScrollBarControl .decbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Hdec_O.png');
+}
+
+.HScrollBarControl .decbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Hdec_D.png');
+}
+
+.VScrollBarControl .trackbar,.HScrollBarControl .trackbar
+{
+	background : #dddddd;
+	-nexa-border : 1px solid #c8c8c8;
+}
+
+.VScrollBarControl .trackbar[userstatus=pushed],.VScrollBarControl .trackbar[status=focused],.VScrollBarControl .trackbar[userstatus=selected],.HScrollBarControl .trackbar[userstatus=pushed],.HScrollBarControl .trackbar[status=focused],.HScrollBarControl .trackbar[userstatus=selected]
+{
+	background : #999999;
+	-nexa-border : 1px solid #888888;
+}
+
+.VScrollBarControl .trackbar[status=mouseover],.HScrollBarControl .trackbar[status=mouseover]
+{
+	background : #bbbbbb;
+	-nexa-border : 1px solid #a8a8a8;
+}
+
+.VScrollBarControl .trackbar[status=disabled],.HScrollBarControl .trackbar[status=disabled]
+{
+	background : #eeeeee;
+	-nexa-border : 1px solid #d8d8d8;
+}
+
+
+/**********************ScrollIndicatorControl***********************************************/
+.VScrollIndicatorControl,.HScrollIndicatorControl
+{
+	background : #f2f2f2;
+}
+
+.VScrollIndicatorControl .trackbar,.HScrollIndicatorControl .trackbar
+{
+	background : #cccccc;
+	-nexa-border : 2px solid transparent;
+}
+
+.VScrollIndicatorControl .trackbar[userstatus=pushed],.HScrollIndicatorControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+
+.VScrollIndicatorControl .trackbar[status=mouseover],.HScrollIndicatorControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+
+
+/**********************StatusBar***********************************************/
+.StatusBarControl
+{
+	background : #e7e7e7;
+}
+
+.StatusBarControl .progressbar
+{
+	background : #eaeaea;
+	-nexa-border : 1px solid #afaeae, 1px solid #d2d0d0, 1px solid #d2d0d0, 1px solid #d2d0d0;
+}
+
+.StatusBarControl .progressbar .progressbaritem
+{
+	background : #4ca0e2;
+}
+
+.StatusBarControl .resizegrip
+{
+	-nexa-icon : URL("theme://images/img_grip.png");
+	-nexa-vertical-align : bottom;
+}
+
+
+/**********************TitleBar***********************************************/
+.TitleBarControl
+{
+	font : bold 12px Gulim;
+	color : #ffffff;
+	background : #003284;
+	-nexa-padding : 0px 0px 0px 10px;
+}
+
+.TitleBarControl .titleicon
+{
+	-nexa-icon : URL('theme://images/img_TF_TitleIcon.png');
+	-nexa-text-padding : 0px 0px 0px 10px;
+}
+
+.TitleBarControl .minbutton
+{
+	-nexa-icon : URL('theme://images/btn_TF_Min.png');
+}
+
+.TitleBarControl .minbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Min_O.png');
+}
+
+.TitleBarControl .minbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Min_D.png');
+}
+
+.TitleBarControl .normalbutton
+{
+	-nexa-icon : URL('theme://images/btn_TF_Normal.png');
+}
+
+.TitleBarControl .normalbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Normal_O.png');
+}
+
+.TitleBarControl .normalbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Normal_D.png');
+}
+
+.TitleBarControl .maxbutton
+{
+	-nexa-icon : URL('theme://images/btn_TF_Max.png');
+}
+
+.TitleBarControl .maxbutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Max_O.png');
+}
+
+.TitleBarControl .maxbutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Max_D.png');
+}
+
+.TitleBarControl .closebutton
+{
+	-nexa-icon : URL('theme://images/btn_TF_Close.png');
+}
+
+.TitleBarControl .closebutton[status=mouseover]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Close_O.png');
+}
+
+.TitleBarControl .closebutton[status=disabled]
+{
+	-nexa-icon : URL('theme://images/btn_TF_Close_D.png');
+}
+
+
+/**********************Step***********************************************/
+.StepControl
+{
+	-nexa-padding : 0px 0px 10px 0px;
+}
+
+.StepControl .stepitem
+{
+	-nexa-icon : URL('theme://images/btn_WF_Stepitem.png');
+}
+
+.StepControl .stepitem[status=mouseover],.StepControl .stepitem[status=focused],.StepControl .stepitem[userstatus=pushed],.StepControl .stepitem[userstatus=selected]
+{
+	-nexa-icon : URL('theme://images/btn_WF_Stepitem_S.png');
+}
+
+/**********************ListView***********************************************/
+.ListView, 
+.ListView[status=readonly]
+{
+	-nexa-border : 1px solid #d5d5d5;
+	background : #ebecee;
+	color : #666666;
+}
+.ListView[status=mouseover],
+.ListView[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+.ListView[status=disabled]
+{
+	background : #666666;
+}
+.ListView .body,
+.ListView .body[status=readonly], .ListView .detail[status=readonly],
+.ListView .body[status=focused], .ListView .detail[status=focused],
+.ListView .body[status=mouseover], .ListView .detail[status=mouseover]
+{
+	-nexa-border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : 12px Gulim;
+}
+.ListView .detail
+{
+	-nexa-border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #f9f9f9;
+	font : 12px Gulim;
+}
+.ListView .body[userstatus=selected]
+{
+	background : #f2f9ff;
+}
+.ListView .detail[userstatus=selected]
+{
+	background : #ebf3f9;
+}
+.ListView .body[status=disabled], .ListView .detail[status=disabled]
+{
+	color : #999999;
+}
+.ListView .body .cell, .ListView .detail .cell,
+.ListView .body .cell[status=disabled], .ListView .detail .cell[status=disabled],
+.ListView .body .cell[status=readonly], .ListView .detail .cell[status=readonly],
+.ListView .body .cell[status=focused], .ListView .detail .cell[status=focused]
+{
+	-nexa-border : 1px solid #dbdee2;
+	-nexa-padding : 4px 4px 4px 4px;
+}
+.ListView .body .cell[status=mouseover], .ListView .detail .cell[status=mouseover]
+{
+	-nexa-border : 1px solid #c4c9cf;
+}
+
+
+/*-----------------------------------cellbutton:ButtonControl과 동일------------------------------------*/
+.ListViewCellControl .cellbutton
+{
+	font : 12px Gulim;
+	color : #555555;
+	background : linear-gradient(to top,#eaeaea,#ffffff);
+	-nexa-border : 1px solid #c2c2c2;
+}
+
+.ListViewCellControl .cellbutton[status=mouseover],.ListViewCellControl .cellbutton[status=focused]
+{
+	background : linear-gradient(to top,#e7e7e7,#fefefe);
+	-nexa-border : 1px solid #a0a0a0;
+}
+
+.ListViewCellControl .cellbutton[userstatus=pushed]
+{
+	background : linear-gradient(to top,#fefefe,#e9e9e9);
+}
+
+.ListViewCellControl .cellbutton[status=disabled]
+{
+	color : #bbbbbb;
+	background : #f5f5f5;
+	-nexa-border : 1px solid #d9d9d9;
+}
+
+/*-----------------------------------cellcalendar:CalendarControl과 동일------------------------------------*/
+.ListViewCellControl .cellcalendar
+{
+	font : 12px Gulim;
+}
+
+/*-----------------------------------cellcheckbox:CheckBoxControl과 동일------------------------------------*/
+.ListViewCellControl .cellcheckbox
+{
+	font : 12px Gulim;
+}
+
+/*-----------------------------------cellcombo:ComboControl과 동일------------------------------------*/
+.ListViewCellControl .cellcombo
+{
+	font : 12px Gulim;
+}
+
+.ListViewCellControl .cellcombo .combolist
+{
+	font : 12px Gulim;
+	color : #555555;
+}
+
+.ListViewCellControl .cellcombo .combolist .listboxitem[status=mouseover]
+{
+	background : #e8e9ed;
+}
+
+/*-----------------------------------celledit:EditControl과 동일------------------------------------*/
+.ListViewCellControl .celledit
+{
+	font : 12px Gulim;
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.ListViewCellControl .celledit[status=mouseover],.ListViewCellControl .celledit[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.ListViewCellControl .celledit[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+/*-----------------------------------cellexpandbutton------------------------------------*/
+.ListViewCellControl .cellexpandbutton
+{
+	-nexa-icon : URL('theme://images/btn_WF_Grdexpand.png');
+}
+
+/*-----------------------------------cellimage:별도스타일없음------------------------------------*/
+
+/*-----------------------------------cellmaskedit:MaskEditControl과 동일------------------------------------*/
+.ListViewCellControl .cellmaskedit
+{
+	font : 12px Gulim;
+	background : #ffffff;
+	-nexa-border : 1px solid #d5d5d5;
+	-nexa-padding : 1px 9px 0px 9px;
+}
+
+.ListViewCellControl .cellmaskedit[status=mouseover],.ListViewCellControl .cellmaskedit[status=focused]
+{
+	-nexa-border : 1px solid #5a86cd;
+}
+
+.ListViewCellControl .cellmaskedit[status=disabled]
+{
+	color : #999999;
+	background : #efefef;
+}
+
+/*-----------------------------------cellprogressbar:ProgressBarControl과 동일------------------------------------*/
+.ListViewCellControl .cellprogressbar
+{
+	font : 12px Gulim;
+}
+
+/*-----------------------------------celltextarea:TextAreaControl과 동일------------------------------------*/
+.ListViewCellControl .celltextarea
+{
+	font : 12px Gulim;
+}
+
+.ListView .body .expandbar
+{
+	background : linear-gradient(to top,#eaeaea,#ffffff);
+	-nexa-icon : URL('theme://images/cmb_WF_Drop.png');
+	-nexa-border : 1px solid #c2c2c2;
+}
+
+.ListView .body .expandbar[status=mouseover],.ListView .body .expandbar[status=focused]
+{
+	background : linear-gradient(to top,#e7e7e7,#fefefe);
+	-nexa-border : 1px solid #a0a0a0;
+}
+
+.ListView .body .expandbar[userstatus=pushed],.ListView .body .expandbar[userstatus=selected]
+{
+	background : linear-gradient(to top,#fefefe,#e9e9e9);
+}
+
+.ListView .body .expandbar[status=disabled]
+{
+	color : #bbbbbb;
+	background : #f5f5f5;
+	-nexa-border : 1px solid #d9d9d9;
+}]]></XCSS>

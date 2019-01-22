@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_animation_05" left="0" top="0" width="1024" height="768" titletext="New Form" onload="sample_animation_01_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnPlay" taborder="0" text="▶" left="30" top="121" width="20" height="70" onclick="btnPlay_onclick"/>
+        <Div id="Div00" taborder="1" text="Menu Area" left="30" top="10" width="1" height="331" border="1px solid black"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[/*
+애니메이션
+*/
+this.sample_animation_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+    var aniObj00 = new nexacro.Animation("Ani00", this);
+    this.addChild("Ani00", aniObj00);
+	this.Ani00.addTarget("AniItem00", this.btnPlay, "width:20, left:329");
+	this.Ani00.addTarget("AniItem01", this.Div00, "width:300, left:30");
+	this.Ani00.setEventHandler("oncomplete", this.Ani00_oncomplete, this);
+	this.Ani00.set_easing("easeInSine");
+	//this.Ani00.set_duration(2000);
+
+    var aniObj01 = new nexacro.Animation("Ani01", this);
+    this.addChild("Ani01", aniObj01);
+	this.Ani01.addTarget("AniItem00", this.btnPlay, "width:20, left:30");
+	this.Ani01.addTarget("AniItem01", this.Div00, "width:1, left:30");
+	this.Ani01.setEventHandler("oncomplete", this.Ani01_oncomplete, this);
+	this.Ani01.set_easing("easeInSine");
+	//this.Ani01.set_duration(2000);	
+};
+
+this.btnPlay_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if( obj.text == "▶")
+	{		
+		this.Ani00.play();
+	} else {
+		this.Ani01.play();
+	}
+    
+};
+
+this.Ani00_oncomplete = function(obj:nexacro.Animation,e:nexacro.AnimationEventInfo)
+{  
+  this.btnPlay.set_text("◀");
+};
+
+this.Ani01_oncomplete = function(obj:nexacro.Animation,e:nexacro.AnimationEventInfo)
+{  
+  this.btnPlay.set_text("▶");
+};
+
+]]></Script>
+  </Form>
+</FDL>

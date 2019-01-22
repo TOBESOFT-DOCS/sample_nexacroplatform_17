@@ -1,0 +1,4729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_38" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="32" top="80" width="600" height="257" binddataset="ds_client" autofittype="col" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="none" fillareatype="none" selecttype="multirow" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body" border="" selectscrollmode="select" onkeydown="Grid_onkeydown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30"/>
+                <Column size="270"/>
+                <Column size="140"/>
+                <Column size="160"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="No"/>
+                <Cell col="1" text="Book Title"/>
+                <Cell col="2" text="Publisher"/>
+                <Cell col="3" text="Author"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:ROWNO"/>
+                <Cell col="1" text="bind:BOOK_NM" textAlign="left"/>
+                <Cell col="2" text="bind:PRESS_NM" textAlign="left"/>
+                <Cell col="3" text="bind:EDITOR_NM" textAlign="left"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="div_page" taborder="1" text="Div00" left="32" top="344" width="600" height="48" right="" bottom="" visible="false">
+          <Layouts>
+            <Layout>
+              <Static id="stt_prev" taborder="0" text="Prev" left="119" top="7" width="40" height="32" right="" bottom="" onclick="div_page_stt_prev_onclick" visible="false"/>
+              <Static id="stt_0" taborder="0" text="1" left="175" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_1" taborder="0" text="2" left="199" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_2" taborder="0" text="3" left="223" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_3" taborder="0" text="4" left="247" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_4" taborder="0" text="5" left="271" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_5" taborder="0" text="6" left="295" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_6" taborder="0" text="7" left="319" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_7" taborder="0" text="8" left="343" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_8" taborder="0" text="9" left="367" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_9" taborder="0" text="10" left="391" top="7" width="20" height="32" right="" bottom="" onclick="div_page_stt_onclick" visible="false"/>
+              <Static id="stt_next" taborder="0" text="Next" left="427" top="7" width="40" height="32" right="" bottom="" onclick="div_page_stt_next_onclick" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button00" taborder="4" text="Inquire" left="512" top="40" width="120" height="32" onclick="Button00_onclick" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_server">
+        <ColumnInfo>
+          <Column type="STRING" size="500" id="BOOK_NM"/>
+          <Column type="STRING" size="200" id="EDITOR_NM"/>
+          <Column type="STRING" size="100" id="PRESS_NM"/>
+          <Column type="INT" size="10" id="PRICE"/>
+          <Column type="INT" size="5" id="ROWNO"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BOOK_NM">ABSENT ONE; TRANS. BY K.E. SEMMEL.</Col>
+            <Col id="EDITOR_NM">ADLER-OLSEN, JUSSI.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">1</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ABSOLUTIST. (EXPORT/IRE)</Col>
+            <Col id="EDITOR_NM">JOHN BOYNE.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">2</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ACAPULCO: NEW AND SELECTED POEMS.</Col>
+            <Col id="EDITOR_NM">MURRAY, NICHOLAS.</Col>
+            <Col id="PRESS_NM">MELOS PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">3</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ACROSS A BRIDGE OF DREAMS.</Col>
+            <Col id="EDITOR_NM">DOWNER, LESLEY.</Col>
+            <Col id="PRESS_NM">BANTAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">4</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ADRIFT IN SOHO: A NOVEL.</Col>
+            <Col id="EDITOR_NM">WILSON, COLIN, 1931-</Col>
+            <Col id="PRESS_NM">FIVE LEAVES</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">5</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ADULT.</Col>
+            <Col id="EDITOR_NM">STRETCH, JOE, 1982-</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">6</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ADVENTURE OF FRENCH PHILOSOPHY</Col>
+            <Col id="EDITOR_NM">BADIOU, ALAIN.</Col>
+            <Col id="PRESS_NM">VERSO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">7</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AEROGRAMMES AND OTHER STORIES.</Col>
+            <Col id="EDITOR_NM">JAMES, TANIA.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">8</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AFTER THE LOCKOUT.</Col>
+            <Col id="EDITOR_NM">MCCANN, DARRAN.</Col>
+            <Col id="PRESS_NM">FOURTH ESTATE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">9</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AFTERWARDS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LUPTON, ROSAMUND.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">10</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AGE OF DESIRE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FIELDS, JENNIE.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">11</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AGUA VIVA</Col>
+            <Col id="EDITOR_NM">LISPECTOR, CLARICE.</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">12</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ALFRED JARRY: A PATAPHYSICAL LIFE.</Col>
+            <Col id="EDITOR_NM">BROTCHIE, ALASTAIR.</Col>
+            <Col id="PRESS_NM">MIT PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">13</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ALL IS SONG.</Col>
+            <Col id="EDITOR_NM">HARVEY, SAMANTHA.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">14</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ALL THAT I AM: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FUNDER, ANNA.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">15</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ALLAH: A CHRISTIAN RESPONSE.</Col>
+            <Col id="EDITOR_NM">VOLF, MIROSLAV.</Col>
+            <Col id="PRESS_NM">HARPER ONE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">16</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ALWAYS LOOKING: ESSAYS ON ART</Col>
+            <Col id="EDITOR_NM">UPDIKE, JOHN.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">17</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ALYS, ALWAYS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LANE, HARRIET, 1969-</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">18</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AMERICAN DERVISH: A NOVEL.</Col>
+            <Col id="EDITOR_NM">AKHTAR, AYAD.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">19</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AMERICAN SON: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">RUBIO, MARCO, 1971-</Col>
+            <Col id="PRESS_NM">SENTINEL</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">20</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ANATOMIST'S APPRENTICE.</Col>
+            <Col id="EDITOR_NM">HARRIS, TESSA.</Col>
+            <Col id="PRESS_NM">KENSINGTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">21</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ANGEL ESMERALDA: NINE STORIES.</Col>
+            <Col id="EDITOR_NM">DELILLO, DON.</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">22</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ANGELS AND HARVESTERS.</Col>
+            <Col id="EDITOR_NM">HARPUR, JAMES.</Col>
+            <Col id="PRESS_NM">ANVIL POETRY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">23</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ANTIGONICK; TRANS. BY ANNE CARSON.</Col>
+            <Col id="EDITOR_NM">SOPHOCLES.</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">24</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ANTI-NIETZSCHE.</Col>
+            <Col id="EDITOR_NM">BULL, MALCOLM.</Col>
+            <Col id="PRESS_NM">VERSO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">25</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">APARTMENT.</Col>
+            <Col id="EDITOR_NM">BAXTER, GREG.</Col>
+            <Col id="PRESS_NM">PENGUIN IRELAND</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">26</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ARCADIA.</Col>
+            <Col id="EDITOR_NM">GROFF, LAUREN.</Col>
+            <Col id="PRESS_NM">HYPERION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">27</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ARMOUR.</Col>
+            <Col id="EDITOR_NM">KINSELLA, JOHN.</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">28</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ART OF FIELDING.</Col>
+            <Col id="EDITOR_NM">HARBACH, CHAD.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">29</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ART OF THE RESTAURATEUR.</Col>
+            <Col id="EDITOR_NM">LANDER, NICHOLAS.</Col>
+            <Col id="PRESS_NM">PHAIDON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">30</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ARTHUR TRESS: SAN FRANCISCO, 1964.</Col>
+            <Col id="EDITOR_NM">TRESS, ARTHUR.</Col>
+            <Col id="PRESS_NM">PRESTEL ART</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">31</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ARTISTS' POSTCARDS: A COMPENDIUM.</Col>
+            <Col id="EDITOR_NM">COOPER, JEREMY.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">32</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AS THE CROW FLIES.</Col>
+            <Col id="EDITOR_NM">JOHNSON, CRAIG.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">33</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AS THOUGH WE WERE FLYING.</Col>
+            <Col id="EDITOR_NM">GREIG, ANDREW.</Col>
+            <Col id="PRESS_NM">BLOODAXE BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">34</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ASHENDEN.</Col>
+            <Col id="EDITOR_NM">WILHIDE, ELIZABETH.</Col>
+            <Col id="PRESS_NM">FIG TREE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">35</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ASTRAY.</Col>
+            <Col id="EDITOR_NM">DONOGHUE, EMMA.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">36</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AUTUMN LAING.</Col>
+            <Col id="EDITOR_NM">MILLER, ALEX.</Col>
+            <Col id="PRESS_NM">ALLEN &amp; UNWIN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">37</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">AVAILABLE MAN: A NOVEL.</Col>
+            <Col id="EDITOR_NM">WOLITZER, HILMA.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">38</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BACK TO BLOOD: A NOVEL.</Col>
+            <Col id="EDITOR_NM">WOLFE, TOM.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">39</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BACKFIRE.</Col>
+            <Col id="EDITOR_NM">COULTER, CATHERINE.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">40</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BAGEYE AT THE WHEEL.</Col>
+            <Col id="EDITOR_NM">GRANT, COLIN, 1961-</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">41</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BARNES FOUNDATION: MASTERWORKS.</Col>
+            <Col id="EDITOR_NM">DOLKART, JUDITH F.</Col>
+            <Col id="PRESS_NM">SKIRA</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">42</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BARON'S COURT, ALL CHANGE.</Col>
+            <Col id="EDITOR_NM">TAYLOR, TERRY, 1933-</Col>
+            <Col id="PRESS_NM">FIVE LEAVES</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">43</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BASKERVILLE LEGACY: A CONFESSION.</Col>
+            <Col id="EDITOR_NM">O'CONNELL, JOHN.</Col>
+            <Col id="PRESS_NM">SHORT BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">44</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BEAUTIFUL RUINS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">WALTER, JESS.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">45</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BEDLAM DETECTIVE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">GALLAGHER, STEPHEN.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">46</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BEES.</Col>
+            <Col id="EDITOR_NM">DUFFY, CAROL ANN.</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">47</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BEGINNER'S GOODBYE.</Col>
+            <Col id="EDITOR_NM">TYLER, ANNE.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">48</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BEHIND THE BEAUTIFUL FOREVERS.</Col>
+            <Col id="EDITOR_NM">BOO, KATHERINE.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">49</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BELIEVING THE LIE.</Col>
+            <Col id="EDITOR_NM">GEORGE, ELIZABETH.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">50</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BELLWETHER REVIVALS.</Col>
+            <Col id="EDITOR_NM">WOOD, BENJAMIN.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">51</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BERTIE: A LIFE OF EDWARD VII.</Col>
+            <Col id="EDITOR_NM">RIDLEY, JANE.</Col>
+            <Col id="PRESS_NM">CHATTO &amp; WINDUS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">52</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BETRAYAL OF THE AMERICAN DREAM.</Col>
+            <Col id="EDITOR_NM">BARLETT, DONALD L.</Col>
+            <Col id="PRESS_NM">PUBLIC AFFAIRS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">53</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BETRAYAL: A NOVEL.</Col>
+            <Col id="EDITOR_NM">STEEL, DANIELLE.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">54</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BETWEEN HEAVEN AND HERE.</Col>
+            <Col id="EDITOR_NM">STRAIGHT, SUSAN.</Col>
+            <Col id="PRESS_NM">MCSWEENEY'S</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">55</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BIG DREAM: STORIES.</Col>
+            <Col id="EDITOR_NM">ROSENBLUM, REBECCA.</Col>
+            <Col id="PRESS_NM">BIBLIOASIS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">56</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BILLY LYNN'S LONG HALFTIME WALK.</Col>
+            <Col id="EDITOR_NM">FOUNTAIN, BEN.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">57</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLACK BOX: A NOVEL.</Col>
+            <Col id="EDITOR_NM">CONNELLY, MICHAEL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">58</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLACK BOX: A NOVEL.</Col>
+            <Col id="EDITOR_NM">CONNELLY, MICHAEL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">59</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLACK LIST: A THRILLER.</Col>
+            <Col id="EDITOR_NM">THOR, BRAD.</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">60</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLACKHOUSE.</Col>
+            <Col id="EDITOR_NM">MAY, PETER.</Col>
+            <Col id="PRESS_NM">SILVER OAK</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">61</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLAZE OF NOON.</Col>
+            <Col id="EDITOR_NM">HEPPENSTALL, RAYNER.</Col>
+            <Col id="PRESS_NM">ALMA CLASSICS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">62</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLEED FOR ME.</Col>
+            <Col id="EDITOR_NM">ROBOTHAM, MICHAEL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">63</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLINDING KNIFE.</Col>
+            <Col id="EDITOR_NM">WEEKS, BRENT.</Col>
+            <Col id="PRESS_NM">ORBIT US</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">64</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLUE MONDAY.</Col>
+            <Col id="EDITOR_NM">FRENCH, NICCI.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">65</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BLUE REMEMBERED EARTH.</Col>
+            <Col id="EDITOR_NM">REYNOLDS, ALASTAIR.</Col>
+            <Col id="PRESS_NM">ACE BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">66</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BOLETO: A NOVEL.</Col>
+            <Col id="EDITOR_NM">HAGY, ALYSON.</Col>
+            <Col id="PRESS_NM">GRAYWOLF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">67</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BONES ARE FOREVER.</Col>
+            <Col id="EDITOR_NM">REICHS, KATHY.</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">68</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BORN TO DARKNESS.</Col>
+            <Col id="EDITOR_NM">BROCKMANN, SUZANNE.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">69</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BRAIN ON FIRE: MY MONTH OF MADNESS.</Col>
+            <Col id="EDITOR_NM">CAHALAN, SUSANNAH.</Col>
+            <Col id="PRESS_NM">FREE PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">70</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BREAKDOWN.</Col>
+            <Col id="EDITOR_NM">PARETSKY, SARA.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">71</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BREAKING SILENCE.</Col>
+            <Col id="EDITOR_NM">SAM-LA ROSE, JACOB.</Col>
+            <Col id="PRESS_NM">BLOODAXE BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">72</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BREATH OF LIFE</Col>
+            <Col id="EDITOR_NM">LISPECTOR, CLARICE.</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">73</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BREED.</Col>
+            <Col id="EDITOR_NM">NOVAK, CHASE.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">74</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BRIDGE.</Col>
+            <Col id="EDITOR_NM">KINGSBURY, KAREN.</Col>
+            <Col id="PRESS_NM">HOWARD BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">75</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BRIEF LIVES: GEOFFREY CHAUCER.</Col>
+            <Col id="EDITOR_NM">ASHTON, GAIL.</Col>
+            <Col id="PRESS_NM">HESPERUS PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">76</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BRIEF LIVES: HENRY JAMES.</Col>
+            <Col id="EDITOR_NM">HUTCHINSON, HAZEL.</Col>
+            <Col id="PRESS_NM">HESPERUS PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">77</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BRING UP THE BODIES.</Col>
+            <Col id="EDITOR_NM">MANTEL, HILARY.</Col>
+            <Col id="PRESS_NM">HENRY HOLT</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">78</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BRITISH COMICS: A CULTURAL HISTORY.</Col>
+            <Col id="EDITOR_NM">CHAPMAN, JAMES.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">79</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BROKEN HARBOR.</Col>
+            <Col id="EDITOR_NM">FRENCH, TANA.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">80</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BROTHERS; TRANS. BY EMILY JEREMIAH.</Col>
+            <Col id="EDITOR_NM">SAHLBERG, ASKO.</Col>
+            <Col id="PRESS_NM">PEIRENE PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">81</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BUDDHA IN THE ATTIC.</Col>
+            <Col id="EDITOR_NM">OTSUKA, JULIE.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">82</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BUILDING STORIES.</Col>
+            <Col id="EDITOR_NM">WARE, CHRIS.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">83</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BUNCH OF FIVES: SELECTED STORIES.</Col>
+            <Col id="EDITOR_NM">SIMPSON, HELEN.</Col>
+            <Col id="PRESS_NM">VINTAGE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">84</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BURYING THE TYPEWRITER: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">BUGAN, CARMEN.</Col>
+            <Col id="PRESS_NM">GRAYWOLF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">85</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BY BATTERSEA BRIDGE.</Col>
+            <Col id="EDITOR_NM">DAVEY, JANET.</Col>
+            <Col id="PRESS_NM">CHATTO &amp; WINDUS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">86</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">BY THE IOWA SEA: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">BLAIR, JOE, 1962-</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">87</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">C.G. JUNG: A BIOGRAPHY IN BOOKS.</Col>
+            <Col id="EDITOR_NM">SHAMDASANI, SONU.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">88</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CALICO JOE.</Col>
+            <Col id="EDITOR_NM">GRISHAM, JOHN.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">89</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CANADA.</Col>
+            <Col id="EDITOR_NM">FORD, RICHARD.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">90</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CAPITAL.</Col>
+            <Col id="EDITOR_NM">LANCHESTER, JOHN.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">91</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CARNIVAL FOR THE DEAD.</Col>
+            <Col id="EDITOR_NM">1EWSON, DAVID.</Col>
+            <Col id="PRESS_NM">PAN MACMILLAN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">92</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CASPAR DAVID FRIEDRICH.</Col>
+            <Col id="EDITOR_NM">GRAVE, JOHANNES.</Col>
+            <Col id="PRESS_NM">PRESTEL ART</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">93</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CASUAL VACANCY.</Col>
+            <Col id="EDITOR_NM">ROWLING, J.K.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">94</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CATCH ME.</Col>
+            <Col id="EDITOR_NM">GARDNER, LISA.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">95</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CELEBRITY IN DEATH.</Col>
+            <Col id="EDITOR_NM">ROBB, J.D.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">96</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CENTRAL RESERVATION.</Col>
+            <Col id="EDITOR_NM">FLEMING, WILL LE.</Col>
+            <Col id="PRESS_NM">XELSION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">97</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CEZANNE: A LIFE.</Col>
+            <Col id="EDITOR_NM">DANCHEV, ALEX.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">98</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CHARLES DICKENS: A LIFE.</Col>
+            <Col id="EDITOR_NM">TOMALIN, CLAIRE.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">99</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CHASING MIDNIGHT.</Col>
+            <Col id="EDITOR_NM">WHITE, RANDY WAYNE.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">100</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CHEMISTRY OF TEARS.</Col>
+            <Col id="EDITOR_NM">CAREY, PETER.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">101</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CHICKEN.</Col>
+            <Col id="EDITOR_NM">POTTS, ANNIE.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">102</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CHILD WHO.</Col>
+            <Col id="EDITOR_NM">LELIC, SIMON.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">103</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CHINA AIRBORNE.</Col>
+            <Col id="EDITOR_NM">FALLOWS, JAMES M.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">104</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CITY OF BOHANE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BARRY, KEVIN.</Col>
+            <Col id="PRESS_NM">GRAYWOLF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">105</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CITY OF WOMEN.</Col>
+            <Col id="EDITOR_NM">GILLHAM, DAVID R.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">106</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CLARKS IN JAMAICA.</Col>
+            <Col id="EDITOR_NM">FINGERS, AL.</Col>
+            <Col id="PRESS_NM">ONE LOVE BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">107</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CLOSE QUARTERS.</Col>
+            <Col id="EDITOR_NM">QUINN, JUSTIN.</Col>
+            <Col id="PRESS_NM">GALLERY PR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">108</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COCKTAIL WAITRESS.</Col>
+            <Col id="EDITOR_NM">CAIN, JAMES M.</Col>
+            <Col id="PRESS_NM">HARD CASE CRIME</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">109</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COINCIDENCE ENGINE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LEITH, SAM.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">110</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COLD DAYS.</Col>
+            <Col id="EDITOR_NM">BUTCHER, JIM.</Col>
+            <Col id="PRESS_NM">ROC</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">111</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COLLECTED POEMS</Col>
+            <Col id="EDITOR_NM">REDGROVE, PETER.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">112</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COLLECTED POEMS IN ENGLISH</Col>
+            <Col id="EDITOR_NM">KOLATKAR, ARUN.</Col>
+            <Col id="PRESS_NM">BLOODAXE BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">113</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COLLECTED POEMS.</Col>
+            <Col id="EDITOR_NM">GILBERT, JACK.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">114</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COLLECTIVE.</Col>
+            <Col id="EDITOR_NM">LEE, DON, 1959-</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">115</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COLONEL; TRANS. BY TOM PATTERDALE.</Col>
+            <Col id="EDITOR_NM">DOWLATABADI, MAHMUD.</Col>
+            <Col id="PRESS_NM">MELVILLE HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">116</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COLUMBUS AFFAIR: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BERRY, STEVE.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">117</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CONFESSION.</Col>
+            <Col id="EDITOR_NM">TODD, CHARLES.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">118</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CONSERVATIVES: A HISTORY.</Col>
+            <Col id="EDITOR_NM">HARRIS, ROBIN.</Col>
+            <Col id="PRESS_NM">BANTAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">119</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CONSTELLATIONS.</Col>
+            <Col id="EDITOR_NM">IAN PINDAR.</Col>
+            <Col id="PRESS_NM">CARCANET</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">120</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CONTENTS MAY HAVE SHIFTED: A NOVEL.</Col>
+            <Col id="EDITOR_NM">HOUSTON, PAM.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">121</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COPPER BEACH.</Col>
+            <Col id="EDITOR_NM">KRENTZ, JAYNE ANN.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">122</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CORN MAIDEN AND OTHER NIGHTMARES.</Col>
+            <Col id="EDITOR_NM">OATES, JOYCE CAROL.</Col>
+            <Col id="PRESS_NM">GROVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">123</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COST OF HOPE: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">BENNETT, AMANDA.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">124</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COUNTING EGGS.</Col>
+            <Col id="EDITOR_NM">DANIELS, PETER.</Col>
+            <Col id="PRESS_NM">MULFRAN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">125</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COUNTRY GIRL.</Col>
+            <Col id="EDITOR_NM">O'BRIEN, EDNA.</Col>
+            <Col id="PRESS_NM">FABER AND FABER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">126</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COVE.</Col>
+            <Col id="EDITOR_NM">RASH, RON, 1953-</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">127</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">COVERT WARRIORS.</Col>
+            <Col id="EDITOR_NM">GRIFFIN, W.E.B.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">128</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CRAMPTON HODNET.</Col>
+            <Col id="EDITOR_NM">PYM, BARBARA.</Col>
+            <Col id="PRESS_NM">VIRAGO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">129</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CRASHED: A JUNIOR BENDER MYSTERY.</Col>
+            <Col id="EDITOR_NM">HALLINAN, TIMOTHY.</Col>
+            <Col id="PRESS_NM">SOHO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">130</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CRIMINAL: A NOVEL.</Col>
+            <Col id="EDITOR_NM">SLAUGHTER, KARIN.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">131</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CRISIS OF ZIONISM.</Col>
+            <Col id="EDITOR_NM">BEINART, PETER.</Col>
+            <Col id="PRESS_NM">TIMES BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">132</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CRONKITE.</Col>
+            <Col id="EDITOR_NM">BRINKLEY, DOUGLAS.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">133</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CROSS ROADS.</Col>
+            <Col id="EDITOR_NM">YOUNG, WM. PAUL.</Col>
+            <Col id="PRESS_NM">FAITH WORDS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">134</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CRYSTAL GARDENS.</Col>
+            <Col id="EDITOR_NM">QUICK, AMANDA.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">135</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CUBOP CITY BLUES.</Col>
+            <Col id="EDITOR_NM">MEDINA, PABLO, 1948-</Col>
+            <Col id="PRESS_NM">GROVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">136</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CUTTING SEASON: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LOCKE, ATTICA.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">137</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">CYNDI LAUPER: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">LAUPER, CYNDI, 1953-</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">138</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">D.C. DEAD.</Col>
+            <Col id="EDITOR_NM">WOODS, STUART.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">139</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DARE ME: A NOVEL.</Col>
+            <Col id="EDITOR_NM">ABBOTT, MEGAN E.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">140</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DARK FILM.</Col>
+            <Col id="EDITOR_NM">FARLEY, PAUL.</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">141</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DARK LIES THE ISLAND: STORIES.</Col>
+            <Col id="EDITOR_NM">BARRY, KEVIN.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">142</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DARK REDEMPTION.</Col>
+            <Col id="EDITOR_NM">SHEREZ, STAV.</Col>
+            <Col id="PRESS_NM">FABER AND FABER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">143</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEAD LOW TIDE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LOTT, BRET.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">144</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEAD SEASON.</Col>
+            <Col id="EDITOR_NM">KENT, CHRISTOBEL.</Col>
+            <Col id="PRESS_NM">PEGASUS BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">145</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEAD STARS: AN ENTERTAINMENT.</Col>
+            <Col id="EDITOR_NM">WAGNER, BRUCE.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">146</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEADLOCKED.</Col>
+            <Col id="EDITOR_NM">HARRIS, CHARLAINE.</Col>
+            <Col id="PRESS_NM">ACE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">147</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEADMAN'S PEDAL.</Col>
+            <Col id="EDITOR_NM">WARNER, ALAN.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">148</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEAR LIFE: STORIES.</Col>
+            <Col id="EDITOR_NM">MUNRO, ALICE.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">149</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEATH COMES TO PEMBERLEY.</Col>
+            <Col id="EDITOR_NM">JAMES, P.D.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">150</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEATH OF KINGS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">CORNWELL, BERNARD.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">151</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DECEPTION OF LIVVY HIGGS.</Col>
+            <Col id="EDITOR_NM">MORRISSEY, DONNA.</Col>
+            <Col id="PRESS_NM">VIKING CANADA</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">152</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEDALUS BOOK OF GIN.</Col>
+            <Col id="EDITOR_NM">BARNETT, RICHARD.</Col>
+            <Col id="PRESS_NM">DEDALUS LTD</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">153</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEFENDING JACOB: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LANDAY, WILLIAM.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">154</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DELUSION IN DEATH.</Col>
+            <Col id="EDITOR_NM">ROBB, J.D.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">155</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEPARTURE.</Col>
+            <Col id="EDITOR_NM">EMERY, CHRIS.</Col>
+            <Col id="PRESS_NM">SALT PUBLISHING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">156</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEVIL IN SILVER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LAVALLE, VICTOR D.</Col>
+            <Col id="PRESS_NM">SPIEGEL &amp; GRAU</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">157</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DEVIL IS WAITING.</Col>
+            <Col id="EDITOR_NM">HIGGINS, JACK.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">158</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DICKENS' WOMEN.</Col>
+            <Col id="EDITOR_NM">MARGOLYES, MIRIAM.</Col>
+            <Col id="PRESS_NM">HESPERUS PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">159</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DICKENS'S LONDON.</Col>
+            <Col id="EDITOR_NM">CLARK, PETER.</Col>
+            <Col id="PRESS_NM">HAUS PUBLISHING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">160</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DIRT: A NOVEL.</Col>
+            <Col id="EDITOR_NM">VANN, DAVID.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">161</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DISTRUST THAT PARTICULAR FLAVOR.</Col>
+            <Col id="EDITOR_NM">GIBSON, WILLIAM.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">162</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DIVINE COMEDY.</Col>
+            <Col id="EDITOR_NM">RAINE, CRAIG.</Col>
+            <Col id="PRESS_NM">ATLANTIC</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">163</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DIVING BELLES AND OTHER STORIES.</Col>
+            <Col id="EDITOR_NM">WOOD, LUCY.</Col>
+            <Col id="PRESS_NM">MARINER BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">164</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DOG STARS.</Col>
+            <Col id="EDITOR_NM">HELLER, PETER.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">165</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DOGMA.</Col>
+            <Col id="EDITOR_NM">IYER, LARS.</Col>
+            <Col id="PRESS_NM">MELVILLE HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">166</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DOG'S JOURNEY.</Col>
+            <Col id="EDITOR_NM">CAMERON, W. BRUCE.</Col>
+            <Col id="PRESS_NM">FORGE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">167</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DOING PSYCHOANALYSIS IN TEHRAN.</Col>
+            <Col id="EDITOR_NM">HOMAYOUNPOUR, GOHAR.</Col>
+            <Col id="PRESS_NM">MIT PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">168</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DOLL: THE LOST SHORT STORIES.</Col>
+            <Col id="EDITOR_NM">DU MAURIER, DAPHNE.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">169</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DONKEY.</Col>
+            <Col id="EDITOR_NM">BOUGH, JILL.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">170</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DOPPLER; TRANS. BY DON BARTLETT.</Col>
+            <Col id="EDITOR_NM">LOE, ERLAND.</Col>
+            <Col id="PRESS_NM">HEAD OF ZEUS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">171</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DOWN THE DARKEST ROAD.</Col>
+            <Col id="EDITOR_NM">HOAG, TAMI.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">172</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DRIFTING HOUSE.</Col>
+            <Col id="EDITOR_NM">LEE, KRYS.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">173</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">DUST TO DUST: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">BUSCH, BENJAMIN.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">174</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ECRIRE LA VIE.</Col>
+            <Col id="EDITOR_NM">ERNAUX, ANNIE.</Col>
+            <Col id="PRESS_NM">GALLIMARD</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">175</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EDDY MERCKX: THE CANNIBAL.</Col>
+            <Col id="EDITOR_NM">FRIEBE, DANIEL.</Col>
+            <Col id="PRESS_NM">EBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">176</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EDGE OF DARK WATER.</Col>
+            <Col id="EDITOR_NM">LANSDALE, JOE R.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">177</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EISENHOWER IN WAR AND PEACE.</Col>
+            <Col id="EDITOR_NM">SMITH, JEAN EDWARD.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">178</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EISENHOWER: THE WHITE HOUSE YEARS.</Col>
+            <Col id="EDITOR_NM">NEWTON, JIM, 1963-</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">179</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ELLSWORTH KELLY: PLANT DRAWINGS.</Col>
+            <Col id="EDITOR_NM">KELLY, ELLSWORTH.</Col>
+            <Col id="PRESS_NM">PRESTEL ART</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">180</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ELSEWHERE, CALIFORNIA.</Col>
+            <Col id="EDITOR_NM">JOHNSON, DANA, 1967-</Col>
+            <Col id="PRESS_NM">COUNTERPOINT</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">181</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EMPORIUM.</Col>
+            <Col id="EDITOR_NM">PINDAR, IAN.</Col>
+            <Col id="PRESS_NM">CARCANET</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">182</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EMPTY SPACE: A HAUNTING.</Col>
+            <Col id="EDITOR_NM">HARRISON, M. JOHN.</Col>
+            <Col id="PRESS_NM">GOLLANCZ</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">183</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ENCHANTMENTS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">HARRISON, KATHRYN.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">184</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">END OF COUNTRY.</Col>
+            <Col id="EDITOR_NM">MCGRAW, SEAMUS.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">185</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">END OF ILLNESS.</Col>
+            <Col id="EDITOR_NM">AGUS, DAVID.</Col>
+            <Col id="PRESS_NM">FREE PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">186</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">END OF MEN: AND THE RISE OF WOMEN.</Col>
+            <Col id="EDITOR_NM">ROSIN, HANNA.</Col>
+            <Col id="PRESS_NM">RIVERHEAD BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">187</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">END OF WAR.</Col>
+            <Col id="EDITOR_NM">HORGAN, JOHN, 1953-</Col>
+            <Col id="PRESS_NM">MCSWEENEY'S</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">188</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">END THIS DEPRESSION NOW!</Col>
+            <Col id="EDITOR_NM">KRUGMAN, PAUL R.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">189</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ENEMIES: A HISTORY OF THE FBI.</Col>
+            <Col id="EDITOR_NM">WEINER, TIM.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">190</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EQUAL OF THE SUN: A NOVEL.</Col>
+            <Col id="EDITOR_NM">AMIRREZVANI, ANITA.</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">191</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EVERY CONTACT LEAVES A TRACE.</Col>
+            <Col id="EDITOR_NM">DYMOTT, ELANOR.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">192</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EXACTLY MY OWN LENGTH.</Col>
+            <Col id="EDITOR_NM">MCCANNON, OLIVIA.</Col>
+            <Col id="PRESS_NM">CARCANET</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">193</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EXCHANGE PLACE.</Col>
+            <Col id="EDITOR_NM">CARSON, CIARAN.</Col>
+            <Col id="PRESS_NM">BLACKSTAFF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">194</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">EXPATS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">PAVONE, CHRIS.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">195</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FACE OF GOD.</Col>
+            <Col id="EDITOR_NM">SCRUTON, ROGER.</Col>
+            <Col id="PRESS_NM">CONTINUUM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">196</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FAIR GAME.</Col>
+            <Col id="EDITOR_NM">BRIGGS, PATRICIA.</Col>
+            <Col id="PRESS_NM">ACE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">197</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FAITH IN THE PUBLIC SQUARE.</Col>
+            <Col id="EDITOR_NM">WILLIAMS, ROWAN.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">198</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FALLEN ANGEL.</Col>
+            <Col id="EDITOR_NM">SILVA, DANIEL, 1960-</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">199</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FAT YEARS.</Col>
+            <Col id="EDITOR_NM">KOONCHUNG, CHAN.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">200</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FAVIKEN.</Col>
+            <Col id="EDITOR_NM">NILSSON, MAGNUS.</Col>
+            <Col id="PRESS_NM">PHAIDON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">201</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FEAR OF MUSIC.</Col>
+            <Col id="EDITOR_NM">LETHEM, JONATHAN.</Col>
+            <Col id="PRESS_NM">CONTINUUM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">202</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FEAR; TRANS. BY MALCOLM IMRIE.</Col>
+            <Col id="EDITOR_NM">CHEVALLIER, GABRIEL.</Col>
+            <Col id="PRESS_NM">SERPENT'S TAIL</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">203</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FEVER TREE.</Col>
+            <Col id="EDITOR_NM">MCVEIGH, JENNIFER.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">204</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FINE COLOUR OF RUST.</Col>
+            <Col id="EDITOR_NM">O'REILLY, P.A.</Col>
+            <Col id="PRESS_NM">BLUE DOOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">205</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FLAME ALPHABET.</Col>
+            <Col id="EDITOR_NM">MARCUS, BEN.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">206</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FLATSCREEN: A NOVEL.</Col>
+            <Col id="EDITOR_NM">WILSON, ADAM.</Col>
+            <Col id="PRESS_NM">HARPERPERENNIAL</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">207</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FLIGHT BEHAVIOR: A NOVEL.</Col>
+            <Col id="EDITOR_NM">KINGSOLVER, BARBARA.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">208</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FLIGHT OF GEMMA HARDY: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LIVESEY, MARGOT.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">209</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FLIGHT.</Col>
+            <Col id="EDITOR_NM">THORPE, ADAM.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">210</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FLOATING ADMIRAL.</Col>
+            <Col id="EDITOR_NM">DETECTION CLUB.</Col>
+            <Col id="PRESS_NM">HARPER PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">211</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FOBBIT.</Col>
+            <Col id="EDITOR_NM">ABRAMS, DAVID.</Col>
+            <Col id="PRESS_NM">GROVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">212</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FOLDED EARTH.</Col>
+            <Col id="EDITOR_NM">ROY, ANURADHA.</Col>
+            <Col id="PRESS_NM">FREE PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">213</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FOOD &amp; TREMBLING.</Col>
+            <Col id="EDITOR_NM">CAMPBELL, JONAH.</Col>
+            <Col id="PRESS_NM">INVISIBLE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">214</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FORCE OF NATURE.</Col>
+            <Col id="EDITOR_NM">BOX, C.J.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">215</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FRATERNITY.</Col>
+            <Col id="EDITOR_NM">BRADY, DIANE.</Col>
+            <Col id="PRESS_NM">SPIEGEL &amp; GRAU</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">216</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FREE MAN.</Col>
+            <Col id="EDITOR_NM">SETHI, AMAN, 1983-</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">217</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FREE WILL.</Col>
+            <Col id="EDITOR_NM">HARRIS, SAM.</Col>
+            <Col id="PRESS_NM">FREE PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">218</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FRIENDS FOREVER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">STEEL, DANIELLE.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">219</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FRIENDS LIKE US: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FOX, LAUREN.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">220</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FROZEN HEAT.</Col>
+            <Col id="EDITOR_NM">CASTLE, RICHARD.</Col>
+            <Col id="PRESS_NM">HYPERION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">221</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">FUN HOUSE: A JOHN CEEPAK MYSTERY.</Col>
+            <Col id="EDITOR_NM">GRABENSTEIN, CHRIS.</Col>
+            <Col id="PRESS_NM">PEGASUS BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">222</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GARDEN OF EVENING MISTS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">TAN, TWAN ENG.</Col>
+            <Col id="PRESS_NM">WEINSTEIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">223</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GATHERING OF WATERS.</Col>
+            <Col id="EDITOR_NM">MCFADDEN, BERNICE L.</Col>
+            <Col id="PRESS_NM">AKASHIC BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">224</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GENTRY: STORIES OF THE ENGLISH.</Col>
+            <Col id="EDITOR_NM">NICOLSON, ADAM.</Col>
+            <Col id="PRESS_NM">HARPER PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">225</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GEORGE F. KENNAN: AN AMERICAN LIFE.</Col>
+            <Col id="EDITOR_NM">GADDIS, JOHN LEWIS.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">226</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GHOSTING.</Col>
+            <Col id="EDITOR_NM">GANN, KIRBY, 1968-</Col>
+            <Col id="PRESS_NM">IG PUBLISHING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">227</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GIFT OF HOPE: HELPING THE HOMELESS.</Col>
+            <Col id="EDITOR_NM">STEEL, DANIELLE.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">228</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GIRL LAND.</Col>
+            <Col id="EDITOR_NM">FLANAGAN, CAITLIN.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">229</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GODS OF GOTHAM.</Col>
+            <Col id="EDITOR_NM">FAYE, LYNDSAY.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">230</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GODS WITHOUT MEN.</Col>
+            <Col id="EDITOR_NM">KUNZRU, HARI.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">231</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GOLDEN APPLES.</Col>
+            <Col id="EDITOR_NM">WELTY, EUDORA.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">232</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GOLD-RIMMED SPECTACLES.</Col>
+            <Col id="EDITOR_NM">BASSANI, GIORGIO.</Col>
+            <Col id="PRESS_NM">PENGUIN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">233</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GONE GIRL.</Col>
+            <Col id="EDITOR_NM">FLYNN, GILLIAN.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">234</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GONE TO THE FOREST: A NOVEL.</Col>
+            <Col id="EDITOR_NM">KITAMURA, KATIE M.</Col>
+            <Col id="PRESS_NM">FREE PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">235</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GONE.</Col>
+            <Col id="EDITOR_NM">WHITE, RANDY WAYNE.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">236</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GOOD AMERICAN.</Col>
+            <Col id="EDITOR_NM">GEORGE, ALEX.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">237</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GOOD FATHER.</Col>
+            <Col id="EDITOR_NM">HAWLEY, NOAH.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">238</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GOODBYE AGAIN.</Col>
+            <Col id="EDITOR_NM">HONE, JOSEPH, 1937-</Col>
+            <Col id="PRESS_NM">LILLIPUT PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">239</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GOODBYE FOR NOW: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FRANKEL, LAURIE.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">240</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GOODBYE, TWENTIETH CENTURY.</Col>
+            <Col id="EDITOR_NM">ABSE, DANNIE.</Col>
+            <Col id="PRESS_NM">PARTHIAN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">241</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GRACE: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">CODDINGTON, GRACE.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">242</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GREEN-EYED THIEVES.</Col>
+            <Col id="EDITOR_NM">COOVADIA, IMRAAN.</Col>
+            <Col id="PRESS_NM">SEAGULL PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">243</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">GRIMM TALES: FOR YOUNG AND OLD.</Col>
+            <Col id="EDITOR_NM">PULLMAN, PHILIP.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">244</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HABITS OF THE HOUSE.</Col>
+            <Col id="EDITOR_NM">WELDON, FAY.</Col>
+            <Col id="PRESS_NM">HEAD OF ZEUS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">245</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HAND OF FU-MANCHU.</Col>
+            <Col id="EDITOR_NM">ROHMER, SAX.</Col>
+            <Col id="PRESS_NM">TITAN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">246</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HARRIET.</Col>
+            <Col id="EDITOR_NM">JENKINS, ELIZABETH.</Col>
+            <Col id="PRESS_NM">PERSEPHONE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">247</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HAVISHAM: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FRAME, RONALD.</Col>
+            <Col id="PRESS_NM">FABER AND FABER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">248</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HAWK QUEST.</Col>
+            <Col id="EDITOR_NM">LYNDON, ROBERT.</Col>
+            <Col id="PRESS_NM">SPHERE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">249</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HAWTHORN AND CHILD.</Col>
+            <Col id="EDITOR_NM">RIDGWAY, KEITH.</Col>
+            <Col id="PRESS_NM">GRANTA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">250</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HEADMASTER'S WAGER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LAM, VINCENT.</Col>
+            <Col id="PRESS_NM">HOGARTH</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">251</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HEDGE FUND &amp; OTHER LIVING MARGINS.</Col>
+            <Col id="EDITOR_NM">MOORE, HELEN.</Col>
+            <Col id="PRESS_NM">SHEARSMAN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">252</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HEFT.</Col>
+            <Col id="EDITOR_NM">MOORE, LIZ, 1983-</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">253</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HELEN KELLER IN LOVE.</Col>
+            <Col id="EDITOR_NM">SULTAN, ROSIE.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">254</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HENRY EXPERIMENT.</Col>
+            <Col id="EDITOR_NM">RADICE, SOPHIE.</Col>
+            <Col id="PRESS_NM">LINEN PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">255</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HERBS: A GLOBAL HISTORY.</Col>
+            <Col id="EDITOR_NM">ALLEN, GARY.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">256</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HHHH.</Col>
+            <Col id="EDITOR_NM">BINET, LAURENT.</Col>
+            <Col id="PRESS_NM">HARVILL SECKER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">257</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HIGHER GOSSIP: ESSAYS AND CRITICISM</Col>
+            <Col id="EDITOR_NM">UPDIKE, JOHN.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">258</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HISTORY OF FOOD IN 100 RECIPES.</Col>
+            <Col id="EDITOR_NM">SITWELL, WILLIAM.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">259</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HISTORY OF OPERA.</Col>
+            <Col id="EDITOR_NM">ABBATE, CAROLYN.</Col>
+            <Col id="PRESS_NM">WW NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">260</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HITLER.</Col>
+            <Col id="EDITOR_NM">WILSON, A N.</Col>
+            <Col id="PRESS_NM">BASIC BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">261</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOLOGRAM FOR THE KING: A NOVEL.</Col>
+            <Col id="EDITOR_NM">EGGERS, DAVE.</Col>
+            <Col id="PRESS_NM">MCSWEENEY'S</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">262</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HONOURABLE MAN.</Col>
+            <Col id="EDITOR_NM">SLOVO, GILLIAN.</Col>
+            <Col id="PRESS_NM">VIRAGO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">263</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOT PINK.</Col>
+            <Col id="EDITOR_NM">LEVIN, ADAM.</Col>
+            <Col id="PRESS_NM">MCSWEENEY'S</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">264</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOUSE OF THE HUNTED: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MILLS, MARK.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">265</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOUSE ON PARADISE STREET.</Col>
+            <Col id="EDITOR_NM">ZINOVIEFF, SOFKA.</Col>
+            <Col id="PRESS_NM">SHORT BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">266</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOUSE THAT GROANED.</Col>
+            <Col id="EDITOR_NM">FRANSMAN, KARRIE.</Col>
+            <Col id="PRESS_NM">SQUARE PEG</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">267</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOW IT ALL BEGAN: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LIVELY, PENELOPE.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">268</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOW MUSIC WORKS.</Col>
+            <Col id="EDITOR_NM">BYRNE, DAVID.</Col>
+            <Col id="PRESS_NM">MCSWEENEY'S</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">269</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HOW TO BE BLACK.</Col>
+            <Col id="EDITOR_NM">THURSTON, BARATUNDE.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">270</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HUNTER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LESCROART, JOHN T.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">271</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">HUSH HUSH: STORIES.</Col>
+            <Col id="EDITOR_NM">BARTHELME, STEVE.</Col>
+            <Col id="PRESS_NM">MELVILLE HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">272</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">I AM A LINGUIST.</Col>
+            <Col id="EDITOR_NM">DIXON, ROBERT M.W.</Col>
+            <Col id="PRESS_NM">BRILL</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">273</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">I AM FORBIDDEN.</Col>
+            <Col id="EDITOR_NM">MARKOVITS, ANOUK.</Col>
+            <Col id="PRESS_NM">HOGARTH</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">274</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">I, MICHAEL BENNETT.</Col>
+            <Col id="EDITOR_NM">PATTERSON, JAMES.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">275</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">IAGO: A NOVEL.</Col>
+            <Col id="EDITOR_NM">SNODIN, DAVID.</Col>
+            <Col id="PRESS_NM">HENRY HOLT</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">276</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ICED: A DANI O'MALLEY NOVEL.</Col>
+            <Col id="EDITOR_NM">MONING, KAREN MARIE.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">277</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">IF THIS IS HOME.</Col>
+            <Col id="EDITOR_NM">EVERS, STUART.</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">278</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">IGNORANCE.</Col>
+            <Col id="EDITOR_NM">ROBERTS, MICHELE.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">279</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">IMPERFECT: AN IMPROBABLE LIFE.</Col>
+            <Col id="EDITOR_NM">ABBOTT, JIM.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">280</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">IN THE KINGDOM OF MEN: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BARNES, KIM.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">281</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">IN THE ORCHARD, THE SWALLOWS.</Col>
+            <Col id="EDITOR_NM">HOBBS, PETER.</Col>
+            <Col id="PRESS_NM">FABER AND FABER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">282</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">INFRARED.</Col>
+            <Col id="EDITOR_NM">HUSTON, NANCY.</Col>
+            <Col id="PRESS_NM">GROVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">283</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">INN AT ROSE HARBOR: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MACOMBER, DEBBIE.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">284</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">INSIDE.</Col>
+            <Col id="EDITOR_NM">OHLIN, ALIX.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">285</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">INTO THE WAR.</Col>
+            <Col id="EDITOR_NM">CALVINO, ITALO.</Col>
+            <Col id="PRESS_NM">PENGUIN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">286</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">INVISIBLE ONES: A NOVEL.</Col>
+            <Col id="EDITOR_NM">PENNEY, STEF.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">287</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ISLAMOPHOBIA.</Col>
+            <Col id="EDITOR_NM">ALLEN, CHRISTOPHER.</Col>
+            <Col id="PRESS_NM">ASHGATE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">288</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ISLAND OF WINGS.</Col>
+            <Col id="EDITOR_NM">ALTENBERG, KARIN.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">289</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ISLANDERS.</Col>
+            <Col id="EDITOR_NM">PRIEST, CHRISTOPHER.</Col>
+            <Col id="PRESS_NM">GOLLANCZ</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">290</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ISTANBUL PASSAGE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">KANON, JOSEPH.</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">291</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">IT'S THE MIDDLE CLASS, STUPID!</Col>
+            <Col id="EDITOR_NM">CARVILLE, JAMES.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">292</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JAINA PROUDMOORE: TIDES OF WAR.</Col>
+            <Col id="EDITOR_NM">GOLDEN, CHRISTIE.</Col>
+            <Col id="PRESS_NM">GALLERY BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">293</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JAMES MADISON.</Col>
+            <Col id="EDITOR_NM">BROOKHISER, RICHARD.</Col>
+            <Col id="PRESS_NM">BASIC BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">294</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JERUSALEM: A COOKBOOK.</Col>
+            <Col id="EDITOR_NM">OTTOLENGHI, YOTAM.</Col>
+            <Col id="PRESS_NM">TEN SPEED</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">295</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JOHN CAGE.</Col>
+            <Col id="EDITOR_NM">HASKINS, ROB, 1960-</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">296</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JOHN HUSTON: COURAGE AND ART.</Col>
+            <Col id="EDITOR_NM">MEYERS, JEFFREY.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">297</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JOSEPH ANTON: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">RUSHDIE, SALMAN.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">298</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JUDGMENT CALL.</Col>
+            <Col id="EDITOR_NM">JANCE, J.A.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">299</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">JUST KIDS.</Col>
+            <Col id="EDITOR_NM">SMITH, PATTI.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">300</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">KINGDOM COME.</Col>
+            <Col id="EDITOR_NM">BALLARD, J.G.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">301</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">KINGDOM OF STRANGERS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FERRARIS, ZOE.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">302</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">KONSTANTIN.</Col>
+            <Col id="EDITOR_NM">BULLOUGH, TOM.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">303</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">KURT VONNEGUT: LETTERS</Col>
+            <Col id="EDITOR_NM">VONNEGUT, KURT.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">304</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LACRIMOSA: A NOVEL.</Col>
+            <Col id="EDITOR_NM">JAUFFRET, REGIS.</Col>
+            <Col id="PRESS_NM">SALAMMBO PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">305</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LAND MORE KIND THAN HOME.</Col>
+            <Col id="EDITOR_NM">CASH, WILEY.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">306</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LAND OF DECORATION: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MCCLEEN, GRACE.</Col>
+            <Col id="PRESS_NM">HENRY HOLT</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">307</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LAST HUNDRED DAYS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MCGUINNESS, PATRICK.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">308</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LAST KIND WORDS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">PICCIRILLI, TOM.</Col>
+            <Col id="PRESS_NM">BANTAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">309</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LAST MAN: A THRILLER.</Col>
+            <Col id="EDITOR_NM">FLYNN, VINCE.</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">310</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LAST NUDE.</Col>
+            <Col id="EDITOR_NM">AVERY, ELLIS.</Col>
+            <Col id="PRESS_NM">RIVERHEAD BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">311</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LAURA LAMONT'S LIFE IN PICTURES.</Col>
+            <Col id="EDITOR_NM">STRAUB, EMMA.</Col>
+            <Col id="PRESS_NM">RIVERHEAD BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">312</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LEBANESE KITCHEN.</Col>
+            <Col id="EDITOR_NM">HAGEM, SALMA.</Col>
+            <Col id="PRESS_NM">PHAIDON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">313</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LEFTY: AN AMERICAN ODYSSEY.</Col>
+            <Col id="EDITOR_NM">GOMEZ, VERNONA.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">314</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LEGENDS OF THE CAUCASUS.</Col>
+            <Col id="EDITOR_NM">HUNT, DAVID.</Col>
+            <Col id="PRESS_NM">SAQI BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">315</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LET THE DEVIL SLEEP: A NOVEL.</Col>
+            <Col id="EDITOR_NM">VERDON, JOHN.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">316</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LETTERS TO A FRIEND.</Col>
+            <Col id="EDITOR_NM">ATHILL, DIANA.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">317</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIARS' GOSPEL.</Col>
+            <Col id="EDITOR_NM">ALDERMAN, NAOMI.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">318</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIFE AFTER DEATH.</Col>
+            <Col id="EDITOR_NM">ECHOLS, DAMIEN.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">319</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIFEBOAT: A NOVEL.</Col>
+            <Col id="EDITOR_NM">ROGAN, CHARLOTTE.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">320</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIFESPAN OF A FACT.</Col>
+            <Col id="EDITOR_NM">D'AGATA, JOHN, 1974-</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">321</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIGHT BETWEEN OCEANS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">STEDMAN, M.L.</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">322</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIGHTHOUSE.</Col>
+            <Col id="EDITOR_NM">MOORE, ALISON.</Col>
+            <Col id="PRESS_NM">SALT PUBLISHING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">323</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIGHTNING RODS.</Col>
+            <Col id="EDITOR_NM">DEWITT, HELEN.</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">324</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LION IS IN.</Col>
+            <Col id="EDITOR_NM">EPHRON, DELIA.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">325</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIONEL ASBO: STATE OF ENGLAND.</Col>
+            <Col id="EDITOR_NM">AMIS, MARTIN.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">326</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIONEL ASBO: THE STATE OF ENGLAND.</Col>
+            <Col id="EDITOR_NM">AMIS, MARTIN.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">327</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIVE BY NIGHT.</Col>
+            <Col id="EDITOR_NM">LEHANE, DENNIS.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">328</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LIVING, THINKING, LOOKING: ESSAYS.</Col>
+            <Col id="EDITOR_NM">HUSTVEDT, SIRI.</Col>
+            <Col id="PRESS_NM">PICADOR USA</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">329</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LOBSTER.</Col>
+            <Col id="EDITOR_NM">KING, RICHARD J.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">330</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LOBSTER: A GLOBAL HISTORY.</Col>
+            <Col id="EDITOR_NM">TOWNSEND, ELISABETH.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">331</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LONE WOLF: A NOVEL.</Col>
+            <Col id="EDITOR_NM">PICOULT, JODI, 1966-</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">332</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LONESOME ANIMALS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">HOLBERT, BRUCE.</Col>
+            <Col id="PRESS_NM">COUNTERPOINT</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">333</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LONG CUTS.</Col>
+            <Col id="EDITOR_NM">MORGAN, J.O.</Col>
+            <Col id="PRESS_NM">CB EDITIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">334</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LONG EARTH.</Col>
+            <Col id="EDITOR_NM">PRATCHETT, TERRY.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">335</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LORD OF MOUNTAINS.</Col>
+            <Col id="EDITOR_NM">STIRLING, S. M.</Col>
+            <Col id="PRESS_NM">ROC</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">336</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LOST MEMORY OF SKIN.</Col>
+            <Col id="EDITOR_NM">BANKS, RUSSELL.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">337</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LOST PRINCE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">EDWARDS, SELDEN.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">338</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LOTHAIRE.</Col>
+            <Col id="EDITOR_NM">COLE, KRESLEY.</Col>
+            <Col id="PRESS_NM">GALLERY BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">339</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LOTS OF CANDLES, PLENTY OF CAKE.</Col>
+            <Col id="EDITOR_NM">QUINDLEN, ANNA.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">340</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">LOVE'S BONFIRE.</Col>
+            <Col id="EDITOR_NM">PAULIN, TOM.</Col>
+            <Col id="PRESS_NM">FABER AND FABER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">341</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MAD RIVER.</Col>
+            <Col id="EDITOR_NM">SANDFORD, JOHN.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">342</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MADAME MEPHISTO: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BAKALAR, A.M.</Col>
+            <Col id="PRESS_NM">STORK PRESS LTD</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">343</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MAGNIFICENCE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MILLET, LYDIA, 1968-</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">344</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MAHARAM AGENDA.</Col>
+            <Col id="EDITOR_NM">MAHARAM, MICHAEL.</Col>
+            <Col id="PRESS_NM">LARS MULLER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">345</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MAKE IT STAY.</Col>
+            <Col id="EDITOR_NM">FRANK, JOAN.</Col>
+            <Col id="PRESS_NM">PERMANENT PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">346</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MAN WHO RAINED.</Col>
+            <Col id="EDITOR_NM">SHAW, ALI.</Col>
+            <Col id="PRESS_NM">ATLANTIC</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">347</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MAN WITHIN MY HEAD.</Col>
+            <Col id="EDITOR_NM">IYER, PICO.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">348</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MANCHESTER CITY RUINED MY LIFE.</Col>
+            <Col id="EDITOR_NM">SHINDLER, COLIN.</Col>
+            <Col id="PRESS_NM">HEADLINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">349</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MANHATTAN PROJECTS 1: SCIENCE BAD.</Col>
+            <Col id="EDITOR_NM">HICKMAN, JONATHAN.</Col>
+            <Col id="PRESS_NM">IMAGE COMICS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">350</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MARLOWE PAPERS: A NOVEL IN VERSE.</Col>
+            <Col id="EDITOR_NM">BARBER, ROS.</Col>
+            <Col id="PRESS_NM">SCEPTRE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">351</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MARRIED LOVE AND OTHER STORIES.</Col>
+            <Col id="EDITOR_NM">HADLEY, TESSA.</Col>
+            <Col id="PRESS_NM">HARPERPERENNIAL</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">352</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MARVEL COMICS: THE UNTOLD STORY.</Col>
+            <Col id="EDITOR_NM">HOWE, SEAN.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">353</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MAY WE BE FORGIVEN.</Col>
+            <Col id="EDITOR_NM">HOMES, A.M.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">354</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ME AND THE DEVIL: A NOVEL.</Col>
+            <Col id="EDITOR_NM">TOSCHES, NICK.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">355</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MEAGRE TARMAC: STORIES.</Col>
+            <Col id="EDITOR_NM">BLAISE, CLARK.</Col>
+            <Col id="PRESS_NM">BIBLIOASIS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">356</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MELISANDE! WHAT ARE DREAMS?</Col>
+            <Col id="EDITOR_NM">HALKIN, HILLEL.</Col>
+            <Col id="PRESS_NM">GRANTA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">357</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MEN IN SPACE.</Col>
+            <Col id="EDITOR_NM">MCCARTHY, TOM, 1969-</Col>
+            <Col id="PRESS_NM">VINTAGE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">358</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MERCURY FOUNTAIN.</Col>
+            <Col id="EDITOR_NM">FACTOR, ELIZA.</Col>
+            <Col id="PRESS_NM">AKASHIC BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">359</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MERGE/DISCIPLE.</Col>
+            <Col id="EDITOR_NM">MOSLEY, WALTER.</Col>
+            <Col id="PRESS_NM">TOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">360</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MERIVEL: A MAN OF HIS TIME.</Col>
+            <Col id="EDITOR_NM">TREMAIN, ROSE.</Col>
+            <Col id="PRESS_NM">CHATTO &amp; WINDUS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">361</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MERRY CHRISTMAS, ALEX CROSS.</Col>
+            <Col id="EDITOR_NM">PATTERSON, JAMES.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">362</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MIAMI BLUES.</Col>
+            <Col id="EDITOR_NM">WILLEFORD, CHARLES.</Col>
+            <Col id="PRESS_NM">PENGUIN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">363</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MIDST TOIL AND TRIBULATION.</Col>
+            <Col id="EDITOR_NM">WEBER, DAVID, 1952-</Col>
+            <Col id="PRESS_NM">TOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">364</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MILLION HEAVENS.</Col>
+            <Col id="EDITOR_NM">BRANDON, JOHN.</Col>
+            <Col id="PRESS_NM">MCSWEENEY'S</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">365</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MIRAGE.</Col>
+            <Col id="EDITOR_NM">RUFF, MATT.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">366</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MISADVENTURE.</Col>
+            <Col id="EDITOR_NM">MEIER, RICHARD.</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">367</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MISS ME WHEN I'M GONE.</Col>
+            <Col id="EDITOR_NM">ARSENAULT, EMILY.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">368</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MISSING OF THE SOMME.</Col>
+            <Col id="EDITOR_NM">DYER, GEOFF.</Col>
+            <Col id="PRESS_NM">VINTAGE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">369</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MISSING SHADE OF BLUE.</Col>
+            <Col id="EDITOR_NM">ERDAL, JENNIE.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">370</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MISSION TO PARIS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FURST, ALAN.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">371</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MO SAID SHE WAS QUIRKY.</Col>
+            <Col id="EDITOR_NM">KELMAN, JAMES.</Col>
+            <Col id="PRESS_NM">HAMISH HAMILTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">372</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MODERNIST CUISINE: AT HOME.</Col>
+            <Col id="EDITOR_NM">MYHRVOLD, NATHAN.</Col>
+            <Col id="PRESS_NM">COOKING LAB</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">373</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MONSTRESS: STORIES.</Col>
+            <Col id="EDITOR_NM">TENORIO, LYSLEY.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">374</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MOUNTAINS OF THE MOON.</Col>
+            <Col id="EDITOR_NM">KAY, I.J.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">375</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MR G: A NOVEL ABOUT THE CREATION.</Col>
+            <Col id="EDITOR_NM">LIGHTMAN, ALAN.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">376</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MRS BRIDGE.</Col>
+            <Col id="EDITOR_NM">CONNELL, EVAN S.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">377</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MUDWOMAN.</Col>
+            <Col id="EDITOR_NM">OATES, JOYCE CAROL.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">378</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">MY CROSS TO BEAR.</Col>
+            <Col id="EDITOR_NM">ALLMAN, GREGG, 1947-</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">379</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NAO OF BROWN.</Col>
+            <Col id="EDITOR_NM">DILLON, GLYN.</Col>
+            <Col id="PRESS_NM">HARRY N. ABRAMS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">380</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NAPOLEON SYMPHONY.</Col>
+            <Col id="EDITOR_NM">BURGESS, ANTHONY.</Col>
+            <Col id="PRESS_NM">PROFILE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">381</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NARCOPOLIS.</Col>
+            <Col id="EDITOR_NM">THAYIL, JEET, 1959-</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">382</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NEAR TO THE WILD HEART</Col>
+            <Col id="EDITOR_NM">LISPECTOR, CLARICE.</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">383</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NEFERTITI IN THE FLAK TOWER.</Col>
+            <Col id="EDITOR_NM">JAMES, CLIVE.</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">384</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NET SMART: HOW TO THRIVE ONLINE.</Col>
+            <Col id="EDITOR_NM">RHEINGOLD, HOWARD.</Col>
+            <Col id="PRESS_NM">MIT PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">385</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NEW REPUBLIC: A NOVEL.</Col>
+            <Col id="EDITOR_NM">SHRIVER, LIONEL.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">386</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NEXT BEST THING: A NOVEL.</Col>
+            <Col id="EDITOR_NM">WEINER, JENNIFER.</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">387</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NEXT TO LOVE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">FELDMAN, ELLEN.</Col>
+            <Col id="PRESS_NM">SPIEGEL &amp; GRAU</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">388</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NIGHT WATCH.</Col>
+            <Col id="EDITOR_NM">FAIRSTEIN, LINDA.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">389</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NINE LIVES OF WILLIAM SHAKESPEARE.</Col>
+            <Col id="EDITOR_NM">HOLDERNESS, GRAHAM.</Col>
+            <Col id="PRESS_NM">CONTINUUM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">390</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NINETY DAYS: A MEMOIR OF RECOVERY.</Col>
+            <Col id="EDITOR_NM">CLEGG, BILL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">391</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NO ANIMALS WE COULD NAME: STORIES.</Col>
+            <Col id="EDITOR_NM">SANDERS, TED, 1969-</Col>
+            <Col id="PRESS_NM">GRAYWOLF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">392</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NO MARK UPON HER.</Col>
+            <Col id="EDITOR_NM">CROMBIE, DEBORAH.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">393</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NOT TACO BELL MATERIAL: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">CAROLLA, ADAM.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">394</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NOTES FOR LIGHTING A FIRE.</Col>
+            <Col id="EDITOR_NM">CAMBRIDGE, GERRY.</Col>
+            <Col id="PRESS_NM">HAPPENSTANCE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">395</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NOUGHTIES.</Col>
+            <Col id="EDITOR_NM">MASTERS, BEN.</Col>
+            <Col id="PRESS_NM">HAMISH HAMILTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">396</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NW.</Col>
+            <Col id="EDITOR_NM">SMITH, ZADIE.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">397</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">NYPD RED.</Col>
+            <Col id="EDITOR_NM">PATTERSON, JAMES.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">398</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OBAMAS.</Col>
+            <Col id="EDITOR_NM">KANTOR, JODI.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">399</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">O'BRIENS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BEHRENS, PETER.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">400</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ODI BARBARE; DAY BOOKS; II.</Col>
+            <Col id="EDITOR_NM">HILL, GEOFFREY.</Col>
+            <Col id="PRESS_NM">CLUTAG PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">401</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OFFICE GIRL: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MENO, JOE.</Col>
+            <Col id="PRESS_NM">AKASHIC BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">402</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ON BEING ILL.</Col>
+            <Col id="EDITOR_NM">WOOLF, VIRGINIA.</Col>
+            <Col id="PRESS_NM">PARIS PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">403</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ON POETRY.</Col>
+            <Col id="EDITOR_NM">MAXWELL, GLYN, 1962-</Col>
+            <Col id="PRESS_NM">OBERON BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">404</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ONE FOR THE BOOKS.</Col>
+            <Col id="EDITOR_NM">QUEENAN, JOE.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">405</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ONE MORE RIVER TO CROSS.</Col>
+            <Col id="EDITOR_NM">PRINCE, BRYAN, 1951-</Col>
+            <Col id="PRESS_NM">DUNDURN PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">406</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OPPOSED POSITIONS.</Col>
+            <Col id="EDITOR_NM">RILEY, GWENDOLINE.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">407</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ORCHARDIST: A NOVEL.</Col>
+            <Col id="EDITOR_NM">COPLIN, AMANDA.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">408</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ORPHAN MASTER'S SON.</Col>
+            <Col id="EDITOR_NM">JOHNSON, ADAM.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">409</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ORPHAN MASTER'S SON: A NOVEL.</Col>
+            <Col id="EDITOR_NM">JOHNSON, ADAM.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">410</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ORPHANMASTER.</Col>
+            <Col id="EDITOR_NM">ZIMMERMAN, JEAN.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">411</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ORPHEUS: THE SONG OF LIFE.</Col>
+            <Col id="EDITOR_NM">WROE, ANN.</Col>
+            <Col id="PRESS_NM">OVERLOOK</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">412</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OTHER PEOPLE WE MARRIED: STORIES.</Col>
+            <Col id="EDITOR_NM">STRAUB, EMMA.</Col>
+            <Col id="PRESS_NM">RIVERHEAD BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">413</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OUR QUEEN.</Col>
+            <Col id="EDITOR_NM">HARDMAN, ROBERT.</Col>
+            <Col id="PRESS_NM">HUTCHINSON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">414</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OUT OF IT.</Col>
+            <Col id="EDITOR_NM">DABBAGH, SELMA.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">415</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OUT OF THE BLUE.</Col>
+            <Col id="EDITOR_NM">CRUZ, VICTOR.</Col>
+            <Col id="PRESS_NM">CELEBRA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">416</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">OUTLAW ALBUM: STORIES.</Col>
+            <Col id="EDITOR_NM">WOODRELL, DANIEL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">417</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PACAZO: A NOVEL.</Col>
+            <Col id="EDITOR_NM">KESEY, ROY.</Col>
+            <Col id="PRESS_NM">DZANC BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">418</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PAINTER OF SILENCE.</Col>
+            <Col id="EDITOR_NM">HARDING, GEORGINA.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">419</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PARIS CORRESPONDENT.</Col>
+            <Col id="EDITOR_NM">COWELL, ALAN S.</Col>
+            <Col id="PRESS_NM">OVERLOOK</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">420</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PASSION ACCORDING TO G.H.</Col>
+            <Col id="EDITOR_NM">LISPECTOR, CLARICE.</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">421</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">'PATAPHYSICS: A USELESS GUIDE.</Col>
+            <Col id="EDITOR_NM">HUGILL, ANDREW.</Col>
+            <Col id="PRESS_NM">MIT PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">422</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PAULINE KAEL: A LIFE IN THE DARK.</Col>
+            <Col id="EDITOR_NM">KELLOW, BRIAN.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">423</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PERFECT BLOOD.</Col>
+            <Col id="EDITOR_NM">HARRISON, KIM.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">424</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PERLMANN'S SILENCE.</Col>
+            <Col id="EDITOR_NM">MERCIER, PASCAL.</Col>
+            <Col id="PRESS_NM">GROVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">425</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PHANTOM.</Col>
+            <Col id="EDITOR_NM">BELL, TED.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">426</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PHANTOM; TRANS. BY DON BARTLETT.</Col>
+            <Col id="EDITOR_NM">NESBO, JO.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">427</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PHILIDA: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BRINK, ANDRE.</Col>
+            <Col id="PRESS_NM">HARVILL SECKER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">428</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PHILOSOPHY OF SPORT.</Col>
+            <Col id="EDITOR_NM">CONNOR, STEVEN.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">429</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PINEAPPLE GRENADE.</Col>
+            <Col id="EDITOR_NM">DORSEY, TIM.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">430</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PITY THE BEAUTIFUL: POEMS.</Col>
+            <Col id="EDITOR_NM">GIOIA, DANA.</Col>
+            <Col id="PRESS_NM">GRAYWOLF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">431</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PLACE.</Col>
+            <Col id="EDITOR_NM">GRAHAM, JORIE, 1951-</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">432</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PLAYDATE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MILLAR, LOUISE.</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">433</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">POINT OF VIEW.</Col>
+            <Col id="EDITOR_NM">JAMES, CLIVE.</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">434</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">POSEIDON'S ARROW.</Col>
+            <Col id="EDITOR_NM">CUSSLER, CLIVE.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">435</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">POTBOILER.</Col>
+            <Col id="EDITOR_NM">KELLERMAN, JESSE.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">436</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">POTTER'S HAND.</Col>
+            <Col id="EDITOR_NM">WILSON, A.N.</Col>
+            <Col id="PRESS_NM">ATLANTIC</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">437</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRE-RAPHAELITE DRAWING.</Col>
+            <Col id="EDITOR_NM">CRUISE, COLIN.</Col>
+            <Col id="PRESS_NM">THAMES &amp; HUDSON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">438</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRICE OF INEQUALITY.</Col>
+            <Col id="EDITOR_NM">STIGLITZ, JOSEPH E.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">439</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRINCE.</Col>
+            <Col id="EDITOR_NM">THORNE, MATT.</Col>
+            <Col id="PRESS_NM">FABER AND FABER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">440</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRISONER OF HEAVEN.</Col>
+            <Col id="EDITOR_NM">RUIZ ZAFON, CARLOS.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">441</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRISONER OF PARADISE.</Col>
+            <Col id="EDITOR_NM">GUNESEKERA, ROMESH.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">442</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRIVACY.</Col>
+            <Col id="EDITOR_NM">KEIZER, GARRET.</Col>
+            <Col id="PRESS_NM">PICADOR USA</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">443</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRIVATE GAMES.</Col>
+            <Col id="EDITOR_NM">PATTERSON, JAMES.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">444</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PRIVATE: #1 SUSPECT: A NOVEL.</Col>
+            <Col id="EDITOR_NM">PATTERSON, JAMES.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">445</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PROFESSOR ANDERSEN'S NIGHT.</Col>
+            <Col id="EDITOR_NM">SOLSTAD, DAG.</Col>
+            <Col id="PRESS_NM">HARVILL SECKER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">446</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PROFIT AND LOSS.</Col>
+            <Col id="EDITOR_NM">FLYNN, LEONTIA.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">447</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PROJECT JAPAN: METABOLISM TALKS...</Col>
+            <Col id="EDITOR_NM">KOOLHAAS, REM.</Col>
+            <Col id="PRESS_NM">TASCHEN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">448</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PROPHET.</Col>
+            <Col id="EDITOR_NM">KORYTA, MICHAEL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">449</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PURPLE CLOUD.</Col>
+            <Col id="EDITOR_NM">SHIEL, M. P.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">450</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">PURPOSE: AN IMMIGRANT'S STORY.</Col>
+            <Col id="EDITOR_NM">JEAN, WYCLEF.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">451</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">QUALITY OF MERCY.</Col>
+            <Col id="EDITOR_NM">UNSWORTH, BARRY.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">452</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">QUEEN: A LIFE IN BRIEF.</Col>
+            <Col id="EDITOR_NM">LACEY, ROBERT.</Col>
+            <Col id="PRESS_NM">HARPERPERENNIAL</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">453</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RACKETEER.</Col>
+            <Col id="EDITOR_NM">GRISHAM, JOHN.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">454</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RAW MATERIAL.</Col>
+            <Col id="EDITOR_NM">MAHON, DEREK.</Col>
+            <Col id="PRESS_NM">GALLERY PR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">455</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RAYLAN.</Col>
+            <Col id="EDITOR_NM">EONARD, ELMORE.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">456</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">REAL ROMNEY.</Col>
+            <Col id="EDITOR_NM">KRANISH, MICHAEL.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">457</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">REALITY, REALITY.</Col>
+            <Col id="EDITOR_NM">KAY, JACKIE, 1961-</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">458</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RED HOUSE.</Col>
+            <Col id="EDITOR_NM">HADDON, MARK.</Col>
+            <Col id="PRESS_NM">VINTAGE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">459</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RED HOUSE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">HADDON, MARK.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">460</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">REDSHIRTS.</Col>
+            <Col id="EDITOR_NM">SCALZI, JOHN, 1969-</Col>
+            <Col id="PRESS_NM">TOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">461</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RETURN OF DR. FU-MANCHU.</Col>
+            <Col id="EDITOR_NM">ROHMER, SAX.</Col>
+            <Col id="PRESS_NM">TITAN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">462</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RIDING FURY HOME: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">WILSON, CHANA. 1951-</Col>
+            <Col id="PRESS_NM">SEAL</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">463</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">RISING THUNDER.</Col>
+            <Col id="EDITOR_NM">WEBER, DAVID.</Col>
+            <Col id="PRESS_NM">BAEN PUBLISHING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">464</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ROD: THE AUTOBIOGRAPHY.</Col>
+            <Col id="EDITOR_NM">STEWART, ROD.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">465</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ROLLING STONES AT FIFTY.</Col>
+            <Col id="EDITOR_NM">JAGGER, MICK.</Col>
+            <Col id="PRESS_NM">HYPERION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">466</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ROOK.</Col>
+            <Col id="EDITOR_NM">RUSBRIDGE, JANE.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">467</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ROUND HOUSE.</Col>
+            <Col id="EDITOR_NM">ERDRICH, LOUISE.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">468</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ROUNDABOUT MAN.</Col>
+            <Col id="EDITOR_NM">MORRALL, CLARE.</Col>
+            <Col id="PRESS_NM">SCEPTRE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">469</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ROYAL CITIES OF THE ANCIENT MAYA.</Col>
+            <Col id="EDITOR_NM">COE, MICHAEL D.</Col>
+            <Col id="PRESS_NM">VENDOME</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">470</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SALMOND: AGAINST THE ODDS.</Col>
+            <Col id="EDITOR_NM">TORRANCE, DAVID.</Col>
+            <Col id="PRESS_NM">BIRLINN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">471</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SALVAGE THE BONES.</Col>
+            <Col id="EDITOR_NM">WARD, JESMYN.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">472</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SARAH THORNHILL.</Col>
+            <Col id="EDITOR_NM">GRENVILLE, KATE.</Col>
+            <Col id="PRESS_NM">GROVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">473</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SAUL STEINBERG: A BIOGRAPHY.</Col>
+            <Col id="EDITOR_NM">BAIR, DEIRDRE.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">474</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SAY NICE THINGS ABOUT DETROIT.</Col>
+            <Col id="EDITOR_NM">LASSER, SCOTT.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">475</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SAY YOU'RE SORRY.</Col>
+            <Col id="EDITOR_NM">ROBOTHAM, MICHAEL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">476</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SCENES FROM EARLY LIFE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">HENSHER, PHILIP.</Col>
+            <Col id="PRESS_NM">FOURTH ESTATE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">477</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SCHMIDT STEPS BACK.</Col>
+            <Col id="EDITOR_NM">BEGLEY, LOUIS.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">478</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SCIENCE OF LOVE AND BETRAYAL.</Col>
+            <Col id="EDITOR_NM">DUNBAR, ROBIN.</Col>
+            <Col id="PRESS_NM">FABER AND FABER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">479</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SECOND WORLD WAR.</Col>
+            <Col id="EDITOR_NM">BEEVOR, ANTONY.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">480</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SECRET KEEPER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MORTON, KATE, 1976-</Col>
+            <Col id="PRESS_NM">ATRIA BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">481</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SELECTED PROSE.</Col>
+            <Col id="EDITOR_NM">MAHON, DEREK, 1941-</Col>
+            <Col id="PRESS_NM">GALLERY PR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">482</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SELF-CONTROL.</Col>
+            <Col id="EDITOR_NM">SAETERBAKKEN, STIG.</Col>
+            <Col id="PRESS_NM">DALKEY ARCHIVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">483</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SERVER.</Col>
+            <Col id="EDITOR_NM">PARKS, TIM.</Col>
+            <Col id="PRESS_NM">HARVILL SECKER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">484</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SERVICE: A NAVY SEAL AT WAR.</Col>
+            <Col id="EDITOR_NM">LUTTRELL, MARCUS.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">485</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SHADOW OF NIGHT.</Col>
+            <Col id="EDITOR_NM">HARKNESS, DEBORAH E.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">486</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SHADOW PATROL.</Col>
+            <Col id="EDITOR_NM">BERENSON, ALEX.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">487</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SHADOWS IN FLIGHT.</Col>
+            <Col id="EDITOR_NM">CARD, ORSON SCOTT.</Col>
+            <Col id="PRESS_NM">TOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">488</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SHELTER.</Col>
+            <Col id="EDITOR_NM">GREENSLADE, FRANCES.</Col>
+            <Col id="PRESS_NM">FREE PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">489</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SHOCK OF THE NEWS.</Col>
+            <Col id="EDITOR_NM">BRODIE, JUDITH.</Col>
+            <Col id="PRESS_NM">LUND HUMPHRIES</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">490</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SIESTA AND THE MIDNIGHT SUN.</Col>
+            <Col id="EDITOR_NM">GAMBLE, JESSA.</Col>
+            <Col id="PRESS_NM">VIKING CANADA</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">491</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SIGHTLINES.</Col>
+            <Col id="EDITOR_NM">JAMIE, KATHLEEN.</Col>
+            <Col id="PRESS_NM">SORT OF BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">492</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SIGNS AND WONDERS: STORIES.</Col>
+            <Col id="EDITOR_NM">OHLIN, ALIX.</Col>
+            <Col id="PRESS_NM">VINTAGE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">493</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SILENCE OF OUR FRIENDS.</Col>
+            <Col id="EDITOR_NM">LONG, MARK, 1957-</Col>
+            <Col id="PRESS_NM">FIRST SECOND</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">494</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SILHOUETTES FROM POPLAR CULTURE.</Col>
+            <Col id="EDITOR_NM">MOSS, OLLY.</Col>
+            <Col id="PRESS_NM">TITAN BOOKS LTD</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">495</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SILVER: RETURN TO TREASURE ISLAND.</Col>
+            <Col id="EDITOR_NM">MOTION, ANDREW.</Col>
+            <Col id="PRESS_NM">CROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">496</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SIMON: THE GENIUS IN MY BASEMENT.</Col>
+            <Col id="EDITOR_NM">MASTERS, ALEXANDER.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">497</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SIMON: THE GENIUS IN MY BASEMENT.</Col>
+            <Col id="EDITOR_NM">MASTERS, ALEXANDER.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">498</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SINS OF THE MOTHER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">STEEL, DANIELLE.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">499</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SKAGBOYS.</Col>
+            <Col id="EDITOR_NM">WELSH, IRVINE.</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">500</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SLEEPWALKER AT SEA.</Col>
+            <Col id="EDITOR_NM">GROVIER, KELLY.</Col>
+            <Col id="PRESS_NM">CARCANET</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">501</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SNOW CHILD.</Col>
+            <Col id="EDITOR_NM">MORLEY, ABEGAIL.</Col>
+            <Col id="PRESS_NM">PINDROP PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">502</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SOLO: A MEMOIR OF HOPE.</Col>
+            <Col id="EDITOR_NM">SOLO, HOPE, 1981-</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">503</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SOME KIND OF FAIRY TALE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">JOYCE, GRAHAM, 1954-</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">504</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SOMEWHERE ELSE, OR EVEN HERE.</Col>
+            <Col id="EDITOR_NM">ASHWORTH, A.J.</Col>
+            <Col id="PRESS_NM">SALT PUBLISHING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">505</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SONG OF ACHILLES.</Col>
+            <Col id="EDITOR_NM">MILLER, MADELINE.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">506</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SORRY PLEASE THANK YOU.</Col>
+            <Col id="EDITOR_NM">YU, CHARLES.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">507</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SOUND HOUSES.</Col>
+            <Col id="EDITOR_NM">EAVES, WILL, 1967-</Col>
+            <Col id="PRESS_NM">CARCANET</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">508</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SPYMASTERS.</Col>
+            <Col id="EDITOR_NM">GRIFFIN, W.E.B.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">509</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ST. ZITA SOCIETY: A NOVEL.</Col>
+            <Col id="EDITOR_NM">RENDELL, RUTH, 1930-</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">510</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STANDING IN ANOTHER MAN'S GRAVE.</Col>
+            <Col id="EDITOR_NM">RANKIN, IAN.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">511</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STAR WARS: DARTH PLAGUEIS.</Col>
+            <Col id="EDITOR_NM">LUCENO, JAMES, 1947-</Col>
+            <Col id="PRESS_NM">DEL REY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">512</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">START SHOOTING: A NOVEL.</Col>
+            <Col id="EDITOR_NM">NEWTON, CHARLIE.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">513</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STAY AWAKE: STORIES.</Col>
+            <Col id="EDITOR_NM">CHAON, DAN.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">514</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STAY CLOSE.</Col>
+            <Col id="EDITOR_NM">COBEN, HARLAN, 1962-</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">515</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STOLEN PREY.</Col>
+            <Col id="EDITOR_NM">SANDFORD, JOHN.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">516</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STONEMOUTH.</Col>
+            <Col id="EDITOR_NM">BANKS, IAIN, 1954-</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">517</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STORM HOUSE.</Col>
+            <Col id="EDITOR_NM">LIARDET, TIM, 1949-</Col>
+            <Col id="PRESS_NM">CARCANET</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">518</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STORY OF MY ASSASSINS.</Col>
+            <Col id="EDITOR_NM">TEJPAL, TARUN J.</Col>
+            <Col id="PRESS_NM">MELVILLE HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">519</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STORY OF THE STREETS.</Col>
+            <Col id="EDITOR_NM">SKINNER, MIKE.</Col>
+            <Col id="PRESS_NM">BANTAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">520</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">STROM THURMOND'S AMERICA.</Col>
+            <Col id="EDITOR_NM">CRESPINO, JOSEPH.</Col>
+            <Col id="PRESS_NM">HILL &amp; WANG</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">521</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SUGAR FROSTED NUTSACK: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LEYNER, MARK.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">522</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SUITABLE PRECAUTIONS.</Col>
+            <Col id="EDITOR_NM">BOUDREAU, LAURA.</Col>
+            <Col id="PRESS_NM">BIBLIOASIS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">523</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SUMMERLAND: A NOVEL.</Col>
+            <Col id="EDITOR_NM">HILDERBRAND, ELIN.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">524</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SUNLESS SEA: A WILLIAM MONK NOVEL.</Col>
+            <Col id="EDITOR_NM">PERRY, ANNE.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">525</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SUTTON.</Col>
+            <Col id="EDITOR_NM">MOEHRINGER, J.R.</Col>
+            <Col id="PRESS_NM">HYPERION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">526</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SWEET TALK.</Col>
+            <Col id="EDITOR_NM">GARWOOD, JULIE.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">527</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SWEET TOOTH.</Col>
+            <Col id="EDITOR_NM">MCEWAN, IAN.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">528</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SWIM: WHY WE LOVE THE WATER.</Col>
+            <Col id="EDITOR_NM">SHERR, LYNN.</Col>
+            <Col id="PRESS_NM">PUBLIC AFFAIRS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">529</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SWIMMING HOME: A NOVEL.</Col>
+            <Col id="EDITOR_NM">LEVY, DEBORAH.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">530</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SWIMMING STUDIES.</Col>
+            <Col id="EDITOR_NM">SHAPTON, LEANNE.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">531</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">SWORDS AND SWORDSMEN.</Col>
+            <Col id="EDITOR_NM">LOADES, MIKE.</Col>
+            <Col id="PRESS_NM">PEN &amp; SWORD</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">532</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TAKEN.</Col>
+            <Col id="EDITOR_NM">CRAIS, ROBERT.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">533</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TALIBAN CRICKET CLUB.</Col>
+            <Col id="EDITOR_NM">MURARI, TIMERI.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">534</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TALULLA RISING.</Col>
+            <Col id="EDITOR_NM">DUNCAN, GLEN.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">535</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TECHNOLOGISTS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">PEARL, MATTHEW.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">536</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TELEGRAPH AVENUE.</Col>
+            <Col id="EDITOR_NM">CHABON, MICHAEL.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">537</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TELEGRAPH AVENUE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">CHABON, MICHAEL.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">538</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TELEPORTATION ACCIDENT.</Col>
+            <Col id="EDITOR_NM">BEAUMAN, NED.</Col>
+            <Col id="PRESS_NM">SCEPTRE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">539</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TEN THOUSAND SAINTS.</Col>
+            <Col id="EDITOR_NM">HENDERSON, ELEANOR.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">540</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TESTAMENT OF MARY.</Col>
+            <Col id="EDITOR_NM">TOIBIN, COLM, 1955-</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">541</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THAT'S NOT A FEELING.</Col>
+            <Col id="EDITOR_NM">JOSEFSON, DAN.</Col>
+            <Col id="PRESS_NM">SOHO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">542</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THERE'S NO HOME: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BARON, ALEXANDER.</Col>
+            <Col id="PRESS_NM">SORT OF BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">543</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THIEF: AN ISAAC BELL ADVENTURE.</Col>
+            <Col id="EDITOR_NM">CUSSLER, CLIVE.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">544</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THINKING THE TWENTIETH CENTURY.</Col>
+            <Col id="EDITOR_NM">JUDT, TONY.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">545</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THIRD GATE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">CHILD, LINCOLN.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">546</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THIRTEEN.</Col>
+            <Col id="EDITOR_NM">ARMSTRONG, KELLEY.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">547</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THIS BRIGHT RIVER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">SOMERVILLE, PATRICK.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">548</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THIS IS HOW YOU LOSE HER.</Col>
+            <Col id="EDITOR_NM">DIAZ, JUNOT.</Col>
+            <Col id="PRESS_NM">RIVERHEAD BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">549</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THIS IS PARADISE.</Col>
+            <Col id="EDITOR_NM">EAVES, WILL, 1967-</Col>
+            <Col id="PRESS_NM">PICADOR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">550</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THORNTON WILDER: A LIFE.</Col>
+            <Col id="EDITOR_NM">NIVEN, PENELOPE.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">551</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THREAT VECTOR.</Col>
+            <Col id="EDITOR_NM">CLANCY, TOM.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">552</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THROUGH THE WINDOW.</Col>
+            <Col id="EDITOR_NM">BARNES, JULIAN.</Col>
+            <Col id="PRESS_NM">VINTAGE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">553</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">THY NEIGHBOR.</Col>
+            <Col id="EDITOR_NM">VINCENT, NORAH.</Col>
+            <Col id="PRESS_NM">VIKING</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">554</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TIGER'S CLAW.</Col>
+            <Col id="EDITOR_NM">BROWN, DALE, 1956-</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">555</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TIGERS IN RED WEATHER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">KLAUSSMANN, LIZA.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">556</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TIMBER IDOL: MR PUNCH IN SCOTLAND.</Col>
+            <Col id="EDITOR_NM">MACGILP, MARTIN.</Col>
+            <Col id="PRESS_NM">GILPRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">557</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TIME KEEPER.</Col>
+            <Col id="EDITOR_NM">ALBOM, MITCH.</Col>
+            <Col id="PRESS_NM">HYPERION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">558</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TITIAN: HIS LIFE.</Col>
+            <Col id="EDITOR_NM">HALE, SHEILA.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">559</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TO ALGERIA, WITH LOVE.</Col>
+            <Col id="EDITOR_NM">RUTA, SUZANNE.</Col>
+            <Col id="PRESS_NM">VIRAGO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">560</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TOBY'S ROOM: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BARKER, PAT, 1943-</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">561</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TOKAIDO ROAD.</Col>
+            <Col id="EDITOR_NM">GAFFIELD, NANCY.</Col>
+            <Col id="PRESS_NM">CB EDITIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">562</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TOM-ALL-ALONE'S.</Col>
+            <Col id="EDITOR_NM">SHEPHERD, LYNN.</Col>
+            <Col id="PRESS_NM">CONSTABLE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">563</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TOMBS.</Col>
+            <Col id="EDITOR_NM">CUSSLER, CLIVE.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">564</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TRACKMAN.</Col>
+            <Col id="EDITOR_NM">CHILD, CATRIONA.</Col>
+            <Col id="PRESS_NM">LUATH PR</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">565</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TRANSLATION OF THE BONES.</Col>
+            <Col id="EDITOR_NM">KAY, FRANCESCA.</Col>
+            <Col id="PRESS_NM">SCRIBNER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">566</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TRAPEZE.</Col>
+            <Col id="EDITOR_NM">MAWER, SIMON.</Col>
+            <Col id="PRESS_NM">OTHER PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">567</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TREASURE ISLAND!!!</Col>
+            <Col id="EDITOR_NM">LEVINE, SARA.</Col>
+            <Col id="PRESS_NM">EUROPA EDITIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">568</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TRICK I LEARNED FROM DEAD MEN.</Col>
+            <Col id="EDITOR_NM">ALDRIDGE, KITTY.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">569</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TROUT.</Col>
+            <Col id="EDITOR_NM">OWEN, JAMES.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">570</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TRUE BELIEVERS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">ANDERSEN, KURT.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">571</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TWELVE CAESARS.</Col>
+            <Col id="EDITOR_NM">DENNISON, MATTHEW.</Col>
+            <Col id="PRESS_NM">ATLANTIC</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">572</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TWELVE TRIBES OF HATTIE.</Col>
+            <Col id="EDITOR_NM">MATHIS, AYANA.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">573</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TWELVE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">CRONIN, JUSTIN.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">574</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">TWO PINTS.</Col>
+            <Col id="EDITOR_NM">DOYLE, RODDY.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">575</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UMBRELLA.</Col>
+            <Col id="EDITOR_NM">SELF, WILL.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">576</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNCOMMON EDUCATION: A NOVEL.</Col>
+            <Col id="EDITOR_NM">PERCER, ELIZABETH.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">577</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNDERGROUND MAN.</Col>
+            <Col id="EDITOR_NM">MACDONALD, ROSS.</Col>
+            <Col id="PRESS_NM">PENGUIN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">578</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNDERSTANDING MONSTER - BK ONE.</Col>
+            <Col id="EDITOR_NM">ELLSWORTH, THEO.</Col>
+            <Col id="PRESS_NM">SECRET ACRES</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">579</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNDERTOW.</Col>
+            <Col id="EDITOR_NM">BAKER, JO.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">580</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNDERWATER DOGS.</Col>
+            <Col id="EDITOR_NM">CASTEEL, SETH.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">581</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNEXPECTED GUEST: A NOVEL.</Col>
+            <Col id="EDITOR_NM">KORKEAKIVI, ANNE.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">582</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNINVITED GUESTS.</Col>
+            <Col id="EDITOR_NM">JONES, SADIE.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">583</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNINVITED.</Col>
+            <Col id="EDITOR_NM">JENSEN, LIZ.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">584</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UNMARKED GRAVE.</Col>
+            <Col id="EDITOR_NM">TODD, CHARLES.</Col>
+            <Col id="PRESS_NM">WILLIAM MORROW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">585</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">UPSET.</Col>
+            <Col id="EDITOR_NM">BARKOW, AL.</Col>
+            <Col id="PRESS_NM">CHICAGO REVIEW</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">586</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">VAGINA: A NEW BIOGRAPHY.</Col>
+            <Col id="EDITOR_NM">WOLF, NAOMI.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">587</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">VAN GOGH: THE LIFE.</Col>
+            <Col id="EDITOR_NM">NAIFEH, STEVEN.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">588</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">VANISHERS.</Col>
+            <Col id="EDITOR_NM">JULAVITS, HEIDI.</Col>
+            <Col id="PRESS_NM">DOUBLEDAY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">589</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">VARAMO; TRANS. BY CHRIS ANDREWS.</Col>
+            <Col id="EDITOR_NM">AIRA, CESAR, 1949-</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">590</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">VICTIMS: AN ALEX DELAWARE NOVEL.</Col>
+            <Col id="EDITOR_NM">KELLERMAN, JONATHAN.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">591</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">VLAD; TRANS. BY E. SHASKAN BUMAS.</Col>
+            <Col id="EDITOR_NM">FUENTES, CARLOS.</Col>
+            <Col id="PRESS_NM">DALKEY ARCHIVE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">592</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">VULTURE PEAK.</Col>
+            <Col id="EDITOR_NM">BURDETT, JOHN.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">593</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WAGING HEAVY PEACE.</Col>
+            <Col id="EDITOR_NM">YOUNG, NEIL.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">594</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WAITING FOR SUNRISE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BOYD, WILLIAM.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">595</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WANTED MAN: A JACK REACHER NOVEL.</Col>
+            <Col id="EDITOR_NM">CHILD, LEE.</Col>
+            <Col id="PRESS_NM">DELACORTE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">596</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WATER SESSIONS.</Col>
+            <Col id="EDITOR_NM">LASDUN, JAMES.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">597</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WATERGATE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">MALLON, THOMAS.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">598</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WAYWARD SAINTS.</Col>
+            <Col id="EDITOR_NM">ROCHE, SUZZY.</Col>
+            <Col id="PRESS_NM">HYPERION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">599</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WE LOOK LIKE THIS.</Col>
+            <Col id="EDITOR_NM">BURT, DAN M., 1942-</Col>
+            <Col id="PRESS_NM">CARCANET</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">600</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WEEK IN WINTER.</Col>
+            <Col id="EDITOR_NM">BINCHY, MAEVE.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">601</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHAT DIES IN SUMMER: A NOVEL.</Col>
+            <Col id="EDITOR_NM">WRIGHT, TOM, 1954-</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">602</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHAT IN GOD'S NAME: A NOVEL.</Col>
+            <Col id="EDITOR_NM">RICH, SIMON.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">603</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHAT THE FAMILY NEEDED.</Col>
+            <Col id="EDITOR_NM">AMSTERDAM, STEVEN.</Col>
+            <Col id="PRESS_NM">HARVILL SECKER</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">604</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHAT THEY DO IN THE DARK.</Col>
+            <Col id="EDITOR_NM">COE, AMANDA, 1965-</Col>
+            <Col id="PRESS_NM">W.W. NORTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">605</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHEN I LEFT HOME: MY STORY.</Col>
+            <Col id="EDITOR_NM">GUY, BUDDY.</Col>
+            <Col id="PRESS_NM">DA CAPO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">606</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHITE GIRL PROBLEMS.</Col>
+            <Col id="EDITOR_NM">WALKER, BABE.</Col>
+            <Col id="PRESS_NM">HYPERION</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">607</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHITE LIE.</Col>
+            <Col id="EDITOR_NM">GILLIES, ANDREA.</Col>
+            <Col id="PRESS_NM">SHORT BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">608</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHITEOUT: POEMS.</Col>
+            <Col id="EDITOR_NM">MURRAY, GEORGE.</Col>
+            <Col id="PRESS_NM">ECW PRESS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">609</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHO I AM: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">TOWNSHEND, PETER.</Col>
+            <Col id="PRESS_NM">HARPERCOLLINS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">610</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHO STOLE THE AMERICAN DREAM?.</Col>
+            <Col id="EDITOR_NM">SMITH, HEDRICK.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">611</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHORES' ASYLUM.</Col>
+            <Col id="EDITOR_NM">DARBY, KATY.</Col>
+            <Col id="PRESS_NM">FIG TREE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">612</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHY MEN LIE.</Col>
+            <Col id="EDITOR_NM">MACINTYRE, LINDEN.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">613</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WHY WE BROKE UP.</Col>
+            <Col id="EDITOR_NM">HANDLER, DANIEL.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">614</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WIFE 22: A NOVEL.</Col>
+            <Col id="EDITOR_NM">GIDEON, MELANIE.</Col>
+            <Col id="PRESS_NM">BALLANTINE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">615</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WILD THING: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BAZELL, JOSH.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">616</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WINTER JOURNAL.</Col>
+            <Col id="EDITOR_NM">AUSTER, PAUL, 1947-</Col>
+            <Col id="PRESS_NM">HENRY HOLT</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">617</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WINTER OF THE WORLD.</Col>
+            <Col id="EDITOR_NM">FOLLETT, KEN.</Col>
+            <Col id="PRESS_NM">DUTTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">618</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WITHOUT HONOUR:</Col>
+            <Col id="EDITOR_NM">TRIPP, ROB.</Col>
+            <Col id="PRESS_NM">2893</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">619</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WITNESS THE NIGHT.</Col>
+            <Col id="EDITOR_NM">DESAI, KISHWAR.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">620</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WITNESS.</Col>
+            <Col id="EDITOR_NM">ROBERTS, NORA.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">621</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WOLF GIFT: A NOVEL.</Col>
+            <Col id="EDITOR_NM">RICE, ANNE.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">622</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WOLF.</Col>
+            <Col id="EDITOR_NM">MARVIN, GARRY.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">623</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WOMAN LIKE ME.</Col>
+            <Col id="EDITOR_NM">LAVETTE, BETTYE.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">624</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WOOLGATHERING.</Col>
+            <Col id="EDITOR_NM">SMITH, PATTI.</Col>
+            <Col id="PRESS_NM">NEW DIRECTIONS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">625</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WORKING THEORY OF LOVE.</Col>
+            <Col id="EDITOR_NM">HUTCHINS, SCOTT.</Col>
+            <Col id="PRESS_NM">PENGUIN BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">626</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WORLD AMERICA MADE.</Col>
+            <Col id="EDITOR_NM">KAGAN, ROBERT.</Col>
+            <Col id="PRESS_NM">ALFRED A. KNOPF</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">627</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WORLD ELSEWHERE.</Col>
+            <Col id="EDITOR_NM">JOHNSTON, WAYNE.</Col>
+            <Col id="PRESS_NM">JONATHAN CAPE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">628</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WORLD OF GARDENS.</Col>
+            <Col id="EDITOR_NM">HUNT, JOHN DIXON.</Col>
+            <Col id="PRESS_NM">REAKTION BOOKS</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">629</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">WORLD WITHOUT YOU.</Col>
+            <Col id="EDITOR_NM">HENKIN, JOSHUA.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">630</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">YARD.</Col>
+            <Col id="EDITOR_NM">GRECIAN, ALEX.</Col>
+            <Col id="PRESS_NM">PUTNAM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">631</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">YELLOW BIRDS: A NOVEL.</Col>
+            <Col id="EDITOR_NM">POWERS, KEVIN.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">632</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">YELLOW EMPEROR'S CURE: A NOVEL.</Col>
+            <Col id="EDITOR_NM">BASU, KUNAL, 1956-</Col>
+            <Col id="PRESS_NM">OVERLOOK</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">633</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">YES, CHEF: A MEMOIR.</Col>
+            <Col id="EDITOR_NM">SAMUELSSON, MARCUS.</Col>
+            <Col id="PRESS_NM">RANDOM HOUSE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">634</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">YIPS.</Col>
+            <Col id="EDITOR_NM">BARKER, NICOLA.</Col>
+            <Col id="PRESS_NM">FOURTH ESTATE</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">635</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">YOU &amp; ME: A NOVEL.</Col>
+            <Col id="EDITOR_NM">POWELL, PADGETT.</Col>
+            <Col id="PRESS_NM">ECCO</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">636</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">YOU DON'T WANT TO KNOW.</Col>
+            <Col id="EDITOR_NM">JACKSON, LISA.</Col>
+            <Col id="PRESS_NM">KENSINGTON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">637</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ZIZEK: A GUIDE FOR THE PERPLEXED.</Col>
+            <Col id="EDITOR_NM">SHEEHAN, SEAN, 1951-</Col>
+            <Col id="PRESS_NM">CONTINUUM</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">638</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ZONA.</Col>
+            <Col id="EDITOR_NM">DYER, GEOFF.</Col>
+            <Col id="PRESS_NM">PANTHEON</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">639</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ZOO TIME: A NOVEL.</Col>
+            <Col id="EDITOR_NM">JACOBSON, HOWARD.</Col>
+            <Col id="PRESS_NM">BLOOMSBURY</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">640</Col>
+          </Row>
+          <Row>
+            <Col id="BOOK_NM">ZOO.</Col>
+            <Col id="EDITOR_NM">PATTERSON, JAMES.</Col>
+            <Col id="PRESS_NM">LITTLE, BROWN</Col>
+            <Col id="PRICE"/>
+            <Col id="ROWNO">641</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_client">
+        <ColumnInfo>
+          <Column type="STRING" size="500" id="BOOK_NM"/>
+          <Column type="STRING" size="200" id="EDITOR_NM"/>
+          <Column type="STRING" size="100" id="PRESS_NM"/>
+          <Column type="INT" size="10" id="PRICE"/>
+          <Column type="INT" size="5" id="ROWNO"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BOOK_NM"/>
+            <Col id="EDITOR_NM"/>
+            <Col id="PRESS_NM"/>
+            <Col id="PRICE"/>
+            <Col id="ROWNO"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.gv_iStartPageNo    = 0;		/* current page number */
+this.gv_iUnitSelRowNo   = 100;	/* number of rows to retrieve when server is called once */
+this.gv_iStartSelRowNo  = 1;		/* row number to start when calling server */
+this.gv_iMaxPageNum     = 10;	/* maximum page number to display on screen */
+this.gv_iServerRowCount = 0;	/* number of rows retrieved from the server */
+
+/*
+list inquire
+*/
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro .ClickEventInfo)
+{
+	obj.set_visible(false);
+	this.div_page.set_visible(true);
+	
+	/* transaction call */
+	
+	this.fn_callback("tr1", 0, "success");	
+};
+
+/*
+callback function
+*/
+this.fn_callback = function(sTrId, ErrorCode, ErrorMsg)
+{
+	if (sTrId == "tr1")	
+	{
+		if (ErrorCode < 0)
+		{
+			trace("Error");
+		}
+		else
+		{
+			var iLastRow = this.gv_iStartPageNo * this.gv_iUnitSelRowNo;
+			this.ds_server.filter("ROWNO >= "+(iLastRow + this.gv_iStartSelRowNo)+" && ROWNO <= "+(iLastRow + this.gv_iUnitSelRowNo));
+		
+			if (this.ds_server.getRowCount() == 0)
+			{
+				alert("No more data to view.");
+				this.ds_server.filter("");
+				return;
+			}
+			else
+			{
+				/* if transaction call using, delete the three lines below */
+				this.ds_client.clearData();
+				this.ds_client.copyData(this.ds_server, true);
+				this.ds_client.filter("ROWNO >= "+(iLastRow + this.gv_iStartSelRowNo)+" && ROWNO <= "+(iLastRow + this.gv_iMaxPageNum));
+								
+				this.gv_iServerRowCount = this.ds_server.getRowCount();
+				this.fn_SetStyle();
+				this.fn_SetPageNo();
+				
+				this.div_page.form.stt_0.set_color("red");
+			}
+		}
+	}
+}
+
+/*
+click event function for page number
+*/
+this.div_page_stt_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	var iNo = new Number(obj.text);
+	var iFirstNum = (iNo-1) * this.gv_iMaxPageNum + 1;
+	var iLastNum = iFirstNum + this.gv_iMaxPageNum;
+
+	this.fn_SetStyle();
+	obj.set_color("red");
+	
+	this.ds_client.filter("");
+	this.ds_client.filter("ROWNO >= " + iFirstNum+" && ROWNO < " + iLastNum);
+}
+
+/*
+click event function for prev
+*/
+this.div_page_stt_prev_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+
+	this.gv_iStartPageNo = this.gv_iStartPageNo - 1;
+	
+	/* transaction function call */
+	
+	this.fn_callback("tr1", 0, "success");
+}
+
+/*
+click event function for next
+*/
+this.div_page_stt_next_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+
+	this.gv_iStartPageNo = this.gv_iStartPageNo + 1;
+	
+	/* transaction function call */
+	
+	this.fn_callback("tr1", 0, "success");
+}
+
+/*
+page number setting
+*/
+this.fn_SetPageNo = function()
+{
+	var sPage = this.gv_iStartPageNo * this.gv_iMaxPageNum;
+	
+	/* prev button setting */
+	if (this.gv_iStartPageNo < 1)
+	{
+		this.div_page.form.stt_prev.set_visible(false);
+	} 
+	else 
+	{
+		this.div_page.form.stt_prev.set_visible(true);
+	}
+
+	/* next button setting */
+	if (this.gv_iServerRowCount < this.gv_iUnitSelRowNo)
+	{
+		this.div_page.form.stt_next.set_visible(false);
+	}
+	else
+	{
+		this.div_page.form.stt_next.set_visible(true);
+	}
+
+	/* page button setting */
+	for (var i = 0; i < this.gv_iMaxPageNum; i++)
+	{
+		this.div_page.form.components["stt_"+i].set_visible(true);
+		
+		this.div_page.form.components["stt_"+i].set_text(sPage+i+1);
+		
+		if (this.gv_iServerRowCount < (i * this.gv_iMaxPageNum))
+		{
+			this.div_page.form.components["stt_"+i].set_visible(false);
+		} 
+		else 
+		{
+			this.div_page.form.components["stt_"+i].set_visible(true);
+		}
+	}	
+}
+
+/*
+style settings
+*/
+this.fn_SetStyle = function()
+{
+	for (var i = 0; i < this.gv_iMaxPageNum; i++)
+	{
+		this.div_page.form.components["stt_"+i].set_color("blue");			
+	}	
+}]]></Script>
+  </Form>
+</FDL>

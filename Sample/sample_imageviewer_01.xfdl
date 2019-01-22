@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_imageviewer_01" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <ImageViewer id="imageviewerMain" taborder="0" text="" left="30" top="30" width="320" height="480" right="" bottom="" image="URL(&quot;imagerc::320px-Bob_Dylan_1978.jpg&quot;)" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btn320" taborder="1" text="320x480" left="372" top="32" width="120" height="50" right="" bottom="" onclick="btn320_onclick"/>
+        <Button id="btn160" taborder="1" text="160x240" left="372" top="96" width="120" height="50" right="" bottom="" onclick="btn160_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.btn320_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.imageviewerMain.set_image("imagerc::320px-Bob_Dylan_1978.jpg");
+};
+
+
+
+this.btn160_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.imageviewerMain.set_image("imagerc::160px-Bob_Dylan_1978.jpg");
+};
+]]></Script>
+  </Form>
+</FDL>

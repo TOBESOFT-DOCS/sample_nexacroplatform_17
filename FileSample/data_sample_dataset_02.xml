@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns="http://www.nexacroplatform.com/platform/dataset" ver="4000" >
+	<Dataset id="datasetXML00">
+		<ColumnInfo>
+			<Column id="Column0" type="INT" size="256"/>
+		</ColumnInfo>
+		<Rows>
+			<Row>
+				<Col id="Column0">10</Col>
+			</Row>
+			<Row>
+				<Col id="Column0">20</Col>
+			</Row>
+			<Row>
+				<Col id="Column0">30</Col>
+			</Row>
+			<Row>
+				<Col id="Column0">40</Col>
+			</Row>
+		</Rows>
+	</Dataset>
+	<Dataset id="datasetXML01">
+		<ColumnInfo>
+			<Column id="Column0" type="INT" size="256"/>
+			<Column id="Column1" type="INT" size="256"/>			
+		</ColumnInfo>
+		<Rows>
+			<Row>
+				<Col id="Column0">10</Col>
+				<Col id="Column1">10</Col>				
+			</Row>
+			<Row>
+				<Col id="Column0">20</Col>
+				<Col id="Column1">10</Col>				
+			</Row>
+		</Rows>
+	</Dataset>	
+</Root>

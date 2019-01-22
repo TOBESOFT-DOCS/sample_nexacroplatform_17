@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_menu_01" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="staticExpr" taborder="1" text="test" left="185" top="24" width="351" height="65" right="" bottom="" expr="comp.parent.fn_dateTostr()"/>
+        <Menu id="menuOption" taborder="" left="45" top="37" width="535" height="39" captioncolumn="captioncolumn" checkboxcolumn="checkboxcolumn" enablecolumn="enablecolumn" hotkeycolumn="" iconcolumn="" idcolumn="idcolumn" levelcolumn="levelcolumn" userdatacolumn="userdatacolumn" onmenuclick="menuOption_onmenuclick" innerdataset="@datasetMenu"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="datasetMenu">
+        <ColumnInfo>
+          <Column id="captioncolumn" size="256"/>
+          <Column id="checkboxcolumn" size="256"/>
+          <Column id="enablecolumn" size="256"/>
+          <Column id="idcolumn" size="256"/>
+          <Column id="levelcolumn" size="256"/>
+          <Column id="userdatacolumn" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="captioncolumn">Wines</Col>
+            <Col id="levelcolumn">0</Col>
+            <Col id="idcolumn">A</Col>
+            <Col id="userdatacolumn">19</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">White Wines</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">A-1</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Red Wines</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">A-2</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Spirits</Col>
+            <Col id="levelcolumn">0</Col>
+            <Col id="idcolumn">B</Col>
+            <Col id="userdatacolumn">19</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Vodka</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">B-1</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Plain</Col>
+            <Col id="levelcolumn">2</Col>
+            <Col id="idcolumn">B-1-1</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Flavoured</Col>
+            <Col id="levelcolumn">2</Col>
+            <Col id="idcolumn">B-1-2</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Cognac</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">B-2</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Rum</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">B-3</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Teguila</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">B-4</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Soft Drink</Col>
+            <Col id="levelcolumn">0</Col>
+            <Col id="idcolumn">C</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Coke</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">C-1</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Juice</Col>
+            <Col id="levelcolumn">1</Col>
+            <Col id="idcolumn">C-2</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Age</Col>
+            <Col id="idcolumn">D</Col>
+            <Col id="levelcolumn">0</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">Under 19</Col>
+            <Col id="idcolumn">D-1</Col>
+            <Col id="levelcolumn">1</Col>
+          </Row>
+          <Row>
+            <Col id="captioncolumn">19+</Col>
+            <Col id="checkboxcolumn">true</Col>
+            <Col id="idcolumn">D-2</Col>
+            <Col id="levelcolumn">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.menuOption_onmenuclick = function(obj:nexacro.Menu,e:nexacro.MenuClickEventInfo)
+{
+	var d1ColumnRow = this.datasetMenu.findRow("idcolumn", "D-1");
+	var d2ColumnRow = this.datasetMenu.findRow("idcolumn", "D-2");
+	
+	if(e.id == "D-1") {
+		this.datasetMenu.setColumn(d1ColumnRow, "checkboxcolumn", true);
+		this.datasetMenu.setColumn(d2ColumnRow, "checkboxcolumn", false);
+		
+		var currentAgeColumnRow = -1;
+		do {
+			currentAgeColumnRow++;
+			currentAgeColumnRow = this.datasetMenu.findRow("userdatacolumn", "19", currentAgeColumnRow);
+			this.datasetMenu.setColumn(currentAgeColumnRow, "enablecolumn", false);
+		} while (currentAgeColumnRow != -1);
+	} else if(e.id == "D-2") {
+		this.datasetMenu.setColumn(d1ColumnRow, "checkboxcolumn", false);
+		this.datasetMenu.setColumn(d2ColumnRow, "checkboxcolumn", true);
+		
+		var currentAgeColumnRow = -1;
+		do {
+			currentAgeColumnRow++;
+			currentAgeColumnRow = this.datasetMenu.findRow("userdatacolumn", "19", currentAgeColumnRow);
+			this.datasetMenu.setColumn(currentAgeColumnRow, "enablecolumn", true);
+		} while (currentAgeColumnRow != -1);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_04" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Calendar id="calFrom" taborder="3" left="88" top="44" width="192" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" locale="en_US" type="normal" usetrailingday=""/>
+        <Static id="staFrom" taborder="5" text="From" left="32" top="44" width="48" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staTo" taborder="5" text="To" left="32" top="92" width="48" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="calTo" taborder="3" left="88" top="88" width="192" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" locale="en_US" type="normal" usetrailingday=""/>
+        <Button id="btnCal" taborder="6" text="Calculate" left="288" top="68" width="80" height="36" right="" bottom="" onclick="btnCal_onclick" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="editDay" taborder="7" left="416" top="66" width="96" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staDay" taborder="5" text="day" left="384" top="68" width="48" height="36" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.btnCal_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var fromDate = new Date();
+	var toDate = new Date();
+	var calDate;
+	var day = 1000*60*60*24;
+	
+	fromDate.setFullYear(this.calFrom.getYear());
+	fromDate.setMonth(this.calFrom.getMonth()-1);
+	fromDate.setDate(this.calFrom.getDay());
+	
+	toDate.setFullYear(this.calTo.getYear());
+	toDate.setMonth(this.calTo.getMonth()-1);
+	toDate.setDate(this.calTo.getDay());
+	
+	calDate = fromDate.getTime() - toDate.getTime();
+	
+	this.editDay.set_value(Math.abs(calDate/day));
+}]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

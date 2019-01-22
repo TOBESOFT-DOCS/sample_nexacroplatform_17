@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_dataset_03" width="1280" height="720" titletext="New Form" locale="en_US" onload="sample_dataset_03_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Button id="Button00" taborder="0" text="getColumnInfo" left="37" top="19" width="103" height="31" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="1" left="37" top="100" width="357" height="195"/>
+        <Spin id="Spin00" taborder="2" left="37" top="60" width="88" height="31"/>
+        <Combo id="Combo00" taborder="3" text="Combo00" left="135" top="60" width="150" height="31" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">STRING</Col>
+                <Col id="datacolumn">STRING</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">INT</Col>
+                <Col id="datacolumn">INT</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">FLOAT</Col>
+                <Col id="datacolumn">FLOAT</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">BIGDECIMAL</Col>
+                <Col id="datacolumn">BIGDECIMAL</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">DATE</Col>
+                <Col id="datacolumn">DATE</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">TIME</Col>
+                <Col id="datacolumn">TIME</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">DATETIME</Col>
+                <Col id="datacolumn">DATETIME</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">BLOB</Col>
+                <Col id="datacolumn">BLOB</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Button id="Button01" taborder="4" text="set_type" left="295" top="60" width="99" height="31" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strText = new String();
+	for (var i = 0; i < this.Dataset00.getColCount(); i++) 
+	{
+		var objColInfo = this.Dataset00.getColumnInfo(i);
+		strText += "ID = " + objColInfo.name;
+		strText += " SIZE = " + objColInfo.size;
+		strText += " type = " + objColInfo.type;
+		strText += "\n";
+	}
+	this.TextArea00.set_value(strText);
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objColInfo = this.Dataset00.getColumnInfo(this.Spin00.value);
+	objColInfo.set_type(this.Combo00.value);
+};
+
+this.sample_dataset_03_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.Spin00.set_max(this.Dataset00.getColCount()-1);
+};
+]]></Script>
+  </Form>
+</FDL>

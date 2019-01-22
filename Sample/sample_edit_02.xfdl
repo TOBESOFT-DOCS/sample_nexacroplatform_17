@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_edit_02" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Static id="Static00" taborder="0" text="String:" left="40" top="32" width="60" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+        <Edit id="edit_input" taborder="1" left="100" top="28" width="360" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onkeyup="edit_input_onkeyup" value=""/>
+        <Static id="Static01" taborder="2" text="Length:" left="32" top="92" width="68" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+        <Edit id="edit_length" taborder="3" left="100" top="88" width="64" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="6" text="number of character" left="180" top="92" width="157" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.edit_input_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	this.edit_length.set_value(this.edit_input.value.length);
+	
+};
+]]></Script>
+  </Form>
+</FDL>

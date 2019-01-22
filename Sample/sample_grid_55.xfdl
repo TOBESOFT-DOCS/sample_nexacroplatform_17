@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_55" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="23" top="15" width="357" height="155" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="42"/>
+                <Column size="57"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="item"/>
+                <Cell col="1" text="price"/>
+                <Cell col="2" text="amount"/>
+                <Cell col="3" text="Total"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:item"/>
+                <Cell col="1" text="bind:price" displaytype="number"/>
+                <Cell col="2" text="bind:amount" displaytype="number"/>
+                <Cell col="3" expr="expr:price * amount" displaytype="currency"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3" expr="expr:dataset.getSum('price*amount')" displaytype="currency"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="item" type="STRING" size="256"/>
+          <Column id="price" type="INT" size="256"/>
+          <Column id="amount" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="item">apple</Col>
+            <Col id="price">500</Col>
+            <Col id="amount">10</Col>
+          </Row>
+          <Row>
+            <Col id="item">soju</Col>
+            <Col id="price">1050</Col>
+            <Col id="amount">20</Col>
+          </Row>
+          <Row>
+            <Col id="item">water</Col>
+            <Col id="price">500</Col>
+            <Col id="amount">5</Col>
+          </Row>
+          <Row>
+            <Col id="item">paper</Col>
+            <Col id="price">2500</Col>
+            <Col id="amount">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

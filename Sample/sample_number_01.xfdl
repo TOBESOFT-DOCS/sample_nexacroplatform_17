@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_number_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Static id="Static00" taborder="0" text="FROM" left="47" top="75" width="50" height="25"/>
+        <Edit id="Edit00" taborder="1" left="107" top="77" width="140" height="20"/>
+        <Static id="Static01" taborder="2" text="TO" left="47" top="110" width="50" height="25"/>
+        <Edit id="Edit01" taborder="3" left="107" top="112" width="140" height="20"/>
+        <Static id="Static02" taborder="4" text="INPUT" left="47" top="145" width="50" height="25"/>
+        <Edit id="Edit02" taborder="5" left="107" top="147" width="140" height="20"/>
+        <Static id="Static03" taborder="6" text="RESULT" left="47" top="177" width="50" height="25"/>
+        <Edit id="Edit03" taborder="7" left="107" top="179" width="140" height="20"/>
+        <Button id="Button00" taborder="8" text="CHECK" left="270" top="149" width="120" height="50" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    var nRtn = this.fn_isNumArea(this.Edit02.value, this.Edit00.value, this.Edit01.value);
+    this.Edit03.set_value(nRtn);
+};
+
+this.fn_isNumArea = function(sValue, sArea1, sArea2)
+{   
+    var nValue = Number(sValue);
+    var nArea1 = Number(sArea1);
+    var nArea2 = Number(sArea2);
+    
+    if (nArea1 > nArea2) 
+    {
+        return false;
+    }
+    
+    if (nValue >= nArea1 && nValue <= nArea2) 
+    {
+        return true;
+    } 
+    else 
+    {
+        return false;        
+    }
+}]]></Script>
+  </Form>
+</FDL>

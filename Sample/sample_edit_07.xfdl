@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_edit_07" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Edit id="edit_input" taborder="1" left="40" top="32" width="208" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" oninput="edit_input_oninput" onkeydown="edit_input_onkeydown"/>
+        <ListBox id="list_output" taborder="2" left="40" top="64" width="240" height="128" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@ds_data" codecolumn="CODE" datacolumn="DATA" visible="false" onitemclick="list_output_onitemclick"/>
+        <Button id="btn_list" taborder="3" text="▼" left="248" top="32" width="32" height="32" right="" bottom="" onclick="btn_list_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_data">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">00</Col>
+            <Col id="DATA">static</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">01</Col>
+            <Col id="DATA">dataset</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">02</Col>
+            <Col id="DATA">button</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">03</Col>
+            <Col id="DATA">calendar</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">04</Col>
+            <Col id="DATA">checkbox</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">05</Col>
+            <Col id="DATA">combo</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">06</Col>
+            <Col id="DATA">radio</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">07</Col>
+            <Col id="DATA">listbox</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">08</Col>
+            <Col id="DATA">grid</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">09</Col>
+            <Col id="DATA">tabpage</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">10</Col>
+            <Col id="DATA">tab</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">11</Col>
+            <Col id="DATA">imageviewer</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">12</Col>
+            <Col id="DATA">groupbox</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[this.edit_input_oninput = function(obj:nexacro.Edit,e:nexacro.InputEventInfo)
+{
+	var strLength = this.edit_input.getLength();
+
+	this.list_output.set_visible(true);
+		
+	if(strLength > 0)
+	{
+		this.ds_data.filter("DATA.toString().search('"+this.edit_input.value+"') >= 0");
+			
+		if(this.ds_data.rowcount == 0)
+		{
+			this.list_output.set_visible(false);
+		}
+		
+	}
+	else
+	{
+		this.list_output.set_visible(false);	
+	}
+	
+};
+
+
+this.edit_input_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	this.list_output.set_visible(true);    
+	
+	switch(e.keycode)
+	{
+		case 13:	//ENTER KEY
+			if (this.list_output.index != -1)
+			{			
+				this.edit_input.set_value(this.list_output.text)
+			}
+			
+			this.list_output.set_visible(false);
+			
+			break;
+			
+		case 27:	//ESC KEY
+			this.list_output.set_visible(false);
+			
+			break;
+			
+		case 38:	//UP KEY
+			if (this.list_output.index > 0)
+			{
+				this.list_output.set_index(this.list_output.index - 1);
+			}
+			
+			break;
+			
+		case 40:	//DOWN KEY
+			this.list_output.set_index(this.list_output.index + 1);
+			
+			break;
+			
+		default:
+			//trace("keycode = " + e.keycode);
+	}
+	
+};
+
+this.btn_list_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.list_output.visible == false)
+	{
+		if(!this.edit_input.getLength())
+		{
+			this.ds_data.filter("");
+		}		
+
+		this.list_output.set_visible(true);	
+	}
+	else
+	{
+		this.list_output.set_visible(false);
+	}
+	
+};
+
+this.list_output_onitemclick = function(obj:nexacro.ListBox,e:nexacro.ClickEventInfo)
+{	
+	this.edit_input.set_value(obj.text);
+	this.list_output.set_visible(false);
+	
+};
+
+
+]]></Script>
+  </Form>
+</FDL>

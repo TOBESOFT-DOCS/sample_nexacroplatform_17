@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_excelexportimport_02" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="4" text="Import" left="32" top="272" width="120" height="32" onclick="Button00_onclick" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="0" left="32" top="40" width="560" height="211" binddataset="Dataset00" autofittype="col" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="none" fillareatype="none" selecttype="row" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body" border="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default"/>
+            <Format id="format00">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+                <Cell col="1" text="Company"/>
+                <Cell col="2" text="Salary"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name" textAlign="left"/>
+                <Cell col="1" text="bind:Company" textAlign="left"/>
+                <Cell col="2" text="bind:Salary" displaytype="currency" textAlign="right"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.importObj = new ExcelImportObject("Import00", this);
+	
+	this.importObj.set_importtype(nexacro.ImportTypes.EXCEL);
+	this.importObj.set_importurl("http://demo.nexacro.com/developer_guide/XImport");
+	
+	this.importObj.addEventHandler("onsuccess", this.Import00_onsuccess, this);
+	this.importObj.addEventHandler("onerror", this.Import00_onerror, this);
+	
+	this.importObj.importData("", "Sheet1!A1:E7", "Dataset00");
+	
+};
+
+this.Import00_onsuccess = function(obj:ExcelImportObject, e:nexacro.ExcelImportEventInfo)
+{
+	trace("Import00_onsuccess");
+	
+	this.Grid00.createFormat();
+}
+
+this.Import00_onerror = function(obj:ExcelImportObject, e:nexacro.ExcelImportErrorEventInfo)
+{
+	trace("Import00_onerror");	
+}]]></Script>
+  </Form>
+</FDL>

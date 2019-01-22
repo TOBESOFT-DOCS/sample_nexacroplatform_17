@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_global_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Edit id="Edit00" taborder="0" left="50" top="40" width="160" height="50"/>
+        <Button id="Button00" taborder="1" text="HEX to RGB" left="220" top="40" width="120" height="50" onclick="Button00_onclick"/>
+        <Edit id="Edit01" taborder="2" left="350" top="40" width="80" height="50"/>
+        <Edit id="Edit02" taborder="3" left="440" top="40" width="80" height="50"/>
+        <Edit id="Edit03" taborder="4" left="530" top="40" width="80" height="50"/>
+        <Edit id="Edit04" taborder="5" left="50" top="100" width="80" height="50"/>
+        <Edit id="Edit05" taborder="6" left="140" top="100" width="80" height="50"/>
+        <Edit id="Edit06" taborder="7" left="230" top="100" width="80" height="50"/>
+        <Button id="Button01" taborder="8" text="RGB to HEX" left="320" top="100" width="120" height="50" onclick="Button01_onclick"/>
+        <Edit id="Edit07" taborder="9" left="450" top="100" width="160" height="50"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_hexToDec(this.Edit00.value);
+};
+
+this.fn_hexToDec = function(sHex)
+{
+	sHex = sHex.toUpperCase();
+	var nRed   = parseInt(sHex.substring(0,2),16);
+	var nGreen = parseInt(sHex.substring(2,4),16);
+	var nBlue  = parseInt(sHex.substring(4),16);
+
+	this.Edit01.set_value(nRed);
+	this.Edit02.set_value(nGreen);
+	this.Edit03.set_value(nBlue);
+
+	this.set_background("#" + sHex);
+}
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_decToHex(this.Edit04.value, this.Edit05.value, this.Edit06.value); 
+};
+
+this.fn_decToHex = function(nRed, nGreen, nBlue)
+{
+	var sHexRed = nexacro.toNumber(nRed).toString(16);
+	var sHexGreen = nexacro.toNumber(nGreen).toString(16);
+	var sHexBlue = nexacro.toNumber(nBlue).toString(16);
+	
+	sHexRed = sHexRed.length<2?"0"+sHexRed:sHexRed;
+	sHexGreen = sHexGreen.length<2?"0"+sHexGreen:sHexGreen;
+	sHexBlue = sHexBlue.length<2?"0"+sHexBlue:sHexBlue;
+	
+	var sHex = sHexRed.toUpperCase() + sHexGreen.toUpperCase() + sHexBlue.toUpperCase();
+    this.Edit07.set_value(sHex);
+	this.set_background("#" + sHex);
+}]]></Script>
+  </Form>
+</FDL>

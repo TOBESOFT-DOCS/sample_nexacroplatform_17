@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_listview_01" left="0" top="0" width="1024" height="768" titletext="New Form" accessibilityenable="true">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <ListView id="ListView00" taborder="0" left="5" top="5" binddataset="Dataset00" width="300" height="320" oncellclick="ListView00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Band id="body" width="100%" height="160">
+                <Cell id="Cell03" left="5" top="5" width="150" height="150" text="bind:cover" displaytype="imagecontrol" border="0px none" padding="0px"/>
+                <Cell id="Cell01" left="Cell03:5" top="5" height="55" text="bind:title" wordWrap="english" right="5" border="0px none"/>
+                <Cell id="Cell00" left="Cell03:5" top="70" height="30" right="5" text="bind:price" displaytype="currency" locale="en_US" border="0px none" font="20px Gulim"/>
+                <Cell id="Cell02" left="267" top="128" width="9" height="9" displaytype="imagecontrol" text="theme://images/btn_WF_Treecollapse.png" border="0px none" padding="0px"/>
+                <Cell id="Cell04" left="225" top="128" width="9" height="9" displaytype="imagecontrol" text="theme://images/btn_WF_Treeexpand.png" border="0px none" padding="0px"/>
+                <Cell id="Cell05" left="230" top="118" width="30" height="28" text="bind:amount" border="0px none"/>
+              </Band>
+            </Format>
+          </Formats>
+        </ListView>
+        <Grid id="Grid00" taborder="1" left="320" top="5" width="390" height="205" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="180"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="title"/>
+                <Cell col="1" text="price"/>
+                <Cell col="2" text="amount"/>
+                <Cell col="3" text="Total"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:title"/>
+                <Cell col="1" text="bind:price"/>
+                <Cell col="2" text="bind:amount"/>
+                <Cell col="3" expr="expr: price * amount" displaytype="currency" locale="en_US"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3" displaytype="currency" expr="expr:dataset.getSum('price*amount')" locale="en_US"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="cover" type="STRING" size="256"/>
+          <Column id="price" type="FLOAT" size="256"/>
+          <Column id="amount" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="title">The Freewheelin' Bob Dylan</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_The_Freewheelin'_Bob_Dylan.jpg</Col>
+            <Col id="price">7.98</Col>
+            <Col id="amount">0</Col>
+          </Row>
+          <Row>
+            <Col id="title">Highway 61 Revisited</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Highway_61_Revisited.jpg</Col>
+            <Col id="price">7.29</Col>
+            <Col id="amount">0</Col>
+          </Row>
+          <Row>
+            <Col id="title">Blood on the Tracks</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Blood_on_the_Tracks.jpg</Col>
+            <Col id="price">9.98</Col>
+            <Col id="amount">0</Col>
+          </Row>
+          <Row>
+            <Col id="title">Blonde on Blonde</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Blonde_on_Blonde.jpg</Col>
+            <Col id="price">9.98</Col>
+            <Col id="amount">0</Col>
+          </Row>
+          <Row>
+            <Col id="title">Bringing It All Back Home</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Bringing_It_All_Back_Home.jpg</Col>
+            <Col id="price">7.29</Col>
+            <Col id="amount">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.ListView00_oncellclick = function(obj:nexacro.ListView,e:nexacro.ListViewClickEventInfo)
+{
+		var cur_amount = this.Dataset00.getColumn(e.row, "amount");
+		if(e.cellid == 'Cell04')
+		{
+			if(cur_amount != 0)
+			{
+				this.Dataset00.setColumn(e.row, "amount", --cur_amount);
+			}
+		}
+		else if(e.cellid == 'Cell02')
+		{
+			this.Dataset00.setColumn(e.row, "amount", ++cur_amount);
+		}
+};
+]]></Script>
+  </Form>
+</FDL>

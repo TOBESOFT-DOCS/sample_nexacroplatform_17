@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_string_09" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Edit id="Edit00" taborder="0" left="49" top="41" width="211" height="39"/>
+        <Button id="Button00" taborder="1" text="Trim" left="270" top="41" width="100" height="39" onclick="Button00_onclick"/>
+        <Edit id="Edit01" taborder="2" left="49" top="91" width="211" height="39" enable="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit01.set_value("*"+this.fn_trim(this.Edit00.value)+"*");
+};
+
+this.fn_trim = function(sValue)
+{
+    if (sValue == null)
+    {
+        return "";
+    }
+    if (new String(sValue).valueOf() == "undefined")
+    {
+        return "";
+    }
+    if (new String(sValue) == null)
+    {
+        return "";
+    }
+
+    var retVal = (new String(sValue)).replace(/^\s+|\s+$/g, '');
+    return retVal;
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_basicchart_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BasicChart id="BasicChart00" taborder="0" left="20" top="40" width="620" height="430" binddataset="Dataset00" categorycolumn="bind:month">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Sales & Profit",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "2017"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"align": "rightcenter",
+		"linestyle": "1px solid blanchedalmond",
+		"markertextgap": "5"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletext": "month",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labeltype": "number"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "sales",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "10pt/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:sales",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #1abd9c",
+			"barfillstyle": "#1abd9c"
+		},
+		{
+			"id": "series1",
+			"titletext": "profit",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "10pt/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:profit",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #1a85be",
+			"barfillstyle": "#1a85be"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+        <CheckBox id="CheckBox00" taborder="1" text="bargrouping" left="36" top="14" width="150" height="20" value="true" onchanged="CheckBox00_onchanged"/>
+        <CheckBox id="CheckBox01" taborder="2" text="linevisible" left="150" top="14" width="150" height="20" onchanged="CheckBox01_onchanged"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="profit" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">1</Col>
+            <Col id="sales">230000</Col>
+            <Col id="profit">80000</Col>
+          </Row>
+          <Row>
+            <Col id="month">2</Col>
+            <Col id="sales">200000</Col>
+            <Col id="profit">65000</Col>
+          </Row>
+          <Row>
+            <Col id="month">3</Col>
+            <Col id="sales">150000</Col>
+            <Col id="profit">70000</Col>
+          </Row>
+          <Row>
+            <Col id="month">4</Col>
+            <Col id="sales">650000</Col>
+            <Col id="profit">120000</Col>
+          </Row>
+          <Row>
+            <Col id="month">5</Col>
+            <Col id="sales">230000</Col>
+            <Col id="profit">70000</Col>
+          </Row>
+          <Row>
+            <Col id="month">6</Col>
+            <Col id="sales">90000</Col>
+            <Col id="profit">30000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.CheckBox00_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	this.BasicChart00.set_bargrouping(e.postvalue);
+};
+
+this.CheckBox01_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	this.BasicChart00.seriesset[0].set_linevisible(e.postvalue);
+	this.BasicChart00.seriesset[1].set_linevisible(e.postvalue);
+	
+	this.BasicChart00.seriesset[0].set_pointvisible(e.postvalue);
+	this.BasicChart00.seriesset[1].set_pointvisible(e.postvalue);	
+};
+]]></Script>
+  </Form>
+</FDL>

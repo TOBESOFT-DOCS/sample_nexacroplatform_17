@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_frame_04" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnPopup" taborder="0" text="Create Popup" left="30" top="20" width="120" height="50" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnPopup_onclick" opacity=""/>
+        <CheckBox id="CheckBox00" taborder="1" text="show titlebar text" left="181" top="25" width="150" height="20"/>
+        <CheckBox id="CheckBox01" taborder="2" text="hide button" left="181" top="55" width="150" height="20"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.btnPopup_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objChildFrame = new ChildFrame();  
+	objChildFrame.init("childframe00", 0, 0, 300, 300, null, null);
+	objChildFrame.set_border("1px solid #999999");
+	objChildFrame.set_showstatusbar(true);
+	objChildFrame.set_showtitlebar(false);
+	objChildFrame.set_openalign('center middle');
+	objChildFrame.set_resizable(true);
+	objChildFrame.set_overlaycolor("rgba(255,0,0,0.3)");
+	objChildFrame.set_background("#ffffff");
+	if(this.CheckBox00.value == 1)
+	{
+		objChildFrame.set_titletext("nexacro");
+		objChildFrame.set_titlebarheight(50);
+	}
+	if(this.CheckBox01.value == 1)
+	{
+		objChildFrame.titlebar.minbutton.set_visible(false);
+		objChildFrame.titlebar.maxbutton.set_visible(false);
+	}
+	objChildFrame.showModal(this.getOwnerFrame());
+};
+]]></Script>
+  </Form>
+</FDL>

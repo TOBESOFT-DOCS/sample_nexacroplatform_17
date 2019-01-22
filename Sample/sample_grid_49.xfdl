@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_49" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="15" top="20" width="270" height="80" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="COL1"/>
+                <Cell col="1" text="COL2"/>
+                <Cell col="2" text="COL3"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+            <Format id="mobile_format">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="COL1"/>
+                <Cell col="1" text="COL2"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="295" top="20" width="120" height="50" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="2" left="15" top="110" width="270" height="100"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var parser, xmlDoc;
+	parser = new DOMParser();
+	xmlDoc = parser.parseFromString(this.Grid00.getFormatString(), "text/xml");
+	var formatList = xmlDoc.getElementsByTagName('Format');
+	var formatStr = "== format info =="+"\n"
+		+"format length: "+formatList.length+"\n"
+		+"format id:"+this.getFormatid(formatList, formatList.length)+"\n"
+		+"current format:"+this.Grid00.formatid;
+	this.TextArea00.set_value(formatStr);
+};
+
+this.getFormatid = function(arr, length)
+{
+	var str = "";
+	for(var i=0;i<length;i++)
+	{
+		str += arr[i].getAttribute("id");
+		if(i!=length-1) str += ", ";
+	}
+	return str;
+}]]></Script>
+  </Form>
+</FDL>

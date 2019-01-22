@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_application_05" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="Cookie check" left="30" top="25" width="120" height="50" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="1" left="30" top="80" width="410" height="150"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var arrCookie = window.document.cookie;
+	arrCookie = arrCookie.split(";");
+	var arrTempCookie;
+	this.TextArea00.set_value("");
+	for(var i=0; i<arrCookie.length; i++)
+	{
+		arrTempCookie = arrCookie[i].split("=");
+		this.TextArea00.set_value(this.TextArea00.value 
+			+ ( arrTempCookie[0].trim() + " : " + arrTempCookie[1] ) + "\n");
+	}  
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_48" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="10" top="30" width="250" height="300" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="rowcnt"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" suppress="1"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:rowcnt"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="280" top="30" width="120" height="50" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" keystring="Column0">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="INT" size="256" prop="SUM"/>
+          <Column id="rowcnt" type="INT" size="256" prop="COUNT"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">A01</Col>
+            <Col id="Column1">10</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A01</Col>
+            <Col id="Column1">20</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A02</Col>
+            <Col id="Column1">15</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A03</Col>
+            <Col id="Column1">12</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A03</Col>
+            <Col id="Column1">25</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A04</Col>
+            <Col id="Column1">10</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	for(var i=this.Dataset00.getRowCount()-1; i>=0 ;i-- )
+	{		
+		if( this.Dataset00.getRowType(i) == Dataset.ROWTYPE_GROUP 
+			&&  this.Dataset00.getGroupRangeCount(i) < 2){
+			this.Dataset00.deleteRow(i);
+		}
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

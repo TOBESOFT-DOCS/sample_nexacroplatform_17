@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_05" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btn_addRow" taborder="4" text="addRow" left="32" top="272" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="" bottom="" onclick="btn_addRow_onclick"/>
+        <Button id="btn_deleteRow" taborder="4" text="deleteRow" left="160" top="272" width="120" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="" bottom="" onclick="btn_deleteRow_onclick"/>
+        <Grid id="Grid00" taborder="0" left="32" top="40" width="560" height="211" binddataset="Dataset00" autofittype="col" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="none" fillareatype="none" selecttype="row" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body" border="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="160"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name" border=""/>
+                <Cell col="1" text="Address" border=""/>
+                <Cell col="2" text="Company" border=""/>
+                <Cell col="3" text="Department" border=""/>
+                <Cell col="4" text="Salary" border=""/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name" textAlign="left" suppress="0" border=""/>
+                <Cell col="1" text="bind:Address" textAlign="left" wordWrap="char" border=""/>
+                <Cell col="2" text="bind:Company" textAlign="left" suppress="0" border=""/>
+                <Cell col="3" text="bind:Department" textAlign="left" wordWrap="english" suppress="0" border=""/>
+                <Cell col="4" text="bind:Salary" displaytype="currency" textAlign="right" border=""/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Name" type="STRING" size="256"/>
+          <Column id="Address" type="STRING" size="256"/>
+          <Column id="Company" type="STRING" size="256"/>
+          <Column id="Department" type="STRING" size="256"/>
+          <Column id="Salary" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Name">John</Col>
+            <Col id="Address">Seoul, KOREA</Col>
+            <Col id="Company">1dollar</Col>
+            <Col id="Department">Sales</Col>
+            <Col id="Salary">15000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">James</Col>
+            <Col id="Address">Barcelona, Spain</Col>
+            <Col id="Company">EBOT</Col>
+            <Col id="Department">Consulting</Col>
+            <Col id="Salary">25000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Donald</Col>
+            <Col id="Address">Califonia, USA</Col>
+            <Col id="Company">EBOT</Col>
+            <Col id="Department">Research Institute</Col>
+            <Col id="Salary">1000000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Lisa</Col>
+            <Col id="Address">London, United Kingdom</Col>
+            <Col id="Company">1dollar</Col>
+            <Col id="Department">Quality Assurance</Col>
+            <Col id="Salary">3000</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Joe</Col>
+            <Col id="Address">São Paulo, Brazil</Col>
+            <Col id="Company">hangul</Col>
+            <Col id="Department">Quality Assurance</Col>
+            <Col id="Salary">8600</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Michael</Col>
+            <Col id="Address">Mumbai, India</Col>
+            <Col id="Company">1dollar</Col>
+            <Col id="Department">Quality Assurance</Col>
+            <Col id="Salary">1300</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Lilli</Col>
+            <Col id="Address">Ankara, Turkey</Col>
+            <Col id="Company">hangul</Col>
+            <Col id="Department">Quality Assurance</Col>
+            <Col id="Salary">4400</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Colt</Col>
+            <Col id="Address">Sydney, NSW, Australia </Col>
+            <Col id="Company">hangul</Col>
+            <Col id="Department">R&amp;D</Col>
+            <Col id="Salary">62000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_addRow_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.addRow();
+};
+
+this.btn_deleteRow_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.deleteRow(this.Dataset00.rowposition);
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="edit_name00" propid="value" datasetid="Dataset00" columnid="Name"/>
+    </Bind>
+  </Form>
+</FDL>

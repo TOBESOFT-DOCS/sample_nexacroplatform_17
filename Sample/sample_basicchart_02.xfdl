@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_basicchart_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BasicChart id="BasicChart00" taborder="0" left="20" top="40" width="620" height="430" binddataset="Dataset00" categorycolumn="bind:month" stacktype="normal">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Product Sales",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"markertextgap": "5"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletext": "month",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "product A",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:product_A",
+			"barlinestyle": "1px solid #1f77b4",
+			"barfillstyle": "#1f77b4"
+		},
+		{
+			"id": "series1",
+			"titletext": "product B",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:product_B",
+			"barlinestyle": "1px solid #aec7e8",
+			"barfillstyle": "#aec7e8"
+		},
+		{
+			"id": "series2",
+			"titletext": "product C",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:product_C",
+			"barlinestyle": "1px solid #ff7f0e",
+			"barfillstyle": "#ff7f0e"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+        <Radio id="Radio00" taborder="1" left="20" top="5" width="210" height="45" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" text="normal" value="normal" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">normal</Col>
+                <Col id="datacolumn">normal</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">percent</Col>
+                <Col id="datacolumn">percent</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="product_A" type="INT" size="256"/>
+          <Column id="product_B" type="INT" size="256"/>
+          <Column id="product_C" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">1</Col>
+            <Col id="product_A">30</Col>
+            <Col id="product_B">50</Col>
+            <Col id="product_C">15</Col>
+          </Row>
+          <Row>
+            <Col id="month">2</Col>
+            <Col id="product_A">60</Col>
+            <Col id="product_B">25</Col>
+            <Col id="product_C">30</Col>
+          </Row>
+          <Row>
+            <Col id="month">3</Col>
+            <Col id="product_A">50</Col>
+            <Col id="product_B">25</Col>
+            <Col id="product_C">50</Col>
+          </Row>
+          <Row>
+            <Col id="month">4</Col>
+            <Col id="product_A">40</Col>
+            <Col id="product_B">30</Col>
+            <Col id="product_C">40</Col>
+          </Row>
+          <Row>
+            <Col id="month">5</Col>
+            <Col id="product_A">20</Col>
+            <Col id="product_B">25</Col>
+            <Col id="product_C">80</Col>
+          </Row>
+          <Row>
+            <Col id="month">6</Col>
+            <Col id="product_A">50</Col>
+            <Col id="product_B">20</Col>
+            <Col id="product_C">120</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.BasicChart00.set_stacktype(e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

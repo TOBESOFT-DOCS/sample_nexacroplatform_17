@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_09" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="" ontimer="Form_ontimer">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="check list" left="16" top="17" width="104" height="33" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="1" text="check all list" onclick="Button01_onclick" left="130" top="17" width="92" height="33"/>
+        <Grid id="Grid00" taborder="2" left="16" top="200" width="544" height="400" binddataset="Dataset00" autosizingtype="col" autofittype="col" cellmovingtype="col" cellsizingtype="col" scrollbartype="" scrolltype="both">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="20"/>
+                <Column size="82"/>
+                <Column size="80"/>
+                <Column size="340"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="No"/>
+                <Cell col="1" text="Parent"/>
+                <Cell col="2" text="ID"/>
+                <Cell col="3" text="path"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="expr:rowidx+1" textAlign="center"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column0"/>
+                <Cell col="3" style="align:left;" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Tab id="Tab00" taborder="3" left="300" top="72" width="260" height="111" tabindex="0" scrollbars="autoboth" style="background:beige;" border="1px solid black">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="tabpage1">
+              <Layouts>
+                <Layout>
+                  <Button id="Button03" taborder="1" text="Button00" left="18" top="8" width="81" height="48"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="tabpage2" text="tabpage2">
+              <Layouts>
+                <Layout>
+                  <MaskEdit id="MaskEdit00" taborder="0" left="18" top="14" width="131" height="42"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Div id="Div00" taborder="4" left="16" top="71" width="272" height="112" style="background:aqua;" text="Div00" border="1px solid crimson">
+          <Layouts>
+            <Layout>
+              <TextArea id="TextArea00" taborder="0" left="12" top="16" width="101" height="62"/>
+              <Static id="Static00" taborder="1" text="Static00" left="123" top="15" width="104" height="27"/>
+              <Div id="Div00" taborder="2" text="Div00" left="129" top="60" width="132" height="47" border="1px solid chartreuse">
+                <Layouts>
+                  <Layout>
+                    <CheckBox id="CheckBox00" taborder="0" text="CheckBox00" left="13" top="14" width="110" height="20"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.clearData();
+	this.get_com_info(this);
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.clearData();
+    this.get_com_info(this, true);
+};
+
+this.get_com_info = function(obj, bAll, bRecursive)
+{
+	var i;
+	var components = bAll?obj.all:obj.components;
+	this.Dataset00.set_enableevent(false);
+	
+	for( i = 0 ; i < components.length ; i++ )
+	{
+	    var nRow = this.Dataset00.addRow();
+	    this.Dataset00.setColumn(nRow,0,components[i].id);	
+	    this.Dataset00.setColumn(nRow,1,bRecursive?obj.parent.valueOf():this.valueOf());
+	    this.Dataset00.setColumn(nRow,2,this.get_url(components[i],""));
+	    var strType = components[i].valueOf(); 
+	    
+		if(strType == "[object Div]" || strType == "[object Tab]"){			
+			if (strType == "[object Tab]") {
+				for(var j = 0 ; j < components[i].tabpages.length ; j++ )
+				{
+					var nRow = this.Dataset00.addRow();
+					this.Dataset00.setColumn(nRow,0,components[i].tabpages[j].id);	
+					this.Dataset00.setColumn(nRow,1,components[i].valueOf());
+					this.Dataset00.setColumn(nRow,2,this.get_url(components[i].tabpages[j],""));				
+					
+					this.get_com_info(components[i].tabpages[j].form, bAll, true);				
+				}				
+			} else {
+				this.get_com_info(components[i].form, bAll, true);
+			}
+		}		 
+	}
+	this.Dataset00.set_enableevent(true);
+};
+
+this.get_url = function(obj, str)
+{
+	if(obj == "[object Form]")
+	{
+		var s = "form";
+		if(obj.name == "sample_form_09")
+		{
+			return str;
+		}
+	}	else	{
+		var s = obj.name;
+	}
+	if(str != "")
+	{
+		s += "."+str;
+	}
+	return this.get_url(obj.parent, s);
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="Div00.form.TextArea00" propid="value" datasetid="Dataset00" columnid="Column2"/>
+    </Bind>
+  </Form>
+</FDL>

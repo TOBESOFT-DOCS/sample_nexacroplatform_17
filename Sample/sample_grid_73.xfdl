@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_73" width="1024" height="768" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="30" top="25" width="140" height="211" binddataset="Dataset00" autofittype="col" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="none" fillareatype="none" selecttype="multirow" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body" border="" selectscrollmode="select">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Edit id="Edit00" taborder="1" left="180" top="25" width="120" height="40"/>
+        <Button id="Button00" taborder="2" text="%Like%" left="180" top="80" width="90" height="30" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="3" text="Like%" left="280" top="80" width="90" height="30" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="4" text="Init" left="180" top="120" width="90" height="30" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Name">john</Col>
+          </Row>
+          <Row>
+            <Col id="Name">james</Col>
+          </Row>
+          <Row>
+            <Col id="Name">donald</Col>
+          </Row>
+          <Row>
+            <Col id="Name">lisa</Col>
+          </Row>
+          <Row>
+            <Col id="Name">joe</Col>
+          </Row>
+          <Row>
+            <Col id="Name">michael</Col>
+          </Row>
+          <Row>
+            <Col id="Name">lilli</Col>
+          </Row>
+          <Row>
+            <Col id="Name">colt</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.filter("String(Name).indexOf('"+this.Edit00.value+"')>=0");
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.filter("String(Name).indexOf('"+this.Edit00.value+"')==0");
+};
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.set_filterstr();
+	this.Dataset00.filter();
+};
+]]></Script>
+  </Form>
+</FDL>

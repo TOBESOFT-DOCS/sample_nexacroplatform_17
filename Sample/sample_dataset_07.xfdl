@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_dataset_07" width="1280" height="720" titletext="New Form" locale="en_US" onload="sample_dataset_03_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="20" width="180" height="80" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" edittype="normal"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="220" top="21" width="101" height="39" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="2" left="30" top="110" width="380" height="230"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">b</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var rowcnt = this.Dataset00.getRowCount();
+	for(var i=0;i<rowcnt;i++)
+	{
+		if(this.Dataset00.getRowType(i)==4)
+		{
+			this.fn_addvalue("index:"+i+" getOrgColumn: "+this.Dataset00.getOrgColumn(i,0));
+			this.fn_addvalue("index:"+i+" getColumn: "+this.Dataset00.getColumn(i,0));
+			this.Dataset00.set_updatecontrol(false);
+			this.Dataset00.setRowType(i,Dataset.ROWTYPE_NORMAL);
+			this.Dataset00.set_updatecontrol(true);
+			this.fn_addvalue("index:"+i+" ROWTYPE_NORMAL_getOrgColumn: "+this.Dataset00.getOrgColumn(i,0));	
+		}
+	}
+}
+
+this.fn_addvalue = function(str:String)
+{
+	if(this.TextArea00.value)
+	{
+		this.TextArea00.set_value(this.TextArea00.value+"\n"+str);
+	} else {
+		this.TextArea00.set_value(str);
+	}
+}
+
+]]></Script>
+  </Form>
+</FDL>

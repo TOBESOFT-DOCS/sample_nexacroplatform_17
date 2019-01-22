@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_23" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="32" top="40" width="800" height="380" binddataset="ds_data" autofittype="col" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autoenter="select" fillareatype="none" selecttype="cell" cellsizingtype="none" selectchangetype="up" cellclickbound="control" treeinitstatus="expand,all" font="" border="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="50"/>
+                <Column size="60"/>
+                <Column size="40"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="60"/>
+                <Column size="70"/>
+                <Column size="70"/>
+                <Column size="120"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="44"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="normal" font="9pt Arial" border=""/>
+                <Cell col="1" text="button" font="9pt Arial" border=""/>
+                <Cell col="2" text="check" font="9pt Arial" border=""/>
+                <Cell col="3" text="combo" font="9pt Arial" border=""/>
+                <Cell col="4" text="date" font="9pt Arial" border=""/>
+                <Cell col="5" text="mask" font="9pt Arial" border=""/>
+                <Cell col="6" text="readonly" font="9pt Arial" border=""/>
+                <Cell col="7" text="text" font="9pt Arial" border=""/>
+                <Cell col="8" text="textarea" font="9pt Arial" border=""/>
+                <Cell col="9" text="tree" font="9pt Arial" border=""/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:normal" edittype="normal" textAlign="left" font="8pt Arial"/>
+                <Cell col="1" text="bind:button" displaytype="buttoncontrol" edittype="button" font="8pt Arial"/>
+                <Cell col="2" text="bind:checkbox" displaytype="checkboxcontrol" edittype="checkbox" font="8pt Arial"/>
+                <Cell col="3" text="bind:combo" displaytype="combocontrol" edittype="combo" combodataset="ds_combo" combocodecol="CODE" combodatacol="VALUE" controlbuttonsize="-1" font="8pt Arial"/>
+                <Cell col="4" text="bind:date" displaytype="date" edittype="date" font="8pt Arial" calendarpopupsize="250"/>
+                <Cell col="5" text="bind:mask" edittype="mask" textAlign="center" font="8pt Arial" displaytype="mask" maskeditformat="AA-###" maskedittype="string"/>
+                <Cell col="6" text="bind:readonly" edittype="readonly" font="8pt Arial"/>
+                <Cell col="7" text="bind:text" displaytype="text" edittype="text" textAlign="left" font="8pt Arial"/>
+                <Cell col="8" text="bind:textarea" edittype="textarea" textAlign="left" wordWrap="english" font="8pt Arial" displaytype="textareacontrol"/>
+                <Cell col="9" text="bind:tree" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:tree" treecheck="bind:checkbox" treestate="1" font="8pt Arial"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_combo">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="VALUE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">M</Col>
+            <Col id="VALUE">Male</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">W</Col>
+            <Col id="VALUE">Female</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_data">
+        <ColumnInfo>
+          <Column id="normal" type="STRING" size="256"/>
+          <Column id="none" type="STRING" size="256"/>
+          <Column id="button" type="STRING" size="256"/>
+          <Column id="checkbox" type="STRING" size="256"/>
+          <Column id="combo" type="STRING" size="256"/>
+          <Column id="date" type="STRING" size="256"/>
+          <Column id="mask" type="STRING" size="256"/>
+          <Column id="readonly" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+          <Column id="textarea" type="STRING" size="256"/>
+          <Column id="tree" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="normal">John</Col>
+            <Col id="none">Korea</Col>
+            <Col id="checkbox">1</Col>
+            <Col id="combo">M</Col>
+            <Col id="button">Profile</Col>
+            <Col id="date">20160105</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">0</Col>
+            <Col id="text">1dollar</Col>
+            <Col id="textarea">Seoul, KOREA</Col>
+            <Col id="mask">AA105</Col>
+          </Row>
+          <Row>
+            <Col id="normal">James</Col>
+            <Col id="button">Profile</Col>
+            <Col id="checkbox">0</Col>
+            <Col id="combo">M</Col>
+            <Col id="date">20100826</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">1</Col>
+            <Col id="text">EBOT</Col>
+            <Col id="none">Spain</Col>
+            <Col id="textarea">Barcelona, Spain</Col>
+            <Col id="mask">CA826</Col>
+          </Row>
+          <Row>
+            <Col id="normal">Donald</Col>
+            <Col id="none">USA</Col>
+            <Col id="checkbox">0</Col>
+            <Col id="combo">M</Col>
+            <Col id="button">Profile</Col>
+            <Col id="date">20120321</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">1</Col>
+            <Col id="text">EBOT</Col>
+            <Col id="textarea">Califonia, USA</Col>
+            <Col id="mask">CA321</Col>
+          </Row>
+          <Row>
+            <Col id="normal">Lisa</Col>
+            <Col id="none">United Kingdom</Col>
+            <Col id="checkbox">1</Col>
+            <Col id="combo">W</Col>
+            <Col id="button">Profile</Col>
+            <Col id="date">20101225</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">2</Col>
+            <Col id="text">1dollar</Col>
+            <Col id="textarea">London, United Kingdom</Col>
+            <Col id="mask">AA225</Col>
+          </Row>
+          <Row>
+            <Col id="normal">Joe</Col>
+            <Col id="none">Brazil</Col>
+            <Col id="checkbox">1</Col>
+            <Col id="combo">W</Col>
+            <Col id="button">Profile</Col>
+            <Col id="date">19190301</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">2</Col>
+            <Col id="text">hangul</Col>
+            <Col id="textarea">São Paulo, Brazil</Col>
+            <Col id="mask">AA301</Col>
+          </Row>
+          <Row>
+            <Col id="normal">Michael</Col>
+            <Col id="button">Profile</Col>
+            <Col id="checkbox">0</Col>
+            <Col id="combo">M</Col>
+            <Col id="date">20140416</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">0</Col>
+            <Col id="text">1dollar</Col>
+            <Col id="none">India</Col>
+            <Col id="textarea">Mumbai, India</Col>
+            <Col id="mask">CA416</Col>
+          </Row>
+          <Row>
+            <Col id="normal">Lilli</Col>
+            <Col id="checkbox">0</Col>
+            <Col id="combo">W</Col>
+            <Col id="button">Profile</Col>
+            <Col id="date">20200101</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">1</Col>
+            <Col id="text">hangul</Col>
+            <Col id="none">Turkey</Col>
+            <Col id="textarea">Ankara, Turkey</Col>
+            <Col id="mask">AA101</Col>
+          </Row>
+          <Row>
+            <Col id="normal">Colt</Col>
+            <Col id="button">Profile</Col>
+            <Col id="checkbox">1</Col>
+            <Col id="combo">M</Col>
+            <Col id="date">19911221</Col>
+            <Col id="readonly">secret</Col>
+            <Col id="tree">2</Col>
+            <Col id="text">hangul</Col>
+            <Col id="none">Australia</Col>
+            <Col id="textarea">Sydney, NSW, Austailia</Col>
+            <Col id="mask">CA221</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

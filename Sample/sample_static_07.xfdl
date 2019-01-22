@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_07" left="0" top="0" width="760" height="430" ontimer="BarChart_ontimer">
+    <Layouts>
+      <Layout>
+        <Div id="divChart1" taborder="1" left="18" top="23" height="117" width="422" border="1px solid black">
+          <Layouts>
+            <Layout>
+              <Static id="stBar01" taborder="0" left="14" top="6" width="207" height="16" background="#C45E62"/>
+              <Static id="stBar02" taborder="1" left="14" top="48" width="207" height="16" background="#a13f40"/>
+              <Static id="stBar03" taborder="2" left="14" top="90" width="207" height="16" background="#e8a5a6"/>
+              <Static id="stValue01" taborder="3" left="stBar01:10" top="4" width="47" height="22" background="powderblue" textAlign="center"/>
+              <Static id="stValue02" taborder="4" left="stBar02:10" top="46" width="47" height="22" background="powderblue" textAlign="center"/>
+              <Static id="stValue03" taborder="5" left="stBar03:10" top="88" width="47" height="22" background="powderblue" textAlign="center"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button00" taborder="1" text="start" left="18" top="150" width="102" height="30" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_Chart01" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Lable" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Lable">item1</Col>
+            <Col id="Value">12</Col>
+          </Row>
+          <Row>
+            <Col id="Lable">item2</Col>
+            <Col id="Value">22</Col>
+          </Row>
+          <Row>
+            <Col id="Lable">item3</Col>
+            <Col id="Value">43</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.nTimerIdx = 0;
+this.nTimerMax = 20;
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.setTimer(1, 50);
+};
+
+this.BarChart_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if(e.timerid==1)
+	{
+		this.nTimerIdx++;
+		this.fn_Chart01();
+		this.divChart1.form.resetScroll();
+		if(this.nTimerIdx==this.nTimerMax)
+		{
+			this.nTimerIdx = 0;
+			this.killTimer(1);
+		}
+	}
+};
+
+this.fn_Chart01 = function ()
+{
+	var i;
+	var nLeft;
+	var nTop;
+	var nWidth;
+	var nHeight;
+	var objBar;
+	var objValue;
+	var nValue;
+	
+	for(i=0;i<this.ds_Chart01.rowcount;i++)
+	{
+		objBar = this.divChart1.form.components["stBar0"+(i+1)];	
+		objValue = this.divChart1.form.components["stValue0"+(i+1)];
+
+		nValue = Math.round(this.ds_Chart01.getColumn(i, "Value")*5.4);
+		objValue.set_text(this.ds_Chart01.getColumn(i, "Value"));
+
+		nLeft = objBar.left;
+		nTop = objBar.top;
+		nWidth = this.fn_move(this.nTimerIdx, 0, nValue, this.nTimerMax);
+		nHeight = objBar.height;
+		
+		objBar.move(nLeft, nTop, nWidth, nHeight);
+	}
+};
+
+this.fn_move = function(t, b, c, d)
+{
+	t /= d/2;
+	if (t < 1) return Math.round(c/2*t*t + b);
+	t--;
+	return Math.round(-c/2 * (t*(t-2) - 1) + b);
+};
+
+]]></Script>
+  </Form>
+</FDL>

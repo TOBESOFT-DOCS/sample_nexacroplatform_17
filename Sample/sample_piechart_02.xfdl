@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_piechart_02" width="1280" height="720" titletext="New Form" onload="sample_piechart_02_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <PieChart id="PieChart00" taborder="0" left="320" top="20" width="340" height="300" binddataset="Dataset01" categorycolumn="bind:product">
+          <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"text": "country"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"radius": 150,
+			"innerradius": "50",
+			"linestyle": "1px solid #1f77b4",
+			"itemtextvisible": true,
+			"itemtextfont": "10pt/normal '맑은 고딕'",
+			"valuecolumn": "bind:value",
+			"endangle": "180",
+			"startangle": "270",
+			"fillstyle": "#1f77b4,#aec7e8,#ff7f0e,#ffbb78,#2ca02c,#98df8a,#d62728,#ff9896,#9467bd,#c5b0d5,#8c564b,#c49c94,#e377c2,#f7b6d2,#7f7f7f,#c7c7c7,#bcbd22,#dbdb8d,#17becf,#9edae5",
+			"itemtext": "expr:product + \": \" + value",
+			"itemtextguidesize": "10",
+			"selecttype": "unselect"
+		}
+	]
+}]]></Contents>
+        </PieChart>
+        <Grid id="Grid00" taborder="1" left="27" top="20" width="263" height="160" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="country"/>
+                <Cell col="1" text="a"/>
+                <Cell col="2" text="b"/>
+                <Cell col="3" text="c"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:country"/>
+                <Cell col="1" text="bind:a"/>
+                <Cell col="2" text="bind:b"/>
+                <Cell col="3" text="bind:c"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onrowposchanged="Dataset00_onrowposchanged">
+        <ColumnInfo>
+          <Column id="country" type="STRING" size="256"/>
+          <Column id="a" type="INT" size="256"/>
+          <Column id="b" type="INT" size="256"/>
+          <Column id="c" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="country">Argentina</Col>
+            <Col id="a">10</Col>
+            <Col id="b">20</Col>
+            <Col id="c">50</Col>
+          </Row>
+          <Row>
+            <Col id="country">Brazil</Col>
+            <Col id="a">15</Col>
+            <Col id="b">53</Col>
+            <Col id="c">30</Col>
+          </Row>
+          <Row>
+            <Col id="country">Cuba</Col>
+            <Col id="a">20</Col>
+            <Col id="b">22</Col>
+            <Col id="c">20</Col>
+          </Row>
+          <Row>
+            <Col id="country">Ghana</Col>
+            <Col id="a">15</Col>
+            <Col id="b">10</Col>
+            <Col id="c">30</Col>
+          </Row>
+          <Row>
+            <Col id="country">Laos</Col>
+            <Col id="a">50</Col>
+            <Col id="b">5</Col>
+            <Col id="c">40</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="product" type="STRING" size="256"/>
+          <Column id="value" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="product">a</Col>
+            <Col id="value">10</Col>
+          </Row>
+          <Row>
+            <Col id="product">b</Col>
+            <Col id="value">10</Col>
+          </Row>
+          <Row>
+            <Col id="product">c</Col>
+            <Col id="value">10</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[var sCountry;
+this.Dataset00_onrowposchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSRowPosChangeEventInfo)
+{
+	this.Dataset01.setColumn(0, "value", this.Dataset00.getColumn(e.newrow, "a"));
+	this.Dataset01.setColumn(1, "value", this.Dataset00.getColumn(e.newrow, "b"));
+	this.Dataset01.setColumn(2, "value", this.Dataset00.getColumn(e.newrow, "c"));
+	sCountry = this.Dataset00.getColumn(e.newrow, "country");
+	if(this.PieChart00.board)
+	{
+		this.PieChart00.board.set_text(this.Dataset00.getColumn(e.newrow, "country"));
+	}
+};
+
+this.sample_piechart_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.PieChart00.board.set_text(sCountry);
+};
+]]></Script>
+  </Form>
+</FDL>

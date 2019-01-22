@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_fileupload_01" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <FileDownload id="FileDownload00" taborder="0" text="FileDownload00" left="89" top="42" width="151" height="54" right="" bottom="" onclick="FileDownload00_onclick" icon=""/>
+        <Calendar id="Calendar00" taborder="1" left="344" top="50" width="150" height="142" right="" bottom="" type="monthonly"/>
+        <Button id="Button00" taborder="2" text="Button00" left="129" top="193" width="120" height="50" right="" bottom="" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[
+this.FileDownload00_onclick = function(obj:nexacro.FileDownload,e:nexacro.ClickEventInfo)
+{
+	obj.download("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Bob_Dylan_1978.jpg/400px-Bob_Dylan_1978.jpg");
+	obj.download("http://localhost:8080/sample_nexacroplatform_17/Sample/sample_download_01.xfdl.js");	
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+trace("3"-1);
+trace(parseInt("3")-1);
+};
+]]></Script>
+  </Form>
+</FDL>

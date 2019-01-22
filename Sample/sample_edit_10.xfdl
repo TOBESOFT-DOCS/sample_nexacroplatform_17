@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_edit_10" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Edit id="Edit00" taborder="1" left="30" top="40" width="290" height="40" oninput="Edit00_oninput"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.Edit00_oninput = function(obj:nexacro.Edit,e:nexacro.InputEventInfo)
+{
+	obj.set_value(obj.value.replace(/[^\ㄱ-ㅎㅏ-ㅣ가-힣]/g, ""));
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="Edit00" propid="value" datasetid="Dataset00" columnid="Column0"/>
+    </Bind>
+  </Form>
+</FDL>

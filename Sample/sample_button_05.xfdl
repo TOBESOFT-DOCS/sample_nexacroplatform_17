@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_button_05" width="1024" height="768" titletext="New Form" background="">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="Button00" left="30" top="20" width="100" height="40" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="1" left="30" top="68" width="360" height="192"/>
+        <TextArea id="TextArea01" taborder="2" left="30" top="278" width="360" height="192"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value(this.checkList(obj));
+	this.TextArea01.set_value(this.checkList(e));
+};
+
+this.checkList = function(obj)
+{
+	var strReturn = "";
+	for(var x in obj)
+	{
+		if(x.substring(0,1)!="_")
+		{
+			if(obj[x]!=null && obj[x].toString().indexOf("function")>-1)	{
+				strReturn += x+": "+"function()"+"\n";
+			}	else	{
+				strReturn += x+": "+obj[x]+"\n";
+			}
+		}
+	}
+	return strReturn;
+}
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

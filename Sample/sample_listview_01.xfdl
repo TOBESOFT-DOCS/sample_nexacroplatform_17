@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_listview_01" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <ListView id="ListView00" taborder="0" left="20" top="20" width="500" height="500" binddataset="Dataset00" bandinitstatus="collapse">
+          <Formats>
+            <Format id="default">
+              <Band id="body" width="100%" height="160" expandbartype="true">
+                <Cell id="Cell00" left="5" top="5" width="150" height="150" displaytype="imagecontrol" text="bind:cover" border="0px none" padding="0px"/>
+                <Cell id="Cell01" left="164" top="25" height="50" right="20" text="bind:title" font="normal bold 20px/normal &quot;Gulim&quot;" border="0px none"/>
+                <Cell id="Cell02" left="165" top="65" right="20" bottom="5" text="bind:release" font="normal 30px/normal &quot;Gulim&quot;" border="0px none"/>
+              </Band>
+              <Band id="detail" left="0" width="100%" top="0" height="250">
+                <Cell id="Cell00" left="0" top="0" width="100%" height="100%" displaytype="text" text="bind:songs"/>
+              </Band>
+            </Format>
+          </Formats>
+        </ListView>
+        <Radio id="Radio00" taborder="1" left="550" top="36" width="100" height="84" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" index="0" text="expand" value="expand" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">expand</Col>
+                <Col id="datacolumn">expand</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">accordion</Col>
+                <Col id="datacolumn">accordion</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">popup</Col>
+                <Col id="datacolumn">popup</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Spin id="Spin00" taborder="2" left="550" top="150" width="90" height="30" max="50" min="0" value="0" onchanged="Spin00_onchanged"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="release" type="STRING" size="256"/>
+          <Column id="cover" type="STRING" size="256"/>
+          <Column id="songs" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="title">The Freewheelin' Bob Dylan</Col>
+            <Col id="release">1963</Col>
+            <Col id="songs">Side one
+1. Blowin' in the Wind
+2. Girl from the North Country
+3. Masters of War
+4. Down the Highway
+5. Bob Dylan's Blues
+6. A Hard Rain's a-Gonna Fall
+
+Side two
+1. Don't Think Twice, It's All Right
+2. Bob Dylan's Dream
+3. Oxford Town
+4. Talkin' World War III Blues
+5. Corrina, Corrina
+6. Honey, Just Allow Me One More Chance
+7. I Shall Be Free</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_The_Freewheelin'_Bob_Dylan.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="title">Highway 61 Revisited</Col>
+            <Col id="release">1965</Col>
+            <Col id="songs">Side one
+1. Like a Rolling Stone
+2. Tombstone Blues
+3. It Takes a Lot to Laugh, It Takes a Train to Cry
+4. From a Buick 6
+5. Ballad of a Thin Man
+
+Side two
+1. Queen Jane Approximately
+2. Highway 61 Revisited
+3. Just Like Tom Thumb's Blues
+4. Desolation Row</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Highway_61_Revisited.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="title">Blood on the Tracks</Col>
+            <Col id="release">1975</Col>
+            <Col id="songs">Side one
+1. Tangled Up in Blue
+2. Simple Twist of Fate
+3. You're a Big Girl Now
+4. Idiot Wind
+5. You're Gonna Make Me Lonesome When You Go
+
+Side two
+6. Meet Me in the Morning
+7. Lily, Rosemary and the Jack of Hearts
+8. If You See Her, Say Hello
+9. Shelter from the Storm
+10. Buckets of Rain</Col>
+            <Col id="cover">imagerc::Bob_Dylan_-_Blood_on_the_Tracks.jpg</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.ListView00.set_bandexpandtype(e.postvalue);
+};
+
+
+
+this.Spin00_onchanged = function(obj:nexacro.Spin,e:nexacro.ChangeEventInfo)
+{
+	this.ListView00.set_bandindentsize(e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_06" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="" ontimer="Form_ontimer">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <Button id="btnStart" taborder="0" text="Time Start" left="260" top="22" width="120" height="50" right="" bottom="" onclick="btnStart_onclick" timekey="1"/>
+        <Static id="staticTime" taborder="1" text="READY" left="16" top="17" width="225" height="60" right="" bottom="" background="black" color="white" textAlign="center"/>
+        <Button id="btnEnd" taborder="2" text="Time Stop" left="400" top="22" width="120" height="50" right="" bottom="" onclick="btnEnd_onclick" timekey="1"/>
+        <Button id="btnStart00" taborder="0" text="Time Start" left="260" top="104" width="120" height="50" right="" bottom="" onclick="btnStart_onclick" timekey="2"/>
+        <Static id="staticTime01" taborder="1" text="READY" left="16" top="99" width="225" height="60" right="" bottom="" background="red" color="white" textAlign="center"/>
+        <Button id="btnEnd00" taborder="2" text="Time Stop" left="400" top="104" width="120" height="50" right="" bottom="" onclick="btnEnd_onclick" timekey="2"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[
+this.btnStart_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.setTimer(obj.timekey, 1000);
+};
+
+this.Form_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if(e.timerid == 1)
+	{
+		this.staticTime.set_text(this.Clock());
+	} else if(e.timerid == 2) {
+		this.staticTime01.set_text(this.Clock());
+	}
+};
+
+this.Clock = function()
+{
+	var objDate = new Date();
+	return objDate.toLocaleTimeString();
+}
+
+this.btnEnd_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.killTimer(obj.timekey);
+};
+]]></Script>
+  </Form>
+</FDL>

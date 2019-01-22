@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_08" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Calendar id="Calendar00" taborder="0" left="31" top="151" width="128" height="39"/>
+        <GroupBox id="GroupBox00" taborder="1" text="empty &gt;&gt; &quot;01&quot;" left="31" top="38" width="128" height="98" font="normal bold 10pt/normal &quot;Arial&quot;"/>
+        <Radio id="Radio00" taborder="2" left="43" top="64" width="87" height="60" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio_onitemchanged" calendarId="Calendar00">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">2018</Col>
+                <Col id="datacolumn">2018</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">201802</Col>
+                <Col id="datacolumn">201802</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">0000</Col>
+                <Col id="datacolumn">0000</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Calendar id="Calendar01" taborder="3" left="171" top="151" width="128" height="39"/>
+        <GroupBox id="GroupBox01" taborder="4" text="00 &gt;&gt; -1" left="171" top="38" width="128" height="98" font="normal bold 10pt/normal &quot;Arial&quot;"/>
+        <Radio id="Radio01" taborder="5" left="183" top="64" width="87" height="60" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio_onitemchanged" calendarId="Calendar01">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">201800</Col>
+                <Col id="datacolumn">201800</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">20180000</Col>
+                <Col id="datacolumn">20180000</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">00000000</Col>
+                <Col id="datacolumn">00000000</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Calendar id="Calendar02" taborder="6" left="311" top="151" width="128" height="39"/>
+        <GroupBox id="GroupBox02" taborder="7" text="over &gt;&gt; +x" left="311" top="38" width="128" height="98" font="normal bold 10pt/normal &quot;Arial&quot;"/>
+        <Radio id="Radio02" taborder="8" left="323" top="64" width="87" height="60" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio_onitemchanged" calendarId="Calendar02">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">20181238</Col>
+                <Col id="datacolumn">20181238</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">00001345</Col>
+                <Col id="datacolumn">00001345</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">99999999</Col>
+                <Col id="datacolumn">99999999</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.Radio_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this[obj.calendarId].set_value(e.postvalue);
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="Calendar00" propid="value" datasetid="Dataset00" columnid="Column0"/>
+      <BindItem id="item1" compid="Calendar01" propid="value" datasetid="Dataset00" columnid="Column0"/>
+      <BindItem id="item2" compid="Calendar02" propid="value" datasetid="Dataset00" columnid="Column0"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_popupmenu_01" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <PopupMenu id="popupmenuABC" left="-104" top="-64" width="93" height="113" right="" bottom="" captioncolumn="captioncolumn" checkboxcolumn="checkboxcolumn" enablecolumn="enablecolumn" hotkeycolumn="hotkeycolumn" iconcolumn="iconcolumn" idcolumn="idcolumn" levelcolumn="levelcolumn" userdatacolumn="userdatacolumn" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="captioncolumn" size="256"/>
+              <Column id="checkboxcolumn" size="256"/>
+              <Column id="enablecolumn" size="256"/>
+              <Column id="hotkeycolumn" size="256"/>
+              <Column id="iconcolumn" size="256"/>
+              <Column id="idcolumn" size="256"/>
+              <Column id="levelcolumn" size="256"/>
+              <Column id="userdatacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="captioncolumn">A</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">A-1</Col>
+                <Col id="levelcolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">A-2</Col>
+                <Col id="levelcolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">B</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">C</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </PopupMenu>
+        <Radio id="radioAlign" taborder="2" left="24" top="18" width="121" height="143" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" background="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onitemchanged="radioAlign_onitemchanged" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">right top</Col>
+                <Col id="datacolumn">right top</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">right middle</Col>
+                <Col id="datacolumn">right middle</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">right bottom</Col>
+                <Col id="datacolumn">right bottom</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">left top</Col>
+                <Col id="datacolumn">left top</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">left middle</Col>
+                <Col id="datacolumn">left middle</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">left bottom</Col>
+                <Col id="datacolumn">left bottom</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Div id="divClick" taborder="3" text="Div00" left="179" top="18" width="200" height="200" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="2px solid red" onclick="divClick_onclick">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[var align;
+this.divClick_onclick = function(obj:nexacro.Div,e:nexacro.ClickEventInfo)
+{
+	var targetX = obj.width;
+	var targetY = obj.height;
+	if(align) {
+		this.popupmenuABC.trackPopupByComponent(obj, targetX, targetY, align);
+	} else {
+		this.popupmenuABC.trackPopupByComponent(obj, targetX, targetY);
+	}
+};
+
+this.radioAlign_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+		align = obj.value;
+};
+]]></Script>
+  </Form>
+</FDL>

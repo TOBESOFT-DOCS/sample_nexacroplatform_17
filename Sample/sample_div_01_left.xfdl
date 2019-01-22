@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_div_01_left" left="0" top="0" width="300" height="300" titletext="New Form" onrbuttondown="Form_onrbuttondown" background="red">
+    <Layouts>
+      <Layout height="300" width="300">
+        <Button id="btnLeft" taborder="1" text="Left" left="10" top="10" width="120" height="50" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnLeft_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.btnLeft_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.alert(this.parent.parent.name);
+};
+]]></Script>
+  </Form>
+</FDL>

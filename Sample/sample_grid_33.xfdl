@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_33" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="32" top="40" width="360" height="294" right="" bottom="" autofittype="col" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="select" fillareatype="none" selecttype="row" binddataset="Dataset00" treeusecheckbox="false" treeuseimage="true" oncelldblclick="Grid00_oncelldblclick" onselectchanged="Grid00_onselectchanged" treeinitstatus="expand,all">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="280"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Label"/>
+                <Cell col="1" text="Level"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Label" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:Level" textAlign="left" editautoselect="true"/>
+                <Cell col="1" text="bind:Level" color="#000000"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Label" type="STRING" size="256"/>
+          <Column id="Level" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Label">1dollar</Col>
+            <Col id="Level">0</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Sales</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Level">2</Col>
+            <Col id="Label">James</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Donald</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Lisa</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Consulting</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Joe</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Michael</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Research Institute</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Lilli</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Colt</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">hangul</Col>
+            <Col id="Level">0</Col>
+          </Row>
+          <Row>
+            <Col id="Label">R&amp;D</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Joe</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Michael</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Quality Assurance</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Colt</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">James</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Lilli</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Sales</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Donald</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">EBOT</Col>
+            <Col id="Level">0</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Personnel</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Donald</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">James</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Sales</Col>
+            <Col id="Level">1</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Lilli</Col>
+            <Col id="Level">2</Col>
+          </Row>
+          <Row>
+            <Col id="Label">Lisa</Col>
+            <Col id="Level">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	//if tree cell column	
+	if(e.col == 0)
+	{
+		var nCellIdx = this.Grid00.currentcell;
+		this.Grid00.setCellProperty("body", nCellIdx, "edittype", "normal");
+		this.Grid00.setCellPos(nCellIdx);
+	}
+
+};
+
+this.Grid00_onselectchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
+{
+	var nCellIdx = this.Grid00.currentcell;
+	this.Grid00.setCellProperty("body", nCellIdx, "edittype", "tree");
+
+};
+]]></Script>
+  </Form>
+</FDL>

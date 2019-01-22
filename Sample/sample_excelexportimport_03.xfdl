@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_excelexportimport_03" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="4" text="Export image" left="32" top="272" width="120" height="32" onclick="Button00_onclick" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="0" left="32" top="40" width="600" height="211" binddataset="Dataset00" autofittype="col" autosizingtype="row" extendsizetype="none" autosizebandtype="body" text="" autoenter="none" fillareatype="none" selecttype="row" cellsizingtype="none" cellmovingtype="none" cellsizebandtype="body" border="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="160"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="100"/>
+                <Column size="60"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+                <Cell col="1" text="Address"/>
+                <Cell col="2" text="Company"/>
+                <Cell col="3" text="Department"/>
+                <Cell col="4" text="Salary"/>
+                <Cell col="5" text="Image"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name" textAlign="left"/>
+                <Cell col="1" text="bind:Address" textAlign="left" wordWrap="char"/>
+                <Cell col="2" text="bind:Company" textAlign="left"/>
+                <Cell col="3" text="bind:Department" textAlign="left" wordWrap="english"/>
+                <Cell col="4" text="bind:Salary" displaytype="currency" textAlign="right"/>
+                <Cell col="5" text="bind:Image" displaytype="imagecontrol"/>
+              </Band>
+            </Format>
+            <Format id="format00">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+                <Cell col="1" text="Company"/>
+                <Cell col="2" text="Salary"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name" textAlign="left"/>
+                <Cell col="1" text="bind:Company" textAlign="left"/>
+                <Cell col="2" text="bind:Salary" displaytype="currency" textAlign="right"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Name" type="STRING" size="256"/>
+          <Column id="Address" type="STRING" size="256"/>
+          <Column id="Company" type="STRING" size="256"/>
+          <Column id="Department" type="STRING" size="256"/>
+          <Column id="Salary" type="STRING" size="256"/>
+          <Column id="Image" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Name">John</Col>
+            <Col id="Address">Seoul, KOREA</Col>
+            <Col id="Company">1dollar</Col>
+            <Col id="Department">Sales</Col>
+            <Col id="Salary">15000</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/img_sta_des.png</Col>
+          </Row>
+          <Row>
+            <Col id="Name">James</Col>
+            <Col id="Address">Barcelona, Spain</Col>
+            <Col id="Company">EBOT</Col>
+            <Col id="Department">Consulting</Col>
+            <Col id="Salary">25000</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/launch_2.png</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Donald</Col>
+            <Col id="Address">Califonia, USA</Col>
+            <Col id="Company">EBOT</Col>
+            <Col id="Department">Research Institute</Col>
+            <Col id="Salary">1000000</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/img_sta_des.png</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Lisa</Col>
+            <Col id="Address">London, United Kingdom</Col>
+            <Col id="Company">1dollar</Col>
+            <Col id="Department">Quality Assurance</Col>
+            <Col id="Salary">3000</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/img_sta_des.png</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Joe</Col>
+            <Col id="Address">São Paulo, Brazil</Col>
+            <Col id="Company">hangul</Col>
+            <Col id="Department">R&amp;D</Col>
+            <Col id="Salary">8600</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/launch_2.png</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Michael</Col>
+            <Col id="Address">Mumbai, India</Col>
+            <Col id="Company">1dollar</Col>
+            <Col id="Department">Personnel</Col>
+            <Col id="Salary">1300</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/img_sta_des.png</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Lilli</Col>
+            <Col id="Address">Ankara, Turkey</Col>
+            <Col id="Company">hangul</Col>
+            <Col id="Department">Quality Assurance</Col>
+            <Col id="Salary">4400</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/launch_2.png</Col>
+          </Row>
+          <Row>
+            <Col id="Name">Colt</Col>
+            <Col id="Address">Sydney, NSW, Australia </Col>
+            <Col id="Company">hangul</Col>
+            <Col id="Department">Sales</Col>
+            <Col id="Salary">62000</Col>
+            <Col id="Image">http://demo.nexacro.com/developer_guide/17/Image/launch_2.png</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.exportObj = new ExcelExportObject("Export00", this);
+	
+	this.exportObj.set_exportfilename("ExcelExportFile");
+	this.exportObj.set_exporttype(nexacro.ExportTypes.EXCEL2007);
+	this.exportObj.set_exporturl("http://demo.nexacro.com/developer_guide/XExportImport");
+	
+	this.exportObj.addExportItem(nexacro.ExportItemTypes.GRID, this.Grid00, "Sheet1!A1");
+	
+	var objExportItem = this.exportObj.getExportItem(nexacro.ExportItemTypes.GRID, 0);
+	objExportItem.set_exportimage("image");	
+	
+	this.exportObj.setExportItem(nexacro.ExportItemTypes.GRID, 0, objExportItem);
+
+	this.addEventHandler("onsuccess", this.Export00_onsuccess, this);
+	this.addEventHandler("onerror", this.Export00_onerror, this);
+
+	var intExportedItem = this.exportObj.exportData();
+	trace("Number of Exported Item: " + intExportedItem);
+	
+};
+
+this.Export00_onsuccess = function(obj:ExcelExportObject, e:nexacro.ExcelExportEventInfo)
+{
+	trace("Export00_onsuccess");	
+}
+
+this.Export00_onerror = function(obj:ExcelExportObject, e:nexacro.ExcelExportEventInfo)
+{
+	trace("Export00_onerror");
+}]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_popupdiv_02" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="Button00" left="40" top="32" width="120" height="32" right="" bottom="" onclick="Button00_onclick" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" visible="false" left="218" top="46" width="200" height="200" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background="darkorange">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.PopupDiv00.trackPopupByComponent(obj, obj.getOffsetWidth(), obj.getOffsetHeight(), 160, 240);
+
+};
+]]></Script>
+  </Form>
+</FDL>

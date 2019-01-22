@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_string_03" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Static id="Static00" taborder="0" text="Halfwidth to Fullwidth" left="44" top="52" width="126" height="40"/>
+        <Static id="Static01" taborder="1" text="Fullwidth to Halfwidth" left="44" top="100" width="126" height="40"/>
+        <Edit id="Edit00" taborder="2" left="180" top="60" width="140" height="31" imemode="alpha,full" value="ｎｅｘａｃｒｏ" text="ｎｅｘａｃｒｏ"/>
+        <Edit id="Edit01" taborder="3" left="180" top="109" width="140" height="31" imemode="alpha" value="nexacro" text="nexacro"/>
+        <Button id="Button00" taborder="4" text="change" left="44" top="155" width="120" height="50" onclick="Button00_onclick"/>
+        <Edit id="Edit02" taborder="5" left="330" top="60" width="140" height="31" enable="false"/>
+        <Edit id="Edit03" taborder="6" left="330" top="109" width="140" height="31" enable="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit02.set_value(this.fn_fullToHalf(this.Edit00.value));
+	this.Edit03.set_value(this.fn_halfToFull(this.Edit01.value));
+};
+
+this.fn_fullToHalf = function(sFull)
+{
+	var sHalf = "";
+	var sChar = "";
+	
+	for (var i = 0; i < sFull.length; i++)	{
+		sChar = sFull.charCodeAt(i);
+		if (sChar == 12288)		{
+			sHalf += unescape("%20");
+		}
+		else if ((sChar >= 65281) && (sChar <= 65374))		{
+			sHalf += unescape("%" + (sChar-65248).toString(16));
+		} else {
+			sHalf += sFull.charAt(i);
+		}
+	}	
+	return  sHalf;
+}
+
+this.fn_halfToFull = function(sHalf)
+{
+    var sFull = "";
+    var sChar = "";
+	
+    for (var i = 0; i < sHalf.length; i++) {
+		if ((sHalf.charCodeAt(i) >= 32) && (sHalf.charCodeAt(i) <= 126)) {
+            if (sHalf.charCodeAt(i) == 32) {
+                sChar = unescape("%u"+(12288).toString(16));
+            } else {
+                sChar = sHalf.charCodeAt(i) + 65248;
+            }
+        } else {
+            sChar = sHalf.charCodeAt(i);
+        }    
+        if (sHalf.charCodeAt(i) == 32) {
+            sFull = sFull + (sChar);
+        }  else  { 
+            sFull = sFull + String.fromCharCode(sChar);
+        }
+    }
+    return sFull;
+}]]></Script>
+  </Form>
+</FDL>

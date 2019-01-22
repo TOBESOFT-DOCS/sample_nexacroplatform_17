@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_button_02_nexacro16" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btn_ok" taborder="4" text="OK" left="32" top="40" width="120" height="32" right="" bottom="" onclick="btn_ok_onclick" icon="URL(&quot;imagerc::img_sta_des.png&quot;)"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var strMsg = "[" +e.eventid + " event] " + this.btn_ok.text + " button clicked.";
+	
+	alert(strMsg);
+
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_06" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnCal" taborder="6" text="Public holiday" left="168" top="68" width="112" height="36" right="" bottom="" onclick="btnCal_onclick" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="calHoliday" taborder="8" left="96" top="120" width="184" height="184" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" type="monthonly" usetrailingday="" backgroundcolumn="backgroundcolumn" bordercolumn="bordercolumn" datecolumn="datecolumn" textcolorcolumn="textcolorcolumn" value="" innerdataset="@dsHoliday"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.btnCal_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.dsHoliday.clearData();
+	
+	var colorBordercolumn = "1px solid green";
+	var colorBackgroundcolumn = "yellow";
+	var colorTextcolorcolumn = "red";
+	
+	var currDate = new Date();
+	var year = currDate.getFullYear().toString().padLeft(4, "0");	
+	
+	for(var i=1;i<13;i++) {
+		var rIdx = this.dsHoliday.addRow();
+		this.dsHoliday.setColumn(rIdx, "backgroundcolumn", colorBackgroundcolumn);
+		this.dsHoliday.setColumn(rIdx, "textcolorcolumn", colorTextcolorcolumn);
+		this.dsHoliday.setColumn(rIdx, "bordercolumn", colorBordercolumn);
+		this.dsHoliday.setColumn(rIdx, "datecolumn", (year+i.toString().padLeft(2, "0"))+"01");	
+		
+	}
+}]]></Script>
+    <Objects>
+      <Dataset id="dsHoliday">
+        <ColumnInfo>
+          <Column id="backgroundcolumn" type="STRING" size="256"/>
+          <Column id="bordercolumn" type="STRING" size="256"/>
+          <Column id="datecolumn" type="STRING" size="256"/>
+          <Column id="textcolorcolumn" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_animation_03" left="0" top="0" width="1024" height="768" titletext="New Form" onload="sample_animation_03_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="linear" left="26" top="55" width="120" height="50"/>
+        <Button id="Button01" taborder="1" text="easeInSine" left="26" top="115" width="120" height="50"/>
+        <Button id="btnPlay" taborder="2" text="play" left="26" top="10" width="90" height="30" onclick="btnPlay_onclick"/>
+        <Button id="btnInit" taborder="3" text="pause" left="140" top="10" width="90" height="30" onclick="btnPause_onclick"/>
+        <Button id="btnStop" taborder="4" text="stop" left="254" top="10" width="90" height="30" onclick="btnStop_onclick"/>
+        <Button id="Button02" taborder="5" text="easeOutSine" left="26" top="175" width="120" height="50"/>
+        <Button id="Button03" taborder="6" text="easeInOutSine" left="26" top="235" width="120" height="50"/>
+        <Static id="Static00" taborder="7" left="420" top="55" width="10" height="230" background="indigo"/>
+        <Static id="Static01" taborder="8" left="16" top="55" width="10" height="230" background="indigo"/>
+        <Radio id="Radio00" taborder="9" left="16" top="300" width="429" height="76" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" index="0" text="linear, easeinsine, easeoutsine, easeinoutsine" value="linear, easeinsine, easeoutsine, easeinoutsine" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">linear,easeInSine,easeOutSine,easeInoutSine</Col>
+                <Col id="datacolumn">linear, easeInSine, easeOutSine, easeInoutSine</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">easeInOutSine,easeInOutQuad,easeInOutCubic,easeInOutQuart</Col>
+                <Col id="datacolumn">easeInOutSine, easeInOutQuad, easeInOutCubic, easeInOutQuart</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">easeInOutSine,easeInOutQuint,easeInOutExpo,easeInOutCirc</Col>
+                <Col id="datacolumn">easeInOutSine, easeInOutQuint, easeInOutExpo, easeInOutCirc</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">easeInOutSine,easeInOutBack,easeInOutElastic,easeInOutBounce</Col>
+                <Col id="datacolumn">easeInOutSine, easeInOutBack, easeInOutElastic, easeInOutBounce</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.sample_animation_03_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.initAnimation("Ani00", "linear", this.Button00);
+	this.initAnimation("Ani01", "easeInSine", this.Button01);
+	this.initAnimation("Ani02", "easeOutSine", this.Button02);
+	this.initAnimation("Ani03", "easeInOutSine", this.Button03);
+};
+
+this.initAnimation = function(sId, sEasing, objButton)
+{
+    if(!this.all[sId])
+	{
+		var aniObj = new nexacro.Animation(sId, this);
+		this.addChild(sId, aniObj);
+		this.all[sId].addTarget("AniItem00", objButton, "left:300");		
+		this.all[sId].set_direction("alternate");		
+		this.all[sId].set_duration(3000);
+		this.all[sId].set_direction("alternate");
+		this.all[sId].set_loop(true);	
+	}
+	this.all[sId].set_easing(sEasing);
+	objButton.set_text(sEasing);
+}
+
+this.btnPlay_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    this.Ani00.play();
+    this.Ani01.play();
+    this.Ani02.play();
+    this.Ani03.play();	
+};
+
+this.btnPause_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    this.Ani00.pause();
+    this.Ani01.pause();
+    this.Ani02.pause();
+    this.Ani03.pause();	
+};
+
+this.btnStop_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    this.Ani00.stop();
+    this.Ani01.stop();
+    this.Ani02.stop();
+    this.Ani03.stop();
+};
+
+
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	var arr = e.postvalue.toString().split(",");
+	this.initAnimation("Ani00", arr[0], this.Button00);
+	this.initAnimation("Ani01", arr[1], this.Button01);
+	this.initAnimation("Ani02", arr[2], this.Button02);
+	this.initAnimation("Ani03", arr[3], this.Button03);
+};
+]]></Script>
+  </Form>
+</FDL>

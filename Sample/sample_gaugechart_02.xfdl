@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_gaugechart_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <GaugeChart id="GaugeChart00" taborder="0" left="290" top="23" width="245" height="240" binddataset="Dataset00" categorycolumn="bind:Category" gaugetype="circular" enableanimation="true">
+          <Contents><![CDATA[{
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmax": "100",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 30pt '맑은 고딕'",
+			"valuecolumn": "bind:Value",
+			"radius": "100",
+			"innerradius": "70",
+			"itemtextmask": "###%",
+			"barsize": "100"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <Grid id="Grid00" taborder="1" left="48" top="77" width="272" height="133" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Category"/>
+                <Cell col="1" text="Value"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Category"/>
+                <Cell col="1" text="bind:Value"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onrowposchanged="Dataset00_onrowposchanged">
+        <ColumnInfo>
+          <Column id="Category" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Category">A</Col>
+            <Col id="Value">70</Col>
+          </Row>
+          <Row>
+            <Col id="Category">B</Col>
+            <Col id="Value">55</Col>
+          </Row>
+          <Row>
+            <Col id="Category">C</Col>
+            <Col id="Value">80</Col>
+          </Row>
+          <Row>
+            <Col id="Category">D</Col>
+            <Col id="Value">100</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="Category" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Dataset00_onrowposchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSRowPosChangeEventInfo)
+{
+	this.GaugeChart00.runAnimation();
+};
+]]></Script>
+  </Form>
+</FDL>

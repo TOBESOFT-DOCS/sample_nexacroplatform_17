@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_11" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Edit id="Edit00" taborder="0" left="49" top="27" width="116" height="36"/>
+        <Button id="Button00" taborder="1" text="Button00" left="190" top="27" width="92" height="36"/>
+        <Spin id="Spin00" taborder="2" left="293" top="27" width="94" height="38"/>
+        <Button id="Button01" taborder="3" text="binds check" left="224" top="75" width="101" height="40" onclick="Button01_onclick"/>
+        <Grid id="Grid00" taborder="4" left="49" top="73" width="165" height="105" binddataset="Dataset01">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="5" left="49" top="188" width="292" height="90" value=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">b</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">c</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">a</Col>
+            <Col id="Column1">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">b</Col>
+            <Col id="Column1">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">c</Col>
+            <Col id="Column1">3</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+form > Bind Item 목록 확인하기
+binds
+*/
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	for(var i = 0; i < this.binds.length; i++)
+	{
+		this.TextArea00.set_value(this.TextArea00.value+this.binds[i].compid+", "+ this.binds[i].propid+", "+ this.binds[i].datasetid + ", " + this.binds[i].columnid+"\n");
+	}
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="Edit00" propid="value" datasetid="Dataset00" columnid="Column0"/>
+      <BindItem id="item1" compid="Button00" propid="text" datasetid="Dataset00" columnid="Column1"/>
+      <BindItem id="item3" compid="Spin00" propid="value" datasetid="Dataset01" columnid="Column1"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_03" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Calendar id="calToday" taborder="3" left="5.47%" top="40" width="269" height="269" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" locale="en_US" type="monthonly" usetrailingday="true"/>
+        <Radio id="radioTrailingday" taborder="4" left="370" top="68" width="158" height="50" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" value="true" onitemchanged="radioTrailingday_onitemchanged" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">true</Col>
+                <Col id="datacolumn">usetrailingday: true</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn"/>
+                <Col id="datacolumn">usetrailingday: false</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.radioTrailingday_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.calToday.set_usetrailingday(Boolean(this.radioTrailingday.value));
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

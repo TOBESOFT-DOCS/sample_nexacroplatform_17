@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_imageviewer_03" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Edit id="Edit00" taborder="0" left="23" top="20" width="267" height="35"/>
+        <Button id="Button00" taborder="1" text="Button00" left="310" top="20" width="100" height="35" onclick="Button00_onclick"/>
+        <ImageViewer id="ImageViewer00" taborder="2" left="23" top="90" width="387" height="230" onload="ImageViewer00_onload" fittocontents="both"/>
+        <Static id="Static00" taborder="3" left="23" top="60" width="153" height="25"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[/*
+https://www.base64-image.de/
+키워드 : imagewidth, imageheight
+*/
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ImageViewer00.set_image(this.Edit00.value);
+};
+
+this.ImageViewer00_onload = function(obj:nexacro.ImageViewer,e:nexacro.LoadEventInfo)
+{
+	this.Static00.set_text(this.ImageViewer00.imagewidth + " x " + this.ImageViewer00.imageheight);
+	this.resetScroll();
+};
+]]></Script>
+  </Form>
+</FDL>

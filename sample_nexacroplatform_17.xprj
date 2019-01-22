@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project type="application" version="2.0">
+  <EnvironmentDefinition url="environment.xml"/>
+  <TypeDefinition url="typedefinition.xml"/>
+  <AppVariables url="appvariables.xml"/>
+  <AppInfos>
+    <AppInfo url="sample_nexacroplatform_17.xadl"/>
+  </AppInfos>
+</Project>

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_basicchart_07" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BasicChart id="BasicChart00" taborder="0" left="25" top="75" width="510" height="230" binddataset="Dataset00" categorycolumn="bind:month" enableanimation="true" duration="2000">
+          <Contents><![CDATA[{
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletext": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:sales"
+		},
+		{
+			"id": "series1",
+			"titletext": "series",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:profit"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"titletext": "valueaxis",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+        <Button id="Button00" taborder="1" text="runAnimation" left="30" top="15" width="90" height="35" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="2" text="Dataset.reset" left="135" top="15" width="90" height="35" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="profit" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">1</Col>
+            <Col id="sales">230000</Col>
+            <Col id="profit">80000</Col>
+          </Row>
+          <Row>
+            <Col id="month">2</Col>
+            <Col id="sales">200000</Col>
+            <Col id="profit">65000</Col>
+          </Row>
+          <Row>
+            <Col id="month">3</Col>
+            <Col id="sales">150000</Col>
+            <Col id="profit">70000</Col>
+          </Row>
+          <Row>
+            <Col id="month">4</Col>
+            <Col id="sales">650000</Col>
+            <Col id="profit">120000</Col>
+          </Row>
+          <Row>
+            <Col id="month">5</Col>
+            <Col id="sales">230000</Col>
+            <Col id="profit">70000</Col>
+          </Row>
+          <Row>
+            <Col id="month">6</Col>
+            <Col id="sales">90000</Col>
+            <Col id="profit">30000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BasicChart00.runAnimation();
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.reset();
+};
+]]></Script>
+  </Form>
+</FDL>

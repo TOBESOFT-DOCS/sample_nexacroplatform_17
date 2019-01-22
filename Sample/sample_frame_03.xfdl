@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_frame_03" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown" ontimer="Form_ontimer">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnCreate" taborder="0" text="Create Frame" left="30" top="20" width="120" height="50" right="" bottom="" onclick="btnCreate_onclick" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Radio id="radioArrange" taborder="1" left="308" top="20" width="280" height="50" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" rowcount="2" onitemchanged="radioArrange_onitemchanged" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">cascade</Col>
+                <Col id="datacolumn">cascade</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">vertical</Col>
+                <Col id="datacolumn">vertical</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">horizontal</Col>
+                <Col id="datacolumn">horizontal</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">tilevertical</Col>
+                <Col id="datacolumn">tilevertical</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Button id="btnAddChild" taborder="2" text="Add ChildFrame" left="164" top="20" width="120" height="50" right="" bottom="" onclick="btnAddChild_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[var frameIdx = 0;
+
+this.btnCreate_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objFrameset = new FrameSet();  
+	objFrameset.init("framesetNew", 30, 90, 400, 400);
+	this.addChild("framesetNew", objFrameset);
+	objFrameset.set_border("1px solid #999999");
+	objFrameset.show();
+};
+
+this.btnAddChild_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objChildFrame = new ChildFrame();  
+	objChildFrame.init("childframe"+frameIdx, frameIdx, frameIdx, 40, 40);
+	this.framesetNew.addChild("childframe"+frameIdx, objChildFrame);
+	objChildFrame.set_border("1px solid #999999");
+	objChildFrame.set_showtitlebar(false);
+	objChildFrame.set_background('#'+Math.random().toString(16).slice(-6));
+	objChildFrame.show();
+	frameIdx = frameIdx + 10;
+};
+
+this.radioArrange_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.framesetNew.arrange(obj.value);
+};
+]]></Script>
+  </Form>
+</FDL>

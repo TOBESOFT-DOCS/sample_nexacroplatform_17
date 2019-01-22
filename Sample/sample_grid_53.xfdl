@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_53" width="1280" height="720" titletext="New Form" locale="en_US">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="37" top="80" width="407" height="140" binddataset="Dataset00" autofittype="col" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="site"/>
+                <Cell col="1" text="url"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:site"/>
+                <Cell col="1" text="bind:url" displaytype="decoratetext" expr="expr:bLink=='Y'?&quot;&lt;u v='true'&gt;&quot;+url+&quot;&lt;/u&gt;&quot;:url"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="site" type="STRING" size="256"/>
+          <Column id="url" type="STRING" size="256"/>
+          <Column id="bLink" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="url">http://codeschool.com</Col>
+            <Col id="site">codeschool</Col>
+            <Col id="bLink">Y</Col>
+          </Row>
+          <Row>
+            <Col id="url">https://www.codecademy.com</Col>
+            <Col id="site">codecademy</Col>
+            <Col id="bLink">Y</Col>
+          </Row>
+          <Row>
+            <Col id="url">-</Col>
+            <Col id="site">khanacademy</Col>
+            <Col id="bLink">N</Col>
+          </Row>
+          <Row>
+            <Col id="url">https://www.udacity.com</Col>
+            <Col id="site">udacity</Col>
+            <Col id="bLink">Y</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if( e.cell == 1 ){
+		if( this.Dataset00.getColumn(e.row, "bLink") == "Y")		
+			system.execBrowser(this.Dataset00.getColumn(e.row, 1));
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

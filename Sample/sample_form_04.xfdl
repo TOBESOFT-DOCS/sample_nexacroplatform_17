@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_03" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <Button id="btnCount" taborder="0" text="Count" left="24" top="32" width="120" height="50" onclick="btnCount_onclick"/>
+        <Button id="btnAddbutton" taborder="1" text="Add Button" left="156" top="32" width="120" height="50" onclick="btnAddbutton_onclick"/>
+        <Button id="btnHide" taborder="2" text="Hide Button" left="288" top="32" width="120" height="50" onclick="btnHide_onclick"/>
+        <TextArea id="TextArea00" taborder="3" left="24" top="90" width="384" height="90"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00"/>
+      <Dataset id="Dataset01"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.btnCount_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("components.length: "+this.components.length+"\n"
+		+"objects.length: "+this.objects.length+"\n"
+		+"all.length: "+this.all.length);
+};
+
+var i=0;
+this.btnAddbutton_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var btnobj = new Button();
+	this.addChild("btn"+i, btnobj);
+	i++;
+};
+
+this.btnHide_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var tempobj;
+	for(var j=0;j<this.components.length;j++)
+	{
+		tempobj = this.components[j];
+		if(tempobj.visible == true && tempobj != obj)	{
+			tempobj.set_visible(false);
+		} else {
+			tempobj.set_visible(true);
+		}
+	}
+	
+	if(obj.text == "Hide Button")
+	{
+		obj.set_text("Show Button");
+	} else {
+		obj.set_text("Hide Button");
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

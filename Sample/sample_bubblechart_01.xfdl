@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_bubblechart_01" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <BubbleChart id="BubbleChart00" taborder="0" left="35" top="50" width="400" height="400" binddataset="Dataset00" enableanimation="true">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Bubble Chart Sample",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"itemtextvisible": "true",
+			"itemtextfont": "bold 9pt '맑은 고딕'",
+			"valuecolumn": "bind:Profit",
+			"value2column": "bind:Cost",
+			"value3column": "bind:Revenue",
+			"tooltiptext": "bind:Revenue",
+			"itemtext": "bind:Revenue"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "profitvalueaxis",
+			"titletext": "profit",
+			"boardlinevisible": "true",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252"
+		},
+		{
+			"id": "costvalueaxis",
+			"titletext": "cost",
+			"boardlinevisible": "true",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252"
+		}
+	]
+}]]></Contents>
+        </BubbleChart>
+        <CheckBox id="CheckBox00" taborder="1" text="min, max value" left="35" top="20" width="114" height="20" onchanged="CheckBox00_onchanged"/>
+        <Spin id="Spin00" taborder="2" left="240" top="20" width="60" height="20" max="100" min="0" value="30" increment="10" onspin="Spin00_onspin"/>
+        <CheckBox id="CheckBox01" taborder="3" text="opacity" left="159" top="20" width="61" height="20" onchanged="CheckBox01_onchanged"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Profit" type="INT" size="256"/>
+          <Column id="Cost" type="INT" size="256"/>
+          <Column id="Revenue" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Revenue">800</Col>
+            <Col id="Cost">1950</Col>
+            <Col id="Profit">300</Col>
+          </Row>
+          <Row>
+            <Col id="Revenue">900</Col>
+            <Col id="Cost">1400</Col>
+            <Col id="Profit">550</Col>
+          </Row>
+          <Row>
+            <Col id="Revenue">1200</Col>
+            <Col id="Cost">2500</Col>
+            <Col id="Profit">300</Col>
+          </Row>
+          <Row>
+            <Col id="Revenue">800</Col>
+            <Col id="Cost">300</Col>
+            <Col id="Profit">1200</Col>
+          </Row>
+          <Row>
+            <Col id="Profit">300</Col>
+            <Col id="Cost">600</Col>
+            <Col id="Revenue">800</Col>
+          </Row>
+          <Row>
+            <Col id="Profit">1200</Col>
+            <Col id="Cost">90</Col>
+            <Col id="Revenue">3000</Col>
+          </Row>
+          <Row>
+            <Col id="Profit">700</Col>
+            <Col id="Cost">900</Col>
+            <Col id="Revenue">100</Col>
+          </Row>
+          <Row>
+            <Col id="Profit">400</Col>
+            <Col id="Cost">120</Col>
+            <Col id="Revenue">1200</Col>
+          </Row>
+          <Row>
+            <Col id="Profit">500</Col>
+            <Col id="Cost">120</Col>
+            <Col id="Revenue">150</Col>
+          </Row>
+          <Row>
+            <Col id="Profit">700</Col>
+            <Col id="Cost">1500</Col>
+            <Col id="Revenue">3010</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.CheckBox00_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	if(e.postvalue)
+	{
+		this.BubbleChart00.valueaxes[0].set_tickmin(200);
+		this.BubbleChart00.valueaxes[0].set_tickmax(1300);
+		this.BubbleChart00.valueaxes[1].set_tickmin(0);
+		this.BubbleChart00.valueaxes[1].set_tickmax(2800);	
+	}
+	else
+	{
+		this.BubbleChart00.valueaxes[0].set_tickmin(undefined);
+		this.BubbleChart00.valueaxes[0].set_tickmax(undefined);
+		this.BubbleChart00.valueaxes[1].set_tickmin(undefined);
+		this.BubbleChart00.valueaxes[1].set_tickmax(undefined);	
+	}
+};
+
+this.Spin00_onspin = function(obj:nexacro.Spin,e:nexacro.SpinEventInfo)
+{
+	this.BubbleChart00.seriesset[0].set_maxsize(e.postvalue);
+};
+
+this.CheckBox01_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	if(e.postvalue)
+		this.BubbleChart00.seriesset[0].set_opacity(0.5);
+	else
+		this.BubbleChart00.seriesset[0].set_opacity(1);
+};
+]]></Script>
+  </Form>
+</FDL>

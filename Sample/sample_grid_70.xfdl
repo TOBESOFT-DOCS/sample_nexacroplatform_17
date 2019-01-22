@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sampla_grid_69" left="0" top="0" width="1024" height="768">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="30" top="30" width="371" height="220" binddataset="Dataset00" onlbuttondown="Grid00_onlbuttondown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48" band="left"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="left"/>
+                <Cell col="1" rowspan="2" text="A"/>
+                <Cell col="2" rowspan="2" text="B"/>
+                <Cell col="3" text="C"/>
+                <Cell row="1" col="3" text="D"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1" rowspan="2" text="bind:A"/>
+                <Cell col="2" rowspan="2" text="bind:B"/>
+                <Cell col="3" text="bind:C"/>
+                <Cell row="1"/>
+                <Cell row="1" col="3" text="bind:D"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="1" left="30" top="260" width="370" height="80"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="A" type="STRING" size="256"/>
+          <Column id="B" type="STRING" size="256"/>
+          <Column id="C" type="STRING" size="256"/>
+          <Column id="D" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="A">1</Col>
+            <Col id="B">1</Col>
+            <Col id="C">1</Col>
+            <Col id="D">1</Col>
+          </Row>
+          <Row>
+            <Col id="A">2</Col>
+            <Col id="B">2</Col>
+            <Col id="C">2</Col>
+            <Col id="D">2</Col>
+          </Row>
+          <Row>
+            <Col id="A">3</Col>
+            <Col id="B">3</Col>
+            <Col id="C">3</Col>
+            <Col id="D">3</Col>
+          </Row>
+          <Row>
+            <Col id="A">4</Col>
+            <Col id="B">4</Col>
+            <Col id="C">4</Col>
+            <Col id="D">4</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_onlbuttondown = function(obj:nexacro.Grid,e:nexacro.GridMouseEventInfo)
+{
+	var strRow;
+	switch(e.row) {
+		case -1:
+			strRow = 'Head Band';
+			break;
+		case -2:
+			strRow = 'Summary Band';
+			break;
+		case -9:
+			strRow = 'Blank Body';
+			break;		
+		default:
+			strRow = 'Body Band';
+	}
+	this.TextArea00.set_value(strRow+'\n'+'row: '+e.row+'\n'+'subrow: '+e.subrow)
+};
+]]></Script>
+  </Form>
+</FDL>

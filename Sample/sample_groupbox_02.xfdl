@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_groupbox_02_nexacro16" width="1024" height="768" titletext="sample_groupbox_02">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <GroupBox id="GroupBox00" taborder="0" left="32" top="40" width="480" height="280" right="" bottom="" text="GroupBox"/>
+        <Static id="Static00" taborder="1" text="Static00" left="48" top="96" width="120" height="32" right="" bottom=""/>
+        <TextArea id="TextArea00" taborder="2" left="48" top="180" width="376" height="120" right="" bottom="" value="TextArea00"/>
+        <Edit id="Edit00" taborder="3" left="120" top="96" width="240" height="32" right="" bottom="" value="Edit00"/>
+        <Radio id="Radio00" taborder="4" left="48" top="136" width="200" height="32" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">00</Col>
+                <Col id="datacolumn">Radio00</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">01</Col>
+                <Col id="datacolumn">Radio01</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <CheckBox id="CheckBox00" taborder="5" text="CheckBox00" left="381" top="96" width="150" height="32" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

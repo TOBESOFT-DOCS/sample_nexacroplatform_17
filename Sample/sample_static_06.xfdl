@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_06" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Edit id="Edit00" taborder="0" left="52" top="37" width="140" height="33"/>
+        <Edit id="Edit01" taborder="1" left="52" top="87" width="140" height="33"/>
+        <Button id="Button00" taborder="2" text="Button00" left="220" top="53" width="120" height="50" onclick="Button00_onclick"/>
+        <Static id="Static00" taborder="3" left="52" top="140" width="288" height="74" border="1px solid black"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Static00.set_text(this.Edit00.value
+		+String.fromCharCode(10)
+		+this.Edit01.value);
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_radio_02" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Radio id="radioValue" taborder="0" left="104" top="128" width="560" height="152" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" index="0" direction="horizontal" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">1. apple</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">2. pear</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">3. walnut</Col>
+                <Col id="codecolumn">3</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">4. acorn</Col>
+                <Col id="codecolumn">4</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">5. strawberry</Col>
+                <Col id="codecolumn">5</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="staticDateformat" taborder="1" text="rowcount:" left="124" top="96" width="80" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staticLocale" taborder="1" text="columncount:" left="104" top="56" width="80" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="staticDirection" taborder="1" text="direction:" left="300" top="56" width="80" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="editRowCount" taborder="2" left="192" top="96" width="80" height="32" right="" bottom=""/>
+        <Edit id="editColumnCount" taborder="2" left="192" top="56" width="80" height="32" right="" bottom=""/>
+        <Radio id="radioDirection" taborder="3" left="360" top="62" width="96" height="50" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" innerdataset="innerdataset" index="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">vertical</Col>
+                <Col id="datacolumn">vertical</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">horizontal</Col>
+                <Col id="datacolumn">horizontal</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Button id="btnChange" taborder="4" text="change direction" left="468" top="55" width="140" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnChange_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[
+this.btnChange_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.radioDirection.value != null)
+	{
+		this.radioValue.set_direction(this.radioDirection.value);
+	}
+	if(this.editRowCount.value != null)
+	{
+		this.radioValue.set_rowcount(this.editRowCount.value);
+	}
+	if(this.editColumnCount.value != null)
+	{
+		this.radioValue.set_columncount(this.editColumnCount.value);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_application_06" left="0" top="0" width="1024" height="768" titletext="Form_getActivForm_title">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Edit id="Edit00" taborder="0" left="45" top="43" width="275" height="27"/>
+        <Edit id="Edit01" taborder="1" left="45" top="80" width="275" height="27"/>
+        <Button id="Button00" taborder="2" text="Check" left="340" top="43" width="120" height="39" onclick="Button00_onclick"/>
+        <Div id="Div00" taborder="3" text="Div00" left="45" top="160" width="435" height="70" border="1px solid black">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="0" text="Div Check" left="294" top="14" width="120" height="39" onclick="Div00_Button00_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Edit id="Edit02" taborder="4" left="45" top="117" width="275" height="27"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.check_active_form();
+};
+
+this.Div00_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.check_active_form();
+};
+
+this.check_active_form = function()
+{
+	var objApp = nexacro.getApplication(); 	
+	var objForm = objApp.getActiveForm();
+	
+	this.Edit00.set_value(objForm.name);
+	this.Edit01.set_value(objForm.titletext);
+	this.Edit02.set_value(this.getFocus().parent.name);
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_02" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Calendar id="calToday" taborder="3" left="56" top="40" width="269" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" locale="en_US"/>
+        <Button id="btnToday" taborder="4" text="Today" left="360" top="40" width="137" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnToday_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[this.btnToday_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var currDate = new Date();
+	var year = currDate.getFullYear().toString().padLeft(4, "0");
+	var month = (currDate.getMonth()+1).toString().padLeft(2, "0");
+	var day = currDate.getDate().toString().padLeft(2, "0");
+
+	this.calToday.set_value(year+month+day);
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

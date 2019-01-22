@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_05" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Radio id="radioLang" taborder="0" left="60" top="45" width="73" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="radioLang_onitemchanged" index="0" text="한국어" value="KOR">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">KOR</Col>
+                <Col id="datacolumn">한국어</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">ENG</Col>
+                <Col id="datacolumn">영어</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="staticWorkplace" taborder="2" text="2. 직장" left="60" top="206" width="70" height="57" font="normal bold 10pt &quot;Arial&quot;" background="yellow" textAlign="center" padding="0px 2px"/>
+        <Static id="staticName" taborder="1" text="1. 이름" left="60" top="123" height="57" font="normal bold 10pt &quot;Arial&quot;" background="yellow" textAlign="center" padding="0px 2px" width="70"/>
+        <CheckBox id="checkboxFit" taborder="3" text="Fit To Contents" left="160" top="50" width="125" height="20" onchanged="checkboxFit_onchanged"/>
+        <Edit id="editName" taborder="4" left="140" top="123" width="140" height="57"/>
+        <Edit id="editWorkplace" taborder="5" left="staticWorkplace:10" top="206" width="140" height="57"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.radioLang_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	trace(e.postindex, e.posttext, e.postvalue);
+	if(e.postvalue == "KOR")	{
+		this.staticName.set_text("1. 이름");
+		this.staticWorkplace.set_text("2. 직장");
+	} else if(e.postvalue == "ENG")	{
+		this.staticName.set_text("1. First name");
+		this.staticWorkplace.set_text("2. place of work");
+	}
+	this.resetScroll();
+};
+
+this.checkboxFit_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	if(e.postvalue == true)	{
+		this.staticName.set_fittocontents('width');
+		this.staticWorkplace.set_fittocontents('width');
+	} else if(e.postvalue == false)	{
+		this.staticName.set_fittocontents('none');
+		this.staticWorkplace.set_fittocontents('none');
+	}
+	this.resetScroll();
+};
+]]></Script>
+  </Form>
+</FDL>

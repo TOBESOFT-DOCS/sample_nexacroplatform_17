@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_75" width="1024" height="768" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="25" top="25" width="415" height="175" binddataset="Dataset00" autofittype="col" text="" fillareatype="none" border="" suppresshorzcell="left">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="45" band="left"/>
+                <Column size="45" band="left"/>
+                <Column size="45" band="left"/>
+                <Column size="45"/>
+                <Column size="45"/>
+                <Column size="45"/>
+                <Column size="45"/>
+                <Column size="45"/>
+                <Column size="45"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="L1"/>
+                <Cell col="1" text="L2"/>
+                <Cell col="2" text="L3"/>
+                <Cell col="3" text="B1"/>
+                <Cell col="4" text="B2"/>
+                <Cell col="5" text="B3"/>
+                <Cell col="6" text="1"/>
+                <Cell col="7" text="2"/>
+                <Cell col="8" text="3"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" suppress="1"/>
+                <Cell col="1" text="bind:Column1" suppress="1"/>
+                <Cell col="2" suppress="1" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column0" suppress="1"/>
+                <Cell col="4" text="bind:Column1" suppress="1"/>
+                <Cell col="5" text="bind:Column2" suppress="1"/>
+                <Cell col="6" text="bind:Column0"/>
+                <Cell col="7" text="bind:Column1"/>
+                <Cell col="8" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="25" top="210" width="115" height="40" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">a</Col>
+            <Col id="Column1">a</Col>
+            <Col id="Column2">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">a</Col>
+            <Col id="Column1">b</Col>
+            <Col id="Column2">b</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">a</Col>
+            <Col id="Column1">a</Col>
+            <Col id="Column2">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">b</Col>
+            <Col id="Column1">b</Col>
+            <Col id="Column2">b</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">b</Col>
+            <Col id="Column1">b</Col>
+            <Col id="Column2">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">b</Col>
+            <Col id="Column1">a</Col>
+            <Col id="Column2">a</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Grid00.setCellProperty("body", 1, "suppress", "0");
+	this.Grid00.setCellProperty("body", 2, "suppress", "0");
+};
+]]></Script>
+  </Form>
+</FDL>

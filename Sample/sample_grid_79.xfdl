@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_79" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="54" top="52" width="196" height="288" binddataset="Dataset00" treeinitstatus="expand,all" autofittype="col" treeusecheckbox="false" treeuseimage="false" oncellclick="Grid00_oncellclick" treeusebutton="noclick" treeuseline="false">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="label"/>
+                <Cell col="1" text="level"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:label" displaytype="treeitemcontrol" treelevel="bind:level" edittype="tree"/>
+                <Cell col="1" text="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="1" left="276" top="52" width="214" height="179"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="label" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">A</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="label">B</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">C</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">D</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">E</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="label">F</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">G</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="label">H</Col>
+          </Row>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">I</Col>
+          </Row>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="label">J</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+버튼 없이 셀 클릭 시 정보를 TextArea에 표시하도록 함.
+Grid 응용 / 트리 구조에서 자식 정보 확인하기
+키워드 getTreeChildCount, getCellText, treeusebutton, treeuseline
+
+*/
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(true)
+	{
+		var numChildcount = this.Grid00.getTreeChildCount(this.Dataset00.rowposition);
+		var strChildInfo = "ChildCount = "+numChildcount+"\n";
+	
+		for(var i=0; i<numChildcount; i++)
+		{
+			var numChildRow = this.Grid00.getTreeChildRow(this.Dataset00.rowposition, i, false);
+			strChildInfo += "Row = "+numChildRow+", RowText = "+this.Grid00.getCellText(numChildRow, 0)+"\n";
+		}
+		this.TextArea00.set_value(strChildInfo);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

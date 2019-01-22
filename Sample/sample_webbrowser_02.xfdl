@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_webbrowser_02" width="1280" height="720" titletext="New Form" onload="sample_webbrowser_02_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <WebBrowser id="WebBrowser00" taborder="0" left="32" top="40" width="540" height="320" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="1" text="Get input value" left="32" top="376" width="120" height="32" font="9pt Arial" onclick="Button00_onclick"/>
+        <Static id="Static00" taborder="2" left="160" top="376" width="400" height="32" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px dotted grey, 1px dotted grey, 1px dotted grey, 1px dotted grey" background="lightgrey"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/*
+  call getInputValue method and get the value of input element in html page.
+*/
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var _doc = this.WebBrowser00.getProperty("document");
+
+	var dom = _doc.callMethod("getElementById", "inputText");
+
+	var str = dom.getProperty("value");
+	
+	this.Static00.set_text(str);
+
+	if(_doc && dom)
+	{
+		_doc.destroy();
+		_doc = null;
+
+		dom.destroy();
+		dom = null;
+	}
+};
+
+this.sample_webbrowser_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var domain = document.location.href;
+	var arrdomain = domain.split('/');
+	var currentfile = arrdomain.pop();
+	domain = domain.replace(currentfile, "Service/webbrowser.html")
+	this.WebBrowser00.set_url(domain);
+};
+]]></Script>
+  </Form>
+</FDL>

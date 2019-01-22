@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_string_11" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Edit id="Edit00" taborder="0" left="49" top="41" width="211" height="39"/>
+        <Button id="Button00" taborder="1" text="isAlphanumeric" left="270" top="41" width="110" height="39" onclick="Button00_onclick"/>
+        <Edit id="Edit01" taborder="2" left="49" top="91" width="211" height="39" enable="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var bRtn = this.fn_checkAlpaNum(this.Edit00.value);	
+    this.Edit01.set_value(bRtn);
+};
+
+this.fn_checkAlpaNum = function(sString) 
+{
+    var sVal = "";
+	var bVal = false;
+	
+    for (var i = 0; i < sString.length; i++) 
+    {
+		var sVal = sString.charCodeAt(i);
+        if ((sVal >= 48 && sVal <=57) || (sVal >=65 && sVal <= 90) || (sVal >= 97 && sVal <= 122)) 
+        {
+            bVal = true;	
+        }
+        else
+        {
+            bVal = false;
+            break;
+        }
+    }
+	return bVal;
+}
+]]></Script>
+  </Form>
+</FDL>

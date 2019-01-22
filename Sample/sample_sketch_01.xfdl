@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_sketch_01" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <Sketch id="sketchMain" taborder="0" left="16" top="25" width="289" height="127" right="" bottom=""/>
+        <Static id="Static00" taborder="1" text="Color" left="324" top="31" width="44" height="36" right="" bottom=""/>
+        <Static id="Static01" taborder="2" text="Size" left="324" top="72" width="36" height="60" right="" bottom=""/>
+        <Combo id="cmbColor" taborder="3" text="Black" left="373" top="40" width="75" height="20" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" canitemchange="cmbColor_canitemchange" onitemchanged="cmbColor_onitemchanged" index="0" value="Black" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Black</Col>
+                <Col id="datacolumn">Black</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Red</Col>
+                <Col id="datacolumn">Red</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Blue</Col>
+                <Col id="datacolumn">Blue</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Yellow</Col>
+                <Col id="datacolumn">Yellow</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Spin id="spinSize" taborder="4" left="373" top="96" width="75" height="20" right="" bottom="" min="1" onchanged="spinSize_onchanged" value="1"/>
+        <Radio id="radioEditmode" taborder="5" left="324" top="140" width="280" height="50" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" onitemchanged="Radio00_onitemchanged" innerdataset="innerdataset" index="1">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">none</Col>
+                <Col id="datacolumn">none</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">stroke</Col>
+                <Col id="datacolumn">stroke</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">text</Col>
+                <Col id="datacolumn">text</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">erase</Col>
+                <Col id="datacolumn">erase</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[this.cmbColor_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.sketchMain.setBrushColor(obj.value);
+};
+
+this.spinSize_onchanged = function(obj:nexacro.Spin,e:nexacro.ChangeEventInfo)
+{
+	this.sketchMain.setBrushSize(obj.value);
+};
+
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.sketchMain.set_editmode(obj.value);
+};
+]]></Script>
+  </Form>
+</FDL>
