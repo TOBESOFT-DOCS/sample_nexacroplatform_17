@@ -74,11 +74,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/*
-form > Bind Item 목록 확인하기
-binds
-*/
-this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	for(var i = 0; i < this.binds.length; i++)
 	{

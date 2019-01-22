@@ -50,11 +50,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/*
-Grid 셀 > 셀 실제 속성값 가져오기
-getCellPropertyValue
-*/
-this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {	
 	this.TextArea00.set_value(obj.getCellPropertyValue(e.row, e.cell, "displaytype")+"\n"
 		+obj.getCellProperty("body", e.cell, "displaytype"));
