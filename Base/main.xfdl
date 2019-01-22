@@ -436,7 +436,7 @@ this.pdiv_Menu_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.Item
  */
  this.Div00_Static01_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
 {
-	strURL = g_strAppInfo.serverURL + "/source/sample_nexacroplatform_17.zip";
+	strURL = "https://github.com/TOBESOFT-DOCS/sample_nexacroplatform_17/archive/master.zip";
 	system.execBrowser(strURL);
 	gtag('event', 'download', {
 		'event_category': 'nexacro 17',
