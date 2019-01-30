@@ -62,7 +62,7 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.0"><![CDATA[this.cmbColor_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.cmbColor_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
 {
 	this.sketchMain.setBrushColor(obj.value);
 };

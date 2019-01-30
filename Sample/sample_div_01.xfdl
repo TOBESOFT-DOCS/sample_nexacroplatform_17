@@ -16,7 +16,7 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.0"><![CDATA[this.btnLeft_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.btnLeft_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.divMain.set_url("Sample::sample_div_01_left.xfdl");
 };

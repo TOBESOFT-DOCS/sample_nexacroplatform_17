@@ -7,7 +7,7 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.0"><![CDATA[var cnt = 0;
+    <Script type="xscript5.1"><![CDATA[var cnt = 0;
 this.btnModeless_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	nexacro.open("test"+cnt, this.parent.formurl, this.parent);

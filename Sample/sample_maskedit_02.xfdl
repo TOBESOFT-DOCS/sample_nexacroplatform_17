@@ -9,6 +9,6 @@
         <Static id="Static01" taborder="3" text="Number :" left="32" top="88" width="80" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[]]></Script>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
   </Form>
 </FDL>

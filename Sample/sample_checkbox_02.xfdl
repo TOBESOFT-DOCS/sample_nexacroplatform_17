@@ -7,7 +7,7 @@
         <Edit id="Edit00" taborder="1" left="32" top="70" width="120" height="20"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[]]></Script>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
     <Objects>
       <Dataset id="Dataset00">
         <ColumnInfo>

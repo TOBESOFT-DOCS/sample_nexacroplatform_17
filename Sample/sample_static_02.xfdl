@@ -29,7 +29,7 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.0"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[
 this.radioWordwrap_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
 {
 	this.staticWordWrap.set_wordWrap(this.radioWordwrap.value);

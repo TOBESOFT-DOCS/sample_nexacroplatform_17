@@ -70,7 +70,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.0"><![CDATA[this.edit_input_oninput = function(obj:nexacro.Edit,e:nexacro.InputEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.edit_input_oninput = function(obj:nexacro.Edit,e:nexacro.InputEventInfo)
 {
 	var strLength = this.edit_input.getLength();
 

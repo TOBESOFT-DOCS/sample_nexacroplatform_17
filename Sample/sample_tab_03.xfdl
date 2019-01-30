@@ -46,7 +46,7 @@
         </Radio>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[
 this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
 {
 	this.Tab00.set_tabposition(e.postvalue);

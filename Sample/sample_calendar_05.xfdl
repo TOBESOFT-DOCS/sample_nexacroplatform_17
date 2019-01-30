@@ -11,7 +11,7 @@
         <Calendar id="calWeek" taborder="8" left="96" top="120" width="184" height="184" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" type="monthonly" usetrailingday="true"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[this.btnCal_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.btnCal_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var dDate = new Date(parseInt(this.editYear.value),0,1);
 	var nDay = dDate.getDay();

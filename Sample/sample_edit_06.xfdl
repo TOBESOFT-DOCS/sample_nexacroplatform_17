@@ -87,7 +87,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.0"><![CDATA[]]></Script>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
     <Bind>
       <BindItem id="item0" compid="edit_name" propid="value" datasetid="Dataset00" columnid="Name"/>
       <BindItem id="item1" compid="edit_addr" propid="value" datasetid="Dataset00" columnid="Address"/>

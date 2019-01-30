@@ -9,7 +9,7 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.0"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[
 this.FileDownload00_onclick = function(obj:nexacro.FileDownload,e:nexacro.ClickEventInfo)
 {
 	obj.download("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Bob_Dylan_1978.jpg/400px-Bob_Dylan_1978.jpg");

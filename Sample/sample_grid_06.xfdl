@@ -136,7 +136,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.0"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[
 this.combo_selecttype_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
 {
 	var strSelectType = e.posttext;

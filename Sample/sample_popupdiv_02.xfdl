@@ -11,7 +11,7 @@
         </PopupDiv>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[
 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.PopupDiv00.trackPopupByComponent(obj, obj.getOffsetWidth(), obj.getOffsetHeight(), 160, 240);

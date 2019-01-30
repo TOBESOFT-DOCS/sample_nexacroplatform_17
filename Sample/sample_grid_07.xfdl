@@ -106,7 +106,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.0"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[
 this.btn_deleteRows_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var arrSelectedRow = this.Grid00.getSelectedDatasetRows();

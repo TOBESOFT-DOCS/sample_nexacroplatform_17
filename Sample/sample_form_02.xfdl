@@ -10,7 +10,7 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.0"><![CDATA[this.btnGoStep3_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.btnGoStep3_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 		this.setStepIndex(2);
 };]]></Script>

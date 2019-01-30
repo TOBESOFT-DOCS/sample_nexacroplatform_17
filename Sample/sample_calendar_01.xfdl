@@ -11,7 +11,7 @@
         <Calendar id="calDisplay" taborder="5" left="120" top="128" width="269" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" value="20160601"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[this.btnChange_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.btnChange_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.calDisplay.set_locale(this.editLocale.value);
 	this.calDisplay.set_dateformat(this.editDateformat.value);

@@ -7,7 +7,7 @@
         <Button id="btnToday" taborder="4" text="Today" left="360" top="40" width="137" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnToday_onclick"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[this.btnToday_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.btnToday_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var currDate = new Date();
 	var year = currDate.getFullYear().toString().padLeft(4, "0");

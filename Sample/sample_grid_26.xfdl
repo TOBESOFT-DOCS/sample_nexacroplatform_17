@@ -106,7 +106,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.0"><![CDATA[this.btn_suppress_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.btn_suppress_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	//Sorting records
 	this.Dataset00.set_keystring("S:Company+Department");
