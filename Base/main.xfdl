@@ -117,6 +117,8 @@ var firstmenuList = new Object;
  *	실행할 예제 관련 정보를 처리합니다.
  *	사용자 로그 확인을 위해 google analytics를 사용합니다.
  *	https://developers.google.com/analytics/devguides/collection/gtagjs/pages
+ * 
+ *  소스 버전 관리를 github으로 옮기면서 소스 보기 기능도 github raw 소스를 사용합니다.
  */
 this.fn_LoadContents = function(strDocID, strSampleFile, strCategory, strSubject)
 {
@@ -126,21 +128,85 @@ this.fn_LoadContents = function(strDocID, strSampleFile, strCategory, strSubject
 	this.Div01.form.WebBrowser00.set_url(g_strAppInfo.docsURL + strDocID);
 	this.Div03.form.Tab00.tp_description.set_url("Sample::" + strSampleFile + ".xfdl");
 
-	this.ds_source.clear();
-	this.transaction( "tr"
+	//this.ds_source.clear();
+	/*this.transaction( "tr"
 					, strServiceURL + strSampleFile
 					, ""
 					, "ds_source=output"
 					, ""
 					, "fn_callback"
-					, true); 
+					, true); */
+	var url = "https://raw.githubusercontent.com/TOBESOFT-DOCS/sample_nexacroplatform_17/master/Sample/"+strSampleFile+".xfdl"; 
+	request.open("GET", url, true);
+	request.send(null);
+	
 	this.pdiv_Menu.closePopup();
 
-	gtag('config', 'UA-126808471-1', {
-		'page_title' : strSubject,
-		'page_path': '/developer_guide/17/Sample/'+strSampleFile + ".xfdl.js"
-	});
+	try
+	{
+		gtag('config', 'UA-126808471-1', {
+			'page_title' : strSubject,
+			'page_path': '/developer_guide/17/Sample/'+strSampleFile + ".xfdl.js"
+		});
+	} catch (e) {
+		if (e instanceof ReferenceError) {
+			trace(e);
+		} else {
+			trace(e);
+		}
+	}
 }
+
+this.makeHttpObject = function()
+{
+	try {
+		return new XMLHttpRequest(); // 모질라, 사파리, IE7+ ...
+	}
+	catch (error) {}
+	try {
+		return new ActiveXObject("Msxml2.XMLHTTP"); // IE 6
+	}
+	catch (error) {}
+	try {
+		return new ActiveXObject("Microsoft.XMLHTTP"); // IE 5 이하
+	}
+	catch (error) {}
+	throw new Error("Could not create HTTP request object.");
+};
+
+var request = this.makeHttpObject();
+var body_str = "";
+var script_str = "";
+var this_form = this;
+
+/*
+ *	this.fn_LoadContents 함수에서 request 를 open 하고 응답이 오면 아래 코드를 실행합니다.
+ *	응답된 문자열에서 스크립트 부분을 분리해 ds_source Dataset 오브젝트에 담습니다.
+ */
+request.onreadystatechange = function() {
+  if (request.readyState == 4)
+		var responseText = request.responseText;
+		if(responseText)
+		{
+			var start_point_str = '<Script type="xscript5.1"><![CDATA[';
+			var end_point_str = ']]]]><![CDATA[></Script>'
+			var start_point = responseText.indexOf(start_point_str);
+			var end_point = responseText.indexOf(end_point_str);
+
+			if(start_point > 0)
+			{
+				body_str = responseText.substring(0, start_point).trim() + String.fromCharCode(10) + responseText.substring(end_point+end_point_str.length).trim();
+				script_str = responseText.substring(start_point+start_point_str.length, end_point);
+			}
+			else 
+			{
+				body_str = responseText;
+			}
+
+			this_form.ds_source.setColumn(0, 0, body_str);
+			this_form.ds_source.setColumn(0, 1, script_str);
+		}
+};
 
 /*
  *	예제 실행 후 콜백 함수를 처리합니다.
@@ -438,10 +504,19 @@ this.pdiv_Menu_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.Item
 {
 	strURL = "https://github.com/TOBESOFT-DOCS/sample_nexacroplatform_17/archive/master.zip";
 	system.execBrowser(strURL);
-	gtag('event', 'download', {
-		'event_category': 'nexacro 17',
-		'event_label': 'example file download'
-	});	
+	try
+	{
+		gtag('event', 'download', {
+			'event_category': 'nexacro 17',
+			'event_label': 'example file download'
+		});	
+	} catch (e) {
+		if (e instanceof ReferenceError) {
+			trace(e);
+		} else {
+			trace(e);
+		}
+	}
 };
 
 /*
@@ -460,6 +535,9 @@ this.Div03_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
           <Column id="source" type="STRING" size="100000"/>
           <Column id="script" type="STRING" size="100000"/>
         </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
       </Dataset>
       <Dataset id="ds_sample_list">
         <ColumnInfo>
