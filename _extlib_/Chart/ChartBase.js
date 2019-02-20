@@ -886,7 +886,97 @@ if (!nexacro._ChartBase) {
 		}
 		return null;
 	};
+	_pChartBase._clearMouseActionSeriesItem = function () {
+		if (this._overSeriesItem) {
+			var tooltip = this.tooltip, highlightvisible = this._getHighlightVisible(), series = this._overSeriesItem._series, seriesItemType = this._overSeriesItem._type, chartName;
+			var overitemid = this._overSeriesItem.id;
+			var oversearchbar = false;
+			var oversearchpoint = false;
+			var oversearchline = false;
+			var oversearcharea = false;
+			var oversearchgauge = false;
+			var oversearchetc = false;
+			var item = null;
 
+			if (overitemid.search("LineItem") >= 0) {
+				oversearchline = true;
+			}
+			else if (overitemid.search("PointItem") >= 0) {
+				oversearchpoint = true;
+			}
+			else if (overitemid.search("BarItem") >= 0) {
+				oversearchbar = true;
+			}
+			else if (overitemid.search("AreaItem") >= 0) {
+				oversearcharea = true;
+			}
+			else if (overitemid.search("GaugeItem") >= 0) {
+				oversearchgauge = true;
+			}
+			else {
+				oversearchetc = true;
+			}
+
+
+			if (tooltip && tooltip.visible && !oversearchline && !oversearcharea) {
+				tooltip._hideTooltip(this._overSeriesItem);
+			}
+
+
+			if (seriesItemType) {
+				if (seriesItemType == "Rect" && oversearchbar) {
+					if (series.barvisible && series.highlightbarvisible) {
+						series._hideBarHighlight(this._overSeriesItem);
+					}
+				}
+				else if (oversearchpoint || oversearchline || oversearcharea || oversearchetc || oversearchgauge) {
+					chartName = this._type_name;
+					if (chartName == "BasicChart") {
+						if (oversearchpoint) {
+							series._hidePointHighlight(this._overSeriesItem);
+						}
+						else if (oversearchline) {
+							series._hideLineHighlight(this._overSeriesItem);
+						}
+					}
+					else if (chartName == "BubbleChart") {
+						if (seriesItemType == "Ellipse" || seriesItemType == "Paths" || seriesItemType == "Path") {
+							if (series.visible && series.highlightvisible) {
+								series._hideHighlight(this._overSeriesItem);
+							}
+						}
+					}
+					else if (chartName == "RadarChart") {
+						if (oversearchpoint) {
+							series._hidePointHighlight(this._overSeriesItem);
+						}
+						else if (oversearchline) {
+							series._hideLineHighlight(this._overSeriesItem);
+						}
+						else if (oversearcharea) {
+							series._hideLineAreaHighlight(this._overSeriesItem);
+						}
+					}
+					else if (chartName == "GaugeChart") {
+						if (oversearchgauge) {
+							series._hideHighlight(this._overSeriesItem);
+						}
+						if (series.visible && series.highlightbarvisible) {
+							series._hideHighlight(this._overSeriesItem);
+						}
+					}
+					else {
+						if (seriesItemType == "Ellipse" || seriesItemType == "Paths" || seriesItemType == "Path") {
+							if (series.visible && series.highlightvisible) {
+								series._hideHighlight(this._overSeriesItem);
+							}
+						}
+					}
+				}
+			}
+			this._overSeriesItem = null;
+		}
+	};
 	_pChartBase.deleteSeries = function (val) {
 		var re = false, index = 0;
 
@@ -906,6 +996,7 @@ if (!nexacro._ChartBase) {
 				if (this.tooltip) {
 					this.tooltip._clearTooltip();
 				}
+				this._clearMouseActionSeriesItem();
 				this._seriesGroup.destroy();
 				this._seriesGroup = null;
 				this._itemtextlist = null;
@@ -933,6 +1024,7 @@ if (!nexacro._ChartBase) {
 		if (this.tooltip) {
 			this.tooltip._clearTooltip();
 		}
+		this._clearMouseActionSeriesItem();
 		if (this.seriesset) {
 			while (this.seriesset.length > 0) {
 				this._deleteSeries(this.seriesset[0], 0);
@@ -1399,115 +1491,7 @@ if (!nexacro._ChartBase) {
 				if (seriesItem != this._overSeriesItem) {
 					var seriesItemType, series, index, value;
 					var chartName = null;
-
-					if (this._overSeriesItem) {
-						series = this._overSeriesItem._series;
-						var overitemid = this._overSeriesItem.id;
-						var oversearchbar = false;
-						var oversearchpoint = false;
-						var oversearchline = false;
-						var oversearcharea = false;
-						var oversearchgauge = false;
-						var oversearchetc = false;
-						var item = null;
-
-						if (overitemid.search("LineItem") >= 0) {
-							oversearchline = true;
-						}
-						else if (overitemid.search("PointItem") >= 0) {
-							oversearchpoint = true;
-						}
-						else if (overitemid.search("BarItem") >= 0) {
-							oversearchbar = true;
-						}
-						else if (overitemid.search("AreaItem") >= 0) {
-							oversearcharea = true;
-						}
-						else if (overitemid.search("GaugeItem") >= 0) {
-							oversearchgauge = true;
-						}
-						else {
-							oversearchetc = true;
-						}
-
-
-						if (tooltip && tooltip.visible && !oversearchline && !oversearcharea) {
-							tooltip._hideTooltip(this._overSeriesItem, canvasX, canvasY);
-						}
-
-						seriesItemType = this._overSeriesItem._type;
-						if (seriesItemType) {
-							if (seriesItemType == "Rect" && oversearchbar) {
-								if (series.barvisible && series.highlightbarvisible) {
-									series._hideBarHighlight(this._overSeriesItem);
-
-									item = this._overSeriesItem._item;
-									if (item) {
-										index = item.index;
-										value = item.value;
-									}
-								}
-								else {
-									index = this._overSeriesItem.index;
-									value = this._overSeriesItem.value;
-								}
-							}
-							else if (oversearchpoint || oversearchline || oversearcharea || oversearchetc || oversearchgauge) {
-								chartName = this._type_name;
-								if (chartName == "BasicChart") {
-									if (oversearchpoint) {
-										series._hidePointHighlight(this._overSeriesItem);
-									}
-									else if (oversearchline) {
-										series._hideLineHighlight(this._overSeriesItem);
-									}
-								}
-								else if (chartName == "BubbleChart") {
-									if (seriesItemType == "Ellipse" || seriesItemType == "Paths" || seriesItemType == "Path") {
-										if (series.visible && series.highlightvisible) {
-											series._hideHighlight(this._overSeriesItem);
-										}
-									}
-								}
-								else if (chartName == "RadarChart") {
-									if (oversearchpoint) {
-										series._hidePointHighlight(this._overSeriesItem);
-									}
-									else if (oversearchline) {
-										series._hideLineHighlight(this._overSeriesItem);
-									}
-									else if (oversearcharea) {
-										series._hideLineAreaHighlight(this._overSeriesItem);
-									}
-								}
-								else if (chartName == "GaugeChart") {
-									if (oversearchgauge) {
-										series._hideHighlight(this._overSeriesItem);
-									}
-									if (series.visible && series.highlightbarvisible) {
-										series._hideHighlight(this._overSeriesItem);
-									}
-								}
-								else {
-									if (seriesItemType == "Ellipse" || seriesItemType == "Paths" || seriesItemType == "Path") {
-										if (series.visible && series.highlightvisible) {
-											series._hideHighlight(this._overSeriesItem);
-										}
-									}
-								}
-
-								item = this._overSeriesItem._item;
-								if (item) {
-									index = item.index;
-									value = item.value;
-								}
-							}
-							else {
-								index = this._overSeriesItem.index;
-								value = this._overSeriesItem.value;
-							}
-						}
-					}
+					this._clearMouseActionSeriesItem();
 
 					if (seriesItem) {
 						series = seriesItem._series;
@@ -1660,6 +1644,7 @@ if (!nexacro._ChartBase) {
 		if (this.tooltip) {
 			this.tooltip._clearTooltip();
 		}
+		this._clearMouseActionSeriesItem();
 		if (this.onmouseenter && this.onmouseenter._has_handlers) {
 			var ref_subcontrol = this.getHittestRefComponent(canvasX, canvasY);
 			if (ref_subcontrol.object == null) {
@@ -1682,6 +1667,7 @@ if (!nexacro._ChartBase) {
 		if (this.tooltip) {
 			this.tooltip._clearTooltip();
 		}
+		this._clearMouseActionSeriesItem();
 		if (this._dragRangebar) {
 			this._changedData = true;
 			this._ani_exception = true;
@@ -1712,6 +1698,7 @@ if (!nexacro._ChartBase) {
 		if (this.tooltip) {
 			this.tooltip._clearTooltip();
 		}
+		this._clearMouseActionSeriesItem();
 		if (this._dragRangebar) {
 			this._changedData = true;
 			this._ani_exception = true;
@@ -16043,6 +16030,7 @@ if (!nexacro.ChartTooltipControl) {
 			this.parent._graphicsControl.draw();
 		}
 	};
+
 	_pChartTooltipControl._clearTooltip = function (noDraw) {
 		if (this._lasttooltip) {
 			this._lasttooltip._tooltipShow = false;
@@ -16055,9 +16043,6 @@ if (!nexacro.ChartTooltipControl) {
 				this.parent._graphicsControl.draw();
 			}
 		}
-
-
-		this.parent._overSeriesItem = null;
 	};
 	_pChartTooltipControl._afterSetProperties = function () {
 		this.on_apply_linestyle(this._linestyle);

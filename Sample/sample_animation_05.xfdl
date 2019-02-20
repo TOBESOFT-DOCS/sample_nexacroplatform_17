@@ -9,7 +9,7 @@
     </Layouts>
     <Objects/>
     <Script type="xscript5.1"><![CDATA[/*
-애니메이션
+Animation / 펼쳐지는 메뉴 효과 만들기
 */
 this.sample_animation_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
@@ -19,7 +19,6 @@ this.sample_animation_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventI
 	this.Ani00.addTarget("AniItem01", this.Div00, "width:300, left:30");
 	this.Ani00.setEventHandler("oncomplete", this.Ani00_oncomplete, this);
 	this.Ani00.set_easing("easeInSine");
-	//this.Ani00.set_duration(2000);
 
     var aniObj01 = new nexacro.Animation("Ani01", this);
     this.addChild("Ani01", aniObj01);
@@ -27,7 +26,6 @@ this.sample_animation_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventI
 	this.Ani01.addTarget("AniItem01", this.Div00, "width:1, left:30");
 	this.Ani01.setEventHandler("oncomplete", this.Ani01_oncomplete, this);
 	this.Ani01.set_easing("easeInSine");
-	//this.Ani01.set_duration(2000);	
 };
 
 this.btnPlay_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
@@ -38,7 +36,6 @@ this.btnPlay_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	} else {
 		this.Ani01.play();
 	}
-    
 };
 
 this.Ani00_oncomplete = function(obj:nexacro.Animation,e:nexacro.AnimationEventInfo)

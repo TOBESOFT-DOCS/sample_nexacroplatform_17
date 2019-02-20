@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_combo_07" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Combo id="Combo00" taborder="0" text="apple" left="32" top="100" width="256" height="32" codecolumn="codecolumn" datacolumn="datacolumn" index="0" value="00" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="innerdataset" type="search" border="">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">00</Col>
+                <Col id="datacolumn">apple</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">banana</Col>
+                <Col id="codecolumn">01</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">orange</Col>
+                <Col id="codecolumn">02</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">kiwi</Col>
+                <Col id="codecolumn">03</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">peach</Col>
+                <Col id="codecolumn">04</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">strawberry</Col>
+                <Col id="codecolumn">05</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">AppleMango</Col>
+                <Col id="codecolumn">06</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">07</Col>
+                <Col id="datacolumn">applemango</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">SaturnPeach</Col>
+                <Col id="codecolumn">08</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">09</Col>
+                <Col id="datacolumn">saturnpeach</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Radio id="Radio00" taborder="1" left="32" top="36" width="308" height="48" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" index="0" rowcount="2" innerdataset="innerdataset" onitemchanged="Radio00_onitemchanged" text="search" value="search">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">search</Col>
+                <Col id="datacolumn">search</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">caseisearch</Col>
+                <Col id="datacolumn">caseisearch</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">filter</Col>
+                <Col id="datacolumn">filter</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">caseifilter</Col>
+                <Col id="datacolumn">caseifilter</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">filterlike</Col>
+                <Col id="datacolumn">filterlike</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">caseifilterlike</Col>
+                <Col id="datacolumn">caseifilterlike</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/*
+Combo / 대소문자 구분 없이 검색하거나 필터링하기
+*/
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.Combo00.set_type(e.postvalue);
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

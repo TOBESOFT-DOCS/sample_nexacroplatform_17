@@ -449,10 +449,10 @@
       </Method>
       <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="RadarChartにフォーカスを与えるメソッドです。">
         <Syntax text="RadarChart.setFocus( [bMoveScroll [, bInnerFocus]] )">
-          <Return type="Object" description="RadarChartがフォーカスされる前にフォーカスを持っていたコンポーネントを返します。&#xA;&#xA;フォーカスを持つコンポーネントがなかったか、メソッド実行に失敗した場合には、「null」を返します。" />
+          <Return type="Object" description="RadarChartがフォーカスされる前にフォーカスを持っていたコンポーネントを返します。 &#xA;&#xA;フォーカスを持つコンポーネントがなかったか、メソッド実行に失敗した場合には、「null」を返します。" />
           <Arguments>
-            <Argument name="bInnerFocus" type="Boolean" in="false" out="false" option="false" variable="false" description="RadarChartがコンテナコンポーネントの場合、子コンポーネントにフォーカスを移動するかを設定します。&#xA;&#xA;「true」に設定時、子コンポーネントのフォーカスを受け取られる最初のコンポーネントがフォーカスになります。&#xA;「false」に設定時、RadarChartにフォーカスされます。&#xA;&#xA;RadarChartがコンテナコンポーネントの場合、値を設定しないと、「true」で動作します。" />
-            <Argument name="bMoveScroll" type="Boolean" in="false" out="false" option="false" variable="false" description="親コンポーネントにスクロールがある場合、RadarChartを基準にスクロールを移動するかを設定します。&#xA;&#xA;「true」に設定時、RadarChartが画面に表示されるようにスクロールを移動させます。&#xA;「false」に設定時、RadarChartの位置に関係なく、スクロールを移動させません。&#xA;&#xA;値を設定しない場合は、「true」で動作します。" />
+            <Argument name="bInnerFocus" type="Boolean" in="false" out="false" option="false" variable="false" description="RadarChartがコンテナコンポーネントの場合、子コンポーネントにフォーカスを移動するかを設定します。 &#xA;&#xA;「true」に設定時、子コンポーネントのフォーカスを受け取られる最初のコンポーネントがフォーカスになります。&#xA;「false」に設定時、RadarChartにフォーカスされます。&#xA;&#xA;RadarChartがコンテナコンポーネントの場合、値を設定しないと、「true」で動作します。" />
+            <Argument name="bMoveScroll" type="Boolean" in="false" out="false" option="false" variable="false" description="親コンポーネントにスクロールがある場合、RadarChartを基準にスクロールを移動するかを設定します。 &#xA;&#xA;「true」に設定時、RadarChartが画面に表示されるようにスクロールを移動させます。&#xA;「false」に設定時、RadarChartの位置に関係なく、スクロールを移動させません。&#xA;&#xA;値を設定しない場合は、「true」で動作します。" />
           </Arguments>
         </Syntax>
       </Method>

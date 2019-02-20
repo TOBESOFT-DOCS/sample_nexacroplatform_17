@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_webbrowser_09" width="1280" height="720" titletext="New Form" onload="test2_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <WebBrowser id="WebBrowser00" taborder="0" left="20" top="150" width="500" height="328"/>
+        <Grid id="Grid00" taborder="1" left="20" top="10" width="500" height="130" binddataset="Dataset00" autofittype="col" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">http://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">http://file-examples.com/wp-content/uploads/2017/02/file_example_XLSX_10.xlsx</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">http://file-examples.com/wp-content/uploads/2017/08/file_example_PPT_250kB.ppt</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">http://file-examples.com/wp-content/uploads/2017/10/file-sample_100kB.odt</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+WebBrowser / MS 오피스 뷰어 사용하기
+*/
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.WebBrowser00.set_url("https://view.officeapps.live.com/op/embed.aspx?src="+encodeURI(this.Dataset00.getColumn(e.row,0)));
+};
+]]></Script>
+  </Form>
+</FDL>

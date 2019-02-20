@@ -1269,7 +1269,7 @@ if (!nexacro.GaugeChart) {
 					if (_slice == itemslice) {
 						return i;
 					}
-					else if (itemslice.highlightvisible == true) {
+					else if (itemslice.highlightbarvisible == true) {
 						if (itemslice._highlight) {
 							if (itemslice._highlight == _slice) {
 								return i;
@@ -1515,7 +1515,7 @@ if (!nexacro.ChartGaugeSeriesControl) {
 		this._chart._draw();
 	};
 
-	_pChartGaugeSeriesControl.on_apply_highlightbarvisible = function (highlightvisible) {
+	_pChartGaugeSeriesControl.on_apply_highlightbarvisible = function (highlightbarvisible) {
 	};
 
 	_pChartGaugeSeriesControl.set_fillstyle = function (val) {

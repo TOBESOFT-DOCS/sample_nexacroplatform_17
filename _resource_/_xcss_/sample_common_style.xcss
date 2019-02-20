@@ -87,6 +87,23 @@
 	color : #666666;
 }
 
+.Grid .body .row .cell.sample_grid_84_background
+{
+	-nexa-background-odd : silver;
+	background : silver;	
+	color : white;
+	-nexa-color-odd : white;	
+}
+.Grid .body .row .cell.sample_grid_84_font_a
+{
+	background : blue;	
+	color : red;
+}
+.Grid .body .row .cell.sample_grid_84_font_b
+{
+	background : red;	
+	color : pink;
+}
 .Grid .body .row .cell.sample_grid_64_changevalue
 {
 	color : red;

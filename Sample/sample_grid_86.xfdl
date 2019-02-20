@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_86" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="12" top="12" width="356" height="128" oninput="Grid00_oninput" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="120"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="text"/>
+                <Cell col="1" text="mask"/>
+                <Cell col="2" text="date"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:text" edittype="text" displaytype="text"/>
+                <Cell col="1" text="bind:mask" edittype="mask" maskeditformat="@@@@-@@" displaytype="mask" maskedittype="string"/>
+                <Cell col="2" text="bind:date" edittype="date" displaytype="calendarcontrol" calendartype="spin"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="1" left="12" top="150" width="356" height="90"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/*
+Grid 셀 / 편집중인 값 가져오기
+*/
+
+this.Grid00_oninput = function(obj:nexacro.Grid,e:nexacro.InputEventInfo)
+{
+	this.TextArea00.set_value("getCurEditType: "+obj.getCurEditType()+"\n"
+		+"getEditValue: "+obj.getEditValue()+"\n"
+		+"getEditText: "+obj.getEditText()+"\n"
+		+"getEditingValue: "+obj.getEditingValue()+"\n"
+		+"getEditingText: "+obj.getEditingText());
+};]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="text" type="STRING" size="256"/>
+          <Column id="mask" type="STRING" size="256"/>
+          <Column id="date" type="DATE" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="text">TEST</Col>
+            <Col id="mask">123456</Col>
+            <Col id="date">20190218</Col>
+          </Row>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

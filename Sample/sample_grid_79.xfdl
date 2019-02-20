@@ -79,25 +79,19 @@
       </Dataset>
     </Objects>
     <Script type="xscript5.1"><![CDATA[/*
-버튼 없이 셀 클릭 시 정보를 TextArea에 표시하도록 함.
 Grid 응용 / 트리 구조에서 자식 정보 확인하기
-키워드 getTreeChildCount, getCellText, treeusebutton, treeuseline
-
 */
 this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
-	if(true)
+	var numChildcount = this.Grid00.getTreeChildCount(this.Dataset00.rowposition);
+	var strChildInfo = "ChildCount = "+numChildcount+"\n";
+
+	for(var i=0; i<numChildcount; i++)
 	{
-		var numChildcount = this.Grid00.getTreeChildCount(this.Dataset00.rowposition);
-		var strChildInfo = "ChildCount = "+numChildcount+"\n";
-	
-		for(var i=0; i<numChildcount; i++)
-		{
-			var numChildRow = this.Grid00.getTreeChildRow(this.Dataset00.rowposition, i, false);
-			strChildInfo += "Row = "+numChildRow+", RowText = "+this.Grid00.getCellText(numChildRow, 0)+"\n";
-		}
-		this.TextArea00.set_value(strChildInfo);
+		var numChildRow = this.Grid00.getTreeChildRow(this.Dataset00.rowposition, i, false);
+		strChildInfo += "Row = "+numChildRow+", RowText = "+this.Grid00.getCellText(numChildRow, 0)+"\n";
 	}
+	this.TextArea00.set_value(strChildInfo);
 };
 ]]></Script>
   </Form>
