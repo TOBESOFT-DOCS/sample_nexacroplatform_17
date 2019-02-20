@@ -6,5 +6,6 @@
     <Variable id="docsURL" initval="http://docs.tobesoft.com/r/a/developer_guide_nexacro_17_ko/"/>
     <Variable id="serverURL" initval="http://demo.nexacro.com/developer_guide"/>
     <Variable id="srcURL" initval="http://demo.nexacro.com/developer_guide/source"/>
+    <Variable id="guideURL" initval="http://docs.tobesoft.com/developer_guide_nexacro_17_ko"/>
   </Variables>
 </AppVariables>

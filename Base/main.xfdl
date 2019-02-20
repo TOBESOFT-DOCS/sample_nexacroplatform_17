@@ -9,7 +9,8 @@
               <Static id="Static00" taborder="0" text="버전 정보, 기타 설명이 들어가는 자리" left="240" top="6" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="35" verticalAlign="bottom" right="634" color="white" font="10pt/normal &quot;맑은 고딕&quot;"/>
               <ImageViewer id="ImageViewer00" taborder="1" left="70" top="5" width="140" height="35" image="URL(&quot;imagerc::nexacro_bi_black.png&quot;)" stretch="fit" background="transparent" border="0px none"/>
               <Button id="btn_Menu" taborder="2" cssclass="btn_TP_Menu01" left="0" top="0" width="60" height="100%" onclick="btn_Menu_onclick" tooltiptext="전체메뉴" tooltiptype="hover" border="0px none" cursor="default"/>
-              <Static id="Static01" taborder="3" text="&gt; 예제 프로젝트 소스코드 내려받기 (sample_nexacroplatform_17.zip)" top="16" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="17" verticalAlign="bottom" right="20" color="white" font="10pt/normal &quot;맑은 고딕&quot;" width="600" textAlign="right" cssclass="Sta_TF_menubar" onclick="Div00_Static01_onclick"/>
+              <Static id="Static01" taborder="3" text="&gt; 예제 프로젝트 소스코드 내려받기 (sample_nexacroplatform_17.zip)" top="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="20" verticalAlign="middle" right="20" color="white" font="10pt/normal &quot;맑은 고딕&quot;" width="430" textAlign="right" cssclass="Sta_TF_menubar" onclick="Div00_Static01_onclick"/>
+              <Static id="Static02" taborder="4" text="&gt; 개발 가이드 전체 문서 보기" top="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="20" verticalAlign="middle" right="20" color="white" font="10pt/normal &quot;맑은 고딕&quot;" width="420" textAlign="right" cssclass="Sta_TF_menubar" onclick="Div00_Static02_onclick"/>
             </Layout>
           </Layouts>
         </Div>
@@ -527,6 +528,12 @@ this.Div03_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
 {
 	this.Div03.form.Tab00.tp_description.set_url("");
 	this.Div03.form.Tab00.tp_description.set_url("Sample::" + strSampleFile + ".xfdl");	
+};
+
+this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	strURL = g_strAppInfo.guideURL + "#" + strDocID;
+	system.execBrowser(strURL);
 };
 ]]></Script>
     <Objects>
