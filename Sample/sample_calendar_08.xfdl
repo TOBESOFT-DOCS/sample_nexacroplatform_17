@@ -3,7 +3,7 @@
   <Form id="sample_calendar_08" width="1280" height="720" titletext="New Form">
     <Layouts>
       <Layout height="720" mobileorientation="landscape" width="1280">
-        <Calendar id="Calendar00" taborder="0" left="31" top="151" width="128" height="39"/>
+        <Calendar id="Calendar00" taborder="0" left="31" top="151" width="128" height="39" dateformat="yyyy-MM-dd"/>
         <GroupBox id="GroupBox00" taborder="1" text="empty &gt;&gt; &quot;01&quot;" left="31" top="38" width="128" height="98" font="normal bold 10pt/normal &quot;Arial&quot;"/>
         <Radio id="Radio00" taborder="2" left="43" top="64" width="87" height="60" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio_onitemchanged" calendarId="Calendar00">
           <Dataset id="innerdataset">
@@ -27,7 +27,7 @@
             </Rows>
           </Dataset>
         </Radio>
-        <Calendar id="Calendar01" taborder="3" left="171" top="151" width="128" height="39"/>
+        <Calendar id="Calendar01" taborder="3" left="171" top="151" width="128" height="39" dateformat="yyyy-MM-dd"/>
         <GroupBox id="GroupBox01" taborder="4" text="00 &gt;&gt; -1" left="171" top="38" width="128" height="98" font="normal bold 10pt/normal &quot;Arial&quot;"/>
         <Radio id="Radio01" taborder="5" left="183" top="64" width="87" height="60" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio_onitemchanged" calendarId="Calendar01">
           <Dataset id="innerdataset">
@@ -51,7 +51,7 @@
             </Rows>
           </Dataset>
         </Radio>
-        <Calendar id="Calendar02" taborder="6" left="311" top="151" width="128" height="39"/>
+        <Calendar id="Calendar02" taborder="6" left="311" top="151" width="128" height="39" dateformat="yyyy-MM-dd"/>
         <GroupBox id="GroupBox02" taborder="7" text="over &gt;&gt; +x" left="311" top="38" width="128" height="98" font="normal bold 10pt/normal &quot;Arial&quot;"/>
         <Radio id="Radio02" taborder="8" left="323" top="64" width="87" height="60" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio_onitemchanged" calendarId="Calendar02">
           <Dataset id="innerdataset">

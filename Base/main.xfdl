@@ -69,7 +69,7 @@
               <Static id="Static05" taborder="8" text="Chart 컴포넌트" cssclass="Sta_TF_mapTitle" left="38" top="257" width="142" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="7"/>
               <Static id="Static08" taborder="9" text="Animation 컴포넌트" cssclass="Sta_TF_mapTitle" left="38" top="288" width="142" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="8"/>
               <Static id="Static09" taborder="10" text="키워드별 예제 보기" cssclass="Sta_TF_AllMenuTit" left="28" top="334" width="142" height="27" onclick="pdiv_Menu_Static09_onclick"/>
-              <Combo id="Combo00" taborder="11" text="Combo00" left="38" top="371" width="150" height="30" innerdataset="ds_keyword" codecolumn="keyword" datacolumn="keyword" type="filterlike" onitemchanged="pdiv_Menu_Combo00_onitemchanged" displayrowcount="13" cssclass="main_combo"/>
+              <Combo id="Combo00" taborder="11" text="Combo00" left="38" top="371" width="150" height="30" innerdataset="ds_keyword" codecolumn="keyword" datacolumn="keyword" type="caseifilterlike" onitemchanged="pdiv_Menu_Combo00_onitemchanged" displayrowcount="13" cssclass="main_combo"/>
               <Div id="Div00" taborder="12" left="205" top="0" width="100%" height="100%" border="0px none">
                 <Layouts>
                   <Layout/>

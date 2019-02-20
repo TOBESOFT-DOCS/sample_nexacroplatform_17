@@ -3,7 +3,7 @@
   <Form id="sample_grid_86" left="0" top="0" width="1024" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="1024">
-        <Grid id="Grid00" taborder="0" left="12" top="12" width="356" height="128" oninput="Grid00_oninput" binddataset="Dataset00" autofittype="col">
+        <Grid id="Grid00" taborder="0" left="12" top="12" width="356" height="148" oninput="Grid00_oninput" binddataset="Dataset00" autofittype="col" autoenter="select">
           <Formats>
             <Format id="default">
               <Columns>
@@ -13,7 +13,7 @@
               </Columns>
               <Rows>
                 <Row size="24" band="head"/>
-                <Row size="24"/>
+                <Row size="30"/>
               </Rows>
               <Band id="head">
                 <Cell text="text"/>
@@ -28,7 +28,7 @@
             </Format>
           </Formats>
         </Grid>
-        <TextArea id="TextArea00" taborder="1" left="12" top="150" width="356" height="90"/>
+        <TextArea id="TextArea00" taborder="1" left="12" top="180" width="356" height="90"/>
       </Layout>
     </Layouts>
     <Script type="xscript5.1"><![CDATA[/*
