@@ -2,7 +2,7 @@
 <XCSS version="1.0"><![CDATA[/*
 nexacro17 Application Theme
 default.xtheme
-last-modified : 2018-08-06
+last-modified : 2019-02-26
 */
 
 /**********************Frame/Form***********************************************/
@@ -381,6 +381,10 @@ last-modified : 2018-08-06
     background : #125dae;
 	color : #ffffff;
 }
+.Grid .body .selection
+{
+	-nexa-border : 2px solid #125dae;
+}
 /*-----------------------------------bodycellbutton:ButtonControl과 동일------------------------------------*/
 /*-----------------------------------bodycellcalendar:CalendarControl과 동일------------------------------------*/
 /*-----------------------------------bodycellcheckbox:CheckBoxControl과 동일------------------------------------*/
@@ -595,11 +599,6 @@ last-modified : 2018-08-06
 {
     background : #125dae;
 	color : #ffffff;
-}
-
-.Grid .body .selection
-{
-	-nexa-border	: 2px solid #125dae;
 }
 
 /**********************GroupBox***********************************************/
@@ -1769,7 +1768,7 @@ last-modified : 2018-08-06
 	-nexa-icon : URL('theme://images/btn_WF_Stepitem.png');
 }
 
-.StepControl .stepitem[status=mouseover],.StepControl .stepitem[status=focused],.StepControl .stepitem[userstatus=pushed],.StepControl .stepitem[userstatus=selected]
+.StepControl .stepitem[status=mouseover],.StepControl .stepitem[userstatus=pushed],.StepControl .stepitem[userstatus=selected]
 {
 	-nexa-icon : URL('theme://images/btn_WF_Stepitem_S.png');
 }
@@ -1823,7 +1822,7 @@ last-modified : 2018-08-06
 .ListView .body .cell[status=readonly], .ListView .detail .cell[status=readonly],
 .ListView .body .cell[status=focused], .ListView .detail .cell[status=focused]
 {
-	-nexa-border : 1px solid #dbdee2;
+	-nexa-border :1px solid #dbdee2;
 	-nexa-padding : 4px 4px 4px 4px;
 }
 .ListView .body .cell[status=mouseover], .ListView .detail .cell[status=mouseover]

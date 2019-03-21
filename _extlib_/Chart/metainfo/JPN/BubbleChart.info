@@ -26,7 +26,7 @@
       <Property name="enable" group="Action" subgroup="" refreshinfo="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartを使用可否を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
       <Property name="enableanimation" group="Action" subgroup="" refreshinfo="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="BubbleChartのSeriesにアニメーション効果の適用有無を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enableanimation" />
       <Property name="enableevent" group="Action" subgroup="" refreshinfo="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartでイベントを発生させるか否かを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
-      <Property name="enableredraw" group="Hidden" subgroup="" refreshinfo="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="BubbleChartに変更が発生した場合、画面に再描画を行うかどうかを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enableredraw" />
+      <Property name="enableredraw" group="Hidden" subgroup="" refreshinfo="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="BubbleChartに変更が発生した場合、画面を自動的に再描画するかを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enableredraw" />
       <Property name="expr" group="Action" subgroup="" refreshinfo="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
       <Property name="font" group="Style" subgroup="font" refreshinfo="" edittype="Font" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartで使用するフォントを設定するプロパティです。" csspropertyname="font" csselementname="" normalpropertyname="font" />
       <Property name="height" group="Position" subgroup="position" refreshinfo="" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartを表示するための高さを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="height" />
@@ -53,7 +53,7 @@
       <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" refreshinfo="" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
       <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" refreshinfo="" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
       <Property name="opacity" group="Style" subgroup="opacity" refreshinfo="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="BubbleChart領域の透明度を設定するプロパティです。" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" refreshinfo="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの親オブジェクトを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="parent" group="Hidden" subgroup="" refreshinfo="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの親オブジェクトを持つ読み取り専用のプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
       <Property name="positionstep" group="Position" subgroup="position" refreshinfo="" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="PositionStep" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="親オブジェクトがステップ機能を使用するとき、BubbleChartが表示されるステップを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="positionstep" />
       <Property name="rangezoom" group="Action" subgroup="" refreshinfo="" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Chart_RangeZoom" enuminfo2="" unitinfo="" delimiter="" requirement="" description="ChartBoardでChartSelectionControlに領域が選択されたときに自動的に拡大させる軸を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="rangezoom" />
       <Property name="right" group="Position" subgroup="position" refreshinfo="" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
@@ -180,13 +180,13 @@
       </Method>
       <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="スクリプトで動的に生成したBubbleChartを削除するメソッドです。">
         <Syntax text="BubbleChart.destroy()">
-          <Return type="Boolean" description="BubbleChartが正常に削除されると、「true」を返します。&#xA;BubbleChartが正常に削除されないと、「false」を返します。" />
+          <Return type="Boolean" description="BubbleChartが正常に削除された場合、「true」を返します。&#xA;BubbleChartが正常に削除されない場合、「false」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
       <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
         <Syntax text="BubbleChart.findEventHandler( strEventID, objFunc, objTarget )">
-          <Return type="Number" description="イベントで検索しようとするハンドラ関数のインデックスを返します。&#xA;検索するハンドラ関数が存在しない場合、「-1」を返します。" />
+          <Return type="Number" description="特定のイベントで検出したハンドラ関数のインデックスを返します。&#xA;&#xA;特定のイベントで検索するハンドラ関数が存在しない場合、「-1」を返します。" />
           <Arguments>
             <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="検索するハンドラ関数を設定します。" />
             <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="検索するハンドラ関数が定義された領域を設定します。" />
@@ -202,16 +202,16 @@
       </Method>
       <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの特定のイベントで指定されたインデックスに該当するハンドラ関数を返すメソッドです。">
         <Syntax text="BubbleChart.getEventHandler( strEventID, nIdx )">
-          <Return type="Object" description="コンポーネントの削除に成功すると、削除されたコンポーネントのオブジェクトを返します。&#xA;コンポーネントの削除に失敗すると、「null」を返します。" />
+          <Return type="Object" description="コンポーネントの削除に成功すると、削除されたコンポーネントのオブジェクトを返します。&#xA;&#xA;コンポーネントの削除に失敗すると、「null」を返します。" />
           <Arguments>
-            <Argument name="nIdx" type="Number" in="false" out="false" option="false" variable="false" description="取得しようとするハンドラ関数のインデックスを設定します。&#xA;インデックスは、「0」から開始します。" />
+            <Argument name="nIdx" type="Number" in="false" out="false" option="false" variable="false" description="取得しようとするハンドラ関数のインデックスを設定します。&#xA;&#xA;ハンドラ関数のインデックスは、「0」から開始します。" />
             <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を取得するイベントのIDを設定します。" />
           </Arguments>
         </Syntax>
       </Method>
       <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの子コンポーネントの中で、現在フォーカスを持っているコンポーネントを返すメソッドです。">
         <Syntax text="BubbleChart.getFocus()">
-          <Return type="Object" description="フォーカスを持つ子コンポーネントがある場合、該当コンポーネントを返します。&#xA;フォーカスを持つ子コンポーネントがない場合、「null」を返します。" />
+          <Return type="Object" description="フォーカスを持つ子コンポーネントがある場合、該当コンポーネントを返します。&#xA;&#xA;フォーカスを持つ子コンポーネントがない場合、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
@@ -253,37 +253,37 @@
       </Method>
       <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartのbottomプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="BubbleChart.getPixelBottom();">
-          <Return type="Number" description="BubbleChartのbottomプロパティ値をピクセル単位で返します。&#xA;bottomプロパティ値を設定しない場合は、「null」を返します。" />
+          <Return type="Number" description="BubbleChartのbottomプロパティ値をピクセル単位で返します。&#xA;&#xA;bottomプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
       <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartのheightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="BubbleChart.getPixelHeight();">
-          <Return type="Number" description="BubbleChartのheightプロパティ値をピクセル単位で返します。&#xA;heightプロパティ値を設定しない場合は、「null」を返します。" />
+          <Return type="Number" description="BubbleChartのheightプロパティ値をピクセル単位で返します。&#xA;&#xA;heightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
       <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartのleftプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="BubbleChart.getPixelLeft();">
-          <Return type="Number" description="BubbleChartのwidthプロパティ値をピクセル単位で返します。&#xA;leftプロパティ値を設定しない場合は、「null」を返します。" />
+          <Return type="Number" description="BubbleChartのwidthプロパティ値をピクセル単位で返します。&#xA;&#xA;leftプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
       <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartのrightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="BubbleChart.getPixelRight();">
-          <Return type="Number" description="BubbleChartのrightプロパティ値をピクセル単位で返します。&#xA;rightプロパティ値を設定しない場合は、「null」を返します。" />
+          <Return type="Number" description="BubbleChartのrightプロパティ値をピクセル単位で返します。&#xA;&#xA;rightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
       <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartのtopプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="BubbleChart.getPixelTop();">
-          <Return type="Number" description="BubbleChartのtopプロパティ値をピクセル単位で返します。&#xA;topプロパティ値を設定しない場合は、「null」を返します。" />
+          <Return type="Number" description="BubbleChartのtopプロパティ値をピクセル単位で返します。&#xA;&#xA;topプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
       <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartのwidthプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="BubbleChart.getPixelWidth();">
-          <Return type="Number" description="BubbleChartのwidthプロパティ値をピクセル単位で返します。&#xA;widthプロパティ値を設定しない場合は、「null」を返します。" />
+          <Return type="Number" description="BubbleChartのwidthプロパティ値をピクセル単位で返します。&#xA;&#xA;widthプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
@@ -418,7 +418,7 @@
       </Method>
       <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの特定イベントからハンドラ関数を削除するメソッドです。">
         <Syntax text="BubbleChart.removeEventHandler( strEventID, objFunc, objTarget )">
-          <Return type="Number" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
+          <Return type="Number" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
             <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数を設定します。" />
             <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数が定義された領域を設定します。" />
@@ -428,7 +428,7 @@
       </Method>
       <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
         <Syntax text="BubbleChart.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
-          <Return type="Number" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
+          <Return type="Number" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
             <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数が定義された領域を設定します。&#xA;該当領域に関数が定義されていない場合は、上位の領域に上がりながら検索します。" />
             <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を削除するイベントIDを設定します。" />
@@ -440,8 +440,8 @@
         <Syntax text="BubbleChart.resize( vWidth, vHeight )">
           <Return type="" description="" />
           <Arguments>
-            <Argument name="vHeight" type="String, Number" in="false" out="false" option="false" variable="false" description="BubbleChartのheightプロパティ値を設定します。&#xA;Pixel単位または割合(「％」)に設定することができます。&#xA;負数を設定することはできません。" />
-            <Argument name="vWidth" type="String, Number" in="false" out="false" option="false" variable="false" description="BubbleChartのwidthプロパティ値を設定します。&#xA;Pixel単位または割合(「％」)に設定することができます。&#xA;負数を設定することはできません。" />
+            <Argument name="vHeight" type="String, Number" in="false" out="false" option="false" variable="false" description="BubbleChartのheightプロパティ値をpixelや割合（％）単位の数値に設定します。&#xA;負の値を設定することはできません。&#xA;&#xA;* 値に基準コンポーネントを含めて設定した場合：&#xA;pixel単位で設定時の基準コンポーネント値は無視され、pixel値でBubbleChartのheightが決定されます。&#xA;割合（％）単位で設定時の基準コンポーネントのheightプロパティ値に基づいてBubbleChartのheightが決定されます。" />
+            <Argument name="vWidth" type="String, Number" in="false" out="false" option="false" variable="false" description="BubbleChartのwidthプロパティ値をpixelや割合（％）単位の数値に設定します。&#xA;負の値を設定することはできません。&#xA;&#xA;* 値に基準コンポーネントを含めて設定した場合：&#xA;pixel単位で設定時の基準コンポーネント値は無視され、pixel値でBubbleChartのwidthが決定されます。&#xA;割合（％）単位で設定時の基準コンポーネントのwidthプロパティ値に基づいてBubbleChartのwidthが決定されます。" />
           </Arguments>
         </Syntax>
       </Method>
@@ -465,7 +465,7 @@
       </Method>
       <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
         <Syntax text="BubbleChart.setEventHandler( strEventID, objFunc, objTarget )">
-          <Return type="Number" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
+          <Return type="Number" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
             <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="既存のハンドラ関数を置換する関数を設定します。" />
             <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="置き換えるハンドラ関数が定義された領域を設定します。" />
@@ -475,7 +475,7 @@
       </Method>
       <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BubbleChartの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
         <Syntax text="BubbleChart.setEventHandlerLookup( strEventID, strFunc, objTarget )">
-          <Return type="Number" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
+          <Return type="Number" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
             <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="置き換えるハンドラ関数を検索する領域を設定します。&#xA;該当領域に関数が定義されていない場合は、上位領域に上がりながら検索します。" />
             <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を変更するイベントのIDを設定します。" />
