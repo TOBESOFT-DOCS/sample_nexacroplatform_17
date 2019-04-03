@@ -1,4 +1,4 @@
-﻿(function()
+(function()
 {
 	return function()
 	{
@@ -38,6 +38,9 @@
 					}
 				}
 			}
+		},
+		{
+			"includeStatusMap" : true
 		}
 		);
 

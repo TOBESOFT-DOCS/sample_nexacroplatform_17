@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_09" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Calendar id="Calendar00" taborder="0" left="35" top="30" width="200" height="200" type="monthonly" locale="en_US"/>
+        <Calendar id="Calendar01" taborder="1" left="245" top="30" width="200" height="200" type="monthonly" locale="en_US" cssclass="sample_calendar_09"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

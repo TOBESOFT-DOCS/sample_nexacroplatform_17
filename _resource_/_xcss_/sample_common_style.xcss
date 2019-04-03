@@ -181,4 +181,36 @@
 {
 	-nexa-border : 2px dotted hotpink;
 }
-]]></XCSS>
+
+.Calendar.sample_calendar_09 .datepicker .body .dayitem[userstatus=saturday]
+{
+	color : #333333;
+}
+
+.Calendar.sample_calendar_09 .datepicker .body .dayitem[userstatus=sunday]
+{
+	color : #333333;
+}
+.Calendar.sample_calendar_09 .datepicker .body .weekitem[userstatus=sunday]
+{
+	color : #ffffff;
+}
+
+.Calendar.sample_calendar_09 .datepicker .head
+{
+	background : orangered;
+}
+
+.Calendar.sample_calendar_09 .datepicker  .body .weekband
+{
+	background : orangered;
+}
+
+.Calendar.sample_calendar_09 .datepicker  .body
+{
+	-nexa-border : 1px none transparent;
+
+}.Calendar.sample_calendar_09 .datepicker .body .weekitem[userstatus=saturday]
+{
+	color : #ffffff;
+}]]></XCSS>

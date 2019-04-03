@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_dataset_09" width="1280" height="720" titletext="New Form" locale="en_US" onload="sample_dataset_03_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="35" top="30" width="185" height="250" binddataset="Dataset00" autofittype="col" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" expr="dataset.getRowLevel(currow)&gt;0?&quot;SUBTOTAL&quot;:Column0" suppress="1"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="1" left="235" top="30" width="185" height="250"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" keystring="Column0">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">A</Col>
+            <Col id="Column1">10</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A</Col>
+            <Col id="Column1">20</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A</Col>
+            <Col id="Column1">30</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">B</Col>
+            <Col id="Column1">20</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">B</Col>
+            <Col id="Column1">30</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">B</Col>
+            <Col id="Column1">20</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">A</Col>
+            <Col id="Column1">10</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var temp_str;
+	var nStartIdx ;
+	var nEndIdx ;
+	if(this.Dataset00.getRowLevel(e.row)==0)
+	{
+		temp_str = "CLICK SUBTOTAL ROW";
+	}
+	else
+	{
+		nStartIdx = this.Dataset00.getGroupRangeStart(e.row);
+		nEndIdx = this.Dataset00.getGroupRangeStart(e.row)+this.Dataset00.getGroupRangeCount(e.row);
+		temp_str = "keystring: "+this.Dataset00.getColumn(e.row, "Column0")+"\n";
+		temp_str += "getAvg: "+nexacro.round(this.Dataset00.getAvg("Column1", nStartIdx, nEndIdx),2)+"\n";
+		temp_str += "getMax: "+this.Dataset00.getMax("Column1", nStartIdx, nEndIdx)+"\n";
+		temp_str += "getMin: "+this.Dataset00.getMin("Column1", nStartIdx, nEndIdx)+"\n";
+		temp_str += "getSum: "+this.Dataset00.getSum("Column1", nStartIdx, nEndIdx)+"\n";
+		temp_str += "getCount: "+this.Dataset00.getCount("Column1", nStartIdx, nEndIdx);
+	}
+	this.TextArea00.set_value(temp_str);
+};
+]]></Script>
+  </Form>
+</FDL>
