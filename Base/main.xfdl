@@ -1123,6 +1123,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">value</Col>
           </Row>
           <Row>
+            <Col id="category">Calendar</Col>
+            <Col id="subject">DatePickerControl 스타일 지정하기</Col>
+            <Col id="id_sample">sample_calendar_09</Col>
+            <Col id="id_doc">a3421473b75a3beb</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">datepicker</Col>
+          </Row>
+          <Row>
             <Col id="category">CheckBox</Col>
             <Col id="subject">CheckBox</Col>
             <Col id="tree_level">0</Col>
@@ -2184,6 +2193,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">cellid</Col>
           </Row>
           <Row>
+            <Col id="category">ListView</Col>
+            <Col id="subject">body 밴드 영역 클릭 시 상세 데이터 표현하기</Col>
+            <Col id="id_sample">sample_listview_04</Col>
+            <Col id="id_doc">592db45d4ecb0c4c</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">getBandExpandStatus, showDetailBand, hideDetailBand</Col>
+          </Row>
+          <Row>
             <Col id="category">ListBox</Col>
             <Col id="subject">ListBox</Col>
             <Col id="tree_level">0</Col>
@@ -2920,6 +2938,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">5</Col>
             <Col id="keyword">filter</Col>
+          </Row>
+          <Row>
+            <Col id="category">Dataset</Col>
+            <Col id="subject">그룹화된 데이터와 관련된 계산값 구하기</Col>
+            <Col id="id_sample">sample_dataset_09</Col>
+            <Col id="id_doc">485da3b7bce27dd7</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">5</Col>
+            <Col id="keyword">getGroupRangeStart, getGroupRangeCount</Col>
           </Row>
           <Row>
             <Col id="category">ExcelObject</Col>
