@@ -122,7 +122,7 @@ this.Grid00_ondrop = function(obj:nexacro.Grid,e:nexacro.GridDragEventInfo)
 this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.TextArea00.set_value("");
-	this.FileUpTransfer00.upload('http://crossorigin.me/http://demo.nexacro.com/developer_guide/17/Service/fileupload.jsp');
+	this.FileUpTransfer00.upload('http://demo.nexacro.com/developer_guide/17/Service/fileupload.jsp');
 };
 
 this.FileUpTransfer00_onprogress = function(obj:nexacro.FileUploadTransfer,e:nexacro.FileUploadTransferProgressEventInfo)

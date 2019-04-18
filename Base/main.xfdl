@@ -1293,6 +1293,36 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">oninput</Col>
           </Row>
           <Row>
+            <Col id="category">FileDialog</Col>
+            <Col id="subject">FileDialog</Col>
+            <Col id="tree_level">0</Col>
+            <Col id="search_subject">1</Col>
+          </Row>
+          <Row>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="subject">FileDialog 실행하고 선택한 파일 표시하기</Col>
+            <Col id="category">FileDialog</Col>
+            <Col id="id_sample">sample_filedialog_01</Col>
+            <Col id="id_doc">f9373956895d7dfa</Col>
+            <Col id="keyword">open, virtualfiles, accept</Col>
+          </Row>
+          <Row>
+            <Col id="tree_level">0</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="category">FileUpTransfer</Col>
+            <Col id="subject">FileUpTransfer</Col>
+          </Row>
+          <Row>
+            <Col id="search_subject">1</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="category">FileUpTransfer</Col>
+            <Col id="subject">선택한 파일 업로드하기</Col>
+            <Col id="id_sample">sample_fileuptransfer_01</Col>
+            <Col id="id_doc">42739e3f13623414</Col>
+            <Col id="keyword">datatype, filelist, addFile, upload</Col>
+          </Row>
+          <Row>
             <Col id="category">GoogleMap</Col>
             <Col id="subject">GoogleMap</Col>
             <Col id="tree_level">0</Col>
