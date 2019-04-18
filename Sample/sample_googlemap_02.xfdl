@@ -12,7 +12,7 @@
     <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.GoogleMap00.set_showzoom(true);
-	
+	this.GoogleMap00.set_apikey(nexacro.getApplication().googleMapAPIKey);	
 	this.GoogleMap00.load(false, 11.96832946, 121.922996308, 0, 13);
 };
 

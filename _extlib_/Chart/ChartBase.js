@@ -42,8 +42,8 @@ if (!nexacro._ChartBase) {
 	_pChatMouseEventInfo._type_name = "ChartMouseEventInfo";
 	delete _pChatMouseEventInfo;
 
-	nexacro.ChartDragEventInfo = function (obj, id, dragdata, userdata, src_comp, src_refer_comp, from_comp, from_refer_comp, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, seriesindex, itemindex, value) {
-		nexacro.DragEventInfo.call(this, obj, id, dragdata, userdata, src_comp, src_refer_comp, null, null, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY);
+	nexacro.ChartDragEventInfo = function (obj, id, dragdata, userdata, datatype, filelist, src_comp, src_refer_comp, from_comp, from_refer_comp, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, seriesindex, itemindex, value) {
+		nexacro.DragEventInfo.call(this, obj, id, dragdata, userdata, datatype, filelist, src_comp, src_refer_comp, null, null, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY);
 
 		this.fromobject = obj;
 		this.fromreferenceobject = from_refer_comp;
@@ -997,12 +997,9 @@ if (!nexacro._ChartBase) {
 					this.tooltip._clearTooltip();
 				}
 				this._clearMouseActionSeriesItem();
-				this._seriesGroup.destroy();
-				this._seriesGroup = null;
 				this._itemtextlist = null;
-				this._highlightGroup.destroy();
-				this._highlightGroup = null;
-
+				this._seriesGroup.clear();
+				this._highlightGroup.clear();
 				if (this._type_name == "GaugeChart") {
 					if (this.indicator) {
 						this.indicator.destroy();
@@ -1031,11 +1028,9 @@ if (!nexacro._ChartBase) {
 			}
 
 			if (this._seriesGroup) {
-				this._seriesGroup.destroy();
-				this._seriesGroup = null;
 				this._itemtextlist = null;
-				this._highlightGroup.destroy();
-				this._highlightGroup = null;
+				this._highlightGroup.clear();
+				this._seriesGroup.clear();
 			}
 			this._changedData = true;
 		}
@@ -1963,7 +1958,7 @@ if (!nexacro._ChartBase) {
 			if (ref_subcontrol.object == null) {
 				ref_subcontrol.object = refer_comp;
 			}
-			var evt = new nexacro.ChartDragEventInfo(this, "ondrag", dragData, null, this, self_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
+			var evt = new nexacro.ChartDragEventInfo(this, "ondrag", dragData, null, "text", null, this, self_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
 			var ret = this.ondrag._fireUserEvent(this, evt);
 			if (ret == true) {
 				this.useDragrangezoom = true;
@@ -1977,7 +1972,7 @@ if (!nexacro._ChartBase) {
 		return [false];
 	};
 
-	_pChartBase.on_fire_user_ondrop = function (src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
+	_pChartBase.on_fire_user_ondrop = function (src_comp, src_refer_comp, dragdata, userdata, datatype, filelist, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
 		if (this._isanimationloading) {
 			return false;
 		}
@@ -1986,13 +1981,13 @@ if (!nexacro._ChartBase) {
 			if (ref_subcontrol.object == null) {
 				ref_subcontrol.object = from_refer_comp;
 			}
-			var evt = new nexacro.ChartDragEventInfo(this, "ondrop", dragdata, userdata, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
+			var evt = new nexacro.ChartDragEventInfo(this, "ondrop", dragdata, userdata, datatype, filelist, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
 			return this.ondrop._fireUserEvent(this, evt);
 		}
 		return false;
 	};
 
-	_pChartBase.on_fire_user_ondragenter = function (src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
+	_pChartBase.on_fire_user_ondragenter = function (src_comp, src_refer_comp, dragdata, userdata, datatype, filelist, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
 		if (this._isanimationloading) {
 			return false;
 		}
@@ -2001,25 +1996,25 @@ if (!nexacro._ChartBase) {
 			if (ref_subcontrol.object == null) {
 				ref_subcontrol.object = from_refer_comp;
 			}
-			var evt = new nexacro.ChartDragEventInfo(this, "ondragenter", dragdata, userdata, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
+			var evt = new nexacro.ChartDragEventInfo(this, "ondragenter", dragdata, userdata, datatype, filelist, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
 			return this.ondragenter._fireUserEvent(this, evt);
 		}
 		return false;
 	};
 
-	_pChartBase.on_fire_user_ondragleave = function (src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
+	_pChartBase.on_fire_user_ondragleave = function (src_comp, src_refer_comp, dragdata, userdata, datatype, filelist, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
 		if (this.ondragleave && this.ondragleave._has_handlers) {
 			var ref_subcontrol = this.getHittestRefComponent(canvasX, canvasY);
 			if (ref_subcontrol.object == null) {
 				ref_subcontrol.object = from_refer_comp;
 			}
-			var evt = new nexacro.ChartDragEventInfo(this, "ondragleave", dragdata, userdata, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
+			var evt = new nexacro.ChartDragEventInfo(this, "ondragleave", dragdata, userdata, datatype, filelist, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
 			return this.ondragleave._fireUserEvent(this, evt);
 		}
 		return false;
 	};
 
-	_pChartBase.on_fire_user_ondragmove = function (src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
+	_pChartBase.on_fire_user_ondragmove = function (src_comp, src_refer_comp, dragdata, userdata, datatype, filelist, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
 		if (this._isanimationloading) {
 			return false;
 		}
@@ -2028,7 +2023,7 @@ if (!nexacro._ChartBase) {
 			if (ref_subcontrol.object == null) {
 				ref_subcontrol.object = from_refer_comp;
 			}
-			var evt = new nexacro.ChartDragEventInfo(this, "ondragmove", dragdata, userdata, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
+			var evt = new nexacro.ChartDragEventInfo(this, "ondragmove", dragdata, userdata, datatype, filelist, src_comp, src_refer_comp, from_comp, ref_subcontrol.object, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, ref_subcontrol.index, ref_subcontrol.itemindex, ref_subcontrol.value);
 			return this.ondragmove._fireUserEvent(this, evt);
 		}
 		return false;
@@ -2532,17 +2527,16 @@ if (!nexacro._ChartBase) {
 			while (this.seriesset.length > 0) {
 				this._deleteSeries(this.seriesset[0], 0);
 			}
+		}
+		if (this._seriesGroup) {
+			this._seriesGroup.destroy();
+			this._seriesGroup = null;
+			this._itemtextlist = null;
+		}
 
-			if (this._seriesGroup) {
-				this._seriesGroup.destroy();
-				this._seriesGroup = null;
-				this._itemtextlist = null;
-			}
-
-			if (this._highlightGroup) {
-				this._highlightGroup.destroy();
-				this._highlightGroup = null;
-			}
+		if (this._highlightGroup) {
+			this._highlightGroup.destroy();
+			this._highlightGroup = null;
 		}
 	};
 

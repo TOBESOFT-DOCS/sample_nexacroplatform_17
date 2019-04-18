@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_filedownloadtransfer_01" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
+    <Layouts>
+      <Layout height="768" width="1024" stepcount="0">
+        <Grid id="Grid00" taborder="0" left="24" top="30" width="832" height="122" binddataset="Dataset00" oncellclick="Grid00_oncellclick" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="230"/>
+                <Column size="600"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="project"/>
+                <Cell col="1" text="URL"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:project"/>
+                <Cell col="1" text="bind:URL"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <FileDownload id="FileDownload00" taborder="1" text="FileDownload00" left="24" top="170" width="290" height="100" onerror="FileDownload00_onerror" onsuccess="FileDownload00_onsuccess"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="project" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="URL">https://github.com/TOBESOFT-DOCS/sample_nexacroplatform_17/archive/master.zip</Col>
+            <Col id="project">sample_nexacroplatform_17</Col>
+          </Row>
+          <Row>
+            <Col id="URL">https://github.com/TOBESOFT-DOCS/demo_nexacroplatform_17_DeviceAPI/archive/master.zip</Col>
+            <Col id="project">demo_nexacroplatform_17_DeviceAPI</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <FileDownloadTransfer id="FileDownloadTransfer00" onsuccess="FileDownloadTransfer00_onsuccess" onerror="FileDownloadTransfer00_onerror"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	trace('test');
+	this.FileDownloadTransfer00.download(this.Dataset00.getColumn(e.row , 1), "master.zip");
+	//this.FileDownload00.download(this.Dataset00.getColumn(e.row , 1));
+};]]></Script>
+  </Form>
+</FDL>

@@ -7,5 +7,6 @@
     <Variable id="serverURL" initval="http://demo.nexacro.com/developer_guide"/>
     <Variable id="srcURL" initval="http://demo.nexacro.com/developer_guide/source"/>
     <Variable id="guideURL" initval="http://docs.tobesoft.com/developer_guide_nexacro_17_ko"/>
+    <Variable id="googleMapAPIKey" initval="AIzaSyDi3vg8y5Jv7_lrEMV7gT86y9wG2KukMis"/>
   </Variables>
 </AppVariables>
