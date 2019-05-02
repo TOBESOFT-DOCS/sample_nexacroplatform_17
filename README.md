@@ -1,4 +1,7 @@
 # 넥사크로플랫폼 17 개발 가이드 예제 프로젝트
+
+![Product Version](https://img.shields.io/badge/nexacro%20platform-v17.0.0.1900-blue.svg)
+
 넥사크로플랫폼 17 개발 가이드 문서 내 포함된 예제 프로젝트 저장소입니다.
 
 > 개발 가이드 문서는 다음 링크에서 볼 수 있습니다 (http://docs.tobesoft.com/developer_guide_nexacro_17_ko)
