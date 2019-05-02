@@ -23,17 +23,17 @@ this.fn_lastDay = function(sDate)
 	if (sDate == null || sDate == "" || sDate == "undefined")  
 	{
 		dDate = (new Date()).addMonth(1);
-	    dDate = (new Date(dDate)).addDate((new Date(dDate)).getDate()*-1);
+	    dDate.addDate((new Date(dDate)).getDate()*-1);
     }
     else 
     {
 	    dDate = new Date(parseInt(sDate.substr(0,4)), parseInt(sDate.substr(4,2)), 1);
-	    dDate = dDate.addDate(-1);	
+	    dDate.addDate(-1);	
     }
 	
-    var sRtn =  (new Date(dDate)).getFullYear()
-	+ ((new Date(dDate)).getMonth()+1).toString().padLeft(2, "0")
-	+ ((new Date(dDate)).getDate()).toString().padLeft(2, "0");  
+    var sRtn =  dDate.getFullYear()
+	+ (dDate.getMonth()+1).toString().padLeft(2, "0")
+	+ dDate.getDate().toString().padLeft(2, "0");  
 	
 	return sRtn;
 };
