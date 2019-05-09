@@ -7,7 +7,7 @@
         <Static id="Static00" taborder="1" text="Static00" left="48" top="96" width="120" height="32" right="" bottom=""/>
         <TextArea id="TextArea00" taborder="2" left="48" top="180" width="376" height="120" right="" bottom="" value="TextArea00"/>
         <Edit id="Edit00" taborder="3" left="120" top="96" width="240" height="32" right="" bottom="" value="Edit00"/>
-        <Radio id="Radio00" taborder="4" left="48" top="136" width="200" height="32" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" innerdataset="innerdataset">
+        <Radio id="Radio00" taborder="4" left="48" top="136" width="200" height="32" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" index="0" innerdataset="innerdataset" rowcount="1">
           <Dataset id="innerdataset">
             <ColumnInfo>
               <Column id="codecolumn" size="256"/>

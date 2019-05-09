@@ -93,7 +93,7 @@
 	]
 }]]></Contents>
         </BasicChart>
-        <Radio id="Radio00" taborder="1" left="20" top="5" width="210" height="45" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" text="normal" value="normal" onitemchanged="Radio00_onitemchanged">
+        <Radio id="Radio00" taborder="1" left="20" top="5" width="210" height="45" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" index="0" text="normal" value="normal" onitemchanged="Radio00_onitemchanged" rowcount="1">
           <Dataset id="innerdataset">
             <ColumnInfo>
               <Column id="codecolumn" size="256"/>
