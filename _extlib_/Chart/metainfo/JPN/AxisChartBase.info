@@ -48,6 +48,8 @@
       <Property name="border" group="Style" subgroup="border" refreshinfo="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" refreshinfo="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
       <Property name="padding" group="Style" subgroup="padding" refreshinfo="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+      <Property name="-nexa-rtl-background-image" group="" subgroup="" refreshinfo="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="-nexa-rtl-background-image" />
+      <Property name="-nexa-rtl-edge-image" group="" subgroup="" refreshinfo="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="-nexa-rtl-edge-image" />
       <Property name="textAlign" group="Style" subgroup="-nexa-text-align" refreshinfo="" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
       <Property name="textDecoration" group="Style" subgroup="text-decoration" refreshinfo="" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
       <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" refreshinfo="" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
@@ -58,6 +60,7 @@
       <Property name="rangezoom" group="" subgroup="" refreshinfo="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rangezoom" />
       <Property name="right" group="Position" subgroup="position" refreshinfo="" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="PixelPercent" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="rotateaxis" group="" subgroup="" refreshinfo="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rotateaxis" />
+      <Property name="rtl" group="" subgroup="" refreshinfo="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rtl" />
       <Property name="selection" group="" subgroup="" refreshinfo="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="selection" />
       <Property name="seriesset" group="" subgroup="" refreshinfo="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="seriesset" />
       <Property name="taborder" group="Action" subgroup="" refreshinfo="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="taborder" />
@@ -99,6 +102,12 @@
     <StatusInfo />
     <ControlInfo />
     <MethodInfo>
+      <Method name="addEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
       <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="XComponent.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="" />
@@ -353,6 +362,12 @@
       </Method>
       <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="XComponent.moveToPrev( objComp )&#xA;XComponent.moveToPrev( strComp )">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="removeEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
