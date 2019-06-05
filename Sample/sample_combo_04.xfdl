@@ -5,7 +5,7 @@
       <Layout height="768" width="1024">
         <Combo id="Combo00" taborder="0" text="apple" left="32" top="80" width="256" height="32" codecolumn="CODE" datacolumn="DATA" index="0" value="00" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@ds_combo" type="dropdown" border=""/>
         <Static id="Static00" taborder="1" text="Search type:" left="32" top="32" width="120" height="32" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Radio id="Radio00" taborder="2" left="122" top="32" width="420" height="32" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" index="0" rowcount="0" onitemchanged="Radio00_onitemchanged" innerdataset="innerdataset">
+        <Radio id="Radio00" taborder="2" left="122" top="32" width="420" height="32" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" index="0" rowcount="1" onitemchanged="Radio00_onitemchanged" innerdataset="innerdataset">
           <Dataset id="innerdataset">
             <ColumnInfo>
               <Column id="codecolumn" size="256"/>

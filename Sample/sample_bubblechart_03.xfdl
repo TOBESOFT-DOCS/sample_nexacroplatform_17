@@ -93,7 +93,7 @@
 	}
 }]]></Contents>
         </BubbleChart>
-        <Radio id="Radio00" taborder="1" left="54" top="15" width="306" height="35" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" text="ALL" value="ALL" onitemchanged="Radio00_onitemchanged">
+        <Radio id="Radio00" taborder="1" left="54" top="15" width="306" height="35" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" text="ALL" value="ALL" onitemchanged="Radio00_onitemchanged" rowcount="1">
           <Dataset id="innerdataset">
             <ColumnInfo>
               <Column id="codecolumn" size="256"/>
