@@ -102,11 +102,11 @@
     </StatusInfo>
     <ControlInfo />
     <MethodInfo>
-      <Method name="addEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="">
+      <Method name="addEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="GaugeChartに特定のイベントを宣言して、追加するメソッドです。">
         <Syntax text="GaugeChart.addEvent( strEventID )">
-          <Return type="Boolean" description="" />
+          <Return type="Boolean" description="イベントの追加に成功するとtrueを返します。&#xA;&#xA;イベントの追加に失敗、もしくは宣言されているイベントIDの設定時はfalseを返します。" />
           <Arguments>
-            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="GaugeChartに追加するイベントのIDを文字列に設定します。" />
           </Arguments>
         </Syntax>
       </Method>
@@ -367,6 +367,17 @@
           </Arguments>
         </Syntax>
       </Method>
+      <Method name="insertEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="GaugeChart.addEventHandler( strEventID, nIndex, objFunc, objTarget )">
+          <Return type="Number" description="" />
+          <Arguments>
+            <Argument name="nIndex" type="Number" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
       <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="GaugeChartの位置とサイズを変更するメソッドです。">
         <Syntax text="GaugeChart.move( vLeft, vTop [, vWidth, vHeight [, vRight, vBottom]] )">
           <Return type="" description="　" />
@@ -398,11 +409,11 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="GaugeChartでChartBoardControl領域をクリックしたときに発生するイベントです。">
+      <Method name="removeEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="GaugeChartに宣言された特定のイベントを削除するメソッドです。">
         <Syntax text="GaugeChart.removeEvent( strEventID )">
-          <Return type="Boolean" description="" />
+          <Return type="Boolean" description="イベントの削除に成功した場合は「true」を返します。&#xA;&#xA;イベントの削除に失敗、もしくは宣言されていないイベントIDの設定時は「false」を返します。" />
           <Arguments>
-            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="GaugeChartから削除するイベントのIDを文字列に設定します。" />
           </Arguments>
         </Syntax>
       </Method>

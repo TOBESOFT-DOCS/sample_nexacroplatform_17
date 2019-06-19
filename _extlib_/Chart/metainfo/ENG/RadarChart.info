@@ -103,11 +103,11 @@
     </StatusInfo>
     <ControlInfo />
     <MethodInfo>
-      <Method name="addEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="">
+      <Method name="addEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="This method is used to declare a certain event and then add it to a RadarChart.">
         <Syntax text="RadarChart.addEvent( strEventID )">
-          <Return type="Boolean" description="" />
+          <Return type="Boolean" description="This method will return &quot;true&quot; if an event is added successfully.&#xA;&#xA;This method will return &quot;false&quot; if it fails to add an event or you specify the ID of an event that has been declared already." />
           <Arguments>
-            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="This is a string that represents the ID of an event to add to the RadarChart." />
           </Arguments>
         </Syntax>
       </Method>
@@ -352,6 +352,17 @@
           </Arguments>
         </Syntax>
       </Method>
+      <Method name="insertEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="RadarChart.addEventHandler( strEventID, nIndex, objFunc, objTarget )">
+          <Return type="Number" description="" />
+          <Arguments>
+            <Argument name="nIndex" type="Number" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
       <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="This method is used to change the position and size of a RadarChart.">
         <Syntax text="RadarChart.move( vLeft, vTop [, vWidth, vHeight [, vRight, vBottom]] )">
           <Return type="" description="" />
@@ -383,11 +394,11 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="">
+      <Method name="removeEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="This method is used to remove a certain event that is declared in a RadarChart.">
         <Syntax text="RadarChart.removeEvent( strEventID )">
-          <Return type="Boolean" description="" />
+          <Return type="Boolean" description="This method will return &quot;true&quot; if an event is removed successfully.&#xA;&#xA;This method will return &quot;false&quot; if it fails to remove an event or you specify the ID of an event that has not been declared." />
           <Arguments>
-            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="This is a string that represents the ID of an event to remove from the RadarChart." />
           </Arguments>
         </Syntax>
       </Method>

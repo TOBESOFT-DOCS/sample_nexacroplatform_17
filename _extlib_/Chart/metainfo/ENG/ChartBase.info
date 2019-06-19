@@ -291,6 +291,12 @@
           <Arguments />
         </Syntax>
       </Method>
+      <Method name="insertEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
       <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="XComponent.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="" />

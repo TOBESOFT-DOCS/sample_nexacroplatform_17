@@ -46,7 +46,7 @@
     <Component id="RadarChart" classname="nexacro.RadarChart" iconindex="85" defaultwidth="0" defaultheight="0" prefixid="RadarChart00" type="JavaScript"/>
     <Component type="JavaScript" id="FileDownTransfer" classname="nexacro.FileDownTransfer"/>
     <Component type="JavaScript" id="FileUpTransfer" classname="nexacro.FileUpTransfer"/>
-    <Component type="JavaScript" id="GaugeChart" classname="nexacro.GaugeChart"/>
+    <Component type="JavaScript" id="GaugeChart" classname="nexacro.GaugeChart" iconindex="86" defaultwidth="0" defaultheight="0"/>
   </Components>
   <Services>
     <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" version="0" communicationversion="0"/>

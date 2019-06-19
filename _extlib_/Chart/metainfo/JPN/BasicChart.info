@@ -63,7 +63,7 @@
       <Property name="rangezoom" group="Action" subgroup="" refreshinfo="" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Chart_RangeZoom" enuminfo2="" unitinfo="" delimiter="" requirement="" description="ChartBoardでChartSelectionControlに領域が選択されたときに自動的に拡大させる軸を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="rangezoom" />
       <Property name="right" group="Position" subgroup="position" refreshinfo="" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="rotateaxis" group="Action" subgroup="" refreshinfo="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartで横軸と縦軸の位置を変更するかを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="rotateaxis" />
-      <Property name="rtl" group="Action" subgroup="" refreshinfo="" edittype="Boolean" readonly="false" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="" csspropertyname="" csselementname="" normalpropertyname="rtl" />
+      <Property name="rtl" group="Action" subgroup="" refreshinfo="" edittype="Boolean" readonly="false" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartで内部コンテンツもしくはコンポーネントの表示基準を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="rtl" />
       <Property name="selection" group="Hidden" subgroup="" refreshinfo="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartのサブコントロールであるChartSelectionControlを持つ読み取り専用のプロパティです。" csspropertyname="" csselementname="" normalpropertyname="selection" />
       <Property name="seriesset" group="Hidden" subgroup="" refreshinfo="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartのサブコントロールであるChartBasicSeriesControlを配列に持つ読み取り専用プロパティです。" csspropertyname="" csselementname="" normalpropertyname="seriesset" />
       <Property name="stacktype" group="Appearance" subgroup="" refreshinfo="" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Chart_stacktype" enuminfo2="" unitinfo="" delimiter="" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartにSeriesを累積的に表示するかを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="stacktype" />
@@ -112,11 +112,11 @@
     </StatusInfo>
     <ControlInfo />
     <MethodInfo>
-      <Method name="addEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="">
+      <Method name="addEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartに特定のイベントを宣言して、追加するメソッドです。">
         <Syntax text="BasicChart.addEvent( strEventID )">
-          <Return type="Boolean" description="" />
+          <Return type="Boolean" description="イベントの追加に成功するとtrueを返します。&#xA;&#xA;イベントの追加に失敗、もしくは宣言されているイベントIDの設定時はfalseを返します。" />
           <Arguments>
-            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="BasicChartに追加するイベントのIDを文字列に設定します。" />
           </Arguments>
         </Syntax>
       </Method>
@@ -407,6 +407,17 @@
           </Arguments>
         </Syntax>
       </Method>
+      <Method name="insertEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="BasicChart.addEventHandler( strEventID, nIndex, objFunc, objTarget )">
+          <Return type="Number" description="" />
+          <Arguments>
+            <Argument name="nIndex" type="Number" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
       <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartの位置とサイズを変更するメソッドです。">
         <Syntax text="BasicChart.move( vLeft, vTop [, vWidth, vHeight [, vRight, vBottom]] )">
           <Return type="" description="　" />
@@ -438,11 +449,11 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartでChartBoardControl領域をクリックしたときに発生するイベントです。">
+      <Method name="removeEvent" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE9,IE10,IE11,Edge,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="BasicChartに宣言された特定のイベントを削除するメソッドです。">
         <Syntax text="BasicChart.removeEvent( strEventID )">
-          <Return type="Boolean" description="" />
+          <Return type="Boolean" description="イベントの削除に成功した場合は「true」を返します。&#xA;&#xA;イベントの削除に失敗、もしくは宣言されていないイベントIDの設定時は「false」を返します。" />
           <Arguments>
-            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="BasicChartから削除するイベントのIDを文字列に設定します。" />
           </Arguments>
         </Syntax>
       </Method>

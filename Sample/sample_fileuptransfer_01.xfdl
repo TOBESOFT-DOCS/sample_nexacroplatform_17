@@ -75,7 +75,7 @@ this.FileList_onsuccess = function(obj:nexacro.VirtualFile, e:nexacro.VirtualFil
 			var nRowIdx = this.Dataset00.addRow();
 			this.Dataset00.setColumn(nRowIdx, 0, obj.filename);
 			this.Dataset00.setColumn(nRowIdx, 1, this.cutFileSize(e.filesize));
-			this.FileUpTransfer00.addFile(obj);
+			this.FileUpTransfer00.addFile(obj.filename, obj);
 			break;
 	}
 }
@@ -144,7 +144,8 @@ this.FileUpTransfer00_onerror = function(obj:nexacro.FileUploadTransfer,e:nexacr
 
 this.fn_addlog = function(strMessage)
 {
-    this.TextArea00.set_value(this.TextArea00.text + strMessage + '\n');
+	this.TextArea00.insertText(strMessage + '\n');
+	
 }
 ]]></Script>
   </Form>

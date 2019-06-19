@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_radio_04" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Radio id="Radio00" taborder="0" left="54" top="20" width="206" height="170" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" background="bisque" border="1px solid darkblue">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">a</Col>
+                <Col id="datacolumn">a</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">bb</Col>
+                <Col id="datacolumn">bb</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">ccc</Col>
+                <Col id="datacolumn">ccc</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">dddd</Col>
+                <Col id="datacolumn">dddd</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">eeeee</Col>
+                <Col id="datacolumn">eeeee</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Grid id="Grid00" taborder="1" left="605" top="20" width="310" height="500" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="60"/>
+                <Column size="60"/>
+              </Columns>
+              <Rows>
+                <Row size="35" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="fittocontents"/>
+                <Cell col="1" text="direction"/>
+                <Cell col="2" text="column&#13;&#10;count"/>
+                <Cell col="3" text="row&#13;&#10;count"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:fittocontents"/>
+                <Cell col="1" text="bind:direction"/>
+                <Cell col="2" text="bind:columncount"/>
+                <Cell col="3" text="bind:rowcount"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="2" left="54" top="Radio00:10" width="206" height="110"/>
+        <Grid id="Grid01" taborder="3" left="275" top="20" width="310" height="330" binddataset="Dataset01" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="60"/>
+                <Column size="60"/>
+              </Columns>
+              <Rows>
+                <Row size="35" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="fittocontents"/>
+                <Cell col="1" text="direction"/>
+                <Cell col="2" text="column&#13;&#10;count"/>
+                <Cell col="3" text="row&#13;&#10;count"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:fittocontents"/>
+                <Cell col="1" text="bind:direction"/>
+                <Cell col="2" text="bind:columncount"/>
+                <Cell col="3" text="bind:rowcount"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Dataset_onrowposchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSRowPosChangeEventInfo)
+{
+	this.setProp(obj.getColumn(e.newrow, "fittocontents"), obj.getColumn(e.newrow, "direction"), obj.getColumn(e.newrow, "columncount"), obj.getColumn(e.newrow, "rowcount"))
+};
+
+
+this.setProp = function(strFittocontents, strDirection, nColumncount, nRowcount)
+{
+	this.Radio00.set_fittocontents(strFittocontents);
+	this.Radio00.set_direction(strDirection);
+	this.Radio00.set_columncount(nColumncount);
+	this.Radio00.set_rowcount(nRowcount);
+	this.TextArea00.set_value("fittocontents: "+strFittocontents+"\n"
+		+"direction: "+strDirection+"\n"
+		+"columncount: "+nColumncount+"\n"
+		+"rowcount: "+nRowcount
+	);
+	this.resetScroll();
+}
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00" onrowposchanged="Dataset_onrowposchanged">
+        <ColumnInfo>
+          <Column id="fittocontents" type="STRING" size="256"/>
+          <Column id="direction" type="STRING" size="256"/>
+          <Column id="columncount" type="INT" size="256"/>
+          <Column id="rowcount" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">width</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">width</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">width</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">width</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">width</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">width</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">height</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">height</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">height</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">height</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">height</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01" onrowposchanged="Dataset_onrowposchanged">
+        <ColumnInfo>
+          <Column id="fittocontents" type="STRING" size="256"/>
+          <Column id="direction" type="STRING" size="256"/>
+          <Column id="columncount" type="INT" size="256"/>
+          <Column id="rowcount" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">5</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">none</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">5</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">0</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">2</Col>
+            <Col id="rowcount">-1</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">2</Col>
+            <Col id="rowcount">0</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">-1</Col>
+            <Col id="rowcount">2</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">horizontal</Col>
+            <Col id="columncount">2</Col>
+            <Col id="rowcount">2</Col>
+          </Row>
+          <Row>
+            <Col id="fittocontents">both</Col>
+            <Col id="direction">vertical</Col>
+            <Col id="columncount">2</Col>
+            <Col id="rowcount">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>
