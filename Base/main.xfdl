@@ -2349,6 +2349,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">getInnerDataset</Col>
           </Row>
           <Row>
+            <Col id="category">Radio</Col>
+            <Col id="subject">fittocontents 속성 조합 시 표시 방식</Col>
+            <Col id="id_sample">sample_radio_04</Col>
+            <Col id="id_doc">fe833d26d88d99c9</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">fittocontents</Col>
+          </Row>
+          <Row>
             <Col id="category">Sketch</Col>
             <Col id="subject">Sketch</Col>
             <Col id="tree_level">0</Col>
