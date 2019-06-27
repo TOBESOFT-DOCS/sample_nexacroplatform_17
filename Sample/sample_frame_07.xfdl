@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_frame_07" left="0" top="0" width="300" height="300" titletext="New Form" ontimer="sample_frame_04_ontimer" onmousemove="sample_frame_04_onmousemove">
+    <Layouts>
+      <Layout height="300" width="300">
+        <Static id="Static00" taborder="0" text="user titlebar" left="0" top="0" width="100%" height="40" background="lightblue" padding="0px 0px 0px 5px" onlbuttondown="Static00_onlbuttondown" onlbuttonup="Static00_onlbuttonup"/>
+        <Button id="Button00" taborder="1" text="close" top="5" height="30" onclick="Button00_onclick" right="10" width="50"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+}
+this.static_lbuttondown;
+
+this.Static00_onlbuttondown = function(obj:nexacro.Static,e:nexacro.MouseEventInfo)
+{
+	this.static_lbuttondown = 1;
+	this.down_x = e.clientx;	
+	this.down_y = e.clienty;
+	this.setTimer(0,10);
+};
+
+this.Static00_onlbuttonup = function(obj:nexacro.Static,e:nexacro.MouseEventInfo)
+{
+	this.static_lbuttondown = 0;
+};
+
+this.sample_frame_04_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if(this.static_lbuttondown) 
+	{
+ 		var left, top;	
+ 		left = system.getCursorX() - this.down_x;
+ 		top = system.getCursorY() - this.down_y;
+		this.parent.move(left, top);
+		trace(left+','+top);
+		trace(system.getCursorX());
+		return true;
+		
+ 	}else{
+		this.killTimer(e.timerid);
+ 	}
+};
+
+this.sample_frame_04_onmousemove = function(obj:nexacro.Form,e:nexacro.MouseEventInfo)
+{
+	trace(system.getCursorX());
+};
+]]></Script>
+  </Form>
+</FDL>

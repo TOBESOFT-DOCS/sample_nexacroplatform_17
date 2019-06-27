@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_calendar_10" width="590" height="300" titletext="New Form">
+    <Layouts>
+      <Layout height="300" mobileorientation="landscape" width="590">
+        <Calendar id="Calendar00" taborder="0" left="15" top="12" width="217" height="38" onchanged="Calendar00_onchanged" editformat="yyyy-MM-dd" locale="en_US"/>
+        <Calendar id="Calendar01" taborder="1" left="242" top="12" width="217" height="38" editformat="yyyy-MM-dd" locale="en_US" readonly="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Calendar00_onchanged = function(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo)
+{
+	var nWeek = obj.getDayOfWeek();
+	if(nWeek == 5)
+	{
+		this.Calendar01.set_value (this.AddDateOffset(e.postvalue, 3));
+	}
+	else if(nWeek == 6)
+	{
+		this.Calendar01.set_value (this.AddDateOffset(e.postvalue, 2));
+	}
+	else 
+	{
+		this.Calendar01.set_value (this.AddDateOffset(e.postvalue, 1));
+	}
+	this.setFocus(true, false);
+};
+
+this.AddDateOffset = function(sDate, nOffset)
+{
+    var nYear = parseInt(sDate.substr(0, 4));
+    var nMonth = parseInt(sDate.substr(4, 2));
+    var nDate = parseInt(sDate.substr(6, 2)) + nOffset;
+
+    return this.MakeDate(nYear, nMonth, nDate);
+}
+
+this.MakeDate = function(nYear, nMonth, nDate)
+{
+    var objDate = new Date(nYear, nMonth-1, nDate);
+
+	var sYear   = objDate.getFullYear().toString();
+	var sMonth  = (objDate.getMonth() + 1).toString().padLeft(2, "0");
+	var sDate   = (objDate.getDate()).toString().padLeft(2, "0");
+
+	return sYear + sMonth + sDate;
+}]]></Script>
+  </Form>
+</FDL>

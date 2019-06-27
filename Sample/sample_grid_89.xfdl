@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="test3" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="59" top="36" width="271" height="264" binddataset="Dataset00" oncellclick="Grid00_oncellclick" treeinitstatus="collapse,null" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="200"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:MenuName" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:Level" treestate="bind:Status"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Level" type="STRING" size="256"/>
+          <Column id="MenuName" type="STRING" size="256"/>
+          <Column id="MenuID" type="STRING" size="256"/>
+          <Column id="Status" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Level">0</Col>
+            <Col id="MenuName">Menu 1</Col>
+            <Col id="MenuID">1</Col>
+          </Row>
+          <Row>
+            <Col id="Level">1</Col>
+            <Col id="MenuName">Menu 1-1</Col>
+            <Col id="MenuID">2</Col>
+          </Row>
+          <Row>
+            <Col id="Level">2</Col>
+            <Col id="MenuName">Menu 1-1-1</Col>
+            <Col id="MenuID">3</Col>
+          </Row>
+          <Row>
+            <Col id="Level">0</Col>
+            <Col id="MenuName">Menu 2</Col>
+            <Col id="MenuID">5</Col>
+            <Col id="Status">1</Col>
+          </Row>
+          <Row>
+            <Col id="Level">1</Col>
+            <Col id="MenuName">Menu 2-1</Col>
+            <Col id="MenuID">6</Col>
+          </Row>
+          <Row>
+            <Col id="Level">2</Col>
+            <Col id="MenuName">Menu 2-1-1</Col>
+            <Col id="MenuID">7</Col>
+          </Row>
+          <Row>
+            <Col id="Level">0</Col>
+            <Col id="MenuName">Menu 3</Col>
+            <Col id="MenuID">8</Col>
+          </Row>
+          <Row>
+            <Col id="Level">1</Col>
+            <Col id="MenuName">Menu 3-1</Col>
+            <Col id="MenuID">9</Col>
+          </Row>
+          <Row>
+            <Col id="Level">2</Col>
+            <Col id="MenuName">Menu 3-1-1</Col>
+            <Col id="MenuID">10</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.fromreferenceobject == "[object TreeItemIconControl]" && e.fromreferenceobject.id == "treeitembutton")
+	{
+		this.Dataset00.set_enableevent(false);
+		if(this.Dataset00.getColumn(e.row,"Status") == null)
+		{
+			this.Dataset00.setColumn(e.row,"Status",1);
+			for(var i=1; i < this.Dataset00.rowcount; i++)
+			{
+				if(obj.isTreeLeafRow(e.row+i) == false)
+				{
+					this.Dataset00.setColumn(e.row+i,"Status",1);
+				} else {
+					break;
+				}
+			}
+		} else {
+			this.Dataset00.setColumn(e.row,"Status",null);
+			for(var i=1; i < this.Dataset00.rowcount; i++)
+			{
+				if(obj.isTreeRootRow(e.row+i) == false)
+				{
+					this.Dataset00.setColumn(e.row+i,"Status",null);
+				} else {
+					break;
+				}
+			}
+		}
+		this.Dataset00.set_enableevent(true);
+	}
+};]]></Script>
+  </Form>
+</FDL>

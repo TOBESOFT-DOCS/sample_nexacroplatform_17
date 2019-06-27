@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_frame_08" left="0" top="0" width="1024" height="768" titletext="New Form" onload="sample_frame_08_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnCreate" taborder="0" text="Create Frame" left="30" top="20" width="120" height="50" right="" bottom="" onclick="btnCreate_onclick" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.btnCreate_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.parent.id=="TEST")
+	{
+		this.parent.titlebar.titleicon.set_font("20pt 'Arial'");
+		this.parent.titlebar.titleicon.set_color("pink");
+		this.parent.titlebar.minbutton.set_visible(false);
+		this.parent.titlebar.maxbutton.set_visible(false);
+		this.parent.set_titlebarheight(40);	
+	}
+	else
+	{
+		var objHFrameset = new HFrameSet();  
+		objHFrameset.init("hframesetNew", 30, 90, 400, 200);
+		this.addChild("hframesetNew", objHFrameset);
+		objHFrameset.set_border("1px solid #999999");
+		objHFrameset.show();
+		
+		var objChildFrame = new ChildFrame();  
+		objChildFrame.init("TEST", 0, 0, 0, 0);
+		objHFrameset.addChild("TEST", objChildFrame);
+		objChildFrame.set_border("1px solid #999999");
+		objChildFrame.set_formurl("Sample::sample_frame_08.xfdl");
+		objChildFrame.show();
+	}
+};
+
+this.sample_frame_08_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	if(this.parent.id=="TEST")
+	{
+		this.btnCreate.set_text('Set TitleBar');
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

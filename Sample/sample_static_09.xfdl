@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_09" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="25" width="200" height="105" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static00" taborder="1" text="Static00" left="30" top="140" width="390" height="130" expr="comp.parent.setWordWrap(comp.text)" verticalAlign="top"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.setWordWrap = function(sValue)
+{
+	return nexacro.replaceAll(sValue, ",", "\n").replace(/^\s+/gm,'');
+}]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">ABC,A,B,C,D,E</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1,2,3,4,5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Static00" propid="text" datasetid="Dataset00" columnid="Column0"/>
+    </Bind>
+  </Form>
+</FDL>

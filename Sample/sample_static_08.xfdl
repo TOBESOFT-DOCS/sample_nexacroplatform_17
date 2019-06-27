@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_static_08" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Button id="Button00" taborder="0" text="Show Accordion Menu" left="30" top="15" width="150" height="40" onclick="Button00_onclick" textAlign="center"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.preObj = "";
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var nTop = 100;
+	
+	for(var i = 0; i < this.Dataset00.rowcount; i++)
+	{
+		var objStatic = new Static();  
+		objStatic.init("Static"+i, 30, 70, 300, 30);				
+		this.addChild("Static"+i, objStatic); 	
+		objStatic.set_border("1px solid darkgray");
+		objStatic.set_padding("0px 0px 0px 5px");
+		objStatic.show(); 
+		
+		objStatic.addEventHandler("onclick", this.StaticAll_onclick, this);
+		objStatic.set_text(this.Dataset00.getColumn(i, "Column0"));
+		
+		if(i != 0)
+		{
+			var imgID = "Static"+(i-1)+"_1";
+			objStatic.set_top(imgID+":-1");
+		}
+		
+		var objStatic1 = new Static();  
+		objStatic1.init("Static"+i + "_1", 30, nTop+60, 300, 0, null, null);				
+		this.addChild("Static"+i + "_1", objStatic1); 	
+		objStatic1.set_border("1px solid darkred, 1px solid darkgray, 1px solid darkgray");
+		objStatic1.set_background("yellow");
+		objStatic1.set_wordWrap("char");
+		objStatic1.show(); 		
+		
+		objStatic1.set_text(this.Dataset00.getColumn(i, "Column1"));
+		objStatic1.set_top(objStatic.id+":0px");	
+		nTop += 40;
+
+	}
+};
+
+
+this.StaticAll_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	if(this.preObj != "")
+	{
+		var objID = this.preObj + "_1";
+		this.components[objID].set_fittocontents("none");		
+		this.components[objID].set_height(0);	
+	}
+		
+	if(obj.id == this.preObj)
+	{
+		this.preObj = "";
+		this.resetScroll();
+		return;
+	}
+	else 
+	{
+		var objID1 = obj.id + "_1";
+		this.components[objID1].set_fittocontents("height");
+		this.components[objID1].set_padding("10px 5px");	
+		this.resetScroll();
+	}
+	this.preObj = obj.id;
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">Menu 1</Col>
+            <Col id="Column1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">Menu 2</Col>
+            <Col id="Column1">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Col>
+            <Col id="Column0">Menu 3</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Col>
+            <Col id="Column0">Menu 4</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Col>
+            <Col id="Column0">Menu 5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>
