@@ -31,7 +31,7 @@
             </Layout>
           </Layouts>
         </Div>
-        <Radio id="Radio00" taborder="1" left="20" top="5" width="133" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="1" text="320" value="320" onitemchanged="Radio00_onitemchanged">
+        <Radio id="Radio00" taborder="1" left="20" top="5" width="133" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="1" text="320" value="320" onitemchanged="Radio00_onitemchanged" rowcount="1">
           <Dataset id="innerdataset">
             <ColumnInfo>
               <Column id="codecolumn" size="256"/>
