@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_92" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid01" taborder="0" left="23" top="20" width="307" height="250" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="CheckBox"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="checkboxcontrol" edittype="checkbox" suppress="2"/>
+                <Cell col="1" text="bind:Column1" suppress="1"/>
+                <Cell col="2" text="bind:Column0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" oncolumnchanged="Dataset00_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">Apple</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">Apple</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">Banana</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">Banana</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">Banana</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">Orange</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">Orange</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">Orange</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">Orange</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Dataset00_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if( e.columnid == "Column0" ){
+		obj.set_enableevent(false);
+		for(var i=0; i<obj.rowcount; i++)
+		{
+			if( obj.getColumn(e.row,"Column1") == obj.getColumn(i,"Column1"))
+				obj.setColumn(i,e.columnid, e.newvalue);
+		}	
+		obj.set_enableevent(true);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

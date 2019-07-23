@@ -109,6 +109,17 @@
 	color : red;
 }
 
+.Grid .body .row .cell.sample_grid_91_padding1
+{
+	-nexa-padding : 4px 4px 4px 40px;
+}
+
+
+.Grid .body .row .cell.sample_grid_91_padding2
+{
+	-nexa-padding : 4px 4px 4px 80px;
+}
+
 .GroupBox.sample_groupbox_03 .groupboxtitle
 {
 	background : greenyellow;
@@ -213,4 +224,24 @@
 }.Calendar.sample_calendar_09 .datepicker .body .weekitem[userstatus=saturday]
 {
 	color : #ffffff;
-}]]></XCSS>
+}
+.Grid .body .row .cell.sample_grid_94_level_0 .celltreeitem .treeitemtext
+{
+	font : normal bold 20pt/normal "Arial";
+	color : blue;
+}
+
+.Grid .body .row .cell.sample_grid_94_level_1 .celltreeitem .treeitemtext
+{		
+	font : normal bold 15pt/normal "Arial";
+}
+
+.Grid .body .row .cell.sample_grid_94_level_2  .celltreeitem .treeitemtext
+{
+	color : firebrick;		
+}.Grid.test
+{
+	font : 20pt/normal "Arial";
+	
+}
+]]></XCSS>

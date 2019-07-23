@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_88" left="0" top="0" width="1024" height="768" titletext="New Form" onload="sample_grid_88_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Grid id="Grid00" taborder="0" left="20" top="20" width="260" height="210" binddataset="Dataset00" autofittype="col" cellexprupdatecondition="none">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="108"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="36"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Combo"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" displaytype="combocontrol" edittype="combo" combodataset="expr:comp.parent.fn_combo(currow)" combodatacol="Column1" combocodecol="Column0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.fn_combo = function(currow)
+{
+	//if(!this.Grid00.getCellPropertyValue(currow, 1,"combodataset"))
+	//{
+		//trace(this.Grid00.getCellPropertyValue(currow, 1,"combodataset"));
+	//}
+	if(!this.ds_temp){
+		var ds = new Dataset;
+		this.addChild("ds_temp", ds);
+		this.ds_temp.addColumn("Column0", "string", 120);
+		this.ds_temp.addColumn("Column1", "string", 120);
+		
+		for(var i=0; i < 3;i++){
+			var nRow = this.ds_temp.addRow();
+			this.ds_temp.setColumn(nRow,"Column0",i+1);
+			this.ds_temp.setColumn(nRow,"Column1",i+1);
+		}
+		
+	}
+	
+	if(!this.ds_temp2)
+	{
+		var ds = new Dataset;
+		this.addChild("ds_temp2", ds);
+		this.ds_temp2.addColumn("Column0", "string", 120);
+		this.ds_temp2.addColumn("Column1", "string", 120);
+		
+			var nRow = this.ds_temp2.addRow();
+			this.ds_temp2.setColumn(nRow,"Column0",1);
+			this.ds_temp2.setColumn(nRow,"Column1","a");
+			var nRow = this.ds_temp2.addRow();
+			this.ds_temp2.setColumn(nRow,"Column0",2);
+			this.ds_temp2.setColumn(nRow,"Column1","b");
+			var nRow = this.ds_temp2.addRow();
+			this.ds_temp2.setColumn(nRow,"Column0",3);
+			this.ds_temp2.setColumn(nRow,"Column1","c");
+
+	}
+	
+	if(this.Dataset00.getColumn(currow,"Column0")=="1")
+	{
+		return "ds_temp";
+	} else {
+		return "ds_temp2";
+	}
+}
+
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsTemp">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_90" width="1280" height="720" titletext="New Form" onload="ColumnResize_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="10" top="10" width="381" height="180" binddataset="Dataset00" onheadclick="Grid00_onheadclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3" edittype="text"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="staTemp" taborder="1" left="10" top="210" height="27" fittocontents="width" text="TEST" width="63" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">ABCDEFGHIJK</Col>
+            <Col id="Column1">ABC</Col>
+            <Col id="Column2">ABC</Col>
+            <Col id="Column3">ABCD</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">ABCD</Col>
+            <Col id="Column2">ABC</Col>
+            <Col id="Column0">ABC</Col>
+            <Col id="Column3">AB</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">ABCDEFGHIJK</Col>
+            <Col id="Column1">ABC</Col>
+            <Col id="Column0">ABCD</Col>
+            <Col id="Column3">ABCD</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">ABCDEFGHIJK</Col>
+            <Col id="Column1">ABC</Col>
+            <Col id="Column2">ABC</Col>
+            <Col id="Column3">ABCDEFGHIJKLM</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">ABCDEFGHIJK</Col>
+            <Col id="Column1">AB</Col>
+            <Col id="Column2">ABC</Col>
+            <Col id="Column3"></Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid00_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var nMaxVal = 0;
+	var nCurrVal = 0;
+	var sMaxText = null;
+	for(var i=0; i<this.Dataset00.rowcount; i++) {		
+		nCurrVal = this.Dataset00.getColumn(i, e.col).length;
+		if(nCurrVal > nMaxVal) {
+			nMaxVal = nCurrVal;
+			sMaxText = this.Dataset00.getColumn(i, e.col);
+		}
+	}
+	this.staTemp.set_text(sMaxText);
+	this.resetScroll();
+	this.Grid00.setFormatColProperty(e.col, "size", this.staTemp.getOffsetWidth()+10);
+};
+  ]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_94" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="21" top="20" width="189" height="302" border="1px solid" binddataset="Dataset00" treeusecheckbox="false" treeuseline="true" background="" treeinitstatus="expand,all" extendsizetype="row">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="187"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:Column1" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:Column0" cssclass="expr:Column0 == 0?'sample_grid_94_level_0':Column0==1?'sample_grid_94_level_1':'sample_grid_94_level_2'"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onload="Dataset00_onload">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">A</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">A-1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">A-1-1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">A-1-2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">A-2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">A-2-1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">B</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">B-1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Dataset00_onload = function(obj:nexacro.NormalDataset,e:nexacro.DSLoadEventInfo)
+{
+	var tempColValue;
+	
+	for(var i=0; i < this.Grid00.rowcount; i++)
+	{
+		tempColValue = this.Dataset00.getColumn(this.Grid00.getDatasetRow(i), "Column0");
+		
+		if(tempColValue==0) {
+			this.Grid00.setRealRowSize(i,"60");
+		}
+		else if(tempColValue==1) {
+			this.Grid00.setRealRowSize(i,"40");
+		}
+		else if(tempColValue==2) {
+			this.Grid00.setRealRowSize(i,"20");
+		}
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

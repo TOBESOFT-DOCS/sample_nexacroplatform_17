@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_div_04" width="1280" height="720" titletext="New Form" onload="sample_div_04_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Div id="Div00" taborder="0" text="Div00" left="40" top="34" width="311" height="268" border="1px solid darkblue" ondrag="Div00_ondrag" ondragmove="Div00_ondragmove" ondrop="Div00_ondrop">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="0" text="Button00" left="16" top="31" width="120" height="50" onlbuttondown="Div00_Button00_onlbuttondown"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <ListBox id="ListBox00" taborder="1" left="361" top="34" width="170" height="268" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="ListBox00_onitemchanged" onkillfocus="ListBox00_onkillfocus">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows/>
+          </Dataset>
+        </ListBox>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[var nButtonX;
+var nButtonY;
+var btnOrgW;
+var btnOrgH;
+
+this.Div00_ondrag = function(obj:nexacro.Div,e:nexacro.DragEventInfo)
+{
+	return true;
+};
+
+this.Div00_ondragmove = function(obj:nexacro.Div,e:nexacro.DragEventInfo)
+{
+	var nLeft = e.clientx-nButtonX;
+	var nTop = e.clienty-nButtonY;
+	this.Div00.form.Button00.move(nLeft,nTop, btnOrgW, btnOrgH);
+};
+
+this.Div00_ondrop = function(obj:nexacro.Div,e:nexacro.DragEventInfo)
+{
+	trace("Left >> " + e.clientx + "  Top >>> " + e.clienty);
+	var tempDS = this.ListBox00.getInnerDataset();
+	var nIndex = tempDS.rowcount;
+	tempDS.insertRow(nIndex);
+    tempDS.setColumn(nIndex, "codecolumn", (e.clientx-nButtonX)+","+(e.clienty-nButtonY));
+    tempDS.setColumn(nIndex, "datacolumn", "Left >> " + (e.clientx-nButtonX) + "  Top >>> " + (e.clienty-nButtonY));
+    this.resetScroll();
+};
+
+this.Div00_Button00_onlbuttondown = function(obj:nexacro.Button,e:nexacro.MouseEventInfo)
+{
+	nButtonX = e.clientx;
+	nButtonY = e.clienty;
+};
+
+this.ListBox00_onitemchanged = function(obj:nexacro.ListBox,e:nexacro.ItemChangeEventInfo)
+{
+	if(e.postindex!=-1)
+	{
+		var tempArray = e.postvalue.split(',');
+		var nLeft = tempArray[0];
+		var nTop = tempArray[1];
+		this.Div00.form.Button00.move(nLeft,nTop, btnOrgW, btnOrgH);
+	}
+};
+
+this.ListBox00_onkillfocus = function(obj:nexacro.ListBox,e:nexacro.KillFocusEventInfo)
+{
+	obj.setSelect(-1);
+};
+
+this.sample_div_04_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var btnOrgW = this.Div00.form.Button00.getOffsetWidth();
+	var btnOrgH = this.Div00.form.Button00.getOffsetHeight();
+};
+]]></Script>
+  </Form>
+</FDL>

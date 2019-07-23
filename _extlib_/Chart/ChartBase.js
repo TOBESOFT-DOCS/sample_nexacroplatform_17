@@ -2479,9 +2479,11 @@ if (!nexacro._ChartBase) {
 		if (dsMap) {
 			this._rowposition = e.newrow;
 
-			this._changedData = true;
-			this._reset = true;
-			this._draw();
+			if (this._graphicsControl._is_created) {
+				this._changedData = true;
+				this._reset = true;
+				this._draw();
+			}
 		}
 	};
 

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_93" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="40" top="111" width="242" height="132" binddataset="Dataset00" summ="Y">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="311" top="110" width="243" height="137" binddataset="Dataset01" summ="Y">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid02" taborder="2" left="572" top="109" width="242" height="139" binddataset="Dataset02">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="3" text="Add sum row" left="42" top="32" width="120" height="45" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="INT" size="256"/>
+          <Column id="Column1" type="INT" size="256"/>
+          <Column id="Column2" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">3</Col>
+            <Col id="Column2">3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">4</Col>
+            <Col id="Column2">5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="Column0" type="INT" size="256"/>
+          <Column id="Column1" type="INT" size="256"/>
+          <Column id="Column2" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">5</Col>
+            <Col id="Column2">3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">6</Col>
+            <Col id="Column2">3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+            <Col id="Column1">7</Col>
+            <Col id="Column2">5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset02">
+        <ColumnInfo>
+          <Column id="Column0" type="INT" size="256"/>
+          <Column id="Column1" type="INT" size="256"/>
+          <Column id="Column2" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">41</Col>
+            <Col id="Column1">5</Col>
+            <Col id="Column2">31</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">61</Col>
+            <Col id="Column2">3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+            <Col id="Column1">7</Col>
+            <Col id="Column2">5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_setSumm(this);
+};
+
+this.fn_setSumm = function(obj)
+{
+	var colNm;
+	var objGrd;
+	var objDs;
+	for(var i=0; i<obj.all.length; i++){
+		if( obj.all[i].toString() == "[object Grid]" ){
+			objGrd = obj.all[i];
+			if( objGrd.summ == "Y"){
+				objDs = obj.all[objGrd.binddataset];	
+				var idx = objDs.addRow();
+				for(var j=0; j<objGrd.getCellCount("body"); j++){
+					colNm = objGrd.getCellProperty("body", j, "text").split(":");
+					objDs.setColumn(idx, colNm[1], objDs.getSum(colNm[1], 0, objDs.rowcount-1));
+				}
+			}	
+		}
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1497,6 +1497,24 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">getRealRowFullSize, autosizingtype, extendsizetype</Col>
           </Row>
           <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="subject">Grid 컴포넌트의 Row 높이를 직접 지정하기</Col>
+            <Col id="id_sample">sample_grid_94</Col>
+            <Col id="id_doc">6ef9b81ab84f282a</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">setRealRowSize, extendsizetype</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="subject">컬럼 너비보다 큰 텍스트만 툴팁으로 보여주기</Col>
+            <Col id="id_sample">sample_grid_95</Col>
+            <Col id="id_doc">38d662b8cafd5b25</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">getTextSize, getFormatColSize</Col>
+          </Row>
+          <Row>
             <Col id="category">Grid 레이아웃</Col>
             <Col id="subject">Grid 레이아웃</Col>
             <Col id="tree_level">0</Col>
@@ -1929,6 +1947,24 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">TreeItemIconControl, isTreeLeafRow</Col>
           </Row>
           <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">트리 형식에서 padding 속성 적용하기</Col>
+            <Col id="id_sample">sample_grid_91</Col>
+            <Col id="id_doc">7bc3a7c8f0bf3279</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">setCellProperty</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">체크박스 병합해서 표시하기</Col>
+            <Col id="id_sample">sample_grid_92</Col>
+            <Col id="id_doc">2627dea193022a23</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">suppress</Col>
+          </Row>
+          <Row>
             <Col id="category">Grid 응용</Col>
             <Col id="subject">Grid 응용</Col>
             <Col id="tree_level">0</Col>
@@ -2169,6 +2205,24 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">copyRow</Col>
           </Row>
           <Row>
+            <Col id="subject">데이터 너비에 맞추어 컬럼 너비 조절하기</Col>
+            <Col id="category">Grid 응용</Col>
+            <Col id="id_sample">sample_grid_90</Col>
+            <Col id="id_doc">fac0caafe733ffd3</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">getOffsetWidth, setFormatColProperty</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 응용</Col>
+            <Col id="subject">특정 Grid 컴포넌트만 합계 Row 추가하기</Col>
+            <Col id="id_sample">sample_grid_93</Col>
+            <Col id="id_doc">ea87d1c0ad545b93</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">getSum, getCellCount</Col>
+          </Row>
+          <Row>
             <Col id="category">GroupBox</Col>
             <Col id="subject">GroupBox</Col>
             <Col id="tree_level">0</Col>
@@ -2383,15 +2437,6 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">getInnerDataset</Col>
-          </Row>
-          <Row>
-            <Col id="category">Radio</Col>
-            <Col id="subject">fittocontents 속성 조합 시 표시 방식</Col>
-            <Col id="id_sample">sample_radio_04</Col>
-            <Col id="id_doc">fe833d26d88d99c9</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">1</Col>
-            <Col id="keyword">fittocontents</Col>
           </Row>
           <Row>
             <Col id="category">Sketch</Col>
@@ -2650,6 +2695,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">af4dbb545827f87b</Col>
             <Col id="search_subject">3</Col>
             <Col id="keyword">ondrag, cursor</Col>
+          </Row>
+          <Row>
+            <Col id="subject">마지막 좌표값 처리하기</Col>
+            <Col id="category">Div</Col>
+            <Col id="id_sample">sample_div_04</Col>
+            <Col id="id_doc">f92a849150d90331</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">3</Col>
+            <Col id="keyword">getOffsetWidth, getOffsetHeight, getInnerDataset, clientx, clienty</Col>
           </Row>
           <Row>
             <Col id="category">PopupDiv</Col>
