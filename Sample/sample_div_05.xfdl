@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_div_05" width="1280" height="720" titletext="New Form" onvscroll="N403418_onvscroll">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Div id="Div00" taborder="0" text="Div00" left="25" top="20" width="245" height="255" background="floralwhite" onvscroll="Div00_onvscroll" border="1px solid black">
+          <Layouts>
+            <Layout>
+              <Edit id="Edit00" taborder="0" left="15" top="20" width="140" height="30" value="1" text="1"/>
+              <Edit id="Edit01" taborder="1" left="15" top="155" width="140" height="30" value="2" text="2"/>
+              <Edit id="Edit02" taborder="2" left="15" top="300" width="140" height="30" value="3" text="3"/>
+              <Button id="Button00" taborder="3" text="^" left="173" top="204" width="42" height="36" onclick="Div00_Button00_onclick" visible="false"/>
+              <Edit id="Edit03" taborder="4" left="15" top="400" width="140" height="30" value="4" text="4"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[var nTop = this.Div00.form.Button00.top;
+
+this.Div00_onvscroll = function(obj:nexacro.Div,e:nexacro.ScrollEventInfo)
+{
+	if( e.pos > 0 ) {
+		this.Div00.form.Button00.set_visible(true);
+		this.Div00.form.Button00.set_top(nexacro.toNumber(nTop)+ nexacro.toNumber(e.pos));
+	} else {
+		this.Div00.form.Button00.set_visible(false);
+	}
+};
+
+this.Div00_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Div00.form.vscrollbar.set_pos(0);
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

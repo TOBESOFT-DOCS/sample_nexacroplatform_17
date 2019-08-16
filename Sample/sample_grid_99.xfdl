@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_99" width="1280" height="720" titletext="New Form" onload="test_190529_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="26" width="351" height="154" binddataset="Dataset00" oncellclick="Grid00_oncellclick" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;,&quot;Column0&quot;)==comp.getCellPos()?'sample_grid_99_cellclick':''"/>
+                <Cell col="1" text="bind:Column1" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;,&quot;Column1&quot;)==comp.getCellPos()?'sample_grid_99_cellclick':''"/>
+                <Cell col="2" text="bind:Column2" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;,&quot;Column2&quot;)==comp.getCellPos()?'sample_grid_99_cellclick':''"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	obj.redrawExprCell("body");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

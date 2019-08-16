@@ -374,6 +374,7 @@ if (!nexacro._ChartBase) {
 
 				this.on_apply_contents();
 				this._changedData = true;
+
 				this._draw();
 				return;
 			}

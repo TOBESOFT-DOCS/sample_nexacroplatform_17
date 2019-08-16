@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_form_12" width="770" height="540" titletext="New Form">
+    <Layouts>
+      <Layout height="540" mobileorientation="landscape" width="770">
+        <Edit id="Edit00" taborder="0" left="40" top="23" width="100" height="30" value="Edit" text="Edit"/>
+        <Combo id="Combo00" taborder="1" text="Combo" left="148" top="23" width="111" height="30" value="" index="-1"/>
+        <Button id="Button00" taborder="2" text="Check" left="40" top="227" width="107" height="37" onclick="Button00_onclick"/>
+        <Edit id="Edit01" taborder="3" left="40" top="63" width="100" height="30" value="Edit" text="Edit"/>
+        <Edit id="Edit02" taborder="4" left="40" top="103" width="100" height="30" value="Edit" text="Edit"/>
+        <Edit id="Edit03" taborder="5" left="40" top="143" width="100" height="30" value="Edit" text="Edit"/>
+        <Edit id="Edit04" taborder="6" left="40" top="183" width="100" height="30" value="Edit" text="Edit"/>
+        <Combo id="Combo01" taborder="7" text="Combo" left="148" top="63" width="111" height="30" value="" index="-1"/>
+        <Combo id="Combo02" taborder="8" text="Combo" left="148" top="103" width="111" height="30" value="" index="-1"/>
+        <Combo id="Combo03" taborder="9" text="Combo" left="148" top="143" width="111" height="30" value="" index="-1"/>
+        <Combo id="Combo04" taborder="10" text="Combo" left="148" top="183" width="111" height="30" value="" index="-1"/>
+        <Button id="Button01" taborder="11" text="Button" left="269" top="23" width="101" height="27"/>
+        <Button id="Button02" taborder="12" text="Button" left="269" top="63" width="101" height="27"/>
+        <Button id="Button03" taborder="13" text="Button" left="269" top="103" width="101" height="27"/>
+        <Button id="Button04" taborder="14" text="Button" left="269" top="143" width="101" height="27"/>
+        <Button id="Button05" taborder="15" text="Button" left="269" top="183" width="101" height="27"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	for(var i = 0; i < this.components.length; i++)
+	{
+		if(this.components[i] instanceof nexacro.Edit)
+		{
+			this.components[i].set_background("lavenderblush");
+		}
+		else if(this.components[i] instanceof nexacro.Combo)
+		{
+			this.components[i].set_background("beige");
+		}
+		else if(this.components[i] instanceof nexacro.Button)
+		{
+			if(this.components[i].id != obj.id)
+				this.components[i].set_background("lightgreen");
+		}
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

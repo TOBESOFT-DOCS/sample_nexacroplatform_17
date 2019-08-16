@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_grid_98" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="12" width="180" height="178" binddataset="Dataset00" selecttype="area" onkeydown="Grid00_onkeydown" onlbuttonup="Grid00_onlbuttonup" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" visible="false" left="220" top="13" width="100" height="27" background="transparent" oncloseup="PopupDiv00_oncloseup">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" width="100%" height="100%" background="beige" padding="0px 10px" onclick="PopupDiv00_Static00_onclick"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="INT" size="256"/>
+          <Column id="Column1" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">2500</Col>
+            <Col id="Column1">2500</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3600</Col>
+            <Col id="Column1">3600</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">500</Col>
+            <Col id="Column1">500</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2400</Col>
+            <Col id="Column1">2400</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">12500</Col>
+            <Col id="Column1">12500</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">35000</Col>
+            <Col id="Column1">35000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.nShift = 0;
+this.Grid00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 16) {
+		this.nShift = 1;
+	} else {
+		this.nShift = 0;
+	}
+};
+
+this.Grid00_onlbuttonup = function(obj:nexacro.Grid,e:nexacro.GridMouseEventInfo)
+{
+	if(this.nShift == 1) {
+		var strColExpr;
+		if(obj.selectstartcol==0) {
+			if(obj.selectendcol==1) {
+				strColExpr = "Column0+Column1";
+			} else {
+				strColExpr = "Column0";
+			}
+		} else {
+			strColExpr = "Column1";
+		}
+		
+		var nTot = this.Dataset00.getSum(strColExpr, obj.selectstartrow, Number(obj.selectendrow)+1);
+		
+		this.PopupDiv00.form.Static00.set_text("SUM : "+nTot);
+		this.PopupDiv00.form.Static00.set_fittocontents('width');
+		this.PopupDiv00.form.resetScroll();
+		this.PopupDiv00.trackPopupByComponent(obj,e.canvasx,e.canvasy);
+		this.nShift = 0;
+	}
+};
+
+this.PopupDiv00_oncloseup = function(obj:nexacro.PopupDiv,e:nexacro.EventInfo)
+{
+	obj.form.Static00.set_text("");
+};
+
+this.PopupDiv00_Static00_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
+  </Form>
+</FDL>

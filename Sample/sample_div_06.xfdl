@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_div_06" width="660" height="540" titletext="New Form" ondragmove="form_ondragmove" ondrop="form_ondrop">
+    <Layouts>
+      <Layout height="540" mobileorientation="landscape" width="660">
+        <Div id="Div00" taborder="0" left="30" top="20" width="130" height="100" background="red" ondrag="Div_ondrag"/>
+        <Div id="Div01" taborder="1" left="30" top="130" width="130" height="100" background="orange" ondrag="Div_ondrag">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="2" left="30" top="240" width="130" height="100" background="yellow" ondrag="Div_ondrag"/>
+        <Div id="Div03" taborder="3" left="170" top="20" width="130" height="100" background="green" ondrag="Div_ondrag">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="Div04" taborder="4" left="170" top="130" width="130" height="100" background="blue" ondrag="Div_ondrag"/>
+        <Div id="Div05" taborder="5" left="170" top="240" width="130" height="100" background="navy" ondrag="Div_ondrag"/>
+        <Div id="Div06" taborder="6" left="310" top="20" width="130" height="100" background="purple" ondrag="Div_ondrag"/>
+        <Div id="Div07" taborder="8" left="310" top="130" width="130" height="100" ondrag="Div_ondrag"/>
+        <Div id="Div08" taborder="9" left="310" top="240" width="130" height="100" ondrag="Div_ondrag"/>
+        <Div id="divMove" taborder="7" left="450" top="20" width="130" height="100" border="3px dotted black" visible="false" opacity="0.5"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.fv_objFrom;
+this.fv_objTo;
+
+var aniObj = new nexacro.Animation("Ani00", this);
+this.addChild("Ani00", aniObj);
+
+this.Div_ondrag = function(obj:nexacro.Div,e:nexacro.DragEventInfo)
+{
+		e.userdata = obj;
+		this.fn_makeDragObj(obj);
+		return true;
+};
+
+this.fn_makeDragObj = function (obj)
+{	
+	this.divMove.set_background(obj.background);
+	this.divMove.set_visible(true);
+};
+
+this.form_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
+{
+	this.divMove.move(e.clientx + 10, e.clienty + 10);
+};
+		
+this.form_ondrop = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
+{
+	this.divMove.set_visible(false);
+	this.fv_objFrom = e.userdata;
+	this.fv_objTo = e.fromobject.parent;							
+	if (this.fv_objTo != "[object Div]") 
+	{
+		
+		return;
+	}
+	this.Ani00.addTarget("AniItem00", this.fv_objFrom, "left:"+this.fv_objTo.left+", top:"+this.fv_objTo.top);
+	this.Ani00.addTarget("AniItem01", this.fv_objTo, "left:"+this.fv_objFrom.left+", top:"+this.fv_objFrom.top);
+	this.Ani00.play();
+	this.Ani00.removeTarget("AniItem00");
+	this.Ani00.removeTarget("AniItem01");
+};
+
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

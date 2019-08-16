@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_combo_09" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Combo id="Combo00" taborder="0" text="1" left="46" top="33" width="174" height="37" canitemchange="Combo00_canitemchange" codecolumn="codecolumn" datacolumn="datacolumn" innerdataset="innerdataset" index="0" value="1">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">2</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">3</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">4</Col>
+                <Col id="datacolumn">4</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">5</Col>
+                <Col id="datacolumn">5</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Button id="Button00" taborder="1" text="set_index" left="239" top="33" width="121" height="40" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="2" text="set_index&#13;&#10;fireEvent" left="239" top="83" width="121" height="40" onclick="Button01_onclick"/>
+        <TextArea id="TextArea00" taborder="3" left="46" top="133" width="314" height="67"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Combo00.set_index(3);
+	this.TextArea00.set_value("Button00_onclick");
+};
+
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var preindex = this.Combo00.index;
+	var pretext = this.Combo00.text;
+	var prevalue = "";
+	this.Combo00.set_index(3);
+	var postindex = this.Combo00.index;
+	var posttext = this.Combo00.text;
+	var postvalue = "";
+	this.TextArea00.set_value("Button01_onclick");
+	
+	var evt = new nexacro.ItemChangeEventInfo(this, "canitemchange", preindex, pretext, prevalue, postindex, posttext, postvalue);
+	this.Combo00.canitemchange.fireEvent(this.Combo00, evt, true);
+
+};
+
+this.Combo00_canitemchange = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.TextArea00.insertText(" -> canitemchange");
+};
+]]></Script>
+  </Form>
+</FDL>

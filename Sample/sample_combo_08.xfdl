@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_combo_08" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Combo id="Combo00" taborder="0" text="apple" left="30" top="28" width="256" height="32" codecolumn="codecolumn" datacolumn="datacolumn" index="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="innerdataset" border="" value="00" onmouseenter="Combo00_onmouseenter" onmouseleave="Combo00_onmouseleave">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">00</Col>
+                <Col id="datacolumn">apple</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">banana</Col>
+                <Col id="codecolumn">01</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">orange</Col>
+                <Col id="codecolumn">02</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">kiwi</Col>
+                <Col id="codecolumn">03</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">peach</Col>
+                <Col id="codecolumn">04</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">strawberry</Col>
+                <Col id="codecolumn">05</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Combo00_onmouseenter = function(obj:nexacro.Combo,e:nexacro.MouseEventInfo)
+{
+	if(!obj.isDropdown()) {
+		obj.dropdown();
+	}
+};
+
+/*
+this.Combo00_onmouseleave = function(obj:nexacro.Combo,e:nexacro.MouseEventInfo)
+{
+	if(obj.isDropdown()) {
+		obj.dropdown();
+	}
+};
+*/]]></Script>
+    <Objects/>
+  </Form>
+</FDL>
