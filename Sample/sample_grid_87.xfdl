@@ -37,6 +37,8 @@ this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 
 this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
+	this.dsTemp.clearData();
+	
 	for(var i=0 ; i < this.Dataset00.rowcount; i++){
 		if(this.Dataset00.getColumn(i,"Column0") == null){
 			var nRow = this.dsTemp.addRow();
