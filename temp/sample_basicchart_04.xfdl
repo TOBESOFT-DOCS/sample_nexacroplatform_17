@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BasicChartMultiAxis" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <ImageViewer id="ImageViewer00" taborder="0" text="ImageViewer00" left="80" top="80" width="90" height="100" image="url('http://docs.tobesoft.com/r/image/get/e4dc419c97929a65')" stretch="fixaspectratio"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

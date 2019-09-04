@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="N401364_GridTooltip" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="3.61%" top="51" right="54.79%" height="149" binddataset="Dataset00" onmousemove="Grid00_onmousemove">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell disptype="normal" text="Column0"/>
+                <Cell col="1" disptype="normal" text="Column1"/>
+                <Cell col="2" disptype="normal" text="Column2"/>
+                <Cell col="3" disptype="normal" text="Column3"/>
+                <Cell col="4" disptype="normal" text="Column4"/>
+              </Band>
+              <Band id="body">
+                <Cell disptype="normal" text="bind:Column0" tooltiptext="bind:Column0"/>
+                <Cell col="1" disptype="normal" text="bind:Column1"/>
+                <Cell col="2" disptype="normal" text="bind:Column2" tooltiptext="bind:tooltip"/>
+                <Cell col="3" disptype="normal" text="bind:Column3"/>
+                <Cell col="4" disptype="normal" text="bind:Column4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">aaa</Col>
+            <Col id="Column1">bbb</Col>
+            <Col id="Column2">cccc</Col>
+            <Col id="Column3">dddd</Col>
+            <Col id="Column4">eeee</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">aaa1</Col>
+            <Col id="Column1">bbb1</Col>
+            <Col id="Column2">cccc1</Col>
+            <Col id="Column3">dddd1</Col>
+            <Col id="Column4">eeee1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">aaa2</Col>
+            <Col id="Column1">bbb2</Col>
+            <Col id="Column2">cccc2</Col>
+            <Col id="Column3">dddd2</Col>
+            <Col id="Column4">eeee2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">aaa3</Col>
+            <Col id="Column1">bbb3</Col>
+            <Col id="Column2">cccc3</Col>
+            <Col id="Column3">dddd3</Col>
+            <Col id="Column4">eeee3</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_onmousemove = function(obj:Grid, e:nexacro.GridMouseEventInfo)
+{	
+	/*if( e.cell == 1 ){
+		var strText   = obj.getCellText(e.row, e.cell);
+		obj.setCellProperty( "Body", e.cell, "tooltiptext", strText);
+	} else {
+		obj.setCellProperty( "Body", e.cell, "tooltiptext", "");
+	}*/	
+}
+]]></Script>
+  </Form>
+</FDL>

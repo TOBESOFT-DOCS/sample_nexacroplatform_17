@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Calendar_test" width="590" height="300" titletext="New Form">
+    <Layouts>
+      <Layout height="300" mobileorientation="landscape" width="590">
+        <Calendar id="Calendar00" taborder="0" left="60" top="30" width="210" height="200" type="monthonly" locale="en_US" enable="false"/>
+        <Grid id="Grid00" taborder="1" left="302" top="64" width="248" height="146" binddataset="Dataset00" enable="false">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="textareacontrol"/>
+                <Cell col="1" text="bind:Column1" displaytype="buttoncontrol"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Calendar00_onchanged = function(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo)
+{
+	var nWeek = obj.getDayOfWeek();
+	if(nWeek == 5)
+	{
+		this.Calendar01.set_value (this.AddDateOffset(e.postvalue, 3));
+	}
+	else if(nWeek == 6)
+	{
+		this.Calendar01.set_value (this.AddDateOffset(e.postvalue, 2));
+	}
+	else 
+	{
+		this.Calendar01.set_value (this.AddDateOffset(e.postvalue, 1));
+	}
+	this.setFocus(true, false);
+};
+
+this.AddDateOffset = function(sDate, nOffset)
+{
+    var nYear = parseInt(sDate.substr(0, 4));
+    var nMonth = parseInt(sDate.substr(4, 2));
+    var nDate = parseInt(sDate.substr(6, 2)) + nOffset;
+
+    return this.MakeDate(nYear, nMonth, nDate);
+}
+
+this.MakeDate = function(nYear, nMonth, nDate)
+{
+    var objDate = new Date(nYear, nMonth-1, nDate);
+
+	var sYear   = objDate.getFullYear().toString();
+	var sMonth  = (objDate.getMonth() + 1).toString().padLeft(2, "0");
+	var sDate   = (objDate.getDate()).toString().padLeft(2, "0");
+
+	return sYear + sMonth + sDate;
+}]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

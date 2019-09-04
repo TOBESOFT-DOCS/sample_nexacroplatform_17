@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Grid_Mask" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="23" top="31" width="167" height="189" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="maskeditcontrol" edittype="normal" maskeditlimitbymask="both" maskeditformat="expr:Column0==undefined||Column0===''?'##.####':'#0.####'"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <MaskEdit id="MaskEdit00" taborder="1" left="241" top="54" width="169" height="46" format="#0.##" value="1254.45"/>
+        <MaskEdit id="MaskEdit01" taborder="2" left="241" top="125" width="169" height="46" format="#0.##"/>
+        <MaskEdit id="MaskEdit02" taborder="3" left="241" top="197" width="169" height="46" format="#0.##" value=""/>
+        <Radio id="Radio00" taborder="4" left="470" top="75" width="280" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">9,999.##</Col>
+                <Col id="datacolumn">9,999.##</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">#0.####</Col>
+                <Col id="datacolumn">#0.####</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">9.####</Col>
+                <Col id="datacolumn">9.####</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">12.56</Col>
+          </Row>
+          <Row/>
+          <Row>
+            <Col id="Column0">0.123</Col>
+          </Row>
+          <Row/>
+          <Row>
+            <Col id="Column0">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.MaskEdit00.set_format(e.postvalue);
+	this.MaskEdit01.set_format(e.postvalue);
+	this.MaskEdit02.set_format(e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

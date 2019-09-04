@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="N273075" classname="ㅜ273075" left="0" top="0" width="500" height="300" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="1%" top="11" right="7.2%" height="266" binddataset="Dataset00" onheadclick="Grid00_onheadclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="93"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" style="backgroundimage: ;" text="Column1"/>
+                <Cell col="2" displaytype="normal" edittype="none" style="background:50% 50%;backgroundimage:URL('theme://images\ico_treeclose.png'); :mouseover {background:70% 70%;}" expandshow="hide"/>
+                <Cell col="3" displaytype="normal" edittype="none" text="검색" expandshow="show" expandsize="20" expandimage="URL('theme://images\ico_zoomcombo.png')"/>
+                <Cell col="4"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3"/>
+                <Cell col="4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[var image_toggle = "";
+this.Grid00_onheadclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	if(e.cell == 2){
+		trace(image_toggle);
+		if(image_toggle == "1"){
+			//this.Grid00.setCellProperty("head", e.cell, "backgroundimage", "theme://images\\ico_treeclose.png");
+			this.Grid00.setCellProperty('head',e.cell,'style', "background:50% 50%;backgroundimage:URL('theme://images\\ico_treeclose.png'); :mouseover {background:70% 70%;}");
+			image_toggle = "";
+		} else {
+			//this.Grid00.setCellProperty("head", e.cell, "backgroundimage", "theme://images\\ico_treeopen.png");
+			this.Grid00.setCellProperty('head',e.cell,'style', "background:50% 50%;backgroundimage:URL('theme://images\\ico_treeopen.png'); :mouseover {background:70% 70%;}");
+			image_toggle = "1";
+		}		
+	
+	} else if(e.cell == 3){
+		trace("3");
+	
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Grid_CellTooltip" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="30" top="25" width="246" height="103" binddataset="Dataset00" onmousemove="Grid00_onmousemove" cssclass="test">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">test test test test 123</Col>
+            <Col id="Column2">abc</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">test1</Col>
+            <Col id="Column2">tobesoft nexacro test</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">test2345678901234567890</Col>
+            <Col id="Column2">abcdefghijklmnopstuvwxyz</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_onmousemove = function(obj:nexacro.Grid,e:nexacro.GridMouseEventInfo)
+{
+	var nCellSize = obj.getFormatColSize(e.cell);
+	var strText   = obj.getCellText(e.row, e.cell);
+	var nTextLen  = nexacro.getTextSize( strText, obj.font );
+	trace(css(document.getElementById( 'mainframe.QuickViewFrame.form.Grid00'), 'font-style'));
+	trace(css(document.getElementById( 'mainframe.QuickViewFrame.form.Grid00'), 'font-weight'));
+	trace(css(document.getElementById( 'mainframe.QuickViewFrame.form.Grid00'), 'font-size'));	
+	trace(css(document.getElementById( 'mainframe.QuickViewFrame.form.Grid00'), 'font-family'));	
+
+	if( nCellSize < nTextLen.nx){
+		obj.setCellProperty( "Body", e.cell, "tooltiptext", strText);
+	} else {
+		obj.setCellProperty( "Body", e.cell, "tooltiptext", "");
+	}	
+};
+
+function css( element, property ) {
+    return window.getComputedStyle( element, null ).getPropertyValue( property );
+}]]></Script>
+  </Form>
+</FDL>

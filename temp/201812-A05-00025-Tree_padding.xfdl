@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="tree1" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="8" top="17" width="192" height="273" binddataset="Dataset00" treeinitstatus="expand,all" treeusecheckbox="false" treeuseline="false" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="164"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="214" top="17" width="316" height="273" binddataset="Dataset00" treeinitstatus="expand,all" treeusecheckbox="false" treeuseline="false" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="164"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="Column0">Menu</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="Column0">Menu - 1</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="Column0">Menu - 1-1</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="Column0">Menu - 1-2</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="Column0">Menu - 2</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="Column0">Menu - 2-1</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="Column0">Menu - 2-2</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="Column0">Menu - 2-3</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="Column0">Menu - 3</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="Column0">Menu - 3-1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="gridCombdbClick" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="86" top="24" width="458" height="186" binddataset="Dataset00" autoenter="none" oncelldblclick="Grid00_oncelldblclick" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" edittype="combo" displaytype="combocontrol" combodataset="Dataset01" combodatacol="Column1" combocodecol="Column0" comboautoselect="true" combotype="search"/>
+                <Cell col="1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">c1</Col>
+            <Col id="Column1">v1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">c2</Col>
+            <Col id="Column1">v2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">c3</Col>
+            <Col id="Column1">v3</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	trace("Grid00_oncelldblclick");
+};
+
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	trace("Grid00_oncellclick");
+};]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="test2" width="1280" height="720" titletext="New Form" onload="test2_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Button id="Button00" taborder="1" text="Button00" left="115" top="212" width="120" height="50" onclick="Button00_onclick"/>
+        <Grid id="Grid00" taborder="1" left="59" top="31" width="375" height="159" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="item"/>
+                <Cell col="1" text="price"/>
+                <Cell col="2" text="amount"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:item"/>
+                <Cell col="1" text="bind:price" displaytype="text"/>
+                <Cell col="2" text="bind:amount"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onload="Dataset00_onload">
+        <ColumnInfo>
+          <Column id="item" type="STRING" size="256"/>
+          <Column id="price" type="BIGDECIMAL" size="256"/>
+          <Column id="amount" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="item">0</Col>
+            <Col id="price">2e-308</Col>
+            <Col id="amount">10</Col>
+          </Row>
+          <Row>
+            <Col id="item">1</Col>
+            <Col id="price">-2e308</Col>
+            <Col id="amount">20</Col>
+          </Row>
+          <Row>
+            <Col id="item">1</Col>
+            <Col id="amount">5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.test2_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//mainframe.QuickViewFrame.form.Grid00.body.gridrow_0.cell_0_1.cellcalendar.calendaredit
+};
+
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	/*var temp = obj.getCellPropertyValue(e.row, e.cell, "cellcalendar");
+	temp.calendaredit.set_readonly(true);
+	e.cell.cellcalendar.dropbutton.set_readonly(false);*/
+	e.fromobject.parent.set_readonly(true);
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	trace(new nexacro.Decimal("2e-308")); // 0
+	trace(new nexacro.Decimal("-2e308")); // Infinity
+	trace(new nexacro.Decimal("2e308")); // Infinity
+	trace('-------------');
+	trace(new nexacro.Decimal(2e-308)); // 0
+	trace(new nexacro.Decimal(-2e308)); //0
+	trace(new nexacro.Decimal(2e308)); // 0	
+	trace(Number.MIN_VALUE); // 5e-324
+	trace(Number.MAX_VALUE); // 1.7976931348623157e+308
+	trace(new nexacro.Decimal(Number.MIN_VALUE)); // 0
+	trace(new nexacro.Decimal(Number.MAX_VALUE)); // Infinity 
+	this.Dataset00.setColumn(1, 1, "-2e308");
+	trace(this.Dataset00.setColumn(0, 1, Number.MAX_VALUE));
+};
+]]></Script>
+  </Form>
+</FDL>

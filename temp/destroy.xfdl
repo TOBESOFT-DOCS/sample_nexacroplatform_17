@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_BindItem" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Edit id="Edit00" taborder="0" left="42" top="30" width="148" height="45"/>
+        <Button id="Button06" taborder="1" text="init" left="42" top="90" width="120" height="50" onclick="Button06_onclick"/>
+        <Button id="Button08" taborder="2" text="destory" left="180" top="90" width="120" height="50" onclick="Button08_onclick"/>
+        <Button id="Button09" taborder="3" text="check" left="320" top="90" width="120" height="50" onclick="Button09_onclick"/>
+        <TextArea id="TextArea00" taborder="4" left="180" top="158" width="364" height="152"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button06_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objBindItem = new BindItem();
+	objBindItem.init("item0", "Edit00", "value", "Dataset00", "Column0");
+	this.addChild("item0", objBindItem); 
+	objBindItem.bind();
+	
+	var objButton = new Button(); 
+	objButton.init("Button", 42, 150, 120, 46, null, null);
+	this.addChild("Button", objButton); 
+	objButton.show(); 
+
+
+};
+
+this.Button07_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.item0.set_columnid("Column1");
+	this.item0.bind();
+};
+
+this.Button08_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.insertText("this.item0.destroy() "+this.item0.destroy()+"\n");
+	this.TextArea00.insertText("this.Button.destroy() "+this.Button.destroy()+"\n");
+};
+
+this.Button09_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.insertText("this.Button "+this.Button+"\n");
+	this.TextArea00.insertText("this.item0 "+this.item0+"\n");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">Column0</Col>
+            <Col id="Column1">Column1</Col>
+            <Col id="Column2">Column2</Col>
+            <Col id="Column3">Column3</Col>
+            <Col id="Column4">Column4</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

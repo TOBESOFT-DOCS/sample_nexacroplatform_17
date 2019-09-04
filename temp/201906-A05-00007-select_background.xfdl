@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="test_190529" width="1280" height="720" titletext="New Form" onload="test_190529_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="49" top="38" width="551" height="304" binddataset="Dataset00" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="126"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+                <Cell col="4" text="Column4"/>
+                <Cell col="5" text="Column5"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;, &quot;Column0&quot;)==comp.getCellPos()?'bkTest1':''"/>
+                <Cell col="1" text="bind:Column1" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;, &quot;Column1&quot;)==comp.getCellPos()?'bkTest1':''"/>
+                <Cell col="2" text="bind:Column2" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;, &quot;Column2&quot;)==comp.getCellPos()?'bkTest1':''"/>
+                <Cell col="3" text="bind:Column3" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;, &quot;Column3&quot;)==comp.getCellPos()?'bkTest1':''"/>
+                <Cell col="4" text="bind:Column4" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;, &quot;Column4&quot;)==comp.getCellPos()?'bkTest1':''"/>
+                <Cell col="5" text="bind:Column5" cssclass="expr:comp.getBindCellIndex(&quot;body&quot;, &quot;Column5&quot;)==comp.getCellPos()?'bkTest1':''"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	obj.redrawExprCell("body");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

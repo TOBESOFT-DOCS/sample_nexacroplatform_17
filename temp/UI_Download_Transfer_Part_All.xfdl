@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="UI_Transfer_Transfer_Part" width="480" height="600" titletext="New Form">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="480">
+        <Button id="Button00" taborder="0" text="파일 리스트 불러오기" left="5" top="10" width="145" height="39" onclick="Button00_onclick"/>
+        <ListView id="ListView00" taborder="1" left="5" top="100" width="465" height="200" binddataset="ds_filelist" oncelldblclick="ListView00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Band id="body" width="100%" height="50">
+                <Cell id="Cell_Icon" left="5" top="5" width="40" height="40" text="ICO"/>
+                <Cell id="Cell_FileName" left="50" top="5" width="400" height="40" text="bind:FILE_NAME"/>
+              </Band>
+            </Format>
+          </Formats>
+        </ListView>
+        <Static id="Static00" taborder="2" text="다운로드 리스트" left="10" top="70" width="120" height="25"/>
+        <Button id="Button01" taborder="3" text="전체다운로드" left="160" top="10" width="130" height="39" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="4" text="선택다운로드" left="5" top="315" width="120" height="50" onclick="Button02_onclick"/>
+        <Grid id="Grid00" taborder="5" left="5" top="375" width="285" height="180" binddataset="ds_inputparam">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="200"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="key"/>
+                <Cell col="1" text="value"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:key"/>
+                <Cell col="1" text="bind:value" edittype="text"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <CheckBox id="CheckBox00" taborder="6" text="postdatalist 포함여부" left="301" top="379" width="150" height="20" value="true"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_filelist">
+        <ColumnInfo>
+          <Column id="FILE_NAME" type="STRING" size="256"/>
+          <Column id="FILE_URL" type="STRING" size="256"/>
+          <Column id="DEPTH" type="STRING" size="256"/>
+          <Column id="STATUS" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <FileDownloadTransfer id="FileDownloadTransfer00" onsuccess="FileDownloadTransfer00_onsuccess" onerror="FileDownloadTransfer00_onerror"/>
+      <Dataset id="ds_inputparam">
+        <ColumnInfo>
+          <Column id="key" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="key">key01</Col>
+            <Col id="value">aaa</Col>
+          </Row>
+          <Row>
+            <Col id="key">key02</Col>
+            <Col id="value">bbb</Col>
+          </Row>
+          <Row>
+            <Col id="key">key03</Col>
+            <Col id="value">ccc</Col>
+          </Row>
+          <Row>
+            <Col id="key">key04</Col>
+            <Col id="value">ddd</Col>
+          </Row>
+          <Row>
+            <Col id="key">key05</Col>
+            <Col id="value">eee</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.callback_transaction = function()
+{
+	trace(1);
+};
+
+this.strdownurl = "http://172.10.12.88:8081/nexacro17/jsp/fileDownload_postdatatest.jsp?paramtest=gettype";
+this.getpostdatalist = function()
+{
+	this.FileDownloadTransfer00.clearPostDataList();
+	for (var i = 0; i < this.ds_inputparam.rowcount; i++)
+	{
+		this.FileDownloadTransfer00.setPostData(
+			this.ds_inputparam.getColumn(i,"key"),
+			this.ds_inputparam.getColumn(i,"value")
+		);
+		trace(
+			this.ds_inputparam.getColumn(i,"key") + " : " + this.FileDownloadTransfer00.getPostData(this.ds_inputparam.getColumn(i,"key"))
+		);
+	}
+};
+this.downloadfile = function(i)
+{
+		if ( true == this.CheckBox00.value )
+		{
+			this.getpostdatalist();
+			trace("download----------------:"+this.ds_filelist.getColumn(i, "FILE_URL"));
+			this.FileDownloadTransfer00.setPostData(
+				"filepath",
+				this.ds_filelist.getColumn(i, "FILE_URL")
+			);
+			this.FileDownloadTransfer00.setPostData(
+				"filename",
+				this.ds_filelist.getColumn(i, "FILE_NAME")
+			);
+			trace("this.FileDownloadTransfer00.postdatalist:"+this.FileDownloadTransfer00.postdatalist.length);
+			this.FileDownloadTransfer00.download(this.ds_filelist.getColumn(i, "FILE_URL"))
+		}
+		else
+		{
+			this.FileDownloadTransfer00.clearPostDataList();
+			trace("download----------------:"+this.ds_filelist.getColumn(i, "FILE_URL"));
+			this.FileDownloadTransfer00.setPostData(
+				"filepath",
+				this.ds_filelist.getColumn(i, "FILE_URL")
+			);
+			this.FileDownloadTransfer00.setPostData(
+				"filename",
+				this.ds_filelist.getColumn(i, "FILE_NAME")
+			);
+			trace("this.FileDownloadTransfer00.postdatalist:"+this.FileDownloadTransfer00.postdatalist.length);
+			this.FileDownloadTransfer00.download(this.ds_filelist.getColumn(i, "FILE_URL"))
+		}
+}
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.transaction("list", "JSP::fileDownload_servlet_list_XML.jsp", "", "ds_filelist=dsList", "a=b", "callback_transaction", "false", "0")
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	for (var i = 0; i < this.ds_filelist.rowcount; i++)
+	{
+		this.downloadfile(i);
+	}
+};
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//this.FileDownloadTransfer00.download("FileSample::test.xlsx");
+		this.downloadfile(this.ds_filelist.rowposition);
+		//this.FileDownloadTransfer00.download(this.ds_filelist.getColumn(this.ds_filelist.rowposition, "FILE_URL"))
+};
+
+this.ListView00_oncelldblclick = function(obj:nexacro.ListView,e:nexacro.ListViewClickEventInfo)
+{
+	this.downloadfile(e.row);
+};
+
+this.FileDownloadTransfer00_onsuccess = function(obj:nexacro.FileDownloadTransfer,e:nexacro.FileDownloadTransferEventInfo)
+{
+	trace( obj.name+"_"+e.eventid );
+};
+
+this.FileDownloadTransfer00_onerror = function(obj:nexacro.FileDownloadTransfer,e:nexacro.FileDownloadTransferErrorEventInfo)
+{
+	trace( obj.name+"_"+e.eventid );
+};
+]]></Script>
+  </Form>
+</FDL>

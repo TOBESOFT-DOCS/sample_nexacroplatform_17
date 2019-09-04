@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="maskSample" width="1280" height="720" titletext="New Form" onload="test_onload">
+    <Layouts>
+      <Layout height="548" mobileorientation="landscape" width="1024">
+        <Plugin id="plg_00" taborder="0" left="90" top="190" width="290" height="250" classid="{8856F961-340A-11D0-A96B-00C04FD705A2}" windowed="true"/>
+        <Button id="btn_00" taborder="1" text="btn_00" left="16" top="13" width="84" height="37" onclick="btn_00_onclick"/>
+        <PopupDiv id="pdv_00" text="pdv_00" visible="false" left="70" top="140" width="224" height="221" background="white" border="1px solid black">
+          <Layouts>
+            <Layout>
+              <Grid id="grd_00" taborder="0" left="15" top="10" width="198" height="202" binddataset="ds_00" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row band="head" size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="Column0"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:Column0"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Button id="Button00" taborder="2" text="Button00" left="652" top="59" width="166" height="59" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">test1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">test2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">test3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">test4</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">test5</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">test6</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">test7</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">test8</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+		this.pdv_00.trackPopupByComponent(obj, 0, obj.height*2);
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//var URl = "http://172.10.13.55:8080/test.png";
+	//this.plg_00.set_pluginpage(URl) // set (URl);
+};
+]]></Script>
+  </Form>
+</FDL>
