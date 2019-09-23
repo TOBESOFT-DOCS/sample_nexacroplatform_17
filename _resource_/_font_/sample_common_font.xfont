@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XFONT version="1.0"><![CDATA[/********************************************************************
+@font-face {
+  font-family : 'NanumGothic';
+  font-style : normal;
+  font-weight : 400;
+  src : local("NanumGothic");
+  src : url(./_resource_/_font_/NanumGothic.eot);
+  src : url(./_resource_/_font_/NanumGothic.eot?#iefix) format('embedded-opentype'),
+    url(./_resource_/_font_/NanumGothic.woff2) format('woff2'),
+    url(./_resource_/_font_/NanumGothic.woff) format('woff'),
+    url(./_resource_/_font_/NanumGothic.ttf) format('truetype');
+}
+@font-face {
+  font-family : 'NanumGothicBold';
+  font-style : normal;
+  font-weight : 700;
+  src : local("NanumGothicBold");
+  src : url(./_resource_/_font_/NanumGothicBold.eot);
+  src : url(./_resource_/_font_/NanumGothicBold.eot?#iefix) format('embedded-opentype'),
+    url(./_resource_/_font_/NanumGothicBold.woff2) format('woff2'),
+    url(./_resource_/_font_/NanumGothicBold.woff) format('woff'),
+    url(./_resource_/_font_/NanumGothicBold.ttf) format('truetype');
+}
+********************************************************************/
+@import url('https://fonts.googleapis.com/css?family=Chilanka|Lobster&display=swap');]]></XFONT>

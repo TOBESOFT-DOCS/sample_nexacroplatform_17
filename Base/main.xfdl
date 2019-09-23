@@ -666,6 +666,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">getActiveForm</Col>
           </Row>
           <Row>
+            <Col id="category">Application</Col>
+            <Col id="subject">구글 폰트 사용하기</Col>
+            <Col id="id_sample">sample_application_07</Col>
+            <Col id="id_doc">95923a24d13532cd</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">4</Col>
+            <Col id="keyword">userfontid</Col>
+          </Row>
+          <Row>
             <Col id="category">Form</Col>
             <Col id="subject">Form</Col>
             <Col id="tree_level">0</Col>
@@ -1815,6 +1824,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Grid 셀</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">2</Col>
+            <Col id="subject_ja">Gridセル</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1824,6 +1834,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">bf670b9414b79529</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">formatid</Col>
+            <Col id="subject_ja">フォーマット変更して適用</Col>
+            <Col id="id_doc_ja">023b442bd189280d</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1833,6 +1845,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">92991016bdc201b5</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">createFormat, binddataset</Col>
+            <Col id="subject_ja">バインドされたDatasetオブジェクトのフォーマットを生成して出力する</Col>
+            <Col id="id_doc_ja">739580dddb24c94e</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1842,6 +1856,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">2f09175766c62e2f</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">displaytype</Col>
+            <Col id="subject_ja">多様な形式でデータ表現</Col>
+            <Col id="id_doc_ja">c16b2e9751da60b5</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1851,6 +1867,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">3fc40a4c93dda2f8</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">edittype, autoenter, wordwrap</Col>
+            <Col id="subject_ja">多様な形式でデータ編集</Col>
+            <Col id="id_doc_ja">b53482ee941cbe59</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1860,6 +1878,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">d048a7c0b4d2406d</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">keystring</Col>
+            <Col id="subject_ja">レコードグルーピング</Col>
+            <Col id="id_doc_ja">192b916cadfe7cdb</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1869,6 +1889,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">595f03c930188057</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">keystring</Col>
+            <Col id="subject_ja">レコードソート</Col>
+            <Col id="id_doc_ja">2fd9d955d7bf2a87</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1878,6 +1900,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">2e4e0cab9a0a912d</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">suppress</Col>
+            <Col id="subject_ja">Suppress機能</Col>
+            <Col id="id_doc_ja">daa5c28a0201e1a4</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1887,6 +1911,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">8653f8d63f6718c6</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getCellProperty, setCellProperty, currentcell</Col>
+            <Col id="subject_ja">Cellプロパティ設定</Col>
+            <Col id="id_doc_ja">89f940956512df16</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1895,6 +1921,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_sample">sample_grid_28</Col>
             <Col id="id_doc">7f71e0d4c756ad45</Col>
             <Col id="search_subject">2</Col>
+            <Col id="subject_ja">Cell結合</Col>
+            <Col id="id_doc_ja">db66fafef1f3c23a</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1904,6 +1932,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">78841889251123b9</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getSubCellProperty, setSubCellProperty</Col>
+            <Col id="subject_ja">サブCellプロパティ設定</Col>
+            <Col id="id_doc_ja">bc42f9ca0701c13d</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1913,6 +1943,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">maskeditformat</Col>
+            <Col id="subject_ja">一部のデータをマスクする</Col>
+            <Col id="id_doc_ja">a3b95ca5b0d4ef5d</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1922,6 +1954,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">comp.parent</Col>
+            <Col id="subject_ja">選択したRow全体のColumnを入力状態に変換する</Col>
+            <Col id="id_doc_ja">8b36e9351143f621</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1931,6 +1965,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">screenToClientX , screenToClientY, trackPopupByComponent, closePopup</Col>
+            <Col id="subject_ja">PopupDivで選択した値をデータとして入力する</Col>
+            <Col id="id_doc_ja">83ae5957bb2aa3fd</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1940,6 +1976,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">setCellProperty</Col>
+            <Col id="subject_ja">条件によってdisplaytypeプロパティ値を変更する</Col>
+            <Col id="id_doc_ja">0addd57e34542c88</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1949,6 +1987,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">calendardisplaynulltext, calendardisplaynulltype</Col>
+            <Col id="subject_ja">データがない場合 Calendarの代わりに代替テキストを表示する</Col>
+            <Col id="id_doc_ja">cfe9581f3ada14dc</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1958,6 +1998,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">oncolumnchanged</Col>
+            <Col id="subject_ja">Column値が「Y」、「N」の場合、checkboxcontrol使用する</Col>
+            <Col id="id_doc_ja">098f91f1d0d6b613</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1967,6 +2009,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">displaytype, execBrowser</Col>
+            <Col id="subject_ja">URLリンクをクリックした際に該当サイトへ移動する</Col>
+            <Col id="id_doc_ja">395095994281740c</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1976,6 +2020,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">currentcell</Col>
+            <Col id="subject_ja">expr内で使用できるプロパティ</Col>
+            <Col id="id_doc_ja">1b492634c9aa2d9c</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1985,6 +2031,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">fillareatype</Col>
+            <Col id="subject_ja">データがない領域を満たす</Col>
+            <Col id="id_doc_ja">6e5cce95c1fac260</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -1994,6 +2042,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">suppress</Col>
+            <Col id="subject_ja">スクリプトでsuppressプロパティを適用する</Col>
+            <Col id="id_doc_ja">a05c41c17f15cd8b</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2003,6 +2053,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">currow</Col>
+            <Col id="subject_ja">ROWナンバーを表示する</Col>
+            <Col id="id_doc_ja">dec16138476c2310</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2012,6 +2064,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">cellexprupdatecondition, blinkCell, blinkCellByInterval</Col>
+            <Col id="subject_ja">特定Rowを点滅して表示する</Col>
+            <Col id="id_doc_ja">8ea28503d65274d3</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2021,6 +2075,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getOrgColumn</Col>
+            <Col id="subject_ja">データ変更時にCellの文字色を変えて表示する</Col>
+            <Col id="id_doc_ja">345ecfc8f9c2b8b8</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2030,6 +2086,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">treeitemtext</Col>
+            <Col id="subject_ja">ツリービューレベルによって文字色を変えて表示する</Col>
+            <Col id="id_doc_ja">0f0032bde5a5a5ee</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2039,6 +2097,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">icon</Col>
+            <Col id="subject_ja">アイコンの画像を変えて表示する</Col>
+            <Col id="id_doc_ja">641c2b4860dbae6d</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2048,6 +2108,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">row</Col>
+            <Col id="subject_ja">選択したCellのプロパティを確認する</Col>
+            <Col id="id_doc_ja">c6a76adb790ae03f</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2057,6 +2119,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">combodataset</Col>
+            <Col id="subject_ja">ComboControl内で選択した項目のスタイルを変更して表示する</Col>
+            <Col id="id_doc_ja">3e83de0176490a7f</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2066,6 +2130,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getEditValue, setEditValue</Col>
+            <Col id="subject_ja">Gridで特定のテキストだけを入力する</Col>
+            <Col id="id_doc_ja">033aef03441879d2</Col>
           </Row>
           <Row>
             <Col id="subject">가로값이 동일한 셀을 하나의 셀로 표시하기</Col>
@@ -2075,6 +2141,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">suppresshorzcell</Col>
+            <Col id="subject_ja">横のセルと値が同じ場合、1つのCellで表示する</Col>
+            <Col id="id_doc_ja">3252660a486be9fd</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2084,6 +2152,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">mergeCell, splitCell</Col>
+            <Col id="subject_ja">希望する領域のCellを一つのCellに表示する</Col>
+            <Col id="id_doc_ja">d912da5e165bba88</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2093,6 +2163,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">selectstartcol, selectendcol, selectstartrow, selectendrow</Col>
+            <Col id="subject_ja">選択した領域のCellを1つのセルで表示する</Col>
+            <Col id="id_doc_ja">77575d8af8c2cb75</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2102,6 +2174,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getCellPropertyValue</Col>
+            <Col id="subject_ja">Cellの実際のプロパティ値を取得する</Col>
+            <Col id="id_doc_ja">c40ad9fa2e199e69</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2111,6 +2185,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">cssclass</Col>
+            <Col id="subject_ja">cssclassプロパティ値を複数指定する</Col>
+            <Col id="id_doc_ja">424562fa7c3e82c3</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2120,6 +2196,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">getEditingValue, getEditingText, setEditingValue</Col>
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
+            <Col id="subject_ja">編集中の値を取得する</Col>
+            <Col id="id_doc_ja">e445e30698729ddb</Col>
           </Row>
           <Row>
             <Col id="category">Grid 셀</Col>
@@ -2600,6 +2678,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">9434c3d19fad2f12</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">trackPopupByComponent, trackPopupByComponent</Col>
+          </Row>
+          <Row>
+            <Col id="category">PopupMenu</Col>
+            <Col id="subject">구분선 추가하기</Col>
+            <Col id="id_sample">sample_popupmenu_02</Col>
+            <Col id="id_doc">6834e2f9d2f5689e</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">iconcolumn</Col>
           </Row>
           <Row>
             <Col id="category">ProgressBar</Col>

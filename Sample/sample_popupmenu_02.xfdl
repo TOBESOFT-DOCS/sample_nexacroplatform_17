@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_popupmenu_02" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="sample_popupmenu_02_onrbuttondown" onclick="sample_popupmenu_02_onclick">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <PopupMenu id="popupmenu00" left="44" top="30" width="126" height="150" captioncolumn="captioncolumn" checkboxcolumn="checkboxcolumn" enablecolumn="enablecolumn" hotkeycolumn="hotkeycolumn" iconcolumn="iconcolumn" idcolumn="idcolumn" levelcolumn="levelcolumn" userdatacolumn="userdatacolumn" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="captioncolumn" size="256"/>
+              <Column id="checkboxcolumn" size="256"/>
+              <Column id="enablecolumn" size="256"/>
+              <Column id="hotkeycolumn" size="256"/>
+              <Column id="iconcolumn" size="256"/>
+              <Column id="idcolumn" size="256"/>
+              <Column id="levelcolumn" size="256"/>
+              <Column id="userdatacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="captioncolumn">New</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">Project</Col>
+                <Col id="levelcolumn">1</Col>
+                <Col id="iconcolumn">url('theme://images/btn_WF_Calendar.png')</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">Application</Col>
+                <Col id="levelcolumn">1</Col>
+                <Col id="iconcolumn">url('theme://images/img_WF_Grdimg.png')</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">-</Col>
+                <Col id="levelcolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">Form</Col>
+                <Col id="levelcolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">Script</Col>
+                <Col id="levelcolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">XML</Col>
+                <Col id="levelcolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">-</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">Open</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">-</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">Close</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="captioncolumn">Close Project</Col>
+                <Col id="levelcolumn">0</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </PopupMenu>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.sample_popupmenu_02_onclick = function(obj:nexacro.Form,e:nexacro.ClickEventInfo)
+{
+	this.popupmenu00.trackPopupByComponent(this, e.clientx, e.clienty);
+};
+]]></Script>
+  </Form>
+</FDL>

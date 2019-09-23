@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ENV version="2.1">
-  <Environment themeid="theme::default" filesecurelevel="all">
+  <Environment themeid="theme::default" filesecurelevel="all" userfontid="font::sample_common_font.xfont">
     <ScreenDefinition>
       <Screen id="Screen_D" type="desktop" userzoom="true"/>
     </ScreenDefinition>

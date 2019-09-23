@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_application_07" left="0" top="0" width="1024" height="768">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="Lobster" left="48" top="32" width="120" height="50" onclick="Button00_onclick" font="20px/normal Lobster"/>
+        <Button id="Button01" taborder="1" text="Chilanka" left="190" top="32" width="120" height="50" onclick="Button01_onclick" font="20px/normal Chilanka"/>
+        <TextArea id="TextArea00" taborder="2" left="48" top="92" width="352" height="178" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra nunc, a condimentum tortor. Ut consequat erat finibus dolor iaculis volutpat. Maecenas id facilisis elit. Mauris lacinia interdum purus, eu varius diam lobortis hendrerit. Sed hendrerit arcu vitae neque consectetur, vel dictum est volutpat. Ut justo ante, feugiat vel malesuada in, malesuada in lorem. Sed mi libero, commodo id tempus sit amet, convallis non orci. Donec rhoncus nisl id tincidunt tincidunt. Suspendisse potenti. Fusce sit amet faucibus urna. Suspendisse porttitor a neque eu dictum. Vestibulum efficitur rhoncus nisi at sodales." wordWrap="char"/>
+        <Static id="Static00" taborder="3" text="nexacro platform" left="48" top="280" width="352" height="40"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.set_font("24px/normal 'Lobster'");
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.set_font("24px/normal 'Chilanka'");
+};
+]]></Script>
+  </Form>
+</FDL>
