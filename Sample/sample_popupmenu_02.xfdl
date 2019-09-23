@@ -3,7 +3,7 @@
   <Form id="sample_popupmenu_02" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="sample_popupmenu_02_onrbuttondown" onclick="sample_popupmenu_02_onclick">
     <Layouts>
       <Layout height="768" width="1024">
-        <PopupMenu id="popupmenu00" left="44" top="30" width="126" height="150" captioncolumn="captioncolumn" checkboxcolumn="checkboxcolumn" enablecolumn="enablecolumn" hotkeycolumn="hotkeycolumn" iconcolumn="iconcolumn" idcolumn="idcolumn" levelcolumn="levelcolumn" userdatacolumn="userdatacolumn" innerdataset="innerdataset">
+        <PopupMenu id="popupmenu00" left="150" top="90" width="126" height="150" captioncolumn="captioncolumn" checkboxcolumn="checkboxcolumn" enablecolumn="enablecolumn" hotkeycolumn="hotkeycolumn" iconcolumn="iconcolumn" idcolumn="idcolumn" levelcolumn="levelcolumn" userdatacolumn="userdatacolumn" innerdataset="innerdataset">
           <Dataset id="innerdataset">
             <ColumnInfo>
               <Column id="captioncolumn" size="256"/>
@@ -69,11 +69,17 @@
             </Rows>
           </Dataset>
         </PopupMenu>
+        <Button id="Button00" taborder="0" text="trackPopupByComponent" left="20" top="25" width="170" height="50" onclick="Button00_onclick"/>
       </Layout>
     </Layouts>
     <Objects/>
     <Script type="xscript5.1"><![CDATA[
-this.sample_popupmenu_02_onclick = function(obj:nexacro.Form,e:nexacro.ClickEventInfo)
+// this.sample_popupmenu_02_onclick = function(obj:nexacro.Form,e:nexacro.ClickEventInfo)
+// {
+// 	this.popupmenu00.trackPopupByComponent(this, e.clientx, e.clienty);
+// };
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.popupmenu00.trackPopupByComponent(this, e.clientx, e.clienty);
 };
