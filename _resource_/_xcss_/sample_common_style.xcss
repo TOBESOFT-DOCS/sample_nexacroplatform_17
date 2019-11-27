@@ -3,7 +3,17 @@
 {
 	background : URL("imagerc::btn_TP_Menu01_O.png") no-repeat center center;
 }
-.Static.Sta_TF_AllMenuTit
+
+.Button.sample_button_08
+{
+	-nexa-icon : url('theme://images/chk_WF_Box_O.png');
+	-nexa-text-padding : 3px;	
+}
+
+.Button.sample_button_08[userstatus=selected]
+{
+	-nexa-icon : url('theme://images/chk_WF_Box_F.png');	
+}.Static.Sta_TF_AllMenuTit
 {
 	background : url("imagerc::Sta_TF_AllMenuTit.png") repeat-x;
 	font : bold 11pt "맑은 고딕";

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_combo_10" width="1280" height="720" titletext="New Form" onload="sample_combo_10_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Combo id="Combo00" taborder="0" text="1" left="46" top="33" width="94" height="37" canitemchange="Combo00_canitemchange" codecolumn="codecolumn" datacolumn="datacolumn" innerdataset="innerdataset" index="0" value="1">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">1</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">2</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">3</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">4</Col>
+                <Col id="datacolumn">4</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">5</Col>
+                <Col id="datacolumn">5</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Button id="Button00" taborder="1" text="buttonsize=40 20" left="150" top="33" width="110" height="40" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="2" text="buttonsize=0" left="279" top="33" width="101" height="40" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Combo00.set_buttonsize("40 20");
+};
+
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Combo00.set_buttonsize(0);
+};
+
+this.sample_combo_10_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.Combo00.dropbutton.set_background("cornflowerblue");
+};
+]]></Script>
+  </Form>
+</FDL>

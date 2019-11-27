@@ -1157,6 +1157,24 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">button</Col>
           </Row>
           <Row>
+            <Col id="category">Button</Col>
+            <Col id="subject">특정 키 입력 시 onclick 이벤트 처리하기</Col>
+            <Col id="id_sample">sample_button_07</Col>
+            <Col id="id_doc">e577a4220dd1d288</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">defaultbutton, escapebutton, hotkey</Col>
+          </Row>
+          <Row>
+            <Col id="category">Button</Col>
+            <Col id="subject">간단한 토글 버튼 만들기</Col>
+            <Col id="id_sample">sample_button_08</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">getSelectStatus, setSelectStatus, toggleSelectStatus</Col>
+            <Col id="id_doc">f85601377c9a8630</Col>
+          </Row>
+          <Row>
             <Col id="category">Calendar</Col>
             <Col id="subject">Calendar</Col>
             <Col id="tree_level">0</Col>
@@ -1268,6 +1286,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">truevalue, falsevalue</Col>
           </Row>
           <Row>
+            <Col id="category">CheckBox</Col>
+            <Col id="subject">체크 여부 확인하기</Col>
+            <Col id="id_sample">sample_checkbox_03</Col>
+            <Col id="id_doc">54afc47837b1cc9d</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">isChecked, onbindingvaluechanged</Col>
+          </Row>
+          <Row>
             <Col id="category">Combo</Col>
             <Col id="subject">Combo</Col>
             <Col id="tree_level">0</Col>
@@ -1344,6 +1371,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">fireEvent</Col>
+          </Row>
+          <Row>
+            <Col id="category">Combo</Col>
+            <Col id="subject">dropbutton 크기 변경하기</Col>
+            <Col id="id_sample">sample_combo_10</Col>
+            <Col id="id_doc">ecdc7a780ac55c79</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">buttonsize</Col>
           </Row>
           <Row>
             <Col id="category">Edit</Col>

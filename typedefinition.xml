@@ -37,16 +37,16 @@
     <Component type="JavaScript" id="VideoPlayer" classname="nexacro.VideoPlayer" iconindex="57"/>
     <Component type="JavaScript" id="VirtualFile" classname="nexacro.VirtualFile"/>
     <Component type="JavaScript" id="FileDialog" classname="nexacro.FileDialog"/>
-    <Component id="PieChart" classname="nexacro.PieChart" iconindex="81" defaultwidth="0" defaultheight="0" prefixid="PieChart00" type="JavaScript"/>
-    <Component id="BubbleChart" classname="nexacro.BubbleChart" iconindex="82" defaultwidth="0" defaultheight="0" prefixid="BubbleChart00" type="JavaScript"/>
-    <Component id="BasicChart" classname="nexacro.BasicChart" iconindex="80" defaultwidth="0" defaultheight="0" prefixid="BasicChart00" type="JavaScript"/>
+    <Component id="PieChart" classname="nexacro.PieChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
+    <Component id="BubbleChart" classname="nexacro.BubbleChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
+    <Component id="BasicChart" classname="nexacro.BasicChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
     <Component type="JavaScript" id="FileDownload" classname="nexacro.FileDownload"/>
     <Component type="JavaScript" id="FileUpload" classname="nexacro.FileUpload"/>
     <Component type="JavaScript" id="ListView" classname="nexacro.ListView"/>
-    <Component id="RadarChart" classname="nexacro.RadarChart" iconindex="85" defaultwidth="0" defaultheight="0" prefixid="RadarChart00" type="JavaScript"/>
+    <Component id="RadarChart" classname="nexacro.RadarChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
     <Component type="JavaScript" id="FileDownTransfer" classname="nexacro.FileDownTransfer"/>
     <Component type="JavaScript" id="FileUpTransfer" classname="nexacro.FileUpTransfer"/>
-    <Component type="JavaScript" id="GaugeChart" classname="nexacro.GaugeChart" iconindex="86" defaultwidth="0" defaultheight="0"/>
+    <Component type="JavaScript" id="GaugeChart" classname="nexacro.GaugeChart" iconindex="24" defaultwidth="0" defaultheight="0" iconextra="false" prefixid=""/>
   </Components>
   <Services>
     <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" version="0" communicationversion="0"/>
