@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="xmlSample" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="290" top="25" width="505" height="285" binddataset="Dataset00" autofittype="col" background="lightblue">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="40"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="date"/>
+                <Cell col="1" text="temperature"/>
+                <Cell col="2" text="pressure"/>
+                <Cell col="3" text="humidity"/>
+                <Cell col="4" text="icon"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:date"/>
+                <Cell col="1" text="bind:temperature" displaytype="number"/>
+                <Cell col="2" text="bind:pressure" displaytype="number"/>
+                <Cell col="3" text="bind:humidity" displaytype="number"/>
+                <Cell col="4" text="bind:icon" displaytype="imagecontrol" imagestretch="fixaspectratio" tooltiptext="bind:status"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="25" top="25" width="260" height="172" binddataset="Dataset01" autofittype="col" oncellclick="Grid01_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="country"/>
+                <Cell col="1" text="city"/>
+                <Cell col="2" text="id"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:country"/>
+                <Cell col="1" text="bind:city"/>
+                <Cell col="2" text="bind:id"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/*
+https://openweathermap.org/ 에서 무료로 제공하는 API 사용한 샘플
+https://openweathermap.org/forecast5#XML
+도시 코드 쿼리로 5일간의 날씨 데이터를 받아와서 
+Dataset 에 등록하고 Grid 컴포넌트에 보여줌
+Date 오브젝트에서 사용하는 locale과 api에서 사용하는 lang 코드가 달라서 따로 등록
+appid는 신청해서 받아야 함 (샘플로 제공되는 id는 언제든 삭제될 수 있음)
+XMLHttpRequest 의 사용법 간단하게 설명
+nexacro.DomParser 를 사용해서 XML 텍스트를 parseFromString 메소드로 Dom 요소로 구성하는 것이 주요 콘텐츠
+NRE에서는 해당 코드 동작하지 않음 
+*/
+var that = this;
+var appid = "7533cbd205a94e397ac3a01258c3fd4c";
+/*
+lang
+English - en, Japanese - ja, Korean - kr
+
+*/
+
+this.fn_getWeatherInfo = function(id, lang)
+{
+	var objXhr = new XMLHttpRequest();
+	objXhr.onreadystatechange = this.XHR_onreadystatechange;
+	objXhr.open("POST", "https://api.openweathermap.org/data/2.5/forecast?mode=xml&units=metric&appid="+appid+"&id="+id+"&lang="+lang);
+	objXhr.send();
+};
+
+this.XHR_onreadystatechange = function()
+{
+	if(this.readyState == 4)
+	{
+		that.fn_setData(this.responseText);
+	}
+}
+
+/*
+this.XHR_onload = function()
+{
+	trace("XHR_onload"+this.responseXML);
+	if(this.status==200)
+	{
+		var objSerializer = new nexacro.XmlSerializer();
+		var strXML = objSerializer.serializeToString(this.responseXML);
+		that.strXML = strXML;
+		that.TextArea00.set_value(strXML);
+
+	}
+}
+*/
+
+this.fn_setData = function(strXML)
+{
+	// Parsing
+	var domDoc;
+	var objDom = new nexacro.DomParser();
+	domDoc = objDom.parseFromString(strXML);
+
+	// Node값 보기
+	var timezone = domDoc.getElementsByTagName("timezone")[0].childNodes[0].data;
+	var domElement = domDoc.getElementsByTagName("forecast")[0].childNodes;
+	var domCnt = domElement.length;
+	var msg="";
+	
+	this.Dataset00.set_enableevent(false);
+	this.Dataset00.clearData();
+	for(var i=0;i<domCnt;i++)
+	{
+		var rIdx = this.Dataset00.addRow();
+		var domElement = domDoc.getElementsByTagName("forecast")[0].childNodes[i];
+
+		this.Dataset00.setColumn(rIdx, 0, this.fn_localDate(domElement.getAttribute("to"), timezone)); // from date
+		this.Dataset00.setColumn(rIdx, 1, domElement.getElementsByTagName("symbol")[0].getAttribute("name")); // status
+		this.Dataset00.setColumn(rIdx, 2, domElement.getElementsByTagName("temperature")[0].getAttribute("value")); // temperature 
+		this.Dataset00.setColumn(rIdx, 3, domElement.getElementsByTagName("pressure")[0].getAttribute("value")); // pressure  
+		this.Dataset00.setColumn(rIdx, 4, domElement.getElementsByTagName("humidity")[0].getAttribute("value")); // humidity  
+		this.Dataset00.setColumn(rIdx, 5, "http://openweathermap.org/img/wn/"+domElement.getElementsByTagName("symbol")[0].getAttribute("var")+".png");
+	}
+	this.Dataset00.set_enableevent(true);
+	this.Grid00.scrollTo(0,0);
+	
+};
+
+this.fn_localDate = function(strDate, timezone)
+{
+	/*var year = strDate.substring(0,4);
+	var month = strDate.substring(5,7);
+	var day = strDate.substring(8,10);
+	var time = strDate.substring(11,13);*/
+	var d = new nexacro.Date(strDate);
+	d.addSeconds(Number(timezone));
+	//return d.toLocaleString(this.locale, { hour12: false });
+    var year = d.getFullYear().toString().padLeft(4, "0");
+    var month = (d.getMonth()+1).toString().padLeft(2, "0");
+    var day = d.getDate().toString().padLeft(2, "0");
+	var hour = d.getHours().toString().padLeft(2, "0");
+	var minute = d.getMinutes().toString().padLeft(2, "0");
+	return year+"/"+month+"/"+day+" "+hour+":"+minute;
+}
+
+this.Grid01_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var id = this.Dataset01.getColumn(e.row, 2);
+	var locale = this.Dataset01.getColumn(e.row, 3);
+	var lang = this.Dataset01.getColumn(e.row, 4);
+	this.locale = locale;
+	this.fn_getWeatherInfo(id, lang);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="date" type="STRING" size="256"/>
+          <Column id="status" type="STRING" size="256"/>
+          <Column id="temperature" type="STRING" size="256"/>
+          <Column id="pressure" type="STRING" size="256"/>
+          <Column id="humidity" type="STRING" size="256"/>
+          <Column id="icon" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="country" type="STRING" size="256"/>
+          <Column id="city" type="STRING" size="256"/>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="locale" type="STRING" size="256"/>
+          <Column id="lang" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="country">KR</Col>
+            <Col id="city">Seoul</Col>
+            <Col id="id">1835848</Col>
+            <Col id="locale">ko-KR</Col>
+            <Col id="lang">kr</Col>
+          </Row>
+          <Row>
+            <Col id="country">KR</Col>
+            <Col id="city">Incheon</Col>
+            <Col id="id">1843564</Col>
+            <Col id="locale">ko-KR</Col>
+            <Col id="lang">kr</Col>
+          </Row>
+          <Row>
+            <Col id="country">JP</Col>
+            <Col id="city">Tokyo</Col>
+            <Col id="id">1850147</Col>
+            <Col id="locale">ja-JP</Col>
+            <Col id="lang">ja</Col>
+          </Row>
+          <Row>
+            <Col id="country">JP</Col>
+            <Col id="city">Nagoya</Col>
+            <Col id="id">1856057</Col>
+            <Col id="locale">ja-JP</Col>
+            <Col id="lang">ja</Col>
+          </Row>
+          <Row>
+            <Col id="country">US</Col>
+            <Col id="city">New York</Col>
+            <Col id="id">5128581</Col>
+            <Col id="locale">en-US</Col>
+            <Col id="lang">en</Col>
+          </Row>
+          <Row>
+            <Col id="country">US</Col>
+            <Col id="city">Hawaii</Col>
+            <Col id="id">5855797</Col>
+            <Col id="locale">en-US</Col>
+            <Col id="lang">en</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_nexacroplatform_17" left="0" top="0" width="1440" height="768" titletext="nexacroplatform developer guide" scrollbardecbuttonsize="0" scrollbarincbuttonsize="0" scrolltype="vertical" statustext="" scrollbartype="none" onload="Form_onload" onerror="sample_nexacroplatform_17_onerror">
     <Layouts>
       <Layout height="768" width="1440">
@@ -66,7 +66,7 @@
               <Static id="Static99" taborder="5" text="전체 컴포넌트" cssclass="Sta_TF_mapTitle" left="38" top="40" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="0"/>
               <Static id="Static06" taborder="6" text="Dataset, Excel" cssclass="Sta_TF_mapTitle" left="38" top="195" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="5"/>
               <Static id="Static07" taborder="7" text="스크립트" cssclass="Sta_TF_mapTitle" left="38" top="226" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="6"/>
-              <Static id="Static05" taborder="8" text="Chart 컴포넌트" cssclass="Sta_TF_mapTitle" left="38" top="257" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="7"/>
+              <Static id="Static05" taborder="8" text="넥사크로 오브젝트" cssclass="Sta_TF_mapTitle" left="38" top="257" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="8"/>
               <Static id="Static08" taborder="9" text="Animation 컴포넌트" cssclass="Sta_TF_mapTitle" left="38" top="288" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="8"/>
               <Static id="Static09" taborder="10" text="키워드별 예제 보기" cssclass="Sta_TF_AllMenuTit" left="28" top="334" width="180" height="27" onclick="pdiv_Menu_Static09_onclick"/>
               <Combo id="Combo00" taborder="11" text="Combo00" left="38" top="371" width="150" height="30" innerdataset="ds_keyword" codecolumn="keyword" datacolumn="keyword" type="caseifilterlike" onitemchanged="pdiv_Menu_Combo00_onitemchanged" displayrowcount="13" cssclass="main_combo"/>
@@ -915,189 +915,6 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">addTarget</Col>
           </Row>
           <Row>
-            <Col id="category">BasicChart</Col>
-            <Col id="subject">BasicChart</Col>
-            <Col id="tree_level">0</Col>
-            <Col id="search_subject">7</Col>
-          </Row>
-          <Row>
-            <Col id="subject">실적(판매, 이익) 데이터 표현하기</Col>
-            <Col id="id_sample">sample_basicchart_01</Col>
-            <Col id="id_doc">fd028bc55d5d4cfe</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="category">BasicChart</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">bargrouping, seriesset, linevisible</Col>
-          </Row>
-          <Row>
-            <Col id="category">BasicChart</Col>
-            <Col id="id_sample">sample_basicchart_02</Col>
-            <Col id="id_doc">7257c1f785603f0e</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="subject">여러 제품 판매 실적 데이터 표현하기</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">stacktype</Col>
-          </Row>
-          <Row>
-            <Col id="category">BasicChart</Col>
-            <Col id="subject">미끄럼식 바 차트 표현하기</Col>
-            <Col id="id_sample">sample_basicchart_03</Col>
-            <Col id="id_doc">04441ea92b564b9b</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">rotateaxis</Col>
-          </Row>
-          <Row>
-            <Col id="category">BasicChart</Col>
-            <Col id="subject">세로축 여러 개 표현하기</Col>
-            <Col id="id_doc">f11206d265fe6a99</Col>
-            <Col id="id_sample">sample_basicchart_04</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">valueaxis, labelmask, tickmax, tickmin, opposite</Col>
-          </Row>
-          <Row>
-            <Col id="category">BasicChart</Col>
-            <Col id="subject">특정 데이터 다른 색으로 표현하기</Col>
-            <Col id="id_sample">sample_basicchart_05</Col>
-            <Col id="id_doc">91442f68456fed87</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">highlightbarvisible, selecttype</Col>
-          </Row>
-          <Row>
-            <Col id="category">BasicChart</Col>
-            <Col id="subject">날짜 형식의 데이터 표현하기</Col>
-            <Col id="id_sample">sample_basicchart_06</Col>
-            <Col id="id_doc">fb8144ca55067e4b</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">axistype, labelrotate</Col>
-          </Row>
-          <Row>
-            <Col id="category">BasicChart</Col>
-            <Col id="subject">애니메이션 효과 적용하기</Col>
-            <Col id="id_sample">sample_basicchart_07</Col>
-            <Col id="id_doc">98ec7d29a318b9b9</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">enableanimation, runAnimation, duration</Col>
-          </Row>
-          <Row>
-            <Col id="category">BubbleChart</Col>
-            <Col id="subject">BubbleChart</Col>
-            <Col id="tree_level">0</Col>
-            <Col id="search_subject">7</Col>
-          </Row>
-          <Row>
-            <Col id="subject">BubbleChart 다듬어서 표현하기</Col>
-            <Col id="category">BubbleChart</Col>
-            <Col id="id_sample">sample_bubblechart_01</Col>
-            <Col id="id_doc">94dddc4e44b617bb</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">tickmin, tickmax, opacity, maxsize, enableanimation</Col>
-          </Row>
-          <Row>
-            <Col id="category">BubbleChart</Col>
-            <Col id="subject">분산형 차트 표현하기</Col>
-            <Col id="id_sample">sample_bubblechart_02</Col>
-            <Col id="id_doc">06c725f82a2d6a9c</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">ticks, boardlinevisible, value3column</Col>
-          </Row>
-          <Row>
-            <Col id="category">BubbleChart</Col>
-            <Col id="subject">Seriesset 여러 개 표현하기</Col>
-            <Col id="id_sample">sample_bubblechart_03</Col>
-            <Col id="id_doc">13879f0c358f7e86</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">titletext</Col>
-          </Row>
-          <Row>
-            <Col id="category">PieChart</Col>
-            <Col id="subject">PieChart</Col>
-            <Col id="tree_level">0</Col>
-            <Col id="search_subject">7</Col>
-          </Row>
-          <Row>
-            <Col id="category">PieChart</Col>
-            <Col id="subject">가이드라인 사용하기</Col>
-            <Col id="id_sample">sample_piechart_01</Col>
-            <Col id="id_doc">be0f3d23634eb284</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">itemtextwidth, itemtextguidesize, enableanimation</Col>
-          </Row>
-          <Row>
-            <Col id="category">PieChart</Col>
-            <Col id="subject">Grid 컴포넌트에서 선택한 항목을 차트에 표시하기</Col>
-            <Col id="id_sample">sample_piechart_02</Col>
-            <Col id="id_doc">84c10de1f2490343</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">text, startangle , endangle</Col>
-          </Row>
-          <Row>
-            <Col id="category">RadarChart</Col>
-            <Col id="subject">RadarChart</Col>
-            <Col id="tree_level">0</Col>
-            <Col id="search_subject">7</Col>
-          </Row>
-          <Row>
-            <Col id="category">RadarChart</Col>
-            <Col id="subject">RadarChart을 다양한 형태로 표현하기</Col>
-            <Col id="id_sample">sample_radarchart_01</Col>
-            <Col id="id_doc">74f3a4e2db555fe1</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">radartype, enableanimation</Col>
-          </Row>
-          <Row>
-            <Col id="category">RadarChart</Col>
-            <Col id="subject">연령대에 따라 선호하는 영화 장르 표현하기</Col>
-            <Col id="id_sample">sample_radarchart_02</Col>
-            <Col id="id_doc">46cb43c43ab9a65b</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">boardlinevisible, highlightlineareaopacity</Col>
-          </Row>
-          <Row>
-            <Col id="category">GaugeChart</Col>
-            <Col id="subject">GaugeChart</Col>
-            <Col id="tree_level">0</Col>
-            <Col id="search_subject">7</Col>
-          </Row>
-          <Row>
-            <Col id="category">GaugeChart</Col>
-            <Col id="subject">게이지 차트를 다양한 형태로 표현하기</Col>
-            <Col id="id_sample">sample_gaugechart_01</Col>
-            <Col id="id_doc">b5b4d35085c77b64</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="keyword">gaugetype, startangle, endangle</Col>
-          </Row>
-          <Row>
-            <Col id="category">GaugeChart</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="subject">Grid에서 선택한 항목을 게이지 차트로 표현하기</Col>
-            <Col id="id_sample">sample_gaugechart_02</Col>
-            <Col id="id_doc">7e9c46613fdb9f3b</Col>
-            <Col id="keyword">itemtextmask, innerradius, barsize</Col>
-          </Row>
-          <Row>
-            <Col id="category">GaugeChart</Col>
-            <Col id="tree_level">1</Col>
-            <Col id="search_subject">7</Col>
-            <Col id="subject">속도계 표현하기</Col>
-            <Col id="id_sample">sample_gaugechart_03</Col>
-            <Col id="id_doc">742a09eee9142274</Col>
-            <Col id="keyword">itemtextgap</Col>
-          </Row>
-          <Row>
             <Col id="category">Button</Col>
             <Col id="subject">Button</Col>
             <Col id="tree_level">0</Col>
@@ -1520,6 +1337,39 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">2c1fd1b2665f63b5</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">load, showzoom, addItem, removeItem</Col>
+          </Row>
+          <Row>
+            <Col id="category">Graphics</Col>
+            <Col id="subject">Graphics</Col>
+            <Col id="tree_level">0</Col>
+            <Col id="search_subject">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">Graphics</Col>
+            <Col id="subject">선 그리기</Col>
+            <Col id="id_sample">sample_graphics_01</Col>
+            <Col id="id_doc">b3e3bd9e258f481e</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">strokepen</Col>
+          </Row>
+          <Row>
+            <Col id="category">Graphics</Col>
+            <Col id="subject">선이나 도형을 그룹으로 묶어서 처리하기</Col>
+            <Col id="id_sample">sample_graphics_02</Col>
+            <Col id="id_doc">bc8cb3facec069da</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">setImageLoadEventHandler, getObjectByID</Col>
+          </Row>
+          <Row>
+            <Col id="category">Graphics</Col>
+            <Col id="subject">간단한 그림판 만들기</Col>
+            <Col id="id_sample">sample_graphics_03</Col>
+            <Col id="id_doc">e0da7efee8a8f665</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">clear</Col>
           </Row>
           <Row>
             <Col id="category">Grid 기본</Col>
@@ -3488,6 +3338,39 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">be65e7edec215612</Col>
             <Col id="search_subject">5</Col>
             <Col id="keyword">clearExportItems, addExportItem</Col>
+          </Row>
+          <Row>
+            <Col id="category">nexacroObject</Col>
+            <Col id="subject">nexacroObject</Col>
+            <Col id="tree_level">0</Col>
+            <Col id="search_subject">8</Col>
+          </Row>
+          <Row>
+            <Col id="id_sample">sample_nexacro_decimal_01</Col>
+            <Col id="id_doc">31f638ff038501db</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">8</Col>
+            <Col id="keyword">getSum</Col>
+            <Col id="category">nexacroObject</Col>
+            <Col id="subject">Grid 컴포넌트에서 BIGDECIMAL 타입 사용하기</Col>
+          </Row>
+          <Row>
+            <Col id="id_sample">sample_nexacro_decimal_02</Col>
+            <Col id="id_doc">86b2fd44e07f15c1</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">8</Col>
+            <Col id="keyword">addDecimal, subDecimal, mulDecimal, divDecimal</Col>
+            <Col id="category">nexacroObject</Col>
+            <Col id="subject">1경(京)보다 큰 값 연산하기</Col>
+          </Row>
+          <Row>
+            <Col id="id_sample">sample_nexacro_domparser_01</Col>
+            <Col id="id_doc">176eafd4e40da4e8</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">8</Col>
+            <Col id="keyword">onreadystatechange, parseFromString</Col>
+            <Col id="category">nexacroObject</Col>
+            <Col id="subject">XML 형식의 Open API 연결해서 Grid 컴포넌트에 표시하기</Col>
           </Row>
         </Rows>
       </Dataset>

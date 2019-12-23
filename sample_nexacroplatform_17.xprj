@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project type="application" version="2.0">
+<Project version="2.1">
   <EnvironmentDefinition url="environment.xml"/>
   <TypeDefinition url="typedefinition.xml"/>
   <AppVariables url="appvariables.xml"/>

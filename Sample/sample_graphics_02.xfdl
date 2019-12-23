@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="GrpTest" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Graphics id="Graphics00" taborder="0" left="207" top="48" width="446" height="212" ondrag="Graphics00_ondrag" ondragmove="Graphics00_ondragmove" onclick="Graphics00_onclick" border="1px solid black"/>
+        <Button id="Button01" taborder="1" text="Add Objects" left="30" top="50" width="147" height="50" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="2" text="rotate (GraphicsRect)" left="30" top="110" width="147" height="50" onclick="Button02_onclick"/>
+        <Button id="Button03" taborder="3" text="rotate (GraphicsGroup)" left="30" top="180" width="147" height="50" onclick="Button03_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/*
+- 도형 오브젝트 추가하는 법
+- 그룹 오브젝트 처리하는 법
+- 이미지 비동기 처리하는 법
+*/
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.addGraphicsControl();
+	// 실제 반영하려면 redraw 메소드 호출해야 함.
+	this.Graphics00.redraw();
+};
+
+this.addGraphicsControl = function()
+{
+	//GraphicsRect
+	var objGRect = new nexacro.GraphicsRect();
+	this.Graphics00.addChild( "GraphicsRect00", objGRect );
+	objGRect.set_x(50);
+	objGRect.set_y(50);
+	objGRect.set_width(50);
+	objGRect.set_height(50);
+	objGRect.set_strokepen("1px solid red");
+	
+	// GraphicsEllipse
+	var objGEllipse = new nexacro.GraphicsEllipse();
+	// 나머지 오브젝트는 그룹으로 묶어서 addChild
+	//this.Graphics00.addChild( "GraphicsEllipse00", objGEllipse );
+	objGEllipse.set_x(150);
+	objGEllipse.set_y(75);
+ 	objGEllipse.set_width(50);
+ 	objGEllipse.set_height(50);
+	objGEllipse.set_strokepen("1px solid red");	
+	
+	// GraphicsText
+	var objGText = new nexacro.GraphicsText();
+	//this.Graphics00.addChild( "GraphicsText00", objGText );
+	objGText.set_x(300);
+	objGText.set_y(50);
+	objGText.set_color('red');
+	// 기본 폰트 확인
+	// RP 87933
+	objGText.set_font('12pt/normal Verdana'); 
+ 	objGText.set_text('Ryan');
+	
+	// GraphicsImage
+	var objGImage = new nexacro.GraphicsImage();
+	//this.Graphics00.addChild( "GraphicsImage00", objGImage );
+	objGImage.set_x(200);
+	objGImage.set_y(50);	
+// 	objGImage.set_width(50);	
+// 	objGImage.set_height(50);	
+	objGImage.set_image("url('imagerc::img_50.png')");	
+	// 아래와 같이 즉시 실행 함수 형식은 동작하지 않음
+	/*
+	objGImage.setImageLoadEventHandler((function(obj) {
+		trace(obj.isEmptyRect());
+		obj.set_width(obj.imagewidth);
+		obj.set_height(obj.imageheight);
+	})(objGImage), this);
+	*/
+	objGImage.setImageLoadEventHandler(this.fn_checkGImage, this);
+	
+	// GraphicsLine
+	var objGLine = new nexacro.GraphicsLine();
+	//this.Graphics00.addChild( "GraphicsLine00", objGLine );
+
+	objGLine.set_x(50);
+	objGLine.set_y(120);
+	objGLine.set_x2(250);
+	objGLine.set_y2(0);
+	objGLine.set_strokepen('1px solid red');  
+	
+	// GraphicsPaths
+	// GraphicsPaths 자체로는 아무런 의미가 없고 GraphicsPath 오브젝트를 추가해주어야 함
+	var objGPaths = new nexacro.GraphicsPaths();
+	//this.Graphics00.addChild( "GraphicsPaths00", objGPaths );	
+	objGPaths.set_x(50);
+	objGPaths.set_y(120);
+	objGPaths.set_strokepen('1px solid blue');  
+
+	
+	var objGPath = new nexacro.GraphicsPath();	
+	trace(objGPath.hasSegments());
+	objGPaths.addChild( "GraphicsPath00", objGPath );
+// 	objGPath.set_x(50);
+// 	objGPath.set_y(120);	
+	//objGPath.bezierCurveTo(400,200,400,300,300,300);
+	objGPath.moveTo(0,0);
+	objGPath.arcTo( 50, 50, 50, 100, 0, true, false );
+	//objGPath.set_strokepen('1px solid red');  
+	trace(objGPath.hasSegments());
+	
+	// GraphicsGroup 
+	var objGGroup = new nexacro.GraphicsGroup();
+	this.Graphics00.addChild( "GraphicsGroup00", objGGroup );
+	objGGroup.addChild("GraphicsEllipse00", objGEllipse);
+	objGGroup.addChild("GraphicsText00", objGText);
+	objGGroup.addChild("GraphicsImage00", objGImage);
+	objGGroup.addChild("GraphicsLine00", objGLine);
+	objGGroup.addChild("GraphicsPaths00", objGPaths);
+}
+
+this.fn_checkGImage = function()
+{
+	var objGImage = this.Graphics00.getObjectByID("GraphicsImage00");
+	objGImage.set_width(objGImage.imagewidth);
+	objGImage.set_height(objGImage.imageheight);
+	// 이미지는 비동기로 로딩되며 로딩되는 시점은 setImageLoadEventHandler 에서만 처리할 수 있음.
+	// 크기를 모르는 경우에는 실제 크기를 처리하기 위해 이런 식으로 처리해주어야 할 듯.
+	this.Graphics00.redraw();
+}
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objGRect = this.Graphics00.getObjectByID("GraphicsRect00");
+	objGRect.set_fillstyle("yellow");
+	objGRect.rotate(10);
+	this.Graphics00.redraw();
+};
+
+// 확인 중.
+// RP 87928
+this.Graphics00_onclick = function(obj:nexacro.Graphics,e:nexacro.ClickEventInfo)
+{
+	var objGRect = this.Graphics00.getObjectByID("GraphicsRect00");
+	trace("objGRect: "+objGRect.isHitTest(e.clientx, e.clienty));
+};
+
+this.Button03_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objGGroup = this.Graphics00.getObjectByID("GraphicsGroup00");
+	objGGroup.rotate(10);
+	this.Graphics00.redraw();
+};
+]]></Script>
+  </Form>
+</FDL>

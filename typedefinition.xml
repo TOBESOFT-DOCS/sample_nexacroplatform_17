@@ -5,8 +5,8 @@
     <Module url="ComComp.json"/>
     <Module url="Grid.json"/>
     <Module url="DeviceAPI.json"/>
-    <Module url="extlib::Chart.json"/>
     <Module url="ListView.json"/>
+    <Module url="Graphics.json"/>
   </Modules>
   <Components>
     <Component type="JavaScript" id="Button" classname="nexacro.Button"/>
@@ -37,28 +37,24 @@
     <Component type="JavaScript" id="VideoPlayer" classname="nexacro.VideoPlayer" iconindex="57"/>
     <Component type="JavaScript" id="VirtualFile" classname="nexacro.VirtualFile"/>
     <Component type="JavaScript" id="FileDialog" classname="nexacro.FileDialog"/>
-    <Component id="PieChart" classname="nexacro.PieChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
-    <Component id="BubbleChart" classname="nexacro.BubbleChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
-    <Component id="BasicChart" classname="nexacro.BasicChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
     <Component type="JavaScript" id="FileDownload" classname="nexacro.FileDownload"/>
     <Component type="JavaScript" id="FileUpload" classname="nexacro.FileUpload"/>
     <Component type="JavaScript" id="ListView" classname="nexacro.ListView"/>
-    <Component id="RadarChart" classname="nexacro.RadarChart" iconindex="24" defaultwidth="0" defaultheight="0" prefixid="" type="JavaScript" iconextra="false"/>
     <Component type="JavaScript" id="FileDownTransfer" classname="nexacro.FileDownTransfer"/>
     <Component type="JavaScript" id="FileUpTransfer" classname="nexacro.FileUpTransfer"/>
-    <Component type="JavaScript" id="GaugeChart" classname="nexacro.GaugeChart" iconindex="24" defaultwidth="0" defaultheight="0" iconextra="false" prefixid=""/>
+    <Component type="JavaScript" id="Graphics" classname="nexacro.Graphics"/>
   </Components>
   <Services>
-    <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" version="0" communicationversion="0"/>
-    <Service prefixid="initvalue" type="resource" url="./_resource_/_initvalue_/" version="0" communicationversion="0"/>
-    <Service prefixid="imagerc" type="resource" url="./_resource_/_images_/"/>
-    <Service prefixid="font" type="resource" url="./_resource_/_font_/" version="0" communicationversion="0"/>
-    <Service prefixid="Base" type="form" cachelevel="session" url="./Base/" version="0" communicationversion="0"/>
-    <Service prefixid="Sample" type="form" cachelevel="session" url="./Sample/" version="0" communicationversion="0"/>
+    <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" version="0" communicationversion="0" include_subdir="true"/>
+    <Service prefixid="initvalue" type="resource" url="./_resource_/_initvalue_/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="imagerc" type="resource" url="./_resource_/_images_/" include_subdir="true"/>
+    <Service prefixid="font" type="resource" url="./_resource_/_font_/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="Base" type="form" cachelevel="session" url="./Base/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="Sample" type="form" cachelevel="session" url="./Sample/" version="0" communicationversion="0" include_subdir="false"/>
     <Service prefixid="SvcGetSource" type="file" cachelevel="session" url="./Service/" version="0" communicationversion="0" include_subdir="true"/>
-    <Service prefixid="temp" type="form" cachelevel="session" url="./temp/" version="0" communicationversion="0"/>
-    <Service prefixid="xcssrc" type="resource" url="./_resource_/_xcss_/"/>
-    <Service prefixid="FileSample" type="file" cachelevel="none" url="./FileSample/" version="0" communicationversion="0"/>
+    <Service prefixid="temp" type="form" cachelevel="session" url="./temp/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="xcssrc" type="resource" url="./_resource_/_xcss_/" include_subdir="false"/>
+    <Service prefixid="FileSample" type="file" cachelevel="none" url="./FileSample/" version="0" communicationversion="0" include_subdir="false"/>
   </Services>
   <Protocols/>
   <Update>

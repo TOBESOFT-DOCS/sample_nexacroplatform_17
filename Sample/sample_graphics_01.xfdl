@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="GrpLine" width="1280" height="720" titletext="New Form" onload="GrpLine_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Graphics id="Graphics00" taborder="0" left="30" top="30" width="300" height="300"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.GrpLine_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var objGLine = new nexacro.GraphicsLine();
+	this.Graphics00.addChild( "GraphicsLine00", objGLine );
+	objGLine.set_x(10);
+	objGLine.set_y(10);	
+	objGLine.set_x2(50);
+	objGLine.set_y2(50);
+	objGLine.set_strokepen('1px solid red');
+	this.Graphics00.redraw();
+};
+]]></Script>
+  </Form>
+</FDL>
