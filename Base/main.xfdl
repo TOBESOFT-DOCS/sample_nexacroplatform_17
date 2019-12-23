@@ -66,7 +66,7 @@
               <Static id="Static99" taborder="5" text="전체 컴포넌트" cssclass="Sta_TF_mapTitle" left="38" top="40" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="0"/>
               <Static id="Static06" taborder="6" text="Dataset, Excel" cssclass="Sta_TF_mapTitle" left="38" top="195" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="5"/>
               <Static id="Static07" taborder="7" text="스크립트" cssclass="Sta_TF_mapTitle" left="38" top="226" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="6"/>
-              <Static id="Static05" taborder="8" text="넥사크로 오브젝트" cssclass="Sta_TF_mapTitle" left="38" top="257" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="8"/>
+              <Static id="Static05" taborder="8" text="넥사크로 오브젝트" cssclass="Sta_TF_mapTitle" left="38" top="257" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="9"/>
               <Static id="Static08" taborder="9" text="Animation 컴포넌트" cssclass="Sta_TF_mapTitle" left="38" top="288" width="180" height="27" onclick="pdiv_Menu_Static_onclick" search_subject="8"/>
               <Static id="Static09" taborder="10" text="키워드별 예제 보기" cssclass="Sta_TF_AllMenuTit" left="28" top="334" width="180" height="27" onclick="pdiv_Menu_Static09_onclick"/>
               <Combo id="Combo00" taborder="11" text="Combo00" left="38" top="371" width="150" height="30" innerdataset="ds_keyword" codecolumn="keyword" datacolumn="keyword" type="caseifilterlike" onitemchanged="pdiv_Menu_Combo00_onitemchanged" displayrowcount="13" cssclass="main_combo"/>
@@ -3343,13 +3343,13 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="category">nexacroObject</Col>
             <Col id="subject">nexacroObject</Col>
             <Col id="tree_level">0</Col>
-            <Col id="search_subject">8</Col>
+            <Col id="search_subject">9</Col>
           </Row>
           <Row>
             <Col id="id_sample">sample_nexacro_decimal_01</Col>
             <Col id="id_doc">31f638ff038501db</Col>
             <Col id="tree_level">1</Col>
-            <Col id="search_subject">8</Col>
+            <Col id="search_subject">9</Col>
             <Col id="keyword">getSum</Col>
             <Col id="category">nexacroObject</Col>
             <Col id="subject">Grid 컴포넌트에서 BIGDECIMAL 타입 사용하기</Col>
@@ -3358,7 +3358,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_sample">sample_nexacro_decimal_02</Col>
             <Col id="id_doc">86b2fd44e07f15c1</Col>
             <Col id="tree_level">1</Col>
-            <Col id="search_subject">8</Col>
+            <Col id="search_subject">9</Col>
             <Col id="keyword">addDecimal, subDecimal, mulDecimal, divDecimal</Col>
             <Col id="category">nexacroObject</Col>
             <Col id="subject">1경(京)보다 큰 값 연산하기</Col>
@@ -3367,7 +3367,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_sample">sample_nexacro_domparser_01</Col>
             <Col id="id_doc">176eafd4e40da4e8</Col>
             <Col id="tree_level">1</Col>
-            <Col id="search_subject">8</Col>
+            <Col id="search_subject">9</Col>
             <Col id="keyword">onreadystatechange, parseFromString</Col>
             <Col id="category">nexacroObject</Col>
             <Col id="subject">XML 형식의 Open API 연결해서 Grid 컴포넌트에 표시하기</Col>
