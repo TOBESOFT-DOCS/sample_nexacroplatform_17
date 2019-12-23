@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="DecimalGrid" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="25" top="25" width="570" height="105" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="INT"/>
+                <Cell col="1" text="FLOAT"/>
+                <Cell col="2" text="BIGDECIMAL"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:INT"/>
+                <Cell col="1" text="bind:FLOAT"/>
+                <Cell col="2" text="bind:BIGDECIMAL"/>
+              </Band>
+              <Band id="summary">
+                <Cell displaytype="number" expr="dataset.getSum('INT')"/>
+                <Cell col="1" expr="dataset.getSum('FLOAT')" displaytype="number"/>
+                <Cell col="2" expr="dataset.getSum('BIGDECIMAL')" displaytype="number"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="INT" type="INT" size="256"/>
+          <Column id="FLOAT" type="FLOAT" size="256"/>
+          <Column id="BIGDECIMAL" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="INT">1234567890123456789</Col>
+            <Col id="FLOAT">1234567890123456789</Col>
+            <Col id="BIGDECIMAL">1234567890123456789</Col>
+          </Row>
+          <Row>
+            <Col id="INT">1234567890123456789</Col>
+            <Col id="FLOAT">1234567890123456789</Col>
+            <Col id="BIGDECIMAL">1234567890123456789</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>
