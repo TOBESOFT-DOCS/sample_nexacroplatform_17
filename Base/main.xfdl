@@ -308,7 +308,7 @@ this.setCompLabel = function()
 this.getCategoryName = function(strSampleFile)
 {
 	var tempCategory = this.ds_sample_list.getColumn(this.ds_sample_list.findRow("id_sample", strSampleFile), "category");
-	tempCategory = this.ds_sample_list.getColumn(this.ds_sample_list.findRowExprNF("category=='"+tempCategory+"'&& tree_level=='0'"), strSubjectCol);
+	tempCategory = this.ds_sample_list.getColumnNF(this.ds_sample_list.findRowExprNF("category=='"+tempCategory+"'&& tree_level=='0'"), strSubjectCol);
 	return tempCategory;
 }
 
