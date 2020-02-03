@@ -2117,6 +2117,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Grid 응용</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">2</Col>
+            <Col id="subject_ja">Gridの応用</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2126,6 +2127,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">2e314460f5a5869d</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">navigatorname, setEventHandler, selectstartrow, selectendrow, selectstartcol, selectendcol, getFormatColCount, getCellText, setClipboard, clearClipboard, keycode, ctrlkey, shiftkey,altkey</Col>
+            <Col id="subject_ja">GridからExcelにコピー/貼り付け</Col>
+            <Col id="id_doc_ja">88d4e16598c652b7</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2135,6 +2138,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">d485297c0d099f58</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">expr, getSum, suppress, keystring</Col>
+            <Col id="subject_ja">合計/小計を表示する</Col>
+            <Col id="id_doc_ja">0c813c7eab89e1d0</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2144,6 +2149,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">f555e80cc2b47f22</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getRowLevel, cssclass, expr</Col>
+            <Col id="subject_ja">小計の名前と背景色設定</Col>
+            <Col id="id_doc_ja">f8ffc5738d1ec2ef</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2153,6 +2160,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">0843710722d68046</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">displaytype, edittype, treelevel, textAlign, treeusecheckbox</Col>
+            <Col id="subject_ja">ツリービューの実装</Col>
+            <Col id="id_doc_ja">cc87ffdc570f39f0</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2162,6 +2171,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">e7a98c2932193774</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">edittype, setCellProperty, editautoselect, autoenter, setCellPos</Col>
+            <Col id="subject_ja">ツリービューを編集</Col>
+            <Col id="id_doc_ja">e0e0b887f97c5ec3</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2171,6 +2182,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">33c1574e75c1c1f6</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">keystring, objects, getCellCount,getCellText, getCellProperty, setCellProperty, split, substr</Col>
+            <Col id="subject_ja">ヘッダ部クリックによるソート制御</Col>
+            <Col id="id_doc_ja">ef7283eb7d703163</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2180,6 +2193,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">2e69196f50aaf319</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">displaytype, edittype, onheadclick, getRowCount, setColumn, getCellProperty, setCellProperty</Col>
+            <Col id="subject_ja">全選択/解除</Col>
+            <Col id="id_doc_ja">a610006244412fba</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2189,6 +2204,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">bddce2c11978273b</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">selectstartrow, selectendrow, selectstartcol, selectendcol, getCellValue, getCellCount, getCellPos, getCellProperty, getRowCount, deleteRow, rowposition, setColumn, keycode, ctrlkey, split, substr</Col>
+            <Col id="subject_ja">Grid間のコピー/貼り付け</Col>
+            <Col id="id_doc_ja">18d5893a41bb3161</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2198,6 +2215,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">b64eb34f535b5bb4</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">visible, filter,clearData,copyData,getRowcount</Col>
+            <Col id="subject_ja">ページング機能</Col>
+            <Col id="id_doc_ja">ddbcd1c7b61904d9</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2207,6 +2226,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">96e390279a5283bf</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">setColumn, currow</Col>
+            <Col id="subject_ja">Gridで簡単なアンケート実装</Col>
+            <Col id="id_doc_ja">4562da470410f5f2</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2216,6 +2237,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">filter, onvscroll</Col>
+            <Col id="subject_ja">マウスホイールの動作を利用したパージング処理</Col>
+            <Col id="id_doc_ja">6be13c9fd35f54cb</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2225,6 +2248,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getRowType, getGroupRangeCount</Col>
+            <Col id="subject_ja">1件だけある小計削除</Col>
+            <Col id="id_doc_ja">191a5ebcf5720acf</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2234,6 +2259,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">treeinitstatus, setTreeStatus</Col>
+            <Col id="subject_ja">特定位置の親ツリービューのみ展開</Col>
+            <Col id="id_doc_ja">21a08d3db21b74b9</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2243,15 +2270,19 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">displaytype</Col>
+            <Col id="subject_ja">領収証を計算する</Col>
+            <Col id="id_doc_ja">dd89f2d2236621de</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
-            <Col id="subject"> 그룹에 레벨 지정해서 subtotal 계산하기</Col>
+            <Col id="subject">그룹에 레벨 지정해서 subtotal 계산하기</Col>
             <Col id="id_sample">sample_grid_56</Col>
             <Col id="id_doc">56a17ccdee386f9e</Col>
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">keystring</Col>
+            <Col id="subject_ja">グループにレベルを指定してsubtotalを計算する</Col>
+            <Col id="id_doc_ja">fc4e9689dfcd1cfb</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2261,6 +2292,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">appendContentsRow, appendContentsCol</Col>
+            <Col id="subject_ja">動的にGridコンポーネントを作成してデータをバインドする</Col>
+            <Col id="id_doc_ja">82362e9293cf75b7</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2270,6 +2303,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getCellValue, getCellRect</Col>
+            <Col id="subject_ja">ドラッグ＆ドロップでコンポーネントの文字列移動</Col>
+            <Col id="id_doc_ja">fe7d6f5eb675797b</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2279,6 +2314,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">scrollTo</Col>
+            <Col id="subject_ja">2つのGridコンポーネントのスクロールを同時に動かす</Col>
+            <Col id="id_doc_ja">81e4708ec41bac8c</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2288,6 +2325,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">redrawExprCell</Col>
+            <Col id="subject_ja">チェックされたRowの数を返す</Col>
+            <Col id="id_doc_ja">01a7a6f10a8fe757</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2297,6 +2336,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">filter</Col>
+            <Col id="subject_ja">Like条件で検索</Col>
+            <Col id="id_doc_ja">70dd50948db3cd01</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2306,6 +2347,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">findRowExpr</Col>
+            <Col id="subject_ja">重複した項目を削除する</Col>
+            <Col id="id_doc_ja">29b449571296fd82</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2315,6 +2358,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">displaytype</Col>
+            <Col id="subject_ja">Radioボタンを表現</Col>
+            <Col id="id_doc_ja">be1bdb26a43afd79</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2324,6 +2369,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getTimezoneOffset</Col>
+            <Col id="subject_ja">世界の現在時刻を表示する</Col>
+            <Col id="id_doc_ja">dc62e1f785d4b9ff</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2333,6 +2380,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getCellRect, trackPopupByComponent</Col>
+            <Col id="subject_ja">PoupDivコンポーネントを利用して選択したCellの枠線を表現する</Col>
+            <Col id="id_doc_ja">5cab6b5d3742147e</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2342,6 +2391,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getTreeChildCount, getCellText, treeusebutton, treeuseline</Col>
+            <Col id="subject_ja">ツリー構造内の子の情報を確認する</Col>
+            <Col id="id_doc_ja">88ba5e0d8d29c94f</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
