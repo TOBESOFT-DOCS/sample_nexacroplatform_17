@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_frame_04" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btnPopup" taborder="0" text="Create Popup" left="30" top="20" width="120" height="50" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnPopup_onclick" opacity=""/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.btnPopup_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objChildFrame = new ChildFrame();  
+	objChildFrame.init("childframe00", 0, 0, 300, 300, null, null);
+	objChildFrame.set_border("1px solid #999999");
+	objChildFrame.set_showstatusbar(true);
+	objChildFrame.set_openalign('center middle');
+	objChildFrame.set_resizable(true);
+	objChildFrame.set_background("#ffffff");
+	objChildFrame.set_titletext(objChildFrame.width+"*"+objChildFrame.height);	
+	objChildFrame.addEventHandler( "onsize", this.ChildFrame00_onsize, this);
+	objChildFrame.showModal(this.getOwnerFrame(), {minsize:'150', maxsize:'400'});
+};
+
+this.ChildFrame00_onsize = function(obj:nexacro.ChildFrame, e:nexacro.SizeEventInfo)
+{
+	obj.set_titletext(obj.width+"*"+obj.height);	
+	if(e.cx < obj.minsize) {
+		obj.set_width(obj.minsize);
+	}
+	if(e.cx > obj.maxsize) {
+		obj.set_width(obj.maxsize);
+	}
+	
+	if(e.cy < obj.minsize){
+		obj.set_height(obj.minsize);
+	}
+	if(e.cy > obj.maxsize){
+		obj.set_height(obj.maxsize);
+	}	
+}]]></Script>
+  </Form>
+</FDL>

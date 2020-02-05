@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_imageviewer_01" left="0" top="0" width="1024" height="768" titletext="New Form" onrbuttondown="Form_onrbuttondown">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="btn320" taborder="1" text="320x480" left="210" top="30" width="120" height="50" onclick="btn320_onclick"/>
+        <Button id="btn160" taborder="0" text="160x240" left="210" top="94" width="120" height="50" onclick="btn160_onclick"/>
+        <Div id="Div00" taborder="2" text="Div00" left="30" top="30" width="160" height="240">
+          <Layouts>
+            <Layout>
+              <ImageViewer id="imageviewerMain" taborder="0" text="ImageViewer00" left="0" top="0" width="160" height="240" image="url('imagerc::160px-Bob_Dylan_1978.jpg')" onload="Div00_imageviewerMain_onload"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.btn320_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Div00.form.imageviewerMain.set_image("imagerc::320px-Bob_Dylan_1978.jpg");
+};
+
+this.btn160_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Div00.form.imageviewerMain.set_image("imagerc::160px-Bob_Dylan_1978.jpg");
+};
+
+this.Div00_imageviewerMain_onload = function(obj:nexacro.ImageViewer,e:nexacro.LoadEventInfo)
+{
+	var nHeight = obj.imageheight;
+	var nWidth = obj.imagewidth;
+	
+	obj.set_height(nHeight);
+	obj.set_width(nWidth);
+	
+	this.Div00.form.resetScroll();
+};
+]]></Script>
+  </Form>
+</FDL>

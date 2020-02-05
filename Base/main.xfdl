@@ -849,6 +849,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">titlebar, titleicon, maxbutton, minbutton</Col>
           </Row>
           <Row>
+            <Col id="category">Frames</Col>
+            <Col id="subject">팝업창 크기 제한하기</Col>
+            <Col id="id_sample">sample_frame_09</Col>
+            <Col id="id_doc">6ad062e876725ab3</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">4</Col>
+            <Col id="keyword">cx,cy</Col>
+          </Row>
+          <Row>
             <Col id="category">Animation</Col>
             <Col id="subject">Animation</Col>
             <Col id="tree_level">0</Col>
@@ -1337,6 +1346,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">2c1fd1b2665f63b5</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">load, showzoom, addItem, removeItem</Col>
+          </Row>
+          <Row>
+            <Col id="category">GoogleMap</Col>
+            <Col id="subject">지도에 표시되는 언어 및 지역 특성 설정하기</Col>
+            <Col id="id_sample">sample_googlemap_04</Col>
+            <Col id="id_doc">fd54df1fd8882895</Col>
+            <Col id="keyword">language, region</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
           </Row>
           <Row>
             <Col id="category">Graphics</Col>
@@ -2501,6 +2519,14 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">이미지를 찾지 못할 때 대체 이미지 보여주기</Col>
             <Col id="id_sample">sample_imageviewer_04</Col>
             <Col id="id_doc">1ea6ff38e91a3a5c</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">imagewidth, imageheight</Col>
+          </Row>
+          <Row>
+            <Col id="subject">이미지가 ImageViewer보다 클 경우 스크롤 처리하기</Col>
+            <Col id="id_sample">sample_imageviewer_05</Col>
+            <Col id="id_doc">025e658f1598d3c2</Col>
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">imagewidth, imageheight</Col>

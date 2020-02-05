@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_googlemap_03" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Button id="Button00" taborder="0" text="ko / KR" left="32" top="40" width="120" height="32" language="en" region="US" onclick="Button00_onclick"/>
+        <GoogleMap id="GoogleMap00" taborder="1" left="170" top="40" width="480" height="320" showzoom=""/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.GoogleMap00.set_showzoom(true);
+	this.GoogleMap00.set_apikey(nexacro.getApplication().googleMapAPIKey);	
+	this.GoogleMap00.set_language('ko');
+	this.GoogleMap00.set_region('KR');
+	this.GoogleMap00.load(false, 37.243158, 131.869202, 3, 15);
+};
+]]></Script>
+  </Form>
+</FDL>
