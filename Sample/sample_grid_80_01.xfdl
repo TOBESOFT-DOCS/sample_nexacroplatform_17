@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_grid_80" width="1000" height="720" titletext="New Form" ontimer="sample_grid_80_ontimer" onload="sample_grid_80_onload">
     <Layouts>
       <Layout height="720" mobileorientation="landscape" width="1000">
@@ -74,12 +74,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/*
-Grid 응용 / 세계 시간 표시하기
-키워드 getTimezoneOffset
-
-*/
-this.sample_grid_80_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.sample_grid_80_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 {
 	for(var i=0;i<this.Dataset00.getRowCount();i++)
 	{
