@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_combo_07" left="0" top="0" width="1024" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="1024">
@@ -89,10 +89,7 @@
         </Radio>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/*
-Combo / 대소문자 구분 없이 검색하거나 필터링하기
-*/
-this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
 {
 	this.Combo00.set_type(e.postvalue);
 };

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sampla_grid_69" left="0" top="0" width="1024" height="768">
     <Layouts>
       <Layout height="768" width="1024">
@@ -106,43 +106,43 @@
         <Rows>
           <Row>
             <Col id="Column0">1</Col>
-            <Col id="Column1">가</Col>
+            <Col id="Column1">unus</Col>
           </Row>
           <Row>
             <Col id="Column0">2</Col>
-            <Col id="Column1">나</Col>
+            <Col id="Column1">duo</Col>
           </Row>
           <Row>
             <Col id="Column0">3</Col>
-            <Col id="Column1">다</Col>
+            <Col id="Column1">tria</Col>
           </Row>
           <Row>
             <Col id="Column0">4</Col>
-            <Col id="Column1">라</Col>
+            <Col id="Column1">quatuor</Col>
           </Row>
           <Row>
             <Col id="Column0">5</Col>
-            <Col id="Column1">마</Col>
+            <Col id="Column1">quinque</Col>
           </Row>
           <Row>
             <Col id="Column0">6</Col>
-            <Col id="Column1">바</Col>
+            <Col id="Column1">sex</Col>
           </Row>
           <Row>
             <Col id="Column0">7</Col>
-            <Col id="Column1">사</Col>
+            <Col id="Column1">septem</Col>
           </Row>
           <Row>
             <Col id="Column0">8</Col>
-            <Col id="Column1">아</Col>
+            <Col id="Column1">octo</Col>
           </Row>
           <Row>
             <Col id="Column0">9</Col>
-            <Col id="Column1">자</Col>
+            <Col id="Column1">nobem</Col>
           </Row>
           <Row>
             <Col id="Column0">10</Col>
-            <Col id="Column1">카</Col>
+            <Col id="Column1">decem</Col>
           </Row>
         </Rows>
       </Dataset>

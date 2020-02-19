@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_edit_05" left="0" top="0" width="1024" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="1024">
@@ -39,12 +39,7 @@ this.CheckBox00_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChan
 	
 };
 
-
-/*
-정규식을 이용한 비밀번호 형식체크
-(영문/숫자로 구성한 8~10 자리 비밀번호만 허용)
- */
- function fn_checkPassword(sValue)
+function fn_checkPassword(sValue)
 {
     var sRtn = "N";
     var sRegExp = "[a-z0-9]{8,10}";

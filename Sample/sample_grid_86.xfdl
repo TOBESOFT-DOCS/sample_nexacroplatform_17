@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_grid_86" left="0" top="0" width="1024" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="1024">
@@ -31,11 +31,7 @@
         <TextArea id="TextArea00" taborder="1" left="12" top="180" width="356" height="90"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/*
-Grid 셀 / 편집중인 값 가져오기
-*/
-
-this.Grid00_oninput = function(obj:nexacro.Grid,e:nexacro.InputEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oninput = function(obj:nexacro.Grid,e:nexacro.InputEventInfo)
 {
 	this.TextArea00.set_value("getCurEditType: "+obj.getCurEditType()+"\n"
 		+"getEditValue: "+obj.getEditValue()+"\n"

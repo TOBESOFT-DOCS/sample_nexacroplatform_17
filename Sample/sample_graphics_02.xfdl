@@ -9,16 +9,9 @@
         <Button id="Button03" taborder="3" text="rotate (GraphicsGroup)" left="30" top="180" width="147" height="50" onclick="Button03_onclick"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/*
-- 도형 오브젝트 추가하는 법
-- 그룹 오브젝트 처리하는 법
-- 이미지 비동기 처리하는 법
-*/
-
-this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.addGraphicsControl();
-	// 실제 반영하려면 redraw 메소드 호출해야 함.
 	this.Graphics00.redraw();
 };
 
@@ -35,8 +28,6 @@ this.addGraphicsControl = function()
 	
 	// GraphicsEllipse
 	var objGEllipse = new nexacro.GraphicsEllipse();
-	// 나머지 오브젝트는 그룹으로 묶어서 addChild
-	//this.Graphics00.addChild( "GraphicsEllipse00", objGEllipse );
 	objGEllipse.set_x(150);
 	objGEllipse.set_y(75);
  	objGEllipse.set_width(50);
@@ -45,12 +36,9 @@ this.addGraphicsControl = function()
 	
 	// GraphicsText
 	var objGText = new nexacro.GraphicsText();
-	//this.Graphics00.addChild( "GraphicsText00", objGText );
 	objGText.set_x(300);
 	objGText.set_y(50);
 	objGText.set_color('red');
-	// 기본 폰트 확인
-	// RP 87933
 	objGText.set_font('12pt/normal Verdana'); 
  	objGText.set_text('Ryan');
 	
@@ -62,7 +50,7 @@ this.addGraphicsControl = function()
 // 	objGImage.set_width(50);	
 // 	objGImage.set_height(50);	
 	objGImage.set_image("url('imagerc::img_50.png')");	
-	// 아래와 같이 즉시 실행 함수 형식은 동작하지 않음
+	// The following format does not work.
 	/*
 	objGImage.setImageLoadEventHandler((function(obj) {
 		trace(obj.isEmptyRect());
@@ -83,7 +71,6 @@ this.addGraphicsControl = function()
 	objGLine.set_strokepen('1px solid red');  
 	
 	// GraphicsPaths
-	// GraphicsPaths 자체로는 아무런 의미가 없고 GraphicsPath 오브젝트를 추가해주어야 함
 	var objGPaths = new nexacro.GraphicsPaths();
 	//this.Graphics00.addChild( "GraphicsPaths00", objGPaths );	
 	objGPaths.set_x(50);
@@ -117,8 +104,8 @@ this.fn_checkGImage = function()
 	var objGImage = this.Graphics00.getObjectByID("GraphicsImage00");
 	objGImage.set_width(objGImage.imagewidth);
 	objGImage.set_height(objGImage.imageheight);
-	// 이미지는 비동기로 로딩되며 로딩되는 시점은 setImageLoadEventHandler 에서만 처리할 수 있음.
-	// 크기를 모르는 경우에는 실제 크기를 처리하기 위해 이런 식으로 처리해주어야 할 듯.
+	// Images are loaded asynchronously and can only be processed by setImageLoadEventHandler.
+	// If you do not know the size seems to have to be processed in this way to handle the actual size.
 	this.Graphics00.redraw();
 }
 
@@ -130,8 +117,6 @@ this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	this.Graphics00.redraw();
 };
 
-// 확인 중.
-// RP 87928
 this.Graphics00_onclick = function(obj:nexacro.Graphics,e:nexacro.ClickEventInfo)
 {
 	var objGRect = this.Graphics00.getObjectByID("GraphicsRect00");

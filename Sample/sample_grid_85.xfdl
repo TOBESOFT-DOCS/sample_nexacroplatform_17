@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_grid_85" left="0" top="0" width="1024" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="1024">
@@ -33,10 +33,7 @@
         <TextArea id="TextArea00" taborder="3" left="315" top="65" width="235" height="175"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/*
-Grid 기본 / 스크롤바가 생기지 않게 Grid 컴포넌트의 높이 조정하기
-*/
-this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var nH = this.Grid00.getRealRowFullSize();
 	//computed style (border-top + border-bottom = 3)

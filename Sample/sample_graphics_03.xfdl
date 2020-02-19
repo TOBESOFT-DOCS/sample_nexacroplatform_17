@@ -29,10 +29,7 @@
         </Radio>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/*
-https://icechou.tistory.com/158
-*/
-var bMouseButtonPressed = false;
+    <Script type="xscript5.1"><![CDATA[var bMouseButtonPressed = false;
 var preClientX;
 var preClientY;
 var nNUm = 0;

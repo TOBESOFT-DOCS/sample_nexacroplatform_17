@@ -61,23 +61,11 @@
         </Grid>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/*
-https://openweathermap.org/ 에서 무료로 제공하는 API 사용한 샘플
-https://openweathermap.org/forecast5#XML
-도시 코드 쿼리로 5일간의 날씨 데이터를 받아와서 
-Dataset 에 등록하고 Grid 컴포넌트에 보여줌
-Date 오브젝트에서 사용하는 locale과 api에서 사용하는 lang 코드가 달라서 따로 등록
-appid는 신청해서 받아야 함 (샘플로 제공되는 id는 언제든 삭제될 수 있음)
-XMLHttpRequest 의 사용법 간단하게 설명
-nexacro.DomParser 를 사용해서 XML 텍스트를 parseFromString 메소드로 Dom 요소로 구성하는 것이 주요 콘텐츠
-NRE에서는 해당 코드 동작하지 않음 
-*/
-var that = this;
+    <Script type="xscript5.1"><![CDATA[var that = this;
 var appid = "7533cbd205a94e397ac3a01258c3fd4c";
 /*
 lang
 English - en, Japanese - ja, Korean - kr
-
 */
 
 this.fn_getWeatherInfo = function(id, lang)
@@ -118,7 +106,7 @@ this.fn_setData = function(strXML)
 	var objDom = new nexacro.DomParser();
 	domDoc = objDom.parseFromString(strXML);
 
-	// Node값 보기
+	// Node value
 	var timezone = domDoc.getElementsByTagName("timezone")[0].childNodes[0].data;
 	var domElement = domDoc.getElementsByTagName("forecast")[0].childNodes;
 	var domCnt = domElement.length;

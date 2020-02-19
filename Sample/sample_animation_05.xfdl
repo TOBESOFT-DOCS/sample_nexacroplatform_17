@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_animation_05" left="0" top="0" width="1024" height="768" titletext="New Form" onload="sample_animation_01_onload">
     <Layouts>
       <Layout height="768" width="1024">
@@ -8,10 +8,7 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.1"><![CDATA[/*
-Animation / 펼쳐지는 메뉴 효과 만들기
-*/
-this.sample_animation_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.sample_animation_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
     var aniObj00 = new nexacro.Animation("Ani00", this);
     this.addChild("Ani00", aniObj00);

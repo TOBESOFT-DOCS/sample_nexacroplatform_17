@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_grid_35" left="0" top="0" width="1024" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="1024">
@@ -154,11 +154,11 @@ this.gf_setCheckAll = function(obj:Grid, e:GridClickEventInfo)
 {
 	var strColID = obj.getCellProperty("body", e.cell, "text").replace(/bind:/i, "");
 		
-	//체크박스가 체크되어 있으면 체크 해제 
-	//체크되어 있지 않으면 체크
+	//Uncheck the checkbox if it is checked
+	//Check if it is not checked
 	this.gv_isCheckAll = (this.gv_isCheckAll ? 0 : 1);
 	
-	//Dataset의 이벤트를 끔
+	//Turn off events in the dataset
 	//this.Dataset00.enableevent = false;
 	
 	//check to body column
@@ -170,7 +170,7 @@ this.gf_setCheckAll = function(obj:Grid, e:GridClickEventInfo)
 	//check to head column
 	obj.setCellProperty("Head", 0, "text", this.gv_isCheckAll);
 
-	//Dataset의 이벤트를 켬
+	//Turn on events in the dataset
 	//this.Dataset00.enableevent = true;
 
 }]]></Script>

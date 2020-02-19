@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_grid_81" width="1000" height="720" titletext="New Form" ontimer="test_180625_ontimer" onload="test_180625_onload">
     <Layouts>
       <Layout height="720" mobileorientation="landscape" width="1000">
@@ -58,13 +58,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/*
-선택한 셀 보더 표시하기
-Grid 응용 / PopupDiv 컴포넌트를 Cell border 처럼 표현하기
-키워드 getCellRect, trackPopupByComponent
-
-*/
-this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
 	var aryRect = this.Grid00.getCellRect(e.row, e.cell);
 	
