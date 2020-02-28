@@ -6,11 +6,11 @@
         <Div id="Div00" taborder="" text="" left="0" top="0" width="100%" height="52" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" color="" background="#363D47" enableevent="true">
           <Layouts>
             <Layout>
-              <Static id="Static00" taborder="0" text="버전 정보, 기타 설명이 들어가는 자리" left="240" top="6" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="40" verticalAlign="bottom" right="634" color="white" font="normal 10pt/normal &quot;맑은 고딕&quot;"/>
+              <Static id="Static00" taborder="0" text="버전 정보, 기타 설명이 들어가는 자리" left="240" top="6" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="40" verticalAlign="bottom" right="634" color="white"/>
               <ImageViewer id="ImageViewer00" taborder="1" left="70" top="5" width="140" height="35" image="URL(&quot;imagerc::nexacro_bi_black.png&quot;)" stretch="fit" background="transparent" border="0px none"/>
               <Button id="btn_Menu" taborder="2" cssclass="btn_TP_Menu01" left="0" top="0" width="60" height="100%" onclick="btn_Menu_onclick" tooltiptext="전체메뉴" tooltiptype="hover" border="0px none" cursor="default"/>
-              <Static id="Static01" taborder="3" text="&gt; 예제 프로젝트 소스코드 내려받기 (sample_nexacroplatform_17.zip)" top="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="20" verticalAlign="middle" right="20" color="white" font="10pt/normal &quot;맑은 고딕&quot;" width="430" textAlign="right" cssclass="Sta_TF_menubar" onclick="Div00_Static01_onclick"/>
-              <Static id="Static02" taborder="4" text="&gt; 개발 가이드 전체 문서 보기" top="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="20" verticalAlign="middle" right="20" color="white" font="10pt/normal &quot;맑은 고딕&quot;" width="420" textAlign="right" cssclass="Sta_TF_menubar" onclick="Div00_Static02_onclick"/>
+              <Static id="Static01" taborder="3" text="&gt; 예제 프로젝트 소스코드 내려받기 (sample_nexacroplatform_17.zip)" top="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="20" verticalAlign="middle" right="20" color="white" width="430" textAlign="right" onclick="Div00_Static01_onclick"/>
+              <Static id="Static02" taborder="4" text="&gt; 개발 가이드 전체 문서 보기" top="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="20" verticalAlign="middle" right="20" color="white" width="420" textAlign="right" onclick="Div00_Static02_onclick"/>
             </Layout>
           </Layouts>
         </Div>
@@ -44,14 +44,14 @@
                   </Tabpage>
                 </Tabpages>
               </Tab>
-              <Static id="Static02" taborder="1" text="&gt; 실행중인 예제 새로고침 (클릭하면 예제 화면에 입력한 값을 초기화합니다)" top="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="17" verticalAlign="bottom" font="10pt/normal &quot;맑은 고딕&quot;" width="480" textAlign="right" cssclass="Sta_TF_menubar" onclick="Div03_Static02_onclick" left="180" color="black"/>
+              <Static id="Static02" taborder="1" text="&gt; 실행중인 예제 새로고침 (클릭하면 예제 화면에 입력한 값을 초기화합니다)" top="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" expr="" height="17" verticalAlign="bottom" width="480" textAlign="right" onclick="Div03_Static02_onclick" left="180" color="black"/>
             </Layout>
           </Layouts>
         </Div>
         <Div id="Div04" taborder="3" text="Div04" left="5" top="53" rightbase="" leftbase="" topbase="" bottombase="" widthbase="" heightbase="" border="1px solid #dfdfdf, 1px solid #dfdfdf, 0px solid #dfdfdf" height="48" right="Div03:5">
           <Layouts>
             <Layout>
-              <Static id="Static01" taborder="3" text="예제 설명이 들어갈 자리" left="10" top="0" height="100%" font="normal bold 14pt &quot;맑은 고딕&quot;" border="0px none #ffffff , 0px none #ffffff , 1px solid #dfdfdf , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="10"/>
+              <Static id="Static01" taborder="3" text="예제 설명이 들어갈 자리" left="10" top="0" height="100%" border="0px none #ffffff , 0px none #ffffff , 1px solid #dfdfdf , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="10"/>
             </Layout>
           </Layouts>
         </Div>
@@ -117,10 +117,20 @@ var firstmenuList = new Object;
 		titleComment = "예제 애플리케이션은 넥사크로플랫폼 " + g_strAppInfo.appVersion + " 버전에서 테스트했습니다." 
 			+ "\n" 
 			+ "웹브라우저에 따라 가이드 문서에 표시된 이미지와 실행된 예제가 다르게 보일 수 있습니다.";
+		this.Div00.form.Static00.set_cssclass("Sta_TF_AllMenuTit");
+		this.Div00.form.Static01.set_cssclass("Sta_TF_menubar");
+		this.Div00.form.Static02.set_cssclass("Sta_TF_menubar");
+		this.Div03.form.Static02.set_cssclass("Sta_TF_menubar");			
 	} else if(strLang == "ja") {
-		titleComment = "サンプル・アプリケーションは、nexacro platfromの" + g_strAppInfo.appVersion + "バージョンでテストしました。" 
+		titleComment = "サンプル・アプリケーションは、nexacro platfromの" + g_strAppInfo.appVersion + "バージョンで動作確認しました。" 
 			+ "\n" 
 			+ "Webブラウザに応じてガイド文書に表示された画像と実行されたサンプルが異なって表示される場合があります。";
+			
+		this.Div00.form.Static00.set_cssclass("Sta_TF_AllMenuTit_ja");
+		this.Div00.form.Static01.set_cssclass("Sta_TF_menubar_ja");
+		this.Div00.form.Static02.set_cssclass("Sta_TF_menubar_ja");
+		this.Div03.form.Static02.set_cssclass("Sta_TF_menubar_ja");
+		this.Div00.form.btn_Menu.set_tooltiptext("メニュー");
 	}
 	this.Div00.form.Static00.set_text(titleComment);
 }
@@ -132,12 +142,29 @@ var firstmenuList = new Object;
  * 
  *  소스 버전 관리를 github으로 옮기면서 소스 보기 기능도 github raw 소스를 사용합니다.
  */
-this.fn_LoadContents = function(strDocID, strSampleFile, strCategory, strSubject)
+this.fn_LoadContents = function(strDocID, strargSampleFile, strCategory, strSubject)
 {
+	strSampleFile = strargSampleFile;
 	var strServiceURL = g_strAppInfo.serverURL + "/17/Service/viewsource.jsp?fileName=";
-
-	this.Div04.form.Static01.set_text(strCategory + " > " + strSubject);	
+	if(strLang == "ko") {
+		this.Div04.form.Static01.set_cssclass("Sta_TF_manualTitle");
+	} else if(strLang == "ja") {
+		this.Div04.form.Static01.set_cssclass("Sta_TF_manualTitle_ja");
+	}
+	this.Div04.form.Static01.set_text(strCategory + " > " + strSubject);
+	
 	this.Div01.form.WebBrowser00.set_url(g_strAppInfo.docsURL + strDocID);
+	//일본어 분기되는 소스 처리
+	if(strLang == "ja") {
+		switch(strSampleFile) {
+		case 'sample_grid_80':
+			strSampleFile = 'sample_grid_80_01';
+			break;
+		case 'sample_static_05':
+			strSampleFile = 'sample_static_05_01';
+			break;			
+		}
+	}
 	this.Div03.form.Tab00.tp_description.set_url("Sample::" + strSampleFile + ".xfdl");
 
 	//this.ds_source.clear();
@@ -213,6 +240,7 @@ request.onreadystatechange = function() {
 			else 
 			{
 				body_str = responseText;
+				script_str = 'No scripts are used';
 			}
 
 			this_form.ds_source.setColumn(0, 0, body_str);
@@ -248,8 +276,8 @@ this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 			this.ds_sample_list_dummy.copyData(this.ds_sample_list, true);
 			this.ds_sample_list.copyData(this.ds_sample_list_dummy);
 			//this.ds_sample_list_dummy.copyData(this.ds_sample_list);
-			g_strAppInfo.setVariable("docsURL", "http://docs.nexaweb.jp/r/a/developer_guide_nexacro_17_ja/");
-			g_strAppInfo.setVariable("guideURL", "http://docs.nexaweb.jp/developer_guide_nexacro_17_ja");
+			g_strAppInfo.setVariable("docsURL", "http://docs.nexaweb.jp/r/a/component_guide_nexacro_17_ja/");
+			g_strAppInfo.setVariable("guideURL", "http://docs.nexaweb.jp/component_guide_nexacro_17_ja");
 		}
 	}
 
@@ -287,10 +315,22 @@ this.setCompLabel = function()
 		this.pdiv_Menu.form.Static99.set_text("全コンポーネント"); // 전체 컴포넌트
 		this.pdiv_Menu.form.Static06.set_text("Dataset、Excel"); // Dataset, Excel
 		this.pdiv_Menu.form.Static07.set_text("スクリプト"); // 스크립트
-		this.pdiv_Menu.form.Static05.set_text("Chartコンポーネント"); // Chart 컴포넌트
+		this.pdiv_Menu.form.Static05.set_text("nexacroオブジェクト"); // nexacro objects
 		this.pdiv_Menu.form.Static08.set_text("Animationコンポーネント"); // Animation 컴포넌트
 		this.pdiv_Menu.form.Static09.set_text("キーワード別サンプル一覧"); // 키워드별 예제 보기
-		
+
+		this.pdiv_Menu.form.Static00.set_cssclass("Sta_TF_AllMenuTit_ja");
+		this.pdiv_Menu.form.Static01.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static02.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static03.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static04.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static99.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static06.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static07.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static05.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static08.set_cssclass("Sta_TF_mapTitle_ja");
+		this.pdiv_Menu.form.Static09.set_cssclass("Sta_TF_AllMenuTit_ja");
+
 		//tab
 		this.Div03.form.Tab00.tp_description.set_text("サンプル"); // 예제
 		this.Div03.form.Tab00.tp_source.set_text("ソース"); // 소스
@@ -300,8 +340,10 @@ this.setCompLabel = function()
 		this.Div03.form.Static02.set_width("600px");
 		
 		//top menu
-		this.Div00.form.Static01.set_text("サンプルプロジェクトのソースコードをダウンロード"); // &gt; 예제 프로젝트 소스코드 내려받기
-		this.Div00.form.Static02.set_text("開発ガイド全文書一覧"); // &gt; 개발 가이드 전체 문서 보기
+		//this.Div00.form.Static01.set_text("サンプルプロジェクトのソースコードをダウンロード"); // &gt; 예제 프로젝트 소스코드 내려받기
+		//this.Div00.form.Static02.set_text("開発ガイド全文書一覧"); // &gt; 개발 가이드 전체 문서 보기
+		this.Div00.form.Static01.set_visible(false);
+		this.Div00.form.Static02.set_visible(false);
 	}
 }
 
@@ -406,7 +448,11 @@ this.fnMakeMenu = function(search_subject, bKeyword)
 		objFirstMenu = new Static();
 		objFirstMenu.init("stc_" + search_subject, nLeft, nTop, nWidth, nTHeight, null, null);
 		this.pdiv_Menu.form.Div00.addChild("stc_" + search_subject, objFirstMenu);
-		objFirstMenu.set_cssclass("Sta_TF_AllMenuTit");
+		if(strLang == "ko") {
+			objFirstMenu.set_cssclass("Sta_TF_AllMenuTit");
+		} else if(strLang == "ja") {
+			objFirstMenu.set_cssclass("Sta_TF_AllMenuTit_ja");
+		}
 		objFirstMenu.set_text("Keyword: "+search_subject);
 		objFirstMenu.show();
 		nTop += nTHeight + 3;
@@ -440,7 +486,11 @@ this.fnMakeMenu = function(search_subject, bKeyword)
 			objFirstMenu = new Static();
 			objFirstMenu.init("stc_" + objmenuList.getColumn(i, strSubjectCol), nLeft, nTop, nWidth, nTHeight, null, null);
 			this.pdiv_Menu.form.Div00.addChild("stc_" + objmenuList.getColumn(i, strSubjectCol), objFirstMenu);
-			objFirstMenu.set_cssclass("Sta_TF_AllMenuTit");
+			if(strLang == "ko") {
+				objFirstMenu.set_cssclass("Sta_TF_AllMenuTit");
+			} else if(strLang == "ja") {
+				objFirstMenu.set_cssclass("Sta_TF_AllMenuTit_ja");
+			}
 			objFirstMenu.set_text(objmenuList.getColumn(i, strSubjectCol));
 			
 			if(search_subject==0)
@@ -464,7 +514,11 @@ this.fnMakeMenu = function(search_subject, bKeyword)
 				objMenu = new Static();
 				objMenu.init("stc_" + objmenuList.getColumn(i, "id_sample"), nLeft+19, nTop, nWidth-19, nHeight, null, null);
 				this.pdiv_Menu.form.Div00.addChild("stc_" + objmenuList.getColumn(i, "id_sample"), objMenu);
-				objMenu.set_cssclass("Sta_TF_mapTitle");
+				if(strLang == "ko") {
+					objMenu.set_cssclass("Sta_TF_mapTitle");
+				} else if(strLang == "ja") {
+					objMenu.set_cssclass("Sta_TF_mapTitle_ja");
+				}
 				objMenu.set_text(objmenuList.getColumn(i, strSubjectCol));
 				objMenu.set_tooltiptext(objmenuList.getColumn(i, strSubjectCol));
 				objMenu.set_cursor("hand");
@@ -629,6 +683,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Application</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">4</Col>
+            <Col id="subject_ja">Application</Col>
           </Row>
           <Row>
             <Col id="id_sample">sample_application_01</Col>
@@ -638,6 +693,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">alert</Col>
+            <Col id="subject_ja">警告、確認のダイアログボックスを表示する</Col>
+            <Col id="id_doc_ja">02394d37db784a0b</Col>
           </Row>
           <Row>
             <Col id="category">Application</Col>
@@ -647,6 +704,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">setPrivateProfile, getPrivateProfile</Col>
+            <Col id="subject_ja">ユーザ情報を保存</Col>
+            <Col id="id_doc_ja">fea6df061a8cc7ed</Col>
           </Row>
           <Row>
             <Col id="category">Application</Col>
@@ -655,6 +714,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">e25865f6e40a0ec4</Col>
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
+            <Col id="subject_ja">Cookie情報を確認する</Col>
+            <Col id="id_doc_ja">8a14a660a305d3cd</Col>
           </Row>
           <Row>
             <Col id="category">Application</Col>
@@ -664,6 +725,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">getActiveForm</Col>
+            <Col id="subject_ja">アクティブ状態の画面（Form）の名前（ID）情報を取得</Col>
+            <Col id="id_doc_ja">8d1e739845a8fce5</Col>
           </Row>
           <Row>
             <Col id="category">Application</Col>
@@ -679,6 +742,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Form</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">4</Col>
+            <Col id="subject_ja">Form</Col>
           </Row>
           <Row>
             <Col id="category">Form</Col>
@@ -688,6 +752,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">onlayoutchanged</Col>
+            <Col id="subject_ja">画面サイズに応じてレイアウトを変更</Col>
+            <Col id="id_doc_ja">408788af3549885b</Col>
           </Row>
           <Row>
             <Col id="category">Form</Col>
@@ -697,6 +763,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">stepcount, positionstep, setStepIndex</Col>
+            <Col id="subject_ja">画面をステップ単位に分割</Col>
+            <Col id="id_doc_ja">26f85b8fd05ac734</Col>
           </Row>
           <Row>
             <Col id="category">Form</Col>
@@ -706,6 +774,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">go, hasOwnProperty</Col>
+            <Col id="subject_ja">画面を移動</Col>
+            <Col id="id_doc_ja">2e1721593c644042</Col>
           </Row>
           <Row>
             <Col id="category">Form</Col>
@@ -769,6 +839,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">transaction</Col>
+            <Col id="subject_ja">サーバーとtransaction処理する</Col>
+            <Col id="id_doc_ja">c2f8a20f163fe165</Col>
           </Row>
           <Row>
             <Col id="category">Form</Col>
@@ -793,6 +865,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Frames</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">4</Col>
+            <Col id="subject_ja">Frames</Col>
           </Row>
           <Row>
             <Col id="category">Frames</Col>
@@ -829,6 +902,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">openalign, resizable</Col>
+            <Col id="subject_ja">モーダルウィンドウでChildFrame生成</Col>
+            <Col id="id_doc_ja">94dd77e198199472</Col>
           </Row>
           <Row>
             <Col id="category">Frames</Col>
@@ -838,6 +913,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">4</Col>
             <Col id="keyword">open</Col>
+            <Col id="subject_ja">openメソッドでプロパティ値を渡す</Col>
+            <Col id="id_doc_ja">692b57e9e117233e</Col>
           </Row>
           <Row>
             <Col id="category">Frames</Col>
@@ -862,6 +939,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Animation</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">8</Col>
+            <Col id="subject_ja">Animation</Col>
           </Row>
           <Row>
             <Col id="category">Animation</Col>
@@ -871,6 +949,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">8</Col>
             <Col id="keyword">loop</Col>
+            <Col id="subject_ja">サイズと位置の変更</Col>
+            <Col id="id_doc_ja">6e1b61f6a1f97643</Col>
           </Row>
           <Row>
             <Col id="category">Animation</Col>
@@ -1005,6 +1085,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Calendar</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">Calendar</Col>
           </Row>
           <Row>
             <Col id="category">Calendar</Col>
@@ -1014,6 +1095,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">locale, dateformat </Col>
+            <Col id="subject_ja">日付の形式変更</Col>
+            <Col id="id_doc_ja">19ac94ee5b64a210</Col>
           </Row>
           <Row>
             <Col id="category">Calendar</Col>
@@ -1212,6 +1295,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Edit</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">Edit</Col>
           </Row>
           <Row>
             <Col id="category">Edit</Col>
@@ -1230,6 +1314,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">db1a56890e08a7b3</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">autoskip, maxlength, taborder</Col>
+            <Col id="subject_ja">自動的にフォーカスを移動</Col>
+            <Col id="id_doc_ja">29572e1ce995627b</Col>
           </Row>
           <Row>
             <Col id="category">Edit</Col>
@@ -2398,8 +2484,6 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getCellRect, trackPopupByComponent</Col>
-            <Col id="subject_ja">PoupDivコンポーネントを利用して選択したCellの枠線を表現する</Col>
-            <Col id="id_doc_ja">5cab6b5d3742147e</Col>
           </Row>
           <Row>
             <Col id="category">Grid 응용</Col>
@@ -2486,6 +2570,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">ImageViewer</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">ImageViewer</Col>
           </Row>
           <Row>
             <Col id="category">ImageViewer</Col>
@@ -2495,6 +2580,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">이미지 폴더에 있는 이미지 보여주기</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">image</Col>
+            <Col id="subject_ja">画像フォルダーにある画像を表示する</Col>
+            <Col id="id_doc_ja">fbcb463d5b83d7da</Col>
           </Row>
           <Row>
             <Col id="category">ImageViewer</Col>
@@ -2504,6 +2591,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">stretch</Col>
+            <Col id="subject_ja">画像サイズの調整</Col>
+            <Col id="id_doc_ja">ac4a1d454caf4851</Col>
           </Row>
           <Row>
             <Col id="category">ImageViewer</Col>
@@ -2530,12 +2619,14 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">imagewidth, imageheight</Col>
+            <Col id="category">ImageViewer</Col>
           </Row>
           <Row>
             <Col id="category">ListView</Col>
             <Col id="subject">ListView</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">ListView</Col>
           </Row>
           <Row>
             <Col id="category">ListView</Col>
@@ -2545,6 +2636,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">bandexpandtype, bandindentsize</Col>
+            <Col id="subject_ja">基本、詳細データの表現</Col>
+            <Col id="id_doc_ja">51bccb0bf618a4e6</Col>
           </Row>
           <Row>
             <Col id="category">ListView</Col>
@@ -2578,6 +2671,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">ListBox</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">ListBox</Col>
           </Row>
           <Row>
             <Col id="category">ListBox</Col>
@@ -2587,12 +2681,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">다중선택</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">multiselect, getSelectedCount, getSelectedItems, getCount, setSelect</Col>
+            <Col id="subject_ja">複数選択</Col>
+            <Col id="id_doc_ja">01a85bdddfaa85f3</Col>
           </Row>
           <Row>
             <Col id="category">MaskEdit</Col>
             <Col id="subject">MaskEdit</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">MaskEdit</Col>
           </Row>
           <Row>
             <Col id="category">MaskEdit</Col>
@@ -2602,6 +2699,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">f48ed310801f697f</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">type, format</Col>
+            <Col id="subject_ja">決められた形式で入力</Col>
+            <Col id="id_doc_ja">91f5fa837e3266a4</Col>
           </Row>
           <Row>
             <Col id="category">MaskEdit</Col>
@@ -2719,6 +2818,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Spin</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">Spin</Col>
           </Row>
           <Row>
             <Col id="category">Spin</Col>
@@ -2728,6 +2828,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Spin 사용하기</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">max, min, increment, type, displaycomma</Col>
+            <Col id="subject_ja">Spin使用</Col>
+            <Col id="id_doc_ja">52c1bd24c8a2cd99</Col>
           </Row>
           <Row>
             <Col id="category">Static</Col>
@@ -2761,6 +2863,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">1ec4313dc48bc354</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">usedecorate</Col>
+            <Col id="subject_ja">テキストデコレーション</Col>
+            <Col id="id_doc_ja">837af6b4590c85d8</Col>
           </Row>
           <Row>
             <Col id="category">Static</Col>
@@ -2779,6 +2883,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">392302144d42a6ea</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">fittocontents, left</Col>
+            <Col id="subject_ja">文字列のサイズに合わせて配置</Col>
+            <Col id="id_doc_ja">be2f984620f598e6</Col>
           </Row>
           <Row>
             <Col id="subject">여러줄로 문자열 표시하기</Col>
@@ -2821,6 +2927,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">TextArea</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">TextArea</Col>
           </Row>
           <Row>
             <Col id="tree_level">1</Col>
@@ -2830,6 +2937,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">c6d55129e8a74dd3</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">wordwrap</Col>
+            <Col id="subject_ja">自動改行（wordwrap）機能</Col>
+            <Col id="id_doc_ja">a7ac1400adf4d672</Col>
           </Row>
           <Row>
             <Col id="category">VideoPlayer</Col>
