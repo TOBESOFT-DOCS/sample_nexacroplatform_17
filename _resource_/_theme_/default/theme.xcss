@@ -2,10 +2,10 @@
 <XCSS version="1.0"><![CDATA[/*
 nexacro17 Application Theme
 default.xtheme
-last-modified : 2019-02-26
+last-modified : 2020-03-23
 */
 
-/**********************Frame/Form***********************************************/
+/* Frame/Form */
 .Form
 {
 	font : 12px Gulim;
@@ -26,7 +26,7 @@ last-modified : 2019-02-26
 
 .MainFrame,.ChildFrame,.FrameSet,.VFrameSet,.HFrameSet,.TileFrameSet
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 .MainFrame .titlebar .titleicon
@@ -35,9 +35,9 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Button***********************************************/
-/**********************FileDownload***********************************************/
-/**********************FileUpload***********************************************/
+/* Button */
+/* FileDownload */
+/* FileUpload */
 .Button,.FileDownload
 {
 	background : linear-gradient(to top,#eaeaea,#ffffff);
@@ -52,12 +52,12 @@ last-modified : 2019-02-26
 
 .FileUpload
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 .FileUpload .fileuploaditem
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 .FileUpload .fileuploaditem[status=disabled]
@@ -91,7 +91,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Calendar***********************************************/
+/* Calendar */
 .Calendar,.CalendarControl
 {
 	background : #ffffff;
@@ -116,7 +116,7 @@ last-modified : 2019-02-26
 
 .Calendar .calendaredit,.CalendarControl .calendaredit
 {
-	/*MaskEditControl과 동일*/
+	/* Same as MaskEditControl */
 }
 
 .Calendar .dropbutton,.CalendarControl .dropbutton
@@ -170,7 +170,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************CheckBox***********************************************/
+/* CheckBox */
 .CheckBox,.CheckBoxControl
 {
 	-nexa-icon : URL('theme://images/chk_WF_Box.png');
@@ -205,7 +205,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Combo***********************************************/
+/* Combo */
 .Combo,.ComboControl
 {
 	background : #ffffff;
@@ -230,7 +230,7 @@ last-modified : 2019-02-26
 
 .Combo .comboedit,.ComboControl .comboedit
 {
-	/*EditControl과 동일*/
+	/* Same as EditControl */
 }
 
 .Combo .dropbutton,.ComboControl .dropbutton
@@ -263,7 +263,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Edit***********************************************/
+/* Edit */
 .Edit,.FileUpload .fileuploaditem .fileuploaditemedit
 {
 	background : #ffffff;
@@ -294,15 +294,24 @@ last-modified : 2019-02-26
 	background : #efefef;
 }
 
+/* nulltext, invalidtext */
+.Edit[userstatus=nulltext],.EditControl[userstatus=nulltext],.MaskEdit[userstatus=nulltext],.MaskEditControl[userstatus=nulltext],.TextArea[userstatus=nulltext],.TextAreaControl[userstatus=nulltext]
+{
+	color : #999999;
+}
+.Calendar[userstatus=invalidtext],.CalendarControl[userstatus=invalidtext],.MaskEdit[userstatus=invalidtext],.MaskEditControl[userstatus=invalidtext],.Spin[userstatus=invalidtext],.SpinControl[userstatus=invalidtext]
+{
+	color : #999999;
+}
 
-/**********************Grid***********************************************/
+/* Grid */
 .Grid
 {
 	background : #ffffff;
 	-nexa-border : 2px solid #125dae, 1px solid #b7b1b2, 1px solid #b7b1b2, 1px solid #b7b1b2;
 }
 
-/*-----------------------------------head------------------------------------*/
+/* head */
 .Grid .head .row .cell
 {
 	font : bold 12px Gulim;
@@ -322,19 +331,19 @@ last-modified : 2019-02-26
 {
 	background : #f0f0f0;
 }
-/*-----------------------------------headcellbutton:ButtonControl과 동일------------------------------------*/
-/*-----------------------------------headcellcalendar:CalendarControl과 동일------------------------------------*/
-/*-----------------------------------headcellcheckbox:CheckBoxControl과 동일------------------------------------*/
-/*-----------------------------------headcellcombo:ComboControl과 동일------------------------------------*/
-/*-----------------------------------headcelledit:EditControl과 동일------------------------------------*/
-/*-----------------------------------headcellexpandbutton------------------------------------*/
-/*-----------------------------------headcellimage:별도스타일없음------------------------------------*/
-/*-----------------------------------headcellmaskedit:MaskEditControl과 동일------------------------------------*/
-/*-----------------------------------headcellprogressbar:ProgressBarControl과 동일------------------------------------*/
-/*-----------------------------------headcelltextarea:TextAreaControl과 동일------------------------------------*/
-/*-----------------------------------headcelltreeitem:------------------------------------*/
+/* headcellbutton (Same as ButtonControl) */
+/* headcellcalendar (Same as CalendarControl) */
+/* headcellcheckbox (Same as CheckBoxControl) */
+/* headcellcombo (Same as ComboControl) */
+/* headcelledit (Same as EditControl) */
+/* headcellexpandbutton */
+/* headcellimage (No style applied) */
+/* headcellmaskedit (Same as MaskEditControl) */
+/* headcellprogressbar (Same as ProgressBarControl) */
+/* headcelltextarea (Same as TextAreaControl) */
+/* headcelltreeitem */
 
-/*-----------------------------------body------------------------------------*/
+/* body */
 .Grid .body .row .cell
 {
 	color : #666666;
@@ -357,7 +366,7 @@ last-modified : 2019-02-26
 	color : #999999;
 }
 
-/*-----------------------------------subcell:cell과 동일------------------------------------*/
+/* subcell (Same as cell) */
 .Grid .body .row .cell .subcell
 {
 	color : #666666;
@@ -385,19 +394,19 @@ last-modified : 2019-02-26
 {
 	-nexa-border : 2px solid #125dae;
 }
-/*-----------------------------------bodycellbutton:ButtonControl과 동일------------------------------------*/
-/*-----------------------------------bodycellcalendar:CalendarControl과 동일------------------------------------*/
-/*-----------------------------------bodycellcheckbox:CheckBoxControl과 동일------------------------------------*/
-/*-----------------------------------bodycellcombo:ComboControl과 동일------------------------------------*/
-/*-----------------------------------bodycelledit:EditControl과 동일------------------------------------*/
-/*-----------------------------------bodycellexpandbutton------------------------------------*/
-/*-----------------------------------bodycellimage:별도스타일없음------------------------------------*/
-/*-----------------------------------bodycellmaskedit:MaskEditControl과 동일------------------------------------*/
-/*-----------------------------------bodycellprogressbar:ProgressBarControl과 동일------------------------------------*/
-/*-----------------------------------bodycelltextarea:TextAreaControl과 동일------------------------------------*/
-/*-----------------------------------bodycelltreeitem:------------------------------------*/
+/* bodycellbutton (Same as ButtonControl) */
+/* bodycellcalendar (Same as CalendarControl) */
+/* bodycellcheckbox (Same as CheckBoxControl) */
+/* bodycellcombo (Same as ComboControl) */
+/* bodycelledit (Same as EditControl) */
+/* bodycellexpandbutton */
+/* bodycellimage (No style applied) */
+/* bodycellmaskedit (Same as MaskEditControl) */
+/* bodycellprogressbar (Same as ProgressBarControl) */
+/* bodycelltextarea (Same as TextAreaControl) */
+/* bodycelltreeitem */
 
-/*-----------------------------------summary------------------------------------*/
+/* summary */
 .Grid .summary
 {
 	-nexa-border : 1px solid #c8c1c2, 0px none, 0px none, 0px none;
@@ -412,32 +421,32 @@ last-modified : 2019-02-26
 	-nexa-text-align : center;
 }
 
-/*-----------------------------------summarycellbutton:ButtonControl과 동일------------------------------------*/
-/*-----------------------------------summarycellcalendar:CalendarControl과 동일------------------------------------*/
-/*-----------------------------------summarycellcheckbox:CheckBoxControl과 동일------------------------------------*/
-/*-----------------------------------summarycellcombo:ComboControl과 동일------------------------------------*/
-/*-----------------------------------summarycelledit:EditControl과 동일------------------------------------*/
-/*-----------------------------------summarycellexpandbutton------------------------------------*/
-/*-----------------------------------summarycellimage:별도스타일없음------------------------------------*/
-/*-----------------------------------summarycellmaskedit:MaskEditControl과 동일------------------------------------*/
-/*-----------------------------------summarycellprogressbar:ProgressBarControl과 동일------------------------------------*/
-/*-----------------------------------summarycelltextarea:TextAreaControl과 동일------------------------------------*/
-/*-----------------------------------summarycelltreeitem:------------------------------------*/
+/* summarycellbutton (Same as ButtonControl) */
+/* summarycellcalendar (Same as CalendarControl) */
+/* summarycellcheckbox (Same as CheckBoxControl) */
+/* summarycellcombo (Same as ComboControl) */
+/* summarycelledit (Same as EditControl) */
+/* summarycellexpandbutton */
+/* summarycellimage (No style applied) */
+/* summarycellmaskedit (Same as MaskEditControl) */
+/* summarycellprogressbar (Same as ProgressBarControl) */
+/* summarycelltextarea (Same as TextAreaControl) */
+/* summarycelltreeitem */
 
-/*-----------------------------------Grid hscrollbar:------------------------------------*/
+/* Grid hscrollbar */
 .Grid .hscrollbar
 {
 	-nexa-border : 1px solid #b1b1b1, 0px none, 0px none, 0px none;
 }
 
-/*-----------------------------------Grid vscrollbar:------------------------------------*/
+/* Grid vscrollbar */
 .Grid .vscrollbar
 {
 	-nexa-border : 0px none, 0px none, 0px none, 1px solid #b1b1b1;
 }
 
 
-/*-----------------------------------cellbutton:ButtonControl과 동일------------------------------------*/
+/* cellbutton (Same as ButtonControl) */
 .GridCellControl .cellbutton
 {
 	font : 12px Gulim;
@@ -464,19 +473,19 @@ last-modified : 2019-02-26
 	-nexa-border : 1px solid #d9d9d9;
 }
 
-/*-----------------------------------cellcalendar:CalendarControl과 동일------------------------------------*/
+/* cellcalendar (Same as CalendarControl) */
 .GridCellControl .cellcalendar
 {
 	font : 12px Gulim;
 }
 
-/*-----------------------------------cellcheckbox:CheckBoxControl과 동일------------------------------------*/
+/* cellcheckbox (Same as CheckBoxControl) */
 .GridCellControl .cellcheckbox
 {
 	font : 12px Gulim;
 }
 
-/*-----------------------------------cellcombo:ComboControl과 동일------------------------------------*/
+/* cellcombo (Same as ComboControl) */
 .GridCellControl .cellcombo
 {
 	font : 12px Gulim;
@@ -493,7 +502,7 @@ last-modified : 2019-02-26
 	background : #e8e9ed;
 }
 
-/*-----------------------------------celledit:EditControl과 동일------------------------------------*/
+/* celledit (Same as EditControl) */
 .GridCellControl .celledit
 {
 	font : 12px Gulim;
@@ -513,15 +522,15 @@ last-modified : 2019-02-26
 	background : #efefef;
 }
 
-/*-----------------------------------cellexpandbutton------------------------------------*/
+/* cellexpandbutton */
 .GridCellControl .cellexpandbutton
 {
 	-nexa-icon : URL('theme://images/btn_WF_Grdexpand.png');
 }
 
-/*-----------------------------------cellimage:별도스타일없음------------------------------------*/
+/* cellimage (No style applied) */
 
-/*-----------------------------------cellmaskedit:MaskEditControl과 동일------------------------------------*/
+/* cellmaskedit(Same as MaskEditControl) */
 .GridCellControl .cellmaskedit
 {
 	font : 12px Gulim;
@@ -541,19 +550,19 @@ last-modified : 2019-02-26
 	background : #efefef;
 }
 
-/*-----------------------------------cellprogressbar:ProgressBarControl과 동일------------------------------------*/
+/* cellprogressbar (Same as ProgressBarControl) */
 .GridCellControl .cellprogressbar
 {
 	font : 12px Gulim;
 }
 
-/*-----------------------------------celltextarea:TextAreaControl과 동일------------------------------------*/
+/* celltextarea (Same as TextAreaControl) */
 .GridCellControl .celltextarea
 {
 	font : 12px Gulim;
 }
 
-/*-----------------------------------celltreeitem:------------------------------------*/
+/* celltreeitem: */
 .GridCellControl .celltreeitem .treeitemtext
 {
 	font : 12px Gulim;
@@ -601,10 +610,10 @@ last-modified : 2019-02-26
 	color : #ffffff;
 }
 
-/**********************GroupBox***********************************************/
+/* GroupBox */
 .GroupBox
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 .GroupBox .groupboxcontents
@@ -631,7 +640,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************ImageViewer***********************************************/
+/* ImageViewer */
 .ImageViewer
 {
 	background : #ffffff;
@@ -654,7 +663,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************ListBox***********************************************/
+/* ListBox */
 .ListBox,.ListBoxControl
 {
 	background : #ffffff;
@@ -695,7 +704,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************MaskEdit***********************************************/
+/* MaskEdit */
 .MaskEdit
 {
 	background : #ffffff;
@@ -727,7 +736,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Menu***********************************************/
+/* Menu */
 .Menu
 {
 	background : linear-gradient(to top, #1059a8, #125dae);
@@ -742,6 +751,7 @@ last-modified : 2019-02-26
 {
 	-nexa-padding : 0px 5px 0px 15px;
 	-nexa-icon : URL('theme://images/btn_WF_Menuprev.png');
+	cursor : pointer;
 }
 
 .Menu .prevbutton[status=mouseover],.Menu .prevbutton[userstatus=pushed]
@@ -758,6 +768,7 @@ last-modified : 2019-02-26
 {
 	-nexa-padding : 0px 15px 0px 5px;
 	-nexa-icon : URL('theme://images/btn_WF_Menunext.png');
+	cursor : pointer;
 }
 
 .Menu .nextbutton[status=mouseover],.Menu .nextbutton[userstatus=pushed]
@@ -775,6 +786,7 @@ last-modified : 2019-02-26
 	font : bold 13px Gulim;
 	color : #ffffff;
 	-nexa-padding : 0px 30px 0px 30px;
+	cursor : pointer;
 }
 
 .Menu .menuitem[status=disabled]
@@ -782,11 +794,14 @@ last-modified : 2019-02-26
 	color : #c7d4e2;
 }
 
-.Menu .menuitem[status=mouseover],.Menu .menuitem[userstatus=selected]
+.Menu .menuitem[status=mouseover]
 {
-	background : URL('theme://images/img_WF_Menu_O.png') no-repeat center top;
+	background : #00438b;
 }
-
+.Menu .menuitem[userstatus=selected]
+{
+	background : #00438b URL('theme://images/img_WF_Menu_O.png') no-repeat center top;
+}
 .Menu .menupopupmenu
 {
 	font : 12px Gulim;
@@ -798,6 +813,7 @@ last-modified : 2019-02-26
 .Menu .menupopupmenu .prevbutton
 {
 	-nexa-icon : URL('theme://images/btn_WF_Popmenuprev.png');
+	cursor : pointer;
 }
 
 .Menu .menupopupmenu .prevbutton[status=mouseover]
@@ -813,6 +829,7 @@ last-modified : 2019-02-26
 .Menu .menupopupmenu .nextbutton
 {
 	-nexa-icon : URL('theme://images/btn_WF_Popmenunext.png');
+	cursor : pointer;
 }
 
 .Menu .menupopupmenu .nextbutton[status=mouseover]
@@ -832,10 +849,15 @@ last-modified : 2019-02-26
 	-nexa-padding : 3px 8px 3px 8px;
 }
 
-.Menu .menupopupmenu .popupmenuitem[status=mouseover],.Menu .menupopupmenu .popupmenuitem[status=focused],.Menu .menupopupmenu .popupmenuitem[userstatus=selected]
+.Menu .menupopupmenu .popupmenuitem[status=mouseover]
 {
 	color : #ffffff;
 	background : transparent;
+}
+.Menu .menupopupmenu .popupmenuitem[status=focused],.Menu .menupopupmenu .popupmenuitem[userstatus=selected]
+{
+	color : #ffffff;
+	background : #00438b;
 }
 
 .Menu .menupopupmenu .popupmenuitem[status=disabled]
@@ -889,17 +911,17 @@ last-modified : 2019-02-26
 
 .Menu .menupopupmenu .popupmenuitem .popupmenuitemexpandimage
 {
-	-nexa-padding : 0px 0px 2px 0px;
-	-nexa-icon : URL('theme://images/btn_WF_Popupexpand.png');
+	
+	-nexa-icon : URL('theme://images/btn_WF_Popupexpand2.png');
 }
-/**********************Plugin***********************************************/
+/* Plugin */
 .Plugin,.PluginControl
 {
 	-nexa-border : 1px solid #d5d5d5;
 }
 
 
-/**********************PopupMenu***********************************************/
+/* PopupMenu */
 .PopupMenu,.PopupMenuControl
 {
 	font : 12px Gulim;
@@ -998,7 +1020,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************ProgressBar***********************************************/
+/* ProgressBar */
 .ProgressBar,.ProgressBarControl
 {
 	background : linear-gradient(to top, #f0f0f0, #e7e7e7);
@@ -1022,10 +1044,10 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Radio***********************************************/
+/* Radio */
 .Radio
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 .Radio .radioitem
@@ -1055,7 +1077,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Sketch***********************************************/
+/* Sketch */
 .Sketch
 {
 	background : #ffffff;
@@ -1068,7 +1090,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Spin***********************************************/
+/* Spin */
 .Spin
 {
 	background : #ffffff;
@@ -1145,10 +1167,10 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Static***********************************************/
+/* Static */
 .Static,.StaticControl
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 .Static[status=disabled],.StaticControl[status=disabled]
@@ -1157,7 +1179,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************TextArea***********************************************/
+/* TextArea */
 .TextArea,.TextAreaControl
 {
 	background : #ffffff;
@@ -1183,25 +1205,25 @@ last-modified : 2019-02-26
 }
 
 
-/**********************WebBrowser***********************************************/
+/* WebBrowser */
 .WebBrowser,.WebBrowserControl
 {
 	-nexa-border : 1px solid #d5d5d5;
 }
 
 
-/**********************Div:별도스타일없음***********************************************/
-/**********************PopupDiv:별도스타일없음***********************************************/
+/* Div (No style applied) */
+/* PopupDiv (No style applied) */
 .Div,.PopupDiv
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 
-/**********************Tab***********************************************/
+/* Tab */
 .Tab
 {
-	/*별도스타일없음*/
+	/* No style applied */
 }
 
 .Tab .tabpage
@@ -1297,7 +1319,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************DatePickerControl***********************************************/
+/* DatePickerControl */
 .DatePickerControl
 {
 	background : #ffffff;
@@ -1534,7 +1556,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************ScrollBar***********************************************/
+/* ScrollBar */
 .VScrollBarControl
 {
 	background : linear-gradient(to left,#ffffff,#f7f7f7);
@@ -1634,7 +1656,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************ScrollIndicatorControl***********************************************/
+/* ScrollIndicatorControl */
 .VScrollIndicatorControl,.HScrollIndicatorControl
 {
 	background : #f2f2f2;
@@ -1657,7 +1679,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************StatusBar***********************************************/
+/* StatusBar */
 .StatusBarControl
 {
 	background : #e7e7e7;
@@ -1681,7 +1703,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************TitleBar***********************************************/
+/* TitleBar */
 .TitleBarControl
 {
 	font : bold 12px Gulim;
@@ -1757,7 +1779,7 @@ last-modified : 2019-02-26
 }
 
 
-/**********************Step***********************************************/
+/* Step */
 .StepControl
 {
 	-nexa-padding : 0px 0px 10px 0px;
@@ -1773,7 +1795,7 @@ last-modified : 2019-02-26
 	-nexa-icon : URL('theme://images/btn_WF_Stepitem_S.png');
 }
 
-/**********************ListView***********************************************/
+/* ListView */
 .ListView, 
 .ListView[status=readonly]
 {
@@ -1822,7 +1844,7 @@ last-modified : 2019-02-26
 .ListView .body .cell[status=readonly], .ListView .detail .cell[status=readonly],
 .ListView .body .cell[status=focused], .ListView .detail .cell[status=focused]
 {
-	-nexa-border :1px solid #dbdee2;
+	-nexa-border : 1px solid #dbdee2;
 	-nexa-padding : 4px 4px 4px 4px;
 }
 .ListView .body .cell[status=mouseover], .ListView .detail .cell[status=mouseover]
@@ -1831,7 +1853,7 @@ last-modified : 2019-02-26
 }
 
 
-/*-----------------------------------cellbutton:ButtonControl과 동일------------------------------------*/
+/* cellbutton (Same as ButtonControl) */
 .ListViewCellControl .cellbutton
 {
 	font : 12px Gulim;
@@ -1858,19 +1880,19 @@ last-modified : 2019-02-26
 	-nexa-border : 1px solid #d9d9d9;
 }
 
-/*-----------------------------------cellcalendar:CalendarControl과 동일------------------------------------*/
+/* cellcalendar (Same as CalendarControl) */
 .ListViewCellControl .cellcalendar
 {
 	font : 12px Gulim;
 }
 
-/*-----------------------------------cellcheckbox:CheckBoxControl과 동일------------------------------------*/
+/* cellcheckbox (Same as CheckBoxControl) */
 .ListViewCellControl .cellcheckbox
 {
 	font : 12px Gulim;
 }
 
-/*-----------------------------------cellcombo:ComboControl과 동일------------------------------------*/
+/* cellcombo (Same as ComboControl) */
 .ListViewCellControl .cellcombo
 {
 	font : 12px Gulim;
@@ -1887,7 +1909,7 @@ last-modified : 2019-02-26
 	background : #e8e9ed;
 }
 
-/*-----------------------------------celledit:EditControl과 동일------------------------------------*/
+/* celledit (Same as EditControl) */
 .ListViewCellControl .celledit
 {
 	font : 12px Gulim;
@@ -1907,15 +1929,15 @@ last-modified : 2019-02-26
 	background : #efefef;
 }
 
-/*-----------------------------------cellexpandbutton------------------------------------*/
+/* cellexpandbutton */
 .ListViewCellControl .cellexpandbutton
 {
 	-nexa-icon : URL('theme://images/btn_WF_Grdexpand.png');
 }
 
-/*-----------------------------------cellimage:별도스타일없음------------------------------------*/
+/* cellimage (No style applied) */
 
-/*-----------------------------------cellmaskedit:MaskEditControl과 동일------------------------------------*/
+/* cellmaskedit (Same as MaskEditControl) */
 .ListViewCellControl .cellmaskedit
 {
 	font : 12px Gulim;
@@ -1935,13 +1957,13 @@ last-modified : 2019-02-26
 	background : #efefef;
 }
 
-/*-----------------------------------cellprogressbar:ProgressBarControl과 동일------------------------------------*/
+/* cellprogressbar (Same as ProgressBarControl) */
 .ListViewCellControl .cellprogressbar
 {
 	font : 12px Gulim;
 }
 
-/*-----------------------------------celltextarea:TextAreaControl과 동일------------------------------------*/
+/* celltextarea (Same as TextAreaControl) */
 .ListViewCellControl .celltextarea
 {
 	font : 12px Gulim;
@@ -1950,7 +1972,6 @@ last-modified : 2019-02-26
 .ListView .body .expandbar
 {
 	background : linear-gradient(to top,#eaeaea,#ffffff);
-	-nexa-icon : URL('theme://images/cmb_WF_Drop.png');
 	-nexa-border : 1px solid #c2c2c2;
 }
 
@@ -1960,14 +1981,19 @@ last-modified : 2019-02-26
 	-nexa-border : 1px solid #a0a0a0;
 }
 
-.ListView .body .expandbar[userstatus=pushed],.ListView .body .expandbar[userstatus=selected]
-{
-	background : linear-gradient(to top,#fefefe,#e9e9e9);
-}
-
 .ListView .body .expandbar[status=disabled]
 {
 	color : #bbbbbb;
 	background : #f5f5f5;
 	-nexa-border : 1px solid #d9d9d9;
+	opacity : 0.50;
+}
+.ListView .body .expandbar[userstatus=collapse]
+{
+	-nexa-icon : URL('theme://images/cmb_WF_Drop.png');
+}
+
+.ListView .body .expandbar[userstatus=expand]
+{
+	-nexa-icon : URL('theme://images/btn_expand.png');
 }]]></XCSS>

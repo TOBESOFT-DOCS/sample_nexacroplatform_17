@@ -16,7 +16,16 @@
 }.Static.Sta_TF_AllMenuTit
 {
 	background : url("imagerc::Sta_TF_AllMenuTit.png") repeat-x;
-	font : bold 11pt "맑은 고딕";
+	font : bold 10pt "맑은 고딕";
+	color : #d3d3d3;
+	-nexa-padding : 0px 0px 10px 0px;
+
+}
+
+.Static.Sta_TF_AllMenuTit_ja
+{
+	background : url("imagerc::Sta_TF_AllMenuTit.png") repeat-x;
+	font : bold 10pt "Meiryo UI";
 	color : #d3d3d3;
 	-nexa-padding : 0px 0px 10px 0px;
 
@@ -28,6 +37,15 @@
 	color : #a9aaaa;
 	-nexa-padding : 0px 0px 0px 10px;
 	font : bold 9pt "맑은 고딕";
+	cursor : pointer;	
+}
+
+.Static.Sta_TF_mapTitle_ja
+{
+	background : url("imagerc::Sta_TF_mapTitle.png") no-repeat left center;
+	color : #a9aaaa;
+	-nexa-padding : 0px 0px 0px 10px;
+	font : bold 9pt "Meiryo UI";
 	cursor : pointer;	
 }
 
@@ -43,6 +61,25 @@
 	font : bold 9pt "맑은 고딕";
 	cursor : pointer;	
 }
+
+.Static.Sta_TF_menubar_ja
+{
+	color : white;
+	-nexa-padding : 0px 0px 0px 10px;
+	font : bold 9pt "Meiryo UI";
+	cursor : pointer;	
+}
+
+.Static.Sta_TF_manualTitle
+{
+	font : normal 700 14pt/normal "맑은 고딕";
+}
+
+.Static.Sta_TF_manualTitle_ja
+{
+	font : normal 700 14pt/normal "Meiryo UI";
+}
+
 
 .Static.Sta_TF_menubar[status=mouseover]
 {
@@ -136,7 +173,11 @@
 	background : lawngreen; 
 }
 
-.GroupBox.sample_groupbox_03 .groupboxtitle
+.Grid .body .row .cell.sample_grid_31_style_subtotal
+{
+	background : #c3d69b;
+	font : normal bold  8pt "Arial";
+}.GroupBox.sample_groupbox_03 .groupboxtitle
 {
 	background : greenyellow;
 	-nexa-icon : URL("theme://images/rdo_WF_Radio.png");
@@ -202,8 +243,9 @@
 }
 .Button.btn_TP_Menu01,.Button.btn_TP_Menu01[status=focused]
 {
-	background : URL("imagerc::btn_TP_Menu01_N.png") no-repeat center center;	
+	background : URL("imagerc::btn_TP_Menu01_N.png") no-repeat center center;
 }
+
 .Grid.sample_grid_83 .body .selection
 {
 	-nexa-border : 2px dotted hotpink;

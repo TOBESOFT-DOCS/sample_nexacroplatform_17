@@ -1184,6 +1184,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">CheckBox</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">CheckBox</Col>
           </Row>
           <Row>
             <Col id="category">CheckBox</Col>
@@ -1193,6 +1194,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">truevalue, falsevalue</Col>
+            <Col id="subject_ja">TRUE、FALSE値を変更する</Col>
+            <Col id="id_doc_ja">e6c34fdb37f6e2ee</Col>
           </Row>
           <Row>
             <Col id="category">CheckBox</Col>
@@ -1208,6 +1211,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Combo</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">Combo</Col>
           </Row>
           <Row>
             <Col id="category">Combo</Col>
@@ -1217,6 +1221,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">codecolumn, datacolumn, innerdataset </Col>
+            <Col id="subject_ja">Combo構成 - 固定アイテムリスト</Col>
+            <Col id="id_doc_ja">d87cc915484f69d7</Col>
           </Row>
           <Row>
             <Col id="category">Combo</Col>
@@ -1226,6 +1232,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">codecolumn, datacolumn, innerdataset </Col>
+            <Col id="subject_ja">Combo構成 - 動的アイテムリスト</Col>
+            <Col id="id_doc_ja">f73c851fb2ad46cc</Col>
           </Row>
           <Row>
             <Col id="category">Combo</Col>
@@ -1235,6 +1243,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">8b1d993c5c6162ee</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">type, onitemchanged</Col>
+            <Col id="subject_ja">キーワード検索で関連アイテムを抽出</Col>
+            <Col id="id_doc_ja">c3464cb1c2ac5724</Col>
           </Row>
           <Row>
             <Col id="category">Combo</Col>
@@ -1262,6 +1272,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">type</Col>
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">大文字／小文字区別なしでに検索したり、フィルタリングする</Col>
+            <Col id="id_doc_ja">b7c14fc8ca8108b6</Col>
           </Row>
           <Row>
             <Col id="category">Combo</Col>
@@ -2716,6 +2728,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Menu</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">Menu</Col>
           </Row>
           <Row>
             <Col id="category">Menu</Col>
@@ -2725,12 +2738,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">메뉴 구성하기</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">innderdataset, checkboxcolumn, enablecolumn, idcolumn, userdatacolumn, findRow</Col>
+            <Col id="subject_ja">メニュー構成</Col>
+            <Col id="id_doc_ja">3722f0ad039cad9f</Col>
           </Row>
           <Row>
             <Col id="category">PopupMenu</Col>
             <Col id="subject">PopupMenu</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">PopupMenu</Col>
           </Row>
           <Row>
             <Col id="category">PopupMenu</Col>
@@ -2740,6 +2756,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">9434c3d19fad2f12</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">trackPopupByComponent, trackPopupByComponent</Col>
+            <Col id="subject_ja">ポップアップの表示位置の変更</Col>
+            <Col id="id_doc_ja">98bb323eaa1ee028</Col>
           </Row>
           <Row>
             <Col id="category">PopupMenu</Col>
@@ -2755,6 +2773,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">ProgressBar</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">ProgressBar</Col>
           </Row>
           <Row>
             <Col id="category">ProgressBar</Col>
@@ -2764,12 +2783,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_sample">sample_progressbar_02</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">max, pos,step,smooth,stepIt,setTimer,killTimer</Col>
+            <Col id="subject_ja">進行状況表示</Col>
+            <Col id="id_doc_ja">3fc9bcd5353556f3</Col>
           </Row>
           <Row>
             <Col id="category">Radio</Col>
             <Col id="subject">Radio</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">Radio</Col>
           </Row>
           <Row>
             <Col id="category">Radio</Col>
@@ -2779,6 +2801,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">ed8a2618cc9a42e0</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">index</Col>
+            <Col id="subject_ja">デフォルト値の設定</Col>
+            <Col id="id_doc_ja">942eb31451cb9086</Col>
           </Row>
           <Row>
             <Col id="category">Radio</Col>
@@ -2788,6 +2812,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">direction, columncount, rowcount</Col>
+            <Col id="subject_ja">横方向に表示</Col>
+            <Col id="id_doc_ja">77965c13281fc565</Col>
           </Row>
           <Row>
             <Col id="category">Radio</Col>
@@ -2797,6 +2823,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">getInnerDataset</Col>
+            <Col id="subject_ja">innerdataset項目の追加</Col>
+            <Col id="id_doc_ja">bd1e8dbaa8cc92c4</Col>
           </Row>
           <Row>
             <Col id="category">Sketch</Col>
@@ -2836,6 +2864,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Static</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">1</Col>
+            <Col id="subject_ja">Static</Col>
           </Row>
           <Row>
             <Col id="category">Static</Col>
@@ -2854,6 +2883,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">자동줄넘김(wordwrap) 기능</Col>
             <Col id="search_subject">1</Col>
             <Col id="keyword">wordwrap</Col>
+            <Col id="subject_ja">自動改行（wordwrap）機能</Col>
+            <Col id="id_doc_ja">90c1d26fe8f4da65</Col>
           </Row>
           <Row>
             <Col id="category">Static</Col>
@@ -3038,6 +3069,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">Div</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">3</Col>
+            <Col id="subject_ja">Div</Col>
           </Row>
           <Row>
             <Col id="category">Div</Col>
@@ -3047,6 +3079,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">3</Col>
             <Col id="keyword">url</Col>
+            <Col id="subject_ja">他の画面を表示</Col>
+            <Col id="id_doc_ja">ea1f5c55bb33f266</Col>
           </Row>
           <Row>
             <Col id="category">Div</Col>
@@ -3098,6 +3132,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">PopupDiv</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">3</Col>
+            <Col id="subject_ja">PopupDiv</Col>
           </Row>
           <Row>
             <Col id="category">PopupDiv</Col>
@@ -3107,12 +3142,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">3</Col>
             <Col id="keyword">trackPopupByComponent, getOffsetHeight, getOffsetWidth</Col>
+            <Col id="subject_ja">PopupDiv配置</Col>
+            <Col id="id_doc_ja">e7295dfa6020a444</Col>
           </Row>
           <Row>
             <Col id="category">Tab</Col>
             <Col id="subject">Tab</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">3</Col>
+            <Col id="subject_ja">Tab</Col>
           </Row>
           <Row>
             <Col id="category">Tab</Col>
@@ -3122,6 +3160,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_doc">2578cefe5055a945</Col>
             <Col id="search_subject">3</Col>
             <Col id="keyword">multiline</Col>
+            <Col id="subject_ja">マルチラインTabの構成</Col>
+            <Col id="id_doc_ja">5cd6e6449118577e</Col>
           </Row>
           <Row>
             <Col id="category">Tab</Col>
