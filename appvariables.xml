@@ -2,7 +2,7 @@
 <AppVariables version="2.0">
   <Datasets/>
   <Variables>
-    <Variable id="appVersion" initval="17.1.0.200"/>
+    <Variable id="appVersion" initval="17.1.1.100"/>
     <Variable id="docsURL" initval="http://docs.tobesoft.com/r/a/developer_guide_nexacro_17_ko/"/>
     <Variable id="serverURL" initval="http://demo.nexacro.com/developer_guide"/>
     <Variable id="srcURL" initval="http://demo.nexacro.com/developer_guide/source"/>
