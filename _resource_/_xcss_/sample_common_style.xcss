@@ -72,12 +72,12 @@
 
 .Static.Sta_TF_manualTitle
 {
-	font : normal 700 14pt/normal "맑은 고딕";
+	font : normal bold 14pt/normal "맑은 고딕";
 }
 
 .Static.Sta_TF_manualTitle_ja
 {
-	font : normal 700 14pt/normal "Meiryo UI";
+	font : normal bold 14pt/normal "Meiryo UI";
 }
 
 
