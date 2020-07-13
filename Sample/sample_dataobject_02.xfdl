@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_dataobject_02" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Button id="Button00" taborder="0" text="Button00" left="62" top="68" width="94" height="38"/>
+        <Button id="Button00_00" taborder="1" text="Button00" left="179" top="68" width="94" height="38"/>
+        <Button id="Button00_00_00" taborder="2" text="Button00" left="296" top="68" width="94" height="38"/>
+        <Combo id="Combo00" taborder="3" text="Korean" left="60" top="23" width="174" height="35" innerdataset="Dataset00" codecolumn="locale" datacolumn="label" value="ko" onitemchanged="Combo00_onitemchanged" index="-1"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <DataObject id="DataObject00">
+        <Contents><![CDATA[{
+	"code" : [
+		{
+			"locale" : "ko",
+			"label" : "Korean"
+		},
+		{
+			"locale" : "ja",
+			"label" : "Japanese"
+		},
+		{
+			"locale" : "en",
+			"label" : "English"
+		}
+	],
+	"data" : {
+		"ko" : {
+			"btn_submit" : "전송",
+			"btn_save" : "저장",
+			"btn_cancel" : "취소"
+		},
+		"ja" : {
+			"btn_submit" : "送信",
+			"btn_save" : "保存",
+			"btn_cancel" : "キャンセル"
+		},
+		"en" : {
+			"btn_submit" : "Submit",
+			"btn_save" : "Save",
+			"btn_cancel" : "Cancel"
+		}
+	}
+}]]></Contents>
+      </DataObject>
+      <Dataset id="Dataset00" binddataobject="DataObject00" dataobjectpath="$.code[*]">
+        <ColumnInfo>
+          <Column id="locale" datapath="@.locale" type="STRING" size="256"/>
+          <Column id="label" datapath="@.label" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="Dataset01" binddataobject="DataObject00" dataobjectpath="$.data.ko">
+        <ColumnInfo>
+          <Column id="btn_submit" datapath="@.btn_submit" type="STRING" size="256"/>
+          <Column id="btn_save" datapath="@.btn_save" type="STRING" size="256"/>
+          <Column id="btn_cancel" datapath="@.btn_cancel" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Button00" propid="text" datasetid="Dataset01" columnid="btn_submit"/>
+      <BindItem id="item1" compid="Button00_00" propid="text" datasetid="Dataset01" columnid="btn_save"/>
+      <BindItem id="item2" compid="Button00_00_00" propid="text" datasetid="Dataset01" columnid="btn_cancel"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[
+this.Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.Dataset01.set_dataobjectpath("$.data."+e.postvalue);
+};
+]]></Script>
+  </Form>
+</FDL>

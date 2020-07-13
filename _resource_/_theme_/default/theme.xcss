@@ -1214,7 +1214,8 @@ last-modified : 2020-03-23
 
 /* Div (No style applied) */
 /* PopupDiv (No style applied) */
-.Div,.PopupDiv
+/* View (No style applied) */
+.Div,.PopupDiv,.View
 {
 	/* No style applied */
 }

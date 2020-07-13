@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_dataobject_03" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Button id="Button00" taborder="0" text="Create" left="410" top="38" width="100" height="30" onclick="Button00_onclick"/>
+        <Edit id="Edit_name" taborder="1" left="30" top="38" width="77" height="32" displaynulltext="name"/>
+        <Edit id="Edit_salary" taborder="2" left="130" top="38" width="77" height="32" displaynulltext="salary"/>
+        <Edit id="Edit_age" taborder="3" left="230" top="38" width="77" height="32" displaynulltext="age"/>
+        <Grid id="Grid00" taborder="4" left="30" top="125" width="570" height="125" autofittype="col"/>
+        <Button id="Button00_00" taborder="5" text="Search" left="30" top="85" width="100" height="30" onclick="Button00_00_onclick"/>
+        <Edit id="Edit_method" taborder="6" left="323" top="38" width="77" height="32" displaynulltext="strMethod" value="POST" text="POST"/>
+        <TextArea id="TextArea00" taborder="7" left="30" top="260" width="570" height="60" wordWrap="english"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <DataObject id="DataObject00" onsuccess="DataObject00_onsuccess" onload="DataObject00_onload" onerror="DataObject00_onerror"/>
+      <Dataset id="Dataset00"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strPostdata = JSON.stringify({"name":this.Edit_name.value,"salary":this.Edit_salary.value,"age":this.Edit_age.value});
+	this.DataObject00.request("CREATE", this.Edit_method.value, "http://dummy.restapiexample.com/api/v1/create", {"postdata":strPostdata});
+};
+
+this.Button00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.DataObject00.request("SEARCH", "GET", "http://dummy.restapiexample.com/api/v1/employees");	
+};
+
+var serviceid;
+this.DataObject00_onsuccess = function(obj:nexacro.DataObject,e:nexacro.DataObjectEventInfo)
+{
+	var strStatus = JSON.parse(e.response).status;
+	serviceid = e.serviceid;
+	trace(e.serviceid + ":" + strStatus);
+};
+
+this.DataObject00_onload = function(obj:nexacro.DataObject,e:nexacro.DataObjectLoadEventInfo)
+{
+	if(e.reason == 2)
+	{
+		this.Dataset00.clear();
+		var objData;
+		var strDataobjectpath;
+		if(serviceid == "CREATE")
+		{
+			objData = obj.data.data;
+			strDataobjectpath = "$.data";
+		} 
+		else if(serviceid == "SEARCH")
+		{
+			objData = obj.data.data[0];
+			strDataobjectpath = "$.data[*]";
+		}
+		for(var key in objData)
+		{
+			var objColinfo = new ColumnInfo();
+			objColinfo.set_type("String");
+			objColinfo.set_datapath("@."+key);
+			this.Dataset00.addColumnInfo(key, objColinfo);
+		}
+		this.Dataset00.set_binddataobject(obj.id);
+		this.Dataset00.set_dataobjectpath(strDataobjectpath);
+		this.Grid00.set_binddataset(this.Dataset00.name);
+		this.Grid00.createFormat();
+		this.TextArea00.set_value("");
+	}
+};
+
+this.DataObject00_onerror = function(obj:nexacro.DataObject,e:nexacro.DataObjectErrorEventInfo)
+{
+	trace(e.statuscode +":"+e.errormsg);
+	this.TextArea00.set_value(e.statuscode +":"+e.errormsg);
+};
+
+
+]]></Script>
+  </Form>
+</FDL>
