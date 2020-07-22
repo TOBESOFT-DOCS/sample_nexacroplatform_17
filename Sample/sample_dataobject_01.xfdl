@@ -35,7 +35,7 @@
       </Layout>
     </Layouts>
     <Objects>
-      <DataObject id="DataObject00" url="http://dummy.restapiexample.com/api/v1/employees"/>
+      <DataObject id="DataObject00" url="http://demo.nexacro.com/developer_guide/17/FileSample/data_sample_dataobject_01.json"/>
       <Dataset id="Dataset00" binddataobject="DataObject00" dataobjectpath="$.data[*]">
         <ColumnInfo>
           <Column id="id" datapath="@.id" type="STRING" size="256"/>
