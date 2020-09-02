@@ -302,4 +302,7 @@
 	font : 20pt/normal "Arial";
 	
 }
-]]></XCSS>
+.Grid .body .row .cell.sample_grid_53_cursor[status=mouseover]
+{
+    cursor : pointer;
+}]]></XCSS>

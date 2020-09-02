@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="TEST_08_27_scrollpixel" width="1280" height="720" titletext="New Form" onload="TEST_08_27_scrollpixel_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="26" top="20" width="214" height="208" binddataset="Dataset00" autofittype="col" wheelscrollrow="3" scrollpixel="all" autosizingtype="row">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="48"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" left="250" top="20" width="214" height="208" binddataset="Dataset00" autofittype="col" autosizingtype="row" wheelscrollrow="1">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="48"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="2" text="inc" left="86" top="233" width="54" height="35" onclick="Btn_onclick" nVoffsetpos="1" icon="url('theme://images/btn_WF_Spindown.png')" iconPosition="top"/>
+        <Button id="Button00_00" taborder="3" text="dec" left="26" top="233" width="54" height="35" onclick="Btn_onclick" nVoffsetpos="-1" icon="url('theme://images/btn_WF_Spinup.png')" iconPosition="top"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">6</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">7</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">8</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">10</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">11</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">12</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">13</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">14</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">15</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Btn_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Grid00.scrollBy(0,this.Grid00.getRealRowSize(0)*obj.nVoffsetpos);
+	this.Grid01.scrollBy(0,this.Grid01.getRealRowSize(0)*obj.nVoffsetpos);
+};
+]]></Script>
+  </Form>
+</FDL>

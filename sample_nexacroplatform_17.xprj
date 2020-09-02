@@ -6,4 +6,5 @@
   <AppInfos>
     <AppInfo url="sample_nexacroplatform_17.xadl"/>
   </AppInfos>
+  <BootstrapCustomize url="bootstrap.xml"/>
 </Project>

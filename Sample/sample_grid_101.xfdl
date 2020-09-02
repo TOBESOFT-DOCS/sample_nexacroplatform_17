@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_grid_101" width="1280" height="720" titletext="New Form" visible="true">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="10" top="10" width="423" height="212" oncellclick="Grid00_oncellclick" oninput="Grid00_oninput" binddataset="Dataset00" autofittype="col" oncellposchanged="Grid00_oncellposchanged" onselectchanged="Grid00_onselectchanged" onsetfocus="Grid00_onsetfocus" autoenter="select">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="174"/>
+                <Column size="140"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="60"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0" displaytype="textareacontrol" edittype="textarea" textareamaxlength="10"/>
+                <Cell col="1" text="bind:Column1" edittype="textarea" displaytype="textareacontrol" textareamaxlength="20"/>
+                <Cell col="2" displaytype="textareacontrol" edittype="textarea"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static00" taborder="1" left="372" top="232" width="61" height="26" border="1px solid black" text="0 / 10" textAlign="center" visible="false" background="white"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[var maxlength = 0;
+
+this.Grid00_oninput = function(obj:nexacro.Grid,e:nexacro.InputEventInfo)
+{
+	this.fn_checklength();
+};
+
+this.fn_checklength = function(row, cell)
+{
+	var length = 0;
+	if(this.Grid00.getEditingText())
+		length = this.Grid00.getEditingText().length;
+	else if(this.Grid00.getCellText(row, cell))
+		length = this.Grid00.getCellText(row, cell).length;
+	this.Static00.set_text(length + " / "+maxlength);
+}
+
+this.Grid00_oncellposchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
+{
+	if(this.Grid00.getCellProperty("body", e.cell, "edittype") == "textarea")
+	{
+		maxlength = this.Grid00.getCellProperty("body", e.cell, "textareamaxlength");
+		if(maxlength == -1)
+		{
+			this.Static00.set_visible(false);
+		}
+		else
+		{
+			var objRet = this.Grid00.getCellRect(e.row, e.cell);
+			var vL = this.Grid00.getOffsetLeft() + objRet.left + objRet.width;
+			var vT = this.Grid00.getOffsetTop() + objRet.top;	
+			
+			this.Static00.move(vL, vT + 1);
+			this.fn_checklength(e.row, e.cell);
+			this.Static00.set_visible(true);		
+		}
+	}
+	else 
+		this.Static00.set_visible(false);
+};]]></Script>
+  </Form>
+</FDL>

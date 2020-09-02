@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_grid_53" width="1280" height="720" titletext="New Form" locale="en_US">
     <Layouts>
       <Layout height="720" width="1280">
@@ -20,7 +20,7 @@
               </Band>
               <Band id="body">
                 <Cell text="bind:site"/>
-                <Cell col="1" text="bind:url" displaytype="decoratetext" expr="expr:bLink=='Y'?&quot;&lt;u v='true'&gt;&quot;+url+&quot;&lt;/u&gt;&quot;:url"/>
+                <Cell col="1" text="bind:url" displaytype="decoratetext" expr="expr:bLink=='Y'?&quot;&lt;u v='true'&gt;&quot;+url+&quot;&lt;/u&gt;&quot;:url" cssclass="expr:bLink=='Y'?'sample_grid_53_cursor':''"/>
               </Band>
             </Format>
           </Formats>
