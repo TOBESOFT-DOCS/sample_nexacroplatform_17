@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_grid_105" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid01" taborder="1" left="44" top="45" width="166" height="125" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" text="GRID_01"/>
+              </Band>
+              <Band id="body">
+                <Cell colspan="2">
+                  <Cell text="bind:Column0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                  <Cell col="1" text="bind:Column1"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid02" taborder="1" left="227" top="45" width="166" height="125" binddataset="Dataset00" autofittype="col" oncellclick="Grid02_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" text="GRID_02"/>
+              </Band>
+              <Band id="body">
+                <Cell colspan="2">
+                  <Cell text="bind:Column0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                  <Cell col="1" text="bind:Column1"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid03" taborder="2" left="410" top="45" width="166" height="125" binddataset="Dataset00" autofittype="col" oncellclick="Grid03_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" text="GRID_03"/>
+              </Band>
+              <Band id="body">
+                <Cell colspan="2">
+                  <Cell text="bind:Column0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                  <Cell col="1" text="bind:Column1"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" onvaluechanged="Dataset00_onvaluechanged">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column1">test1</Col>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">test2</Col>
+            <Col id="Column0">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">test3</Col>
+            <Col id="Column0">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">test4</Col>
+            <Col id="Column0">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.Grid02_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(this.Dataset00.getColumn(e.row, "Column0") == 1) 
+		this.Dataset00.setColumn(e.row, "Column0", 0);
+	else 
+		this.Dataset00.setColumn(e.row, "Column0", 1);
+};
+
+this.Grid03_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.fromreferenceobject == "[object CheckBoxControl]")
+	{
+		if(this.Dataset00.getColumn(e.row, "Column0") == 1) 
+			this.Dataset00.setColumn(e.row, "Column0", 0);
+		else 
+			this.Dataset00.setColumn(e.row, "Column0", 1);
+	}
+};
+
+this.Dataset00_onvaluechanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	trace('test');
+};
+]]></Script>
+  </Form>
+</FDL>

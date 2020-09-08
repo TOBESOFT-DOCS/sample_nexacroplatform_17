@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <TypeDefinition url="..\..\default_typedef.xml"/>
+  <Form id="sample_grid_103" classname="Grid_Calendar" left="0" top="0" width="340" height="390" titletext="Base2" onload="sample_grid_103_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" binddataset="ds_calendar" useinputpanel="false" selecttype="cell" autofittype="col" left="2" top="35" oncellclick="Grid00_oncellclick" width="331" height="195">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="32" band="head"/>
+                <Row size="32"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Sun"/>
+                <Cell col="1" text="Mon"/>
+                <Cell col="2" text="Tue"/>
+                <Cell col="3" text="Wed"/>
+                <Cell col="4" text="Thu"/>
+                <Cell col="5" text="Fri"/>
+                <Cell col="6" text="Sat"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="comp.parent.fn_checkTable(cal0)&gt;0?&quot;&lt;fc v='red'&gt;&lt;u v='true'&gt;&quot;+cal0+&quot;&lt;/u&gt;&lt;/fc&gt;&quot;:cal0?&quot;&lt;fc v='red'&gt;&quot;+cal0+&quot;&lt;/fc&gt;&quot;:cal0" displaytype="decoratetext"/>
+                <Cell col="1" expr="comp.parent.fn_checkTable(cal1)&gt;0?&quot;&lt;u v='true'&gt;&quot;+cal1+&quot;&lt;/u&gt;&quot;:cal1" displaytype="decoratetext"/>
+                <Cell col="2" expr="comp.parent.fn_checkTable(cal2)&gt;0?&quot;&lt;u v='true'&gt;&quot;+cal2+&quot;&lt;/u&gt;&quot;:cal2" displaytype="decoratetext"/>
+                <Cell col="3" expr="comp.parent.fn_checkTable(cal3)&gt;0?&quot;&lt;u v='true'&gt;&quot;+cal3+&quot;&lt;/u&gt;&quot;:cal3" displaytype="decoratetext"/>
+                <Cell col="4" expr="comp.parent.fn_checkTable(cal4)&gt;0?&quot;&lt;u v='true'&gt;&quot;+cal4+&quot;&lt;/u&gt;&quot;:cal4" displaytype="decoratetext"/>
+                <Cell col="5" expr="comp.parent.fn_checkTable(cal5)&gt;0?&quot;&lt;u v='true'&gt;&quot;+cal5+&quot;&lt;/u&gt;&quot;:cal5" displaytype="decoratetext"/>
+                <Cell col="6" expr="comp.parent.fn_checkTable(cal6)&gt;0?&quot;&lt;fc v='blue'&gt;&lt;u v='true'&gt;&quot;+cal6+&quot;&lt;/u&gt;&lt;/fc&gt;&quot;:cal6?&quot;&lt;fc v='blue'&gt;&quot;+cal6+&quot;&lt;/fc&gt;&quot;:cal6" displaytype="decoratetext"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button01" taborder="1" text="&gt;" top="3" height="28" onclick="Button_onclick" width="28" left="275" dataType="month" dataValue="1"/>
+        <Button id="Button02" taborder="2" text="&gt;&gt;" top="3" onclick="Button_onclick" height="28" width="28" left="306" dataType="year" dataValue="1"/>
+        <Button id="Button03" taborder="3" text="&lt;" left="34" top="3" width="28" height="28" onclick="Button_onclick" dataType="month" dataValue="-1"/>
+        <Button id="Button00" taborder="4" text="&lt;&lt;" top="3" width="28" height="28" onclick="Button_onclick" left="3" dataType="year" dataValue="-1"/>
+        <Combo id="Combo00" taborder="5" text="Combo00" left="67" top="3" height="28" onitemchanged="Combo_onitemchanged" innerdataset="@ds_Year" codecolumn="Column0" datacolumn="Column1" type="search" width="100" displayrowcount="10"/>
+        <Combo id="Combo01" taborder="6" text="Combo00" left="170" top="3" height="28" onitemchanged="Combo_onitemchanged" innerdataset="@ds_Month" codecolumn="Column0" datacolumn="Column1" type="search" width="100"/>
+        <ListBox id="ListBox00" taborder="7" left="3" top="233" width="330" height="150" innerdataset="Dataset00" codecolumn="date" datacolumn="title"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_calendar" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="cal0" type="STRING" size="256"/>
+          <Column id="cal1" type="STRING" size="256"/>
+          <Column id="cal2" type="STRING" size="256"/>
+          <Column id="cal3" type="STRING" size="256"/>
+          <Column id="cal4" type="STRING" size="256"/>
+          <Column id="cal5" type="STRING" size="256"/>
+          <Column id="cal6" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_Year">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_Month">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="date" type="STRING" size="256"/>
+          <Column id="title" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="date">20200912</Col>
+            <Col id="title">Burnley FC vs Manchester United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200912</Col>
+            <Col id="title">Manchester City vs Aston Villa</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200912</Col>
+            <Col id="title">Fulham FC vs Arsenal FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200912</Col>
+            <Col id="title">Crystal Palace vs Southampton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200912</Col>
+            <Col id="title">West Ham United vs Newcastle United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200912</Col>
+            <Col id="title">Liverpool FC vs Leeds United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200913</Col>
+            <Col id="title">West Bromwich Albion vs Leicester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200913</Col>
+            <Col id="title">Tottenham Hotspur vs Everton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200914</Col>
+            <Col id="title">Brighton &amp; Hove Albion vs Chelsea FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200914</Col>
+            <Col id="title">Sheffield United vs Wolverhampton Wanderers</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200919</Col>
+            <Col id="title">Everton FC vs West Bromwich Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200919</Col>
+            <Col id="title">Leeds United vs Fulham FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200919</Col>
+            <Col id="title">Leicester City vs Burnley FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200919</Col>
+            <Col id="title">Manchester United vs Crystal Palace</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200920</Col>
+            <Col id="title">Southampton FC vs Tottenham Hotspur</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200920</Col>
+            <Col id="title">Arsenal FC vs West Ham United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200920</Col>
+            <Col id="title">Aston Villa vs Sheffield United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200920</Col>
+            <Col id="title">Newcastle United vs Brighton &amp; Hove Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200920</Col>
+            <Col id="title">Chelsea FC vs Liverpool FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200921</Col>
+            <Col id="title">Wolverhampton Wanderers vs Manchester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200926</Col>
+            <Col id="title">Brighton &amp; Hove Albion vs Manchester United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200926</Col>
+            <Col id="title">Burnley FC vs Southampton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200926</Col>
+            <Col id="title">Crystal Palace vs Everton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200926</Col>
+            <Col id="title">Tottenham Hotspur vs Newcastle United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200926</Col>
+            <Col id="title">West Ham United vs Wolverhampton Wanderers</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200926</Col>
+            <Col id="title">West Bromwich Albion vs Chelsea FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200927</Col>
+            <Col id="title">Sheffield United vs Leeds United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200927</Col>
+            <Col id="title">Fulham FC vs Aston Villa</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200927</Col>
+            <Col id="title">Manchester City vs Leicester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200928</Col>
+            <Col id="title">Liverpool FC vs Arsenal FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Arsenal FC vs Sheffield United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Aston Villa vs Liverpool FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Chelsea FC vs Crystal Palace</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Everton FC vs Brighton &amp; Hove Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Leeds United vs Manchester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Leicester City vs West Ham United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Manchester United vs Tottenham Hotspur</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Newcastle United vs Burnley FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Southampton FC vs West Bromwich Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201003</Col>
+            <Col id="title">Wolverhampton Wanderers vs Fulham FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Chelsea FC vs Southampton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Crystal Palace vs Brighton &amp; Hove Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Everton FC vs Liverpool FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Leeds United vs Wolverhampton Wanderers</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Leicester City vs Aston Villa</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Manchester City vs Arsenal FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Newcastle United vs Manchester United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Sheffield United vs Fulham FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">Tottenham Hotspur vs West Ham United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201017</Col>
+            <Col id="title">West Bromwich Albion vs Burnley FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Arsenal FC vs Leicester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Aston Villa vs Leeds United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Brighton &amp; Hove Albion vs West Bromwich Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Burnley FC vs Tottenham Hotspur</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Fulham FC vs Crystal Palace</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Liverpool FC vs Sheffield United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Manchester United vs Chelsea FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Southampton FC vs Everton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">West Ham United vs Manchester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201024</Col>
+            <Col id="title">Wolverhampton Wanderers vs Newcastle United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Aston Villa vs Southampton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Burnley FC vs Chelsea FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Fulham FC vs West Bromwich Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Leeds United vs Leicester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Liverpool FC vs West Ham United</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Manchester United vs Arsenal FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Newcastle United vs Everton FC</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Sheffield United vs Manchester City</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Tottenham Hotspur vs Brighton &amp; Hove Albion</Col>
+          </Row>
+          <Row>
+            <Col id="date">20201031</Col>
+            <Col id="title">Wolverhampton Wanderers vs Crystal Palace</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.minYear = -100;
+this.maxYear = 100;
+
+this.sample_grid_103_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var date = new nexacro.Date(2020,8,1);
+	this.fn_setYear(date.getFullYear());
+	this.fn_setMonth(date.getMonth());
+	this.fn_setCalendar();	
+};
+
+this.fn_setYear = function(numCurrentYear)
+{
+	this.ds_Year.set_enableevent(false);
+	for(var i=numCurrentYear+this.minYear ; i<=numCurrentYear+this.maxYear ; i++)
+	{
+		var nRow = this.ds_Year.addRow();
+		this.ds_Year.setColumn(nRow, 0, i);
+		this.ds_Year.setColumn(nRow, 1, i);
+	}
+	this.ds_Year.set_enableevent(true);
+	this.Combo00.set_value(numCurrentYear);
+}
+
+this.fn_setMonth = function(numCurrentMonth)
+{
+	this.ds_Month.set_enableevent(false);
+	for(var i=0 ; i<12 ; i++)
+	{
+		var nRow = this.ds_Month.addRow();
+		this.ds_Month.setColumn(nRow, 0, i);
+		this.ds_Month.setColumn(nRow, 1, i+1);
+	}
+	this.ds_Month.set_enableevent(true);
+	this.Combo01.set_value(numCurrentMonth);
+}
+
+this.Button_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	if(obj.dataType == "month")
+	{
+		var numMonth = nexacro.toNumber(this.Combo01.value)+nexacro.toNumber(obj.dataValue);
+		var value = (numMonth%12)!=0 ? (numMonth%12) : 0;
+		trace(value);
+		this.Combo01.set_value(value);
+	} 
+	else if(obj.dataType == "year") 
+	{
+		var numYear = nexacro.toNumber(this.Combo00.value)+nexacro.toNumber(obj.dataValue);
+		this.Combo00.set_value(numYear);
+	}
+	this.fn_setCalendar();
+}
+
+this.Combo_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_setCalendar();
+}
+
+this.fn_setCalendar = function()
+{
+	var y = nexacro.toNumber(this.Combo00.value);	
+	var m = nexacro.toNumber(this.Combo01.value);
+	
+	var arr = this.getCalendarArr(y,m);
+
+	this.ds_calendar.set_enableevent(false);
+	this.ds_calendar.clearData();
+	for(var i = 0 ; i < arr.length ; i++){
+		this.ds_calendar.addRow();
+		for(var y = 0 ; y < arr[i].length; y++)
+		{
+			if(arr[i][y] != null){ this.ds_calendar.setColumn(i,y, arr[i][y]); }
+		}
+	}
+	this.ds_calendar.set_enableevent(true);
+	this.Dataset00.filter("date == '00000000'");
+	this.Grid00.clearSelect();
+}
+
+this.Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	this.Dataset00.filter("date == '"+this.fn_getDateString(this.ds_calendar.getColumn(e.row,e.cell))+"'");
+}
+
+this.fn_getDateString = function(strDay)
+{
+	return new nexacro.Date(this.Combo00.value ,this.Combo01.value ,strDay).toString();
+}
+
+this.fn_checkTable = function(strDay)
+{
+	return this.Dataset00.getCaseCountNF("date == '"+this.fn_getDateString(strDay)+"'");
+}
+
+this.getCalendarArr = function(y,m,d)
+{
+	var date = new nexacro.Date();
+	date.setFullYear(y, m , 1);
+	return this.get_DateArr(date, new Array(), m);
+}
+
+this.get_DateArr = function(date, arr , month)
+{
+	if(month != date.getMonth())
+		return arr;
+		
+	var idx = date.getDay();
+	if(arr.length == 0 ) {
+		arr[0] = new Array();
+	} else {
+		if(idx == 0) {
+			arr[arr.length] = new Array();
+		}
+	}
+	arr[arr.length-1][idx] = date.getDate();
+	date.addDate(1);
+	return this.get_DateArr(date, arr, month);
+}
+
+]]></Script>
+  </Form>
+</FDL>

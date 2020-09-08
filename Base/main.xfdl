@@ -1676,6 +1676,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">wheelscrollrow, scrollpixel</Col>
           </Row>
           <Row>
+            <Col id="category">Grid 기본</Col>
+            <Col id="subject">Row 위치 변경하기</Col>
+            <Col id="id_doc">ea1f96ad681948a9</Col>
+            <Col id="id_sample">sample_grid_106</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">moveRow</Col>
+          </Row>
+          <Row>
             <Col id="category">Grid 레이아웃</Col>
             <Col id="subject">Grid 레이아웃</Col>
             <Col id="tree_level">0</Col>
@@ -2247,6 +2256,24 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="keyword">getEditingText, getCellText</Col>
           </Row>
           <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">트리 형식에 마스크 문자 적용하기</Col>
+            <Col id="id_sample">sample_grid_104</Col>
+            <Col id="id_doc">67c68f2917da5329</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">getDisplayText</Col>
+          </Row>
+          <Row>
+            <Col id="category">Grid 셀</Col>
+            <Col id="subject">병합된 셀의 체크박스 체크하기</Col>
+            <Col id="id_sample">sample_grid_105</Col>
+            <Col id="id_doc">fffb5de915f3632b</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">fromreferenceobject</Col>
+          </Row>
+          <Row>
             <Col id="category">Grid 응용</Col>
             <Col id="subject">Grid 응용</Col>
             <Col id="tree_level">0</Col>
@@ -2579,6 +2606,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">2</Col>
             <Col id="keyword">getRealRowSize, getTreeRow</Col>
+          </Row>
+          <Row>
+            <Col id="subject">Grid 컴포넌트로 달력 형태의 일정표 만들기</Col>
+            <Col id="category">Grid 응용</Col>
+            <Col id="id_sample">sample_grid_103</Col>
+            <Col id="id_doc">eab6c6cdfa41ec28</Col>
+            <Col id="tree_level">1</Col>
+            <Col id="search_subject">2</Col>
+            <Col id="keyword">getCaseCountNF</Col>
           </Row>
           <Row>
             <Col id="category">GroupBox</Col>

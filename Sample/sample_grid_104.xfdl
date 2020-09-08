@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sample_grid_104" width="1280" height="720" titletext="Form_Work">
+    <Layouts>
+      <Layout width="1280" height="720">
+        <Grid id="Grid00" taborder="0" left="18" top="17" width="282" height="223" binddataset="Dataset00" treeusecheckbox="false" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="275"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="code"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="treeitemcontrol" edittype="tree" treelevel="bind:Column0" expr="comp.parent.fn_getMaskString(currow)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <MaskEdit id="MaskEdit00" taborder="1" left="18" top="250" width="122" height="20" visible="false" format="@@@@-@@@@-{@@@@}" type="string"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="code" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="code">111111111111</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="code">222222222222</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="code">333333333333</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="code">444444444444</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="code">555555555555</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="code">666666666666</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="code">777777777777</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.fn_getMaskString = function(nRow)
+{
+	var nStr = this.Dataset00.getColumn(nRow,"code");
+	this.MaskEdit00.set_value(nStr);
+	var rtn = this.MaskEdit00.getDisplayText();
+	return rtn;
+};]]></Script>
+  </Form>
+</FDL>
