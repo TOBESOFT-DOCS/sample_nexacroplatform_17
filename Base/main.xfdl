@@ -3633,6 +3633,7 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="subject">DataObject</Col>
             <Col id="tree_level">0</Col>
             <Col id="search_subject">5</Col>
+            <Col id="subject_ja">DataObject</Col>
           </Row>
           <Row>
             <Col id="category">DataObject</Col>
@@ -3642,6 +3643,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="tree_level">1</Col>
             <Col id="search_subject">5</Col>
             <Col id="keyword">binddataobject, dataobjectpath</Col>
+            <Col id="subject_ja">簡単なデータの表示</Col>
+            <Col id="id_doc_ja">0c28e6891f25ced4</Col>
           </Row>
           <Row>
             <Col id="category">DataObject</Col>
@@ -3651,6 +3654,8 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
             <Col id="id_sample">sample_dataobject_02</Col>
             <Col id="id_doc">900e9f3c308b92e4</Col>
             <Col id="keyword">data,dataobjectpath</Col>
+            <Col id="subject_ja">ボタンのテキストの多言語表示</Col>
+            <Col id="id_doc_ja">d587966d4c4b0821</Col>
           </Row>
           <Row>
             <Col id="category">nexacroObject</Col>
