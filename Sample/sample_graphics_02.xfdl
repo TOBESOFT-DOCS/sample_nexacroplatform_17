@@ -49,16 +49,9 @@ this.addGraphicsControl = function()
 	objGImage.set_y(50);	
 // 	objGImage.set_width(50);	
 // 	objGImage.set_height(50);	
-	objGImage.set_image("url('imagerc::img_50.png')");	
-	// The following format does not work.
-	/*
-	objGImage.setImageLoadEventHandler((function(obj) {
-		trace(obj.isEmptyRect());
-		obj.set_width(obj.imagewidth);
-		obj.set_height(obj.imageheight);
-	})(objGImage), this);
-	*/
 	objGImage.setImageLoadEventHandler(this.fn_checkGImage, this);
+	objGImage.set_image("url('imagerc::img_50.png')");	
+
 	
 	// GraphicsLine
 	var objGLine = new nexacro.GraphicsLine();
