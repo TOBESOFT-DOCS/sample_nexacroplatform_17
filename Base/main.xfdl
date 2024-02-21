@@ -3043,6 +3043,15 @@ this.Div00_Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventIn
           <Row>
             <Col id="category">VideoPlayer</Col>
             <Col id="tree_level">1</Col>
+            <Col id="subject">VideoPlayer 만들기</Col>
+            <Col id="id_sample">sample_videoplayer_01</Col>
+            <Col id="id_doc">35d2e5935c3619c8</Col>
+            <Col id="search_subject">1</Col>
+            <Col id="keyword">url</Col>
+          </Row>
+          <Row>
+            <Col id="category">VideoPlayer</Col>
+            <Col id="tree_level">1</Col>
             <Col id="subject">컨트롤 기능 만들기</Col>
             <Col id="id_sample">sample_videoplayer_02</Col>
             <Col id="id_doc">77ee1b8760cc2bb5</Col>

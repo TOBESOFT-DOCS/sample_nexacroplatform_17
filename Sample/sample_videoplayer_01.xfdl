@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_videoplayer_01" left="0" top="0" width="1024" height="768" titletext="New Form" border="" background="">
     <Layouts>
       <Layout height="768" width="1024" stepcount="0">
-        <VideoPlayer id="VideoPlayer00" taborder="0" left="32" top="40" width="540" height="320" showcontrolbar="true" url="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"/>
+        <VideoPlayer id="VideoPlayer00" taborder="0" left="32" top="40" width="540" height="320" showcontrolbar="true" url="https://github.com/mediaelement/mediaelement-files/blob/master/big_buck_bunny.mp4?raw=true"/>
       </Layout>
     </Layouts>
     <Objects/>

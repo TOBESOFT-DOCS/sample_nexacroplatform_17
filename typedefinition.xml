@@ -59,7 +59,11 @@
   </Services>
   <Protocols/>
   <Update>
-    <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" modulepath="C:\Program Files (x86)\nexacro\17\nexacro17lib\" updatetype="server"/>
+    <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" modulepath="C:\Program Files (x86)\nexacro\17\nexacro17lib\" updatetype="server">
+      <Version name="common">
+        <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="" description=""/>
+      </Version>
+    </Os>
     <Os name="macOS" url="./" timeout="30" retry="3" autoupdate="auto">
       <Version name="common">
         <Resource type="Theme" file="default.zip" targetpath="./_resource_/_theme_" version="0.0.0.0"/>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sample_videoplayer_02" width="1280" height="720" titletext="New Form">
     <Layouts>
       <Layout height="720" mobileorientation="landscape" width="1280">
@@ -17,7 +17,7 @@
     <Script type="xscript5.1"><![CDATA[
 this.btn_play_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	this.VideoPlayer00.set_url("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"); //http://www.mediaelementjs.com/
+	this.VideoPlayer00.set_url("https://github.com/mediaelement/mediaelement-files/blob/master/big_buck_bunny.mp4?raw=true"); //http://www.mediaelementjs.com/
 	this.VideoPlayer00.play();
 };
 
